@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soul Yatra — Yoga · Travel · Mindfulness</title>
+    <meta name="description"
+        content="Curated yoga journeys across India's sacred landscapes. Reconnect. Rebalance. Return renewed." />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="assets/home.css" />
+    <style>
+        /* FIX for absolute positioned quote block – ensure relative container */
+        .journey-section .col-lg-9 {
+            position: relative;
+        }
+
+        /* additional micro adjustment to prevent any text overflow */
+        .journey-quote {
+            max-width: 210px;
+            z-index: 5;
+        }
+
+        @media (max-width: 992px) {
+            .journey-quote {
+                position: static;
+                margin-bottom: 20px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="loading">
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: PRELOADER                         -->
+    <!-- ══════════════════════════════════════ -->
+    <div id="preloader">
+        <div class="preloader-lotus">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="38" stroke="#c8922a" stroke-width="0.7" opacity="0.45" />
+                <circle cx="40" cy="40" r="30" stroke="#c8922a" stroke-width="0.5" opacity="0.25" />
+                <path d="M40 58 C40 58 22 46 22 32 C22 22 30 18 40 28 C50 18 58 22 58 32 C58 46 40 58 40 58Z"
+                    stroke="#c8922a" stroke-width="1.1" fill="rgba(200,146,42,0.08)" />
+                <path d="M40 28 C40 28 28 38 28 50 M40 28 C40 28 52 38 52 50" stroke="#c8922a" stroke-width="0.8"
+                    opacity="0.55" />
+                <path d="M24 30 C24 30 16 36 18 48 M56 30 C56 30 64 36 62 48" stroke="#c8922a" stroke-width="0.7"
+                    opacity="0.35" />
+                <circle cx="40" cy="56" r="2.2" fill="#c8922a" opacity="0.75" />
+                <path d="M40 25 C40 25 36 18 28 18 C22 18 18 24 26 30" stroke="#c8922a" stroke-width="0.7" fill="none"
+                    opacity="0.4" />
+                <path d="M40 25 C40 25 44 18 52 18 C58 18 62 24 54 30" stroke="#c8922a" stroke-width="0.7" fill="none"
+                    opacity="0.4" />
+            </svg>
+        </div>
+        <div class="preloader-title">
+            SOUL YATRA
+            <span>Yoga · Travel · Mindfulness</span>
+        </div>
+        <div class="preloader-bar-wrap">
+            <div class="preloader-bar"></div>
+        </div>
+        <p class="preloader-sub">Journey Inward</p>
+    </div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: NAVBAR                           -->
+    <!-- ══════════════════════════════════════ -->
+    <nav id="mainNav" class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand nav-brand" href="#">
+                <div class="nav-brand-icon">
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 36 C22 36 10 28 10 17 C10 10 16 8 22 15 C28 8 34 10 34 17 C34 28 22 36 22 36Z"
+                            fill="#c8922a" opacity="0.9" />
+                        <path d="M22 15 C22 15 15 22 15 30 M22 15 C22 15 29 22 29 30" stroke="rgba(244,236,224,0.25)"
+                            stroke-width="0.8" />
+                        <circle cx="22" cy="34" r="1.8" fill="#c8922a" opacity="0.7" />
+                    </svg>
+                </div>
+                <div class="nav-brand-text">
+                    SOUL YATRA
+                    <small>Yoga · Travel · Mindfulness</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Experiences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Retreats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                </ul>
+                <a href="#" class="btn-primary-sy">Plan Your Journey →</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: HERO                             -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+
+        <div class="hero-particles">
+            <span class="particle"></span><span class="particle"></span>
+            <span class="particle"></span><span class="particle"></span>
+            <span class="particle"></span><span class="particle"></span>
+        </div>
+
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-6 col-md-9">
+                    <p class="hero-eyebrow">Journey Inward</p>
+                    <h1 class="hero-h1">
+                        Explore India.
+                        <span class="hero-h1-gold">Transform Within.</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Yoga journeys and mindful experiences across<br>
+                        India's sacred landscapes. Reconnect. Rebalance.<br>
+                        Return renewed.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn-primary-sy">Explore Retreats &nbsp;→</a>
+                        <a href="#" class="btn-outline-sy">Our Destinations &nbsp;→</a>
+                    </div>
+                    <button class="hero-film-row">
+                        <span class="play-circle">▶</span>
+                        <span class="film-text">
+                            <b>Watch Journey Film</b>
+                            <small>1:28 min</small>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span class="scroll-num">01</span>
+            <div class="scroll-dots">
+                <span class="s-dot active"></span>
+                <span class="s-dot"></span>
+                <span class="s-dot"></span>
+                <span class="s-dot"></span>
+                <span class="s-dot"></span>
+            </div>
+            <span class="scroll-num">05</span>
+        </div>
+
+        <button class="soundscape-btn">
+            Soundscape
+            <span class="sound-ring">
+                <i class="fas fa-volume-up" style="font-size:0.58rem;"></i>
+            </span>
+            <span style="font-size:0.58rem;">On</span>
+        </button>
+    </section>
+
+    <div class="section-sep"></div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: JOURNEY / PATH (SVG MAP)      -->
+    <!-- ══════════════════════════════════════ -->
+
+    <!-- JOURNEY SECTION START -->
+    <section class="journey-section">
+
+        <!-- LUXURY FRAME START -->
+        <div class="journey-frame" aria-hidden="true">
+            <span class="frame-corner tl"></span>
+            <span class="frame-corner tr"></span>
+            <span class="frame-corner bl"></span>
+            <span class="frame-corner br"></span>
+        </div>
+        <!-- LUXURY FRAME END -->
+
+        <!-- BACKGROUND DECORATIONS START -->
+        <img src="assets/gallery/home-image/india-map-lineart.svg" class="india-map-bg" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/luxury mandala.png" class="mandala-deco right" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco2 bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco3 bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco3 bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco3 bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/leaf.png" class="leaf-deco3 bottom-left" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/om-symbol.svg" class="om-symbol-deco" alt="" aria-hidden="true" />
+        <img src="assets/gallery/home-image/lotus-deco.svg" class="lotus-deco" alt="" aria-hidden="true" />
+        <!-- BACKGROUND DECORATIONS END -->
+
+        <!-- CONTAINER START -->
+        <div class="container">
+            <div class="row align-items-start">
+
+                <!-- LEFT COLUMN START -->
+                <div class="col-lg-3 col-md-12 journey-left reveal-left">
+                    <span class="eyebrow">YOUR JOURNEY AWAITS</span>
+                    <h2>A Path That<br>Transforms</h2>
+                    <div class="journey-divider" aria-hidden="true">
+                        <svg viewBox="0 0 160 20" xmlns="http://www.w3.org/2000/svg" width="160" height="20">
+                            <line x1="0" y1="10" x2="56" y2="10" stroke="#d4a030" stroke-width="0.6" opacity="0.45" />
+                            <path
+                                d="M68 10 C68 4, 72 2, 76 6 C78 8, 80 2, 80 2 C80 2, 82 8, 84 6 C88 2, 92 4, 92 10 C88 14, 84 12, 80 16 C76 12, 72 14, 68 10Z"
+                                fill="none" stroke="#d4a030" stroke-width="0.8" opacity="0.7" />
+                            <circle cx="80" cy="10" r="2" fill="#d4a030" opacity="0.5" />
+                            <line x1="104" y1="10" x2="160" y2="10" stroke="#d4a030" stroke-width="0.6"
+                                opacity="0.45" />
+                        </svg>
+                    </div>
+                    <p>Curated routes across India that blend ancient wisdom with breathtaking places.</p>
+
+                    <div class="journey-features">
+                        <!-- Feature 1 -->
+                        <div class="journey-feature">
+                            <div class="jf-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28">
+                                    <path d="M16 26 L16 14" stroke="#d4a030" stroke-width="1" />
+                                    <path d="M16 20 C12 14,5 12,3 17 C7 21,13 20,16 20Z" fill="rgba(212,160,48,0.12)"
+                                        stroke="#d4a030" stroke-width="0.8" />
+                                    <path d="M16 16 C20 10,27 8,29 13 C25 17,19 17,16 16Z" fill="rgba(212,160,48,0.12)"
+                                        stroke="#d4a030" stroke-width="0.8" />
+                                </svg>
+                            </div>
+                            <span>Authentic<br>Experiences</span>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="journey-feature">
+                            <div class="jf-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28">
+                                    <path
+                                        d="M16 26 C16 26, 8 20, 8 14 C8 10, 12 8, 16 12 C20 8, 24 10, 24 14 C24 20, 16 26, 16 26Z"
+                                        fill="rgba(212,160,48,0.12)" stroke="#d4a030" stroke-width="0.8" />
+                                    <path d="M10 18 C7 15, 5 11, 8 9" stroke="#d4a030" stroke-width="0.6"
+                                        opacity="0.6" />
+                                    <path d="M22 18 C25 15, 27 11, 24 9" stroke="#d4a030" stroke-width="0.6"
+                                        opacity="0.6" />
+                                    <circle cx="16" cy="16" r="2" fill="rgba(212,160,48,0.3)" stroke="#d4a030"
+                                        stroke-width="0.6" />
+                                </svg>
+                            </div>
+                            <span>Mind, Body &amp;<br>Soul Harmony</span>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="journey-feature">
+                            <div class="jf-icon" aria-hidden="true">
+                                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="28">
+                                    <rect x="5" y="24" width="22" height="2" stroke="#d4a030" stroke-width="0.8"
+                                        fill="rgba(212,160,48,0.08)" />
+                                    <rect x="8" y="21" width="16" height="3" stroke="#d4a030" stroke-width="0.8"
+                                        fill="rgba(212,160,48,0.06)" />
+                                    <rect x="11" y="15" width="10" height="6" stroke="#d4a030" stroke-width="0.8"
+                                        fill="rgba(212,160,48,0.08)" />
+                                    <path d="M9 15 L13 9 L16 5 L19 9 L23 15Z" fill="rgba(212,160,48,0.1)"
+                                        stroke="#d4a030" stroke-width="0.8" />
+                                    <circle cx="16" cy="4" r="1.2" fill="#d4a030" />
+                                    <path d="M14 21 L14 18 Q16 16, 18 18 L18 21" fill="rgba(212,160,48,0.14)"
+                                        stroke="#d4a030" stroke-width="0.6" />
+                                </svg>
+                            </div>
+                            <span>Timeless<br>Destinations</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="journey-cta-btn">VIEW ALL JOURNEYS →</a>
+                    <p class="journey-sub-caption">Begin your transformation today.</p>
+                    <div class="journey-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 80 12" width="80" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0" y1="6" x2="28" y2="6" stroke="#d4a030" stroke-width="0.5" opacity="0.4" />
+                            <circle cx="32" cy="6" r="2" fill="none" stroke="#d4a030" stroke-width="0.6"
+                                opacity="0.5" />
+                            <circle cx="40" cy="6" r="3" fill="none" stroke="#d4a030" stroke-width="0.6"
+                                opacity="0.6" />
+                            <circle cx="48" cy="6" r="2" fill="none" stroke="#d4a030" stroke-width="0.6"
+                                opacity="0.5" />
+                            <line x1="52" y1="6" x2="80" y2="6" stroke="#d4a030" stroke-width="0.5" opacity="0.4" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- LEFT COLUMN END -->
+
+                <!-- RIGHT COLUMN START -->
+                <div class="col-lg-9 col-md-12 reveal">
+
+                    <!-- Quote Block -->
+                    <div class="journey-quote" aria-label="Quote">
+                        <span class="quote-mark">&ldquo;</span>
+                        <p class="quote-text"><em>The journey within is<br>the greatest adventure<br>of all.</em></p>
+                        <div class="quote-rule" aria-hidden="true">
+                            <svg viewBox="0 0 90 10" width="90" height="10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0" y1="5" x2="30" y2="5" stroke="#d4a030" stroke-width="0.5" opacity="0.5" />
+                                <circle cx="34" cy="5" r="1.5" fill="#d4a030" opacity="0.6" />
+                                <circle cx="40" cy="5" r="2.5" fill="none" stroke="#d4a030" stroke-width="0.6"
+                                    opacity="0.65" />
+                                <circle cx="46" cy="5" r="1.5" fill="#d4a030" opacity="0.6" />
+                                <line x1="50" y1="5" x2="80" y2="5" stroke="#d4a030" stroke-width="0.5" opacity="0.5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- SVG Map Wrapper -->
+                    <div class="journey-svg-wrap">
+                        <svg id="journeyMapSVG" viewBox="0 0 900 370" preserveAspectRatio="xMidYMid meet"
+                            xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; overflow:visible;"
+                            role="img" aria-label="Journey map showing Kerala, Rishikesh, Hampi, and Himalayas">
+
+                            <defs>
+                                <!-- Path Gradient (Gold) -->
+                                <linearGradient id="pathGold" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#7a4e10" stop-opacity="0.4" />
+                                    <stop offset="15%" stop-color="#b07820" stop-opacity="0.85" />
+                                    <stop offset="30%" stop-color="#c8911e" stop-opacity="1" />
+                                    <stop offset="50%" stop-color="#f0cb6b" stop-opacity="1" />
+                                    <stop offset="70%" stop-color="#c8911e" stop-opacity="1" />
+                                    <stop offset="85%" stop-color="#b07820" stop-opacity="0.85" />
+                                    <stop offset="100%" stop-color="#7a4e10" stop-opacity="0.4" />
+                                </linearGradient>
+                                <!-- Circle Fill Gradient -->
+                                <radialGradient id="circFill" cx="40%" cy="35%" r="65%">
+                                    <stop offset="0%" stop-color="#22401f" />
+                                    <stop offset="55%" stop-color="#142318" />
+                                    <stop offset="100%" stop-color="#070d08" />
+                                </radialGradient>
+                                <!-- Circle Ring Gradient -->
+                                <radialGradient id="circRing" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#f0cb6b" />
+                                    <stop offset="100%" stop-color="#b07820" />
+                                </radialGradient>
+                                <!-- Shimmer Gradient -->
+                                <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="rgba(240,203,107,0)" />
+                                    <stop offset="40%" stop-color="rgba(240,203,107,0.35)" />
+                                    <stop offset="60%" stop-color="rgba(255,246,224,0.55)" />
+                                    <stop offset="100%" stop-color="rgba(240,203,107,0)" />
+                                </linearGradient>
+                                <!-- Clip Paths — updated cy values -->
+                                <clipPath id="clip1">
+                                    <circle cx="130" cy="130" r="57" />
+                                </clipPath>
+                                <clipPath id="clip2">
+                                    <circle cx="340" cy="50" r="57" />
+                                </clipPath>
+                                <clipPath id="clip3">
+                                    <circle cx="560" cy="120" r="57" />
+                                </clipPath>
+                                <clipPath id="clip4">
+                                    <circle cx="770" cy="190" r="57" />
+                                </clipPath>
+                                <!-- Dot Glow Filter -->
+                                <filter id="dotGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b" />
+                                    <feMerge>
+                                        <feMergeNode in="b" />
+                                        <feMergeNode in="b" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                                <!-- Circle Glow Filter -->
+                                <filter id="circleGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b" />
+                                    <feMerge>
+                                        <feMergeNode in="b" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+
+                            <!-- PATH — lifted by 30px -->
+                            <path id="pathGlow1"
+                                d="M130,190 C 220,210 280,150 340,110 S 450,70 560,180 S 670,230 770,250" fill="none"
+                                stroke="url(#pathGold)" stroke-width="12" stroke-linecap="round" opacity="0"
+                                filter="blur(6px)" />
+
+                            <path id="pathCore"
+                                d="M130,190 C 220,210 280,150 340,110 S 450,70 560,180 S 670,230 770,250" fill="none"
+                                stroke="url(#pathGold)" stroke-width="2" stroke-linecap="round"
+                                stroke-dasharray="4 8" />
+
+                            <path id="pathDots"
+                                d="M130,190 C 220,210 280,150 340,110 S 450,70 560,180 S 670,230 770,250" fill="none"
+                                stroke="#f0cb6b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="1 15"
+                                opacity="0.6" />
+
+                            <!-- ═══════════════════════════════ -->
+                            <!-- NODE 1: KERALA  (cy 160→130)   -->
+                            <!-- ═══════════════════════════════ -->
+                            <g class="journey-node" style="--delay:0s">
+                                <circle class="node-glow" cx="130" cy="130" r="58" fill="none" stroke="#f0cb6b"
+                                    stroke-width="1.5" opacity="0" filter="url(#circleGlow)" />
+                                <circle cx="130" cy="130" r="58" fill="url(#circFill)" stroke="url(#circRing)"
+                                    stroke-width="1.5" />
+                                <circle cx="130" cy="130" r="60" fill="none" stroke="rgba(240,203,107,0.15)"
+                                    stroke-width="8" />
+                                <rect class="shimmer-rect" x="55" y="72" width="160" height="116"
+                                    fill="url(#shimmerGrad)" clip-path="url(#clip1)" opacity="0" />
+                                <!-- Icon -->
+                                <g transform="translate(100,100)" stroke="#e8bc50" stroke-width="0.9" fill="none"
+                                    opacity="0.95">
+                                    <rect x="6" y="47" width="48" height="3.5" fill="rgba(232,188,80,0.08)" />
+                                    <rect x="12" y="43" width="36" height="4" fill="rgba(232,188,80,0.06)" />
+                                    <rect x="18" y="30" width="24" height="13" fill="rgba(232,188,80,0.08)" />
+                                    <path d="M16 30 L22 18 L30 10 L38 18 L44 30Z" fill="rgba(232,188,80,0.1)" />
+                                    <line x1="19" y1="26" x2="41" y2="26" opacity="0.6" />
+                                    <line x1="21" y1="22" x2="39" y2="22" opacity="0.5" />
+                                    <path d="M28 10 Q30 6 32 10" fill="rgba(232,188,80,0.2)" />
+                                    <circle cx="30" cy="9" r="1.3" fill="#f0cb6b" stroke="none" />
+                                    <path d="M25 43 L25 36 Q30 32 35 36 L35 43" fill="rgba(232,188,80,0.14)" />
+                                </g>
+                                <!-- Connection dot (was 219, now 189) -->
+                                <circle cx="130" cy="189" r="5" fill="#f0cb6b" filter="url(#dotGlow)" />
+                                <circle cx="130" cy="189" r="3" fill="#fff6e0" />
+                                <!-- Labels (shifted -30) -->
+                                <text x="130" y="215" text-anchor="middle"
+                                    font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600"
+                                    letter-spacing="0.5" fill="#f8f1e4">Kerala</text>
+                                <text x="130" y="230" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Ayurveda &amp;</text>
+                                <text x="130" y="241" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Rejuvenation</text>
+                            </g>
+
+                            <!-- ═══════════════════════════════════ -->
+                            <!-- NODE 2: RISHIKESH  (cy 80→50)      -->
+                            <!-- ═══════════════════════════════════ -->
+                            <g class="journey-node" style="--delay:0.15s">
+                                <circle class="node-glow" cx="340" cy="50" r="58" fill="none" stroke="#f0cb6b"
+                                    stroke-width="1.5" opacity="0" filter="url(#circleGlow)" />
+                                <circle cx="340" cy="50" r="58" fill="url(#circFill)" stroke="url(#circRing)"
+                                    stroke-width="1.5" />
+                                <circle cx="340" cy="50" r="60" fill="none" stroke="rgba(240,203,107,0.15)"
+                                    stroke-width="8" />
+                                <rect class="shimmer-rect" x="265" y="-8" width="160" height="116"
+                                    fill="url(#shimmerGrad)" clip-path="url(#clip2)" opacity="0" />
+                                <!-- Icon -->
+                                <g transform="translate(310,20)" stroke="#e8bc50" stroke-width="0.9" fill="none"
+                                    opacity="0.95">
+                                    <path d="M30 50 L30 28" />
+                                    <path d="M30 36 C26 30 18 28 14 32 C18 36 26 36 30 36Z"
+                                        fill="rgba(232,188,80,0.12)" />
+                                    <path d="M30 30 C34 24 42 22 46 26 C42 30 34 32 30 30Z"
+                                        fill="rgba(232,188,80,0.12)" />
+                                    <path d="M30 28 C28 22 26 16 30 12 C34 16 32 22 30 28Z"
+                                        fill="rgba(232,188,80,0.14)" />
+                                    <path d="M30 42 C27 38 22 37 20 40 C23 43 28 43 30 42Z" fill="rgba(232,188,80,0.1)"
+                                        opacity="0.85" />
+                                    <path d="M24 50 Q30 48 36 50" opacity="0.6" />
+                                    <path d="M22 52 Q30 54 38 52" opacity="0.45" />
+                                </g>
+                                <!-- Connection dot (was 139, now 109) -->
+                                <circle cx="340" cy="109" r="5" fill="#f0cb6b" filter="url(#dotGlow)" />
+                                <circle cx="340" cy="109" r="3" fill="#fff6e0" />
+                                <!-- Labels (shifted -30) -->
+                                <text x="340" y="134" text-anchor="middle"
+                                    font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600"
+                                    letter-spacing="0.5" fill="#f8f1e4">Rishikesh</text>
+                                <text x="340" y="149" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Yoga &amp; Ganga</text>
+                                <text x="340" y="160" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Awakening</text>
+                            </g>
+
+                            <!-- ═══════════════════════════════ -->
+                            <!-- NODE 3: HAMPI  (cy 150→120)    -->
+                            <!-- ═══════════════════════════════ -->
+                            <g class="journey-node" style="--delay:0.3s">
+                                <circle class="node-glow" cx="560" cy="120" r="58" fill="none" stroke="#f0cb6b"
+                                    stroke-width="1.5" opacity="0" filter="url(#circleGlow)" />
+                                <circle cx="560" cy="120" r="58" fill="url(#circFill)" stroke="url(#circRing)"
+                                    stroke-width="1.5" />
+                                <circle cx="560" cy="120" r="60" fill="none" stroke="rgba(240,203,107,0.15)"
+                                    stroke-width="8" />
+                                <rect class="shimmer-rect" x="485" y="62" width="160" height="116"
+                                    fill="url(#shimmerGrad)" clip-path="url(#clip3)" opacity="0" />
+                                <!-- Icon -->
+                                <g transform="translate(530,90)" stroke="#e8bc50" stroke-width="0.9" fill="none"
+                                    opacity="0.95">
+                                    <rect x="10" y="46" width="40" height="3.5" fill="rgba(232,188,80,0.08)" />
+                                    <rect x="14" y="42" width="32" height="4" fill="rgba(232,188,80,0.07)" />
+                                    <path d="M16 42 Q16 28 30 22 Q44 28 44 42Z" fill="rgba(232,188,80,0.1)" />
+                                    <path d="M20 42 Q20 31 30 26 Q40 31 40 42" fill="none" opacity="0.55" />
+                                    <rect x="24" y="18" width="12" height="4" fill="rgba(232,188,80,0.1)" />
+                                    <line x1="30" y1="18" x2="30" y2="10" stroke-linecap="round" />
+                                    <circle cx="30" cy="9" r="2" fill="#f0cb6b" />
+                                    <path d="M26 42 L26 36 Q30 33 34 36 L34 42" fill="rgba(232,188,80,0.12)" />
+                                </g>
+                                <!-- Connection dot (was 209, now 179) -->
+                                <circle cx="560" cy="179" r="5" fill="#f0cb6b" filter="url(#dotGlow)" />
+                                <circle cx="560" cy="179" r="3" fill="#fff6e0" />
+                                <!-- Labels (shifted -30) -->
+                                <text x="560" y="205" text-anchor="middle"
+                                    font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600"
+                                    letter-spacing="0.5" fill="#f8f1e4">Hampi</text>
+                                <text x="560" y="220" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Silence &amp; Ancient</text>
+                                <text x="560" y="231" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Wisdom</text>
+                            </g>
+
+                            <!-- ═══════════════════════════════════ -->
+                            <!-- NODE 4: HIMALAYAS  (cy 220→190)    -->
+                            <!-- ═══════════════════════════════════ -->
+                            <g class="journey-node" style="--delay:0.45s">
+                                <circle class="node-glow" cx="770" cy="190" r="58" fill="none" stroke="#f0cb6b"
+                                    stroke-width="1.5" opacity="0" filter="url(#circleGlow)" />
+                                <circle cx="770" cy="190" r="58" fill="url(#circFill)" stroke="url(#circRing)"
+                                    stroke-width="1.5" />
+                                <circle cx="770" cy="190" r="60" fill="none" stroke="rgba(240,203,107,0.15)"
+                                    stroke-width="8" />
+                                <rect class="shimmer-rect" x="695" y="132" width="160" height="116"
+                                    fill="url(#shimmerGrad)" clip-path="url(#clip4)" opacity="0" />
+                                <!-- Icon -->
+                                <g transform="translate(740,160)" stroke="#e8bc50" stroke-width="0.8" fill="none"
+                                    opacity="0.95">
+                                    <path d="M4 46 L17 20 L30 46Z" fill="rgba(232,188,80,0.06)" opacity="0.6" />
+                                    <path d="M30 46 L43 20 L56 46Z" fill="rgba(232,188,80,0.06)" opacity="0.6" />
+                                    <path d="M14 46 L30 8 L46 46Z" fill="rgba(232,188,80,0.1)" stroke-width="1.05" />
+                                    <path d="M24 24 L30 8 L36 24 Q30 28 24 24Z" fill="rgba(240,203,107,0.22)" />
+                                    <line x1="4" y1="46" x2="56" y2="46" opacity="0.45" />
+                                </g>
+                                <!-- Connection dot (was 279, now 249) -->
+                                <circle cx="770" cy="249" r="5" fill="#f0cb6b" filter="url(#dotGlow)" />
+                                <circle cx="770" cy="249" r="3" fill="#fff6e0" />
+                                <!-- Labels (shifted -30) -->
+                                <text x="770" y="275" text-anchor="middle"
+                                    font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600"
+                                    letter-spacing="0.5" fill="#f8f1e4">Himalayas</text>
+                                <text x="770" y="290" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Meditation &amp;</text>
+                                <text x="770" y="301" text-anchor="middle" font-family="'Inter', sans-serif"
+                                    font-size="8.5" letter-spacing="0.5" fill="#b39a78">Inner Peace</text>
+                            </g>
+
+                        </svg>
+                    </div>
+                    <!-- SVG Map Wrapper End -->
+
+                    <!-- STATS BAR -->
+                    <div class="journey-stats-bar reveal">
+                        <div class="jstat">
+                            <div class="jstat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="22"
+                                    height="22">
+                                    <path d="M3 22 L10 10 L14 4 L18 10 L25 22Z" fill="rgba(212,160,48,0.1)"
+                                        stroke="#d4a030" stroke-width="0.9" />
+                                    <path d="M11 14 L14 4 L17 14 Q14 17, 11 14Z" fill="rgba(240,203,107,0.2)" />
+                                </svg>
+                            </div>
+                            <div class="jstat-text"><strong>25+</strong><span>HANDPICKED<br>DESTINATIONS</span></div>
+                        </div>
+                        <div class="jstat-sep" aria-hidden="true"></div>
+                        <div class="jstat">
+                            <div class="jstat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="22"
+                                    height="22">
+                                    <circle cx="10" cy="9" r="4" fill="rgba(212,160,48,0.1)" stroke="#d4a030"
+                                        stroke-width="0.9" />
+                                    <circle cx="19" cy="9" r="4" fill="rgba(212,160,48,0.1)" stroke="#d4a030"
+                                        stroke-width="0.9" />
+                                    <path d="M2 24 Q2 17 10 17 Q14 17 16 19" stroke="#d4a030" stroke-width="0.9"
+                                        stroke-linecap="round" />
+                                    <path d="M12 24 Q12 17 19 17 Q26 17 26 24" stroke="#d4a030" stroke-width="0.9"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="jstat-text"><strong>10K+</strong><span>TRANSFORMED<br>TRAVELERS</span></div>
+                        </div>
+                        <div class="jstat-sep" aria-hidden="true"></div>
+                        <div class="jstat">
+                            <div class="jstat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="22"
+                                    height="22">
+                                    <path d="M14 24 L14 12" stroke="#d4a030" stroke-width="0.9" />
+                                    <path d="M14 18 C10 13, 4 11, 2 16 C6 20, 12 19, 14 18Z"
+                                        fill="rgba(212,160,48,0.12)" stroke="#d4a030" stroke-width="0.8" />
+                                    <path d="M14 14 C18 9, 24 7, 26 12 C22 16, 16 16, 14 14Z"
+                                        fill="rgba(212,160,48,0.12)" stroke="#d4a030" stroke-width="0.8" />
+                                </svg>
+                            </div>
+                            <div class="jstat-text"><strong>100%</strong><span>AUTHENTIC &amp;<br>RESPONSIBLE</span>
+                            </div>
+                        </div>
+                        <div class="jstat-sep" aria-hidden="true"></div>
+                        <div class="jstat">
+                            <div class="jstat-icon" aria-hidden="true">
+                                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" width="22"
+                                    height="22">
+                                    <path
+                                        d="M14 3 L16.5 10 L24 10 L18 15 L20.5 22 L14 18 L7.5 22 L10 15 L4 10 L11.5 10Z"
+                                        fill="rgba(212,160,48,0.12)" stroke="#d4a030" stroke-width="0.9"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="jstat-text"><strong>4.9/5</strong><span>TRAVELER<br>RATING</span></div>
+                        </div>
+                    </div>
+                    <!-- STATS BAR END -->
+
+                </div>
+                <!-- RIGHT COLUMN END -->
+
+            </div>
+        </div>
+        <!-- CONTAINER END -->
+
+    </section>
+    <!-- JOURNEY SECTION END -->
+
+    <!-- SECTION SEPARATOR -->
+    <div class="section-sep"></div>
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: EXPERIENCES                     -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="exp-section">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+                <div class="col-auto exp-left reveal-left">
+                    <span class="eyebrow">Experiences</span>
+                    <h2>More Than<br>Just a Trip</h2>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center gap-2 reveal-right">
+                    <button class="nav-arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-arrow-btn"
+                        style="background:rgba(200,146,42,0.18);border-color:rgba(200,146,42,0.4);">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-lg col-md-4 col-sm-6 reveal">
+                    <div class="exp-card">
+                        <div class="exp-icon"><svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="5" r="2" />
+                                <path d="M12 7v5M7 10c1.5 0 3-1 5-1s3.5 1 5 1M9 17l3-5 3 5" />
+                            </svg></div>
+                        <h4>Yoga Retreats</h4>
+                        <p>Deepen your practice in serene locations.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.07s">
+                    <div class="exp-card">
+                        <div class="exp-icon"><svg viewBox="0 0 24 24">
+                                <path d="M12 2a10 10 0 110 20 10 10 0 010-20z" />
+                                <path d="M12 6v6l4 2" />
+                            </svg></div>
+                        <h4>Meditation Camps</h4>
+                        <p>Silence. Stillness. Self-discovery.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.14s">
+                    <div class="exp-card">
+                        <div class="exp-icon"><svg viewBox="0 0 24 24">
+                                <path d="M4 10h16v2a8 8 0 01-16 0v-2z" />
+                                <path d="M8 10V8a4 4 0 018 0v2" />
+                                <line x1="12" y1="2" x2="12" y2="6" />
+                            </svg></div>
+                        <h4>Ayurveda Healing</h4>
+                        <p>Detox, heal and rejuvenate naturally.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.21s">
+                    <div class="exp-card">
+                        <div class="exp-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17 20H7M12 4v12M7 9l5-5 5 5" />
+                                <path d="M5 20c0-4 3-7 7-7s7 3 7 7" opacity="0.5" />
+                            </svg></div>
+                        <h4>Spiritual Trails</h4>
+                        <p>Walk ancient paths of culture &amp; faith.</p>
+                    </div>
+                </div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.28s">
+                    <div class="exp-card">
+                        <div class="exp-icon"><svg viewBox="0 0 24 24">
+                                <path d="M12 22s8-6 8-12A8 8 0 004 10c0 6 8 12 8 12z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></div>
+                        <h4>Conscious Travel</h4>
+                        <p>Travel mindfully. Give back. Grow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: DESTINATIONS                    -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="dest-section">
+        <div class="container">
+            <div class="dest-top reveal">
+                <div><span class="eyebrow">Destinations</span>
+                    <h2>Sacred Places, Timeless Energy</h2>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#" class="view-all-link" style="margin-bottom:0;">View All Destinations</a>
+                    <div class="d-flex gap-2"><button class="nav-arrow-btn"><i
+                                class="fas fa-chevron-left"></i></button><button class="nav-arrow-btn"><i
+                                class="fas fa-chevron-right"></i></button></div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-lg col-md-4 col-sm-6 reveal"><a href="#" class="dest-card">
+                        <div class="dest-img-wrap"><img
+                                src="https://images.unsplash.com/photo-1544735716-ea9ef790f501?w=500&q=80"
+                                alt="Rishikesh" loading="lazy" /></div>
+                        <div class="dest-overlay"></div>
+                        <div class="dest-info">
+                            <h4>Rishikesh</h4>
+                            <p>Yoga Capital of the World</p>
+                        </div>
+                    </a></div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.07s"><a href="#"
+                        class="dest-card">
+                        <div class="dest-img-wrap"><img
+                                src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=500&q=80"
+                                alt="Kerala" loading="lazy" /></div>
+                        <div class="dest-overlay"></div>
+                        <div class="dest-info">
+                            <h4>Kerala</h4>
+                            <p>Land of Serenity</p>
+                        </div>
+                    </a></div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.14s"><a href="#"
+                        class="dest-card">
+                        <div class="dest-img-wrap"><img
+                                src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=500&q=80"
+                                alt="Varanasi" loading="lazy" /></div>
+                        <div class="dest-overlay"></div>
+                        <div class="dest-info">
+                            <h4>Varanasi</h4>
+                            <p>Spiritual Heart of India</p>
+                        </div>
+                    </a></div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.21s"><a href="#"
+                        class="dest-card">
+                        <div class="dest-img-wrap"><img
+                                src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=500&q=80"
+                                alt="Auroville" loading="lazy" /></div>
+                        <div class="dest-overlay"></div>
+                        <div class="dest-info">
+                            <h4>Auroville</h4>
+                            <p>Conscious Living</p>
+                        </div>
+                    </a></div>
+                <div class="col-lg col-md-4 col-sm-6 reveal" style="transition-delay:.28s"><a href="#"
+                        class="dest-card">
+                        <div class="dest-img-wrap"><img
+                                src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=500&q=80"
+                                alt="Ladakh" loading="lazy" /></div>
+                        <div class="dest-overlay"></div>
+                        <div class="dest-info">
+                            <h4>Ladakh</h4>
+                            <p>High Altitude Peace</p>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: BREATHE (MEDITATION ORB)        -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="breathe-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-4 reveal-left">
+                    <span class="eyebrow">Pause. Breathe. Be.</span>
+                    <h2 class="breathe-title">Take a Moment<br>for Yourself</h2>
+                    <p class="breathe-sub">A simple breath can change your entire state.</p>
+                    <svg class="leaf-svg" width="110" height="160" viewBox="0 0 110 160" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M55 150 C55 150 10 108 10 62 C10 30 28 18 55 38 C82 18 100 30 100 62 C100 108 55 150 55 150Z"
+                            stroke="#c8922a" stroke-width="1" fill="rgba(200,146,42,0.08)" />
+                        <line x1="55" y1="38" x2="55" y2="148" stroke="#c8922a" stroke-width="0.8" opacity="0.55" />
+                        <line x1="32" y1="72" x2="55" y2="90" stroke="#c8922a" stroke-width="0.65" opacity="0.45" />
+                        <line x1="78" y1="72" x2="55" y2="90" stroke="#c8922a" stroke-width="0.65" opacity="0.45" />
+                        <line x1="24" y1="100" x2="55" y2="115" stroke="#c8922a" stroke-width="0.6" opacity="0.35" />
+                        <line x1="86" y1="100" x2="55" y2="115" stroke="#c8922a" stroke-width="0.6" opacity="0.35" />
+                    </svg>
+                </div>
+                
+                <div class="col-lg-4 reveal-right">
+                    <div class="breathe-steps-col">
+                        <div class="b-step"><span class="b-dot i"></span>
+                            <div class="b-step-text">
+                                <h5>Inhale</h5><span>4 sec</span>
+                            </div>
+                        </div>
+                        <div class="b-step"><span class="b-dot h"></span>
+                            <div class="b-step-text">
+                                <h5>Hold</h5><span>4 sec</span>
+                            </div>
+                        </div>
+                        <div class="b-step"><span class="b-dot e"></span>
+                            <div class="b-step-text">
+                                <h5>Exhale</h5><span>6 sec</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-start-breathe"><span class="bp">▶</span> Start Breathing</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: QUOTE                           -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="quote-section">
+        <div class="container quote-inner text-center">
+            <span class="quote-mark">"</span>
+            <p class="quote-text reveal">The journey of a thousand miles<br>begins with a single breath.</p>
+            <p class="quote-attr reveal">— Ancient Wisdom</p>
+        </div>
+        <div class="d-flex align-items-center gap-3" style="position:absolute;right:40px;bottom:28px;z-index:2;">
+            <button class="quote-play-btn">▶</button>
+            <span
+                style="font-family:var(--font-body);font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,236,224,0.45);">More
+                Stories</span>
+        </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: STORIES (TESTIMONIALS)          -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="stories-section">
+        <div class="container">
+            <div class="stories-top reveal">
+                <div><span class="eyebrow">Voices from the Journey</span>
+                    <h2>Stories That Inspire</h2>
+                </div>
+                <button class="prev-btn">‹</button>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 reveal">
+                    <div class="story-card">
+                        <div class="story-top"><img class="story-av"
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80"
+                                alt="Ananya Sharma" />
+                            <div>
+                                <p class="story-name">Ananya Sharma</p><span class="story-tag">Rishikesh Retreat</span>
+                            </div>
+                        </div>
+                        <p class="story-quote">"This journey helped me find a peace I was searching for years. Life
+                            changing!"</p>
+                        <div class="story-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.1s">
+                    <div class="story-card">
+                        <div class="story-top"><img class="story-av"
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
+                                alt="Karan Mehta" />
+                            <div>
+                                <p class="story-name">Karan Mehta</p><span class="story-tag">Kerala Ayurveda</span>
+                            </div>
+                        </div>
+                        <p class="story-quote">"The perfect blend of healing, hospitality and serenity."</p>
+                        <div class="story-stars">★★★★★</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.2s">
+                    <div class="story-card">
+                        <div class="story-top"><img class="story-av"
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
+                                alt="Meera Iyer" />
+                            <div>
+                                <p class="story-name">Meera Iyer</p><span class="story-tag">Himalayan Meditation</span>
+                            </div>
+                        </div>
+                        <p class="story-quote">"Disconnecting from the noise and connecting with myself was priceless."
+                        </p>
+                        <div class="story-stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: NEWSLETTER                      -->
+    <!-- ══════════════════════════════════════ -->
+    <section class="newsletter-section">
+        <div class="nl-glow a"></div>
+        <div class="nl-glow b"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 reveal-left">
+                    <svg class="nl-lotus" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 68 C40 68 16 52 16 33 C16 20 26 16 40 28 C54 16 64 20 64 33 C64 52 40 68 40 68Z"
+                            stroke="#c8922a" stroke-width="1.1" fill="rgba(200,146,42,0.1)" />
+                        <path d="M40 28 C40 28 27 40 27 54 M40 28 C40 28 53 40 53 54" stroke="#c8922a"
+                            stroke-width="0.8" opacity="0.5" />
+                        <path d="M18 35 C12 30 10 40 16 46 M62 35 C68 30 70 40 64 46" stroke="#c8922a"
+                            stroke-width="0.7" opacity="0.35" />
+                        <circle cx="40" cy="66" r="2" fill="#c8922a" opacity="0.7" />
+                    </svg>
+                    <span class="nl-eyebrow">Begin Your Journey</span>
+                    <h3 class="nl-title">Stay Inspired</h3>
+                    <p class="nl-sub">Mindful travel tips, stories and<br>offers from India's heartland.</p>
+                </div>
+                <div class="col-lg-7 reveal-right d-flex align-items-center justify-content-lg-end">
+                    <div class="nl-form"><input class="nl-input" type="email" placeholder="Enter your email" /><button
+                            class="btn-primary-sy" type="button">Subscribe</button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: FOOTER                          -->
+    <!-- ══════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-brand-wrap">
+                        <div class="footer-logo-icon"><svg viewBox="0 0 44 44" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22 36 C22 36 10 28 10 17 C10 10 16 8 22 15 C28 8 34 10 34 17 C34 28 22 36 22 36Z"
+                                    fill="#c8922a" />
+                                <circle cx="22" cy="34" r="1.8" fill="#c8922a" opacity="0.65" />
+                            </svg></div>
+                        <div class="footer-logo-name">SOUL YATRA<small>Yoga · Travel · Mindfulness</small></div>
+                    </div>
+                    <p class="footer-desc">Curated yoga journeys across India for a more mindful, meaningful life.</p>
+                    <div class="footer-social"><a href="#" class="f-social"><i class="fab fa-instagram"></i></a><a
+                            href="#" class="f-social"><i class="fab fa-facebook-f"></i></a><a href="#"
+                            class="f-social"><i class="fab fa-youtube"></i></a><a href="#" class="f-social"><i
+                                class="fab fa-pinterest"></i></a></div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="footer-col-head">Explore</h6>
+                    <ul class="footer-link-list">
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Retreats</a></li>
+                        <li><a href="#">Experiences</a></li>
+                        <li><a href="#">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h6 class="footer-col-head">Support</h6>
+                    <ul class="footer-link-list">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Travel Info</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-contact">
+                    <h6 class="footer-col-head">Connect</h6>
+                    <p><a href="mailto:hello@soulyatra.com">hello@soulyatra.com</a></p>
+                    <p><a href="tel:+919670543210">+91 96705 43210</a></p>
+                    <p>Rishikesh, India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2024 Soul Yatra. All rights reserved.</div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        /* Preloader */
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('preloader').classList.add('hide');
+                document.body.classList.remove('loading');
+            }, 2700);
+        });
+
+        /* Navbar scroll */
+        var nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', function () {
+            nav.classList.toggle('scrolled', window.scrollY > 55);
+        });
+
+        /* Scroll reveal */
+        var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    revealObserver.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+        /* Breathing orb */
+        var phases = [
+            { label: 'Inhale', count: 4, unit: 'SEC' },
+            { label: 'Hold', count: 4, unit: 'SEC' },
+            { label: 'Exhale', count: 6, unit: 'SEC' }
+        ];
+        var phaseIndex = 0, timer = null, current = 0, running = false;
+        var orbLabel = document.querySelector('.orb-label-top');
+        var orbNumber = document.querySelector('.orb-number');
+        var orbUnit = document.querySelector('.orb-unit');
+        var startBtn = document.querySelector('.btn-start-breathe');
+
+        function runBreath() {
+            clearInterval(timer);
+            var phase = phases[phaseIndex];
+            current = phase.count;
+            if (orbLabel) orbLabel.textContent = phase.label;
+            if (orbNumber) orbNumber.textContent = current;
+            if (orbUnit) orbUnit.textContent = phase.unit;
+            timer = setInterval(function () {
+                current--;
+                if (orbNumber) orbNumber.textContent = current;
+                if (current <= 0) {
+                    clearInterval(timer);
+                    phaseIndex = (phaseIndex + 1) % phases.length;
+                    setTimeout(runBreath, 400);
+                }
+            }, 1000);
+        }
+
+        if (startBtn) {
+            startBtn.addEventListener('click', function () {
+                if (!running) {
+                    running = true;
+                    startBtn.innerHTML = '<span class="bp">■</span> Stop';
+                    runBreath();
+                } else {
+                    running = false; clearInterval(timer);
+                    phaseIndex = 0; current = 0;
+                    startBtn.innerHTML = '<span class="bp">▶</span> Start Breathing';
+                    if (orbLabel) orbLabel.textContent = 'Inhale';
+                    if (orbNumber) orbNumber.textContent = '4';
+                    if (orbUnit) orbUnit.textContent = 'SEC';
+                }
+            });
+        }
+
+        /* Journey path & shimmer (single observer – no duplicate) */
+        (function () {
+            const svgWrap = document.querySelector('.journey-svg-wrap');
+            if (!svgWrap) return;
+            const observer = new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('path-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.25 }
+            );
+            observer.observe(svgWrap);
+            const nodes = document.querySelectorAll('.journey-node');
+            nodes.forEach(function (node) {
+                node.addEventListener('mouseenter', function () {
+                    const shimmer = node.querySelector('.shimmer-rect');
+                    if (!shimmer) return;
+                    shimmer.style.animation = 'none';
+                    shimmer.offsetHeight;
+                    shimmer.style.animation = '';
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
