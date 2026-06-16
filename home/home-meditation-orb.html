@@ -1,0 +1,193 @@
+<section class="meditation-orb-section">
+
+    <div class="orb-noise"></div>
+    <div class="orb-shimmer"></div>
+    <div class="orb-particles" id="orbParticles"></div>
+
+    <!-- Leaf grows from bottom-left corner -->
+   
+
+    <div class="container">
+        <div class="meditation-layout">
+
+            <!-- ══ LEFT ══ -->
+            <div class="meditation-copy reveal-left">
+
+                <div class="orb-eyebrow">
+                    <div class="eyebrow-pill">
+                        <span class="eyebrow-icon">🌿</span>
+                        <span class="eyebrow-text">PAUSE. BREATHE. BE.</span>
+                    </div>
+                </div>
+
+                <h2>Take a Moment<br>for Yourself</h2>
+                <div class="orb-divider"></div>
+                <p>A simple breath can<br>change your entire state.</p>
+
+            </div>
+
+            <!-- ══ CENTER ══ -->
+            <div class="orb-center reveal">
+
+                <div class="center-glow"></div>
+
+                <!-- background wave decoration -->
+
+
+
+                <div class="orb-container">
+                    <div class="outer-orbit"></div>
+                    <div class="outer-orbit"></div>
+
+                    <div class="orb-glow"></div>
+                    <div class="breathing-ring" id="breathingRing">
+                        <div class="orb-content">
+                            <span class="orb-label-top" id="orbPhaseLabel">Inhale</span>
+                            <div class="orb-number" id="orbNumber">4</div>
+                            <span class="orb-unit">SEC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="orb-tagline">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                    Find your calm. One breath at a time.
+                </div>
+
+            </div>
+
+            <!-- ══ RIGHT ══ -->
+            <div class="orb-right reveal-right">
+
+                <div class="breath-steps">
+                    <div class="step-item inhale">
+                        <span class="step-dot"></span>
+                        <div>
+                            <h5>Inhale</h5><small>4 sec</small>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item hold">
+                        <span class="step-dot"></span>
+                        <div>
+                            <h5>Hold</h5><small>4 sec</small>
+                        </div>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item exhale">
+                        <span class="step-dot"></span>
+                        <div>
+                            <h5>Exhale</h5><small>6 sec</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-start-breathe" id="startBtn" onclick="toggleBreathing()">
+                    <span class="bp" id="btnIcon">▶</span>
+                    <span id="btnText">Start Breathing</span>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    /* ── Gold particles ── */
+    (function () {
+        var container = document.getElementById('orbParticles');
+        var pts = [
+            { t: '18%', l: '5%', s: 2.5, d: '5s', dl: '0s' },
+            { t: '55%', l: '3%', s: 1.8, d: '8s', dl: '1s' },
+            { t: '75%', l: '10%', s: 2.2, d: '6.5s', dl: '.5s' },
+            { t: '30%', l: '18%', s: 1.5, d: '9s', dl: '2s' },
+            { t: '85%', l: '28%', s: 2, d: '7s', dl: '1.5s' },
+            { t: '12%', l: '42%', s: 1.6, d: '10s', dl: '.8s' },
+            { t: '65%', l: '38%', s: 2.8, d: '5.5s', dl: '2.5s' },
+            { t: '40%', l: '55%', s: 1.4, d: '8.5s', dl: '.3s' },
+            { t: '22%', l: '68%', s: 2, d: '7s', dl: '1.8s' },
+            { t: '80%', l: '62%', s: 1.7, d: '6s', dl: '3s' },
+            { t: '50%', l: '74%', s: 2.4, d: '9s', dl: '.6s' },
+            { t: '15%', l: '82%', s: 1.5, d: '11s', dl: '2.2s' },
+            { t: '70%', l: '88%', s: 2, d: '7.5s', dl: '1.2s' },
+            { t: '35%', l: '94%', s: 1.8, d: '8s', dl: '.4s' },
+            { t: '90%', l: '46%', s: 2.2, d: '6s', dl: '3.5s' },
+            { t: '8%', l: '55%', s: 1.6, d: '9.5s', dl: '1s' },
+        ];
+        pts.forEach(function (p) {
+            var el = document.createElement('span');
+            el.className = 'particle';
+            el.style.cssText =
+                'top:' + p.t + ';left:' + p.l +
+                ';width:' + p.s + 'px;height:' + p.s + 'px' +
+                ';--dur:' + p.d + ';--delay:' + p.dl;
+            container.appendChild(el);
+        });
+    })();
+
+    /* ── Breathing engine ── */
+    var phases = [
+        { label: 'Inhale', sec: 4, color: '#8cf3af', ringClass: 'inhale-active' },
+        { label: 'Hold', sec: 4, color: '#ffcb6a', ringClass: '' },
+        { label: 'Exhale', sec: 6, color: '#ffb85a', ringClass: 'exhale-active' },
+    ];
+
+    var running = false;
+    var pi = 0;
+    var cnt = 4;
+    var timer = null;
+
+    var labelEl = document.getElementById('orbPhaseLabel');
+    var numEl = document.getElementById('orbNumber');
+    var ringEl = document.getElementById('breathingRing');
+    var biconEl = document.getElementById('btnIcon');
+    var btxtEl = document.getElementById('btnText');
+
+    function applyPhase() {
+        var p = phases[pi];
+        labelEl.textContent = p.label;
+        labelEl.style.color = p.color;
+        numEl.textContent = cnt;
+        /* ring scale animation class */
+        ringEl.classList.remove('inhale-active', 'exhale-active');
+        if (p.ringClass) ringEl.classList.add(p.ringClass);
+    }
+
+    function tick() {
+        cnt--;
+        if (cnt <= 0) {
+            pi = (pi + 1) % phases.length;
+            cnt = phases[pi].sec;
+        }
+        applyPhase();
+    }
+
+    function toggleBreathing() {
+        running = !running;
+        if (running) {
+            pi = 0;
+            cnt = phases[0].sec;
+            applyPhase();
+            timer = setInterval(tick, 1000);
+            biconEl.textContent = '⏸';
+            btxtEl.textContent = 'Pause';
+        } else {
+            clearInterval(timer);
+            /* reset to idle */
+            pi = 0;
+            cnt = phases[0].sec;
+            ringEl.classList.remove('inhale-active', 'exhale-active');
+            labelEl.textContent = 'Inhale';
+            labelEl.style.color = '#8cf3af';
+            numEl.textContent = '4';
+            biconEl.textContent = '▶';
+            btxtEl.textContent = 'Start Breathing';
+        }
+    }
+</script>

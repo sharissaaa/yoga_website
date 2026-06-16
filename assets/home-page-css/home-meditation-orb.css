@@ -1,0 +1,580 @@
+/* ═══════════════════════════════════════════════════
+   MEDITATION ORB SECTION
+   home-meditation-orb.css
+═══════════════════════════════════════════════════ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Reset / Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ══════════════════════════════════════
+   SECTION SHELL
+   Main container with dark radial gradient background
+══════════════════════════════════════ */
+.meditation-orb-section {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  background: radial-gradient(ellipse 80% 120% at 50% 60%,
+      #1a0c00 0%,
+      #120800 30%,
+      #0d0500 60%,
+      #080300 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Noise texture overlay (SVG fractal noise) ── */
+.orb-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Warm shimmer / vignette (radial gradients) ── */
+.orb-shimmer {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 50% 50%,
+      rgba(120, 50, 0, 0.22) 0%,
+      transparent 70%),
+    radial-gradient(ellipse 30% 40% at 20% 80%,
+      rgba(180, 80, 0, 0.12) 0%,
+      transparent 60%),
+    radial-gradient(ellipse 25% 35% at 80% 20%,
+      rgba(150, 60, 0, 0.1) 0%,
+      transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Floating particles (small dots) ── */
+.orb-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(199, 163, 92, 0.7);
+  box-shadow: 0 0 4px rgba(199, 163, 92, 0.5);
+  animation: floatParticle var(--dur, 7s) var(--delay, 0s) ease-in-out infinite alternate;
+}
+
+@keyframes floatParticle {
+  0%   { opacity: 0; transform: translateY(0px) scale(0.8); }
+  30%  { opacity: 0.8; }
+  70%  { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-28px) scale(1.2); }
+}
+
+/* ══════════════════════════════════════
+   LAYOUT
+   Three‑column grid (left copy / center orb / right steps)
+══════════════════════════════════════ */
+.meditation-orb-section .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.meditation-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  align-items: center;
+  gap: 0;
+  min-height: 340px;
+  padding: 36px 0;
+}
+
+/* ══════════════════════════════════════
+   LEFT COLUMN — COPY & BOTANICAL LEAF
+══════════════════════════════════════ */
+.meditation-copy {
+  padding-right: 32px;
+}
+
+/* Eyebrow pill (small badge) */
+.orb-eyebrow { margin-bottom: 14px; }
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 8px;
+  border: 1px solid rgba(199, 163, 92, 0.25);
+  border-radius: 40px;
+  background: rgba(199, 163, 92, 0.06);
+}
+
+.eyebrow-icon { font-size: 12px; }
+
+.eyebrow-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: rgba(199, 163, 92, 0.75);
+  text-transform: uppercase;
+}
+
+/* Heading (serif) */
+.meditation-copy h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 300;
+  line-height: 1.18;
+  color: #f5ede0;
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+
+/* Decorative divider line */
+.orb-divider {
+  width: 36px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #c7a35c 0%, rgba(199, 163, 92, 0.2) 100%);
+  margin-bottom: 14px;
+  border-radius: 2px;
+}
+
+/* Body text */
+.meditation-copy p {
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(245, 230, 210, 0.55);
+  margin-bottom: 0;
+}
+
+/* Botanical leaf anchored bottom‑left */
+.orb-leaf-wrap {
+  position: absolute;
+  bottom: -40px;
+  left: -30px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orb-leaf-img {
+  width: 280px;
+  height: auto;
+  display: block;
+  mix-blend-mode: lighten;
+  filter: drop-shadow(0 0 18px rgba(199, 163, 92, 0.2))
+          drop-shadow(0 0 6px rgba(80, 200, 100, 0.15));
+  transform: rotate(-10deg);
+  transform-origin: bottom left;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ══════════════════════════════════════
+   CENTER — BREATHING ORB & ANIMATIONS
+══════════════════════════════════════ */
+.orb-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Soft glow behind the whole center column */
+.center-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(60, 180, 80, 0.08) 0%,
+    rgba(180, 100, 0, 0.06) 45%,
+    transparent 70%);
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+
+/* Orb wrapper container */
+/* ── Orb container ── */
+.orb-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer dashed orbit */
+.outer-orbit {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px dashed rgba(199, 163, 92, 0.25);
+  animation: orbitSpin 20s linear infinite;
+}
+
+/* ── First orbit dots — pinned exactly on the circle edge ── */
+.outer-orbit:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  /* 9 o'clock position */
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(199, 163, 92, 0.7);
+  box-shadow: 0 0 6px rgba(199, 163, 92, 0.6);
+}
+
+.outer-orbit:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  /* ~5 o'clock position */
+  bottom: 16px;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(93, 232, 160, 0.6);
+  box-shadow: 0 0 5px rgba(93, 232, 160, 0.5);
+}
+
+/* ── Second orbit ── */
+.outer-orbit:nth-child(2) {
+  animation: orbitSpin 28s linear infinite reverse;
+  border-color: rgba(199, 163, 92, 0.15);
+}
+
+/* 12 o'clock position */
+.outer-orbit:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(199, 163, 92, 0.75);
+  box-shadow: 0 0 7px rgba(199, 163, 92, 0.65);
+}
+
+/* 3 o'clock position */
+.outer-orbit:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -3px;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(93, 232, 160, 0.6);
+  box-shadow: 0 0 5px rgba(93, 232, 160, 0.5);
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Outer glow ring */
+.orb-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+    transparent 38%,
+    rgba(93, 232, 160, 0.04) 50%,
+    rgba(199, 163, 92, 0.07) 65%,
+    transparent 75%);
+  filter: blur(2px);
+}
+/* Main breathing ring (the visible orb) */
+.breathing-ring {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%,
+    #1c0e00 0%,
+    #130900 55%,
+    #0d0600 100%);
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,0.6),
+    0 0 40px rgba(93, 232, 160, 0.08),
+    0 0 60px rgba(199, 163, 92, 0.05);
+  transition: transform 4s ease-in-out;
+}
+
+/* Conic gradient border that pulses */
+.breathing-ring::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  padding: 2px;
+  background: conic-gradient(
+    from 220deg,
+    #3de87a 0deg,
+    #6df5a4 40deg,
+    #c7a35c 120deg,
+    #e8a030 200deg,
+    #ff8c30 280deg,
+    #3de87a 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ringPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes ringPulse {
+  0%   { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1;   transform: scale(1.015); }
+}
+
+/* Breathing animation states (expands / contracts) */
+.breathing-ring.inhale-active {
+  transform: scale(1.06);
+}
+.breathing-ring.exhale-active {
+  transform: scale(0.95);
+}
+
+/* Inner textual content of the orb */
+.orb-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 1;
+}
+
+.orb-label-top {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #8cf3af;
+  transition: color 0.6s ease;
+}
+
+.orb-number {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 68px;
+  font-weight: 300;
+  line-height: 1;
+  color: #f5ede0;
+  letter-spacing: -2px;
+}
+
+.orb-unit {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: rgba(245, 230, 210, 0.4);
+  text-transform: uppercase;
+}
+
+/* Small tagline below orb (icon + text) */
+.orb-tagline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(199, 163, 92, 0.55);
+  letter-spacing: 0.3px;
+}
+
+.orb-tagline svg {
+  color: rgba(199, 163, 92, 0.5);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   RIGHT COLUMN — BREATH STEPS & BUTTON
+══════════════════════════════════════ */
+.orb-right {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Breath step list (inhale / hold / exhale) */
+.breath-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 0;
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.step-item.inhale .step-dot { background: #4ade80; color: #4ade80; }
+.step-item.hold   .step-dot { background: #f59e0b; color: #f59e0b; }
+.step-item.exhale .step-dot { background: #f97316; color: #f97316; }
+
+.step-item h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #f0e8d8;
+  letter-spacing: 0.2px;
+  margin-bottom: 1px;
+}
+
+.step-item small {
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  color: rgba(240, 232, 216, 0.45);
+  letter-spacing: 0.2px;
+}
+
+/* Vertical connector line between steps */
+.step-connector {
+  width: 1px;
+  height: 16px;
+  background: linear-gradient(to bottom,
+    rgba(199, 163, 92, 0.2) 0%,
+    rgba(199, 163, 92, 0.05) 100%);
+  margin-left: 4.5px;
+}
+
+/* Start breathing button */
+.btn-start-breathe {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(199, 163, 92, 0.35);
+  background: rgba(199, 163, 92, 0.06);
+  color: rgba(245, 230, 210, 0.85);
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.btn-start-breathe:hover {
+  background: rgba(199, 163, 92, 0.14);
+  border-color: rgba(199, 163, 92, 0.6);
+  box-shadow: 0 0 18px rgba(199, 163, 92, 0.15);
+  color: #f5ede0;
+}
+
+.btn-start-breathe:active {
+  transform: scale(0.98);
+}
+
+.btn-start-breathe .bp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(199, 163, 92, 0.18);
+  border: 1px solid rgba(199, 163, 92, 0.3);
+  font-size: 10px;
+  color: #c7a35c;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   REVEAL ANIMATIONS (scroll / load)
+══════════════════════════════════════ */
+.reveal-left  { animation: revealLeft  0.9s cubic-bezier(.22,.68,0,1.2) both; }
+.reveal       { animation: revealUp    0.9s cubic-bezier(.22,.68,0,1.2) 0.15s both; }
+.reveal-right { animation: revealRight 0.9s cubic-bezier(.22,.68,0,1.2) 0.3s both; }
+
+@keyframes revealLeft  {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealUp  {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════════ */
+@media (max-width: 960px) {
+  .meditation-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 0;
+  }
+
+  .meditation-copy { padding-right: 0; text-align: center; }
+  .orb-divider     { margin: 0 auto 14px; }
+  .orb-leaf-wrap   { bottom: -20px; left: -15px; }
+  .orb-leaf-img    { width: 180px; }
+
+  .orb-right {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .breath-steps { align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .meditation-orb-section .container { padding: 0 20px; }
+  .orb-container { width: 180px; height: 180px; }
+  .breathing-ring { width: 170px; height: 170px; }
+  .orb-number { font-size: 54px; }
+}

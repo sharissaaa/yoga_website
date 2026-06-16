@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/home.css" />
     <link rel="stylesheet" href="assets/home-page-css/home-experience.css" />
      <link rel="stylesheet" href="assets/home-page-css/home-destination.css" />
+     <link rel="stylesheet" href="assets/home-page-css/home-meditation-orb.css" />
 
 
     <style>
@@ -642,49 +643,8 @@
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: BREATHE (MEDITATION ORB)        -->
     <!-- ══════════════════════════════════════ -->
-    <section class="breathe-section">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-4 reveal-left">
-                    <span class="eyebrow">Pause. Breathe. Be.</span>
-                    <h2 class="breathe-title">Take a Moment<br>for Yourself</h2>
-                    <p class="breathe-sub">A simple breath can change your entire state.</p>
-                    <svg class="leaf-svg" width="110" height="160" viewBox="0 0 110 160" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M55 150 C55 150 10 108 10 62 C10 30 28 18 55 38 C82 18 100 30 100 62 C100 108 55 150 55 150Z"
-                            stroke="#c8922a" stroke-width="1" fill="rgba(200,146,42,0.08)" />
-                        <line x1="55" y1="38" x2="55" y2="148" stroke="#c8922a" stroke-width="0.8" opacity="0.55" />
-                        <line x1="32" y1="72" x2="55" y2="90" stroke="#c8922a" stroke-width="0.65" opacity="0.45" />
-                        <line x1="78" y1="72" x2="55" y2="90" stroke="#c8922a" stroke-width="0.65" opacity="0.45" />
-                        <line x1="24" y1="100" x2="55" y2="115" stroke="#c8922a" stroke-width="0.6" opacity="0.35" />
-                        <line x1="86" y1="100" x2="55" y2="115" stroke="#c8922a" stroke-width="0.6" opacity="0.35" />
-                    </svg>
-                </div>
+          <div id="partial-meditation-orb"></div>
 
-                <div class="col-lg-4 reveal-right">
-                    <div class="breathe-steps-col">
-                        <div class="b-step"><span class="b-dot i"></span>
-                            <div class="b-step-text">
-                                <h5>Inhale</h5><span>4 sec</span>
-                            </div>
-                        </div>
-                        <div class="b-step"><span class="b-dot h"></span>
-                            <div class="b-step-text">
-                                <h5>Hold</h5><span>4 sec</span>
-                            </div>
-                        </div>
-                        <div class="b-step"><span class="b-dot e"></span>
-                            <div class="b-step-text">
-                                <h5>Exhale</h5><span>6 sec</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn-start-breathe"><span class="bp">▶</span> Start Breathing</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- ══════════════════════════════════════ -->
@@ -965,6 +925,7 @@
         var partials = [
             { id: 'partial-experience', src: 'home/home-experience.html' },
             { id: 'partial-destinations', src: 'home/home-destinations.html' },
+            { id: 'partial-meditation-orb', src: 'home/home-meditation-orb.html' },
             { id: 'partial-breathe', src: 'home/home-breathe.html' },
             { id: 'partial-stories', src: 'home/home-stories.html' }
         ];
