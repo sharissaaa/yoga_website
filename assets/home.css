@@ -546,13 +546,7 @@
   100% { transform: translateX(160px);  opacity: 0; }
 }
 
-.journey-svg-wrap.path-visible .shimmer-rect {
-  animation: shimmerSlide 2.4s cubic-bezier(0.4,0,0.2,1) forwards;
-}
-.journey-node:nth-child(3) .shimmer-rect  { animation-delay: 0.1s;  }
-.journey-node:nth-child(4) .shimmer-rect  { animation-delay: 0.28s; }
-.journey-node:nth-child(5) .shimmer-rect  { animation-delay: 0.45s; }
-.journey-node:nth-child(6) .shimmer-rect  { animation-delay: 0.62s; }
+
 
 /* ── PATH DRAW-IN ANIMATION ── */
 #pathCore {
