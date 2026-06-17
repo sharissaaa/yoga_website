@@ -175,8 +175,8 @@
 }
 
 .exp-icon-img {
-    width: 64px;
-    height: 64px;
+    width: 104px;
+    height: 104px;
     object-fit: contain;
     filter:
         brightness(1.1)
