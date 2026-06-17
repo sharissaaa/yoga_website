@@ -1,11 +1,348 @@
+<!--
+  ════════════════════════════════════════════════════════════════
+  home-meditation-orb.html
+  Single-color theme: every accent is a shade of your maroon/red
+  (45040C / 720714), tied together with gradients rather than
+  mixing in other hues. Black is the base, maroon does the work.
+
+  BACKGROUND VIDEO: point the <source> below at your own clip.
+  Free options matching this mood: search "temple diya flame slow
+  motion", "candlelight macro", or "embers slow motion" on Pexels,
+  Pixabay or Mixkit. Until added, it falls back to the gradient glow.
+  ════════════════════════════════════════════════════════════════
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ── one hue, five depths ── */
+    --c-black:          #050302;
+    --c-maroon-deepest: #2A0307;  /* near-black shadow tone */
+    --c-maroon-dark:    #45040C;  /* from your palette */
+    --c-maroon:         #720714;  /* from your palette */
+    --c-maroon-bright:  #A8132A;  /* derived — mid emphasis */
+    --c-maroon-light:   #E2785F;  /* derived — legible accent on black */
+    --c-maroon-pale:    #F2A98F;  /* derived — palest highlight */
+
+    --c-cream:  #F3ECE3;
+    --c-muted:  #B8ACA5;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Manrope', sans-serif;
+  }
+
+  .meditation-orb-section{
+    position: relative;
+    overflow: hidden;
+    background: var(--c-black);
+    border-radius: 28px;
+    padding: 86px 64px;
+    isolation: isolate;
+    color: var(--c-cream);
+    font-family: var(--font-body);
+  }
+
+  /* ══ Background video + fallback ══ */
+  .orb-bg-video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.4;
+    filter: saturate(0.8) brightness(0.65) sepia(0.15) hue-rotate(-10deg);
+  }
+
+  .meditation-orb-section::before{
+    /* fallback wash + always-on color grade, single-hue gradient */
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 15%, rgba(69,4,12,0.6), transparent 70%),
+      radial-gradient(ellipse 55% 55% at 88% 80%, rgba(114,7,20,0.45), transparent 70%),
+      linear-gradient(180deg, rgba(5,3,2,0.5) 0%, rgba(5,3,2,0.8) 60%, rgba(5,3,2,0.94) 100%);
+  }
+
+  .orb-noise{
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    opacity: 0.05; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .orb-shimmer{
+    position: absolute; inset: -20%; z-index: 1; pointer-events: none;
+    background: conic-gradient(from 0deg at 50% 50%, transparent, rgba(168,19,42,0.07), transparent 30%);
+    animation: shimmer-rotate 18s linear infinite;
+  }
+  @keyframes shimmer-rotate{ to{ transform: rotate(360deg); } }
+
+  .orb-particles{ position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+  .particle{
+    position: absolute;
+    border-radius: 50%;
+    background: var(--c-maroon-light);
+    box-shadow: 0 0 6px 1px rgba(226,120,95,0.6);
+    opacity: 0;
+    animation: float-up var(--dur) ease-in var(--delay) infinite;
+  }
+  .particle:nth-of-type(3n){ background: var(--c-maroon-pale); box-shadow: 0 0 6px 1px rgba(242,169,143,0.55); }
+  .particle:nth-of-type(5n){ background: var(--c-maroon-bright); box-shadow: 0 0 6px 1px rgba(168,19,42,0.6); }
+
+  @keyframes float-up{
+    0%   { opacity: 0; transform: translateY(0) scale(0.8); }
+    15%  { opacity: 0.85; }
+    85%  { opacity: 0.4; }
+    100% { opacity: 0; transform: translateY(-90px) scale(1.1); }
+  }
+
+  .container{ position: relative; z-index: 3; max-width: 1280px; margin: 0 auto; }
+
+  .meditation-layout{
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 0.85fr;
+    align-items: center;
+    gap: 48px;
+  }
+
+  /* ══ LEFT ══ */
+  .orb-eyebrow{ margin-bottom: 26px; }
+  .eyebrow-pill{
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px;
+    border: 1px solid rgba(226,120,95,0.4);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(69,4,12,0.3), rgba(168,19,42,0.1));
+  }
+  .eyebrow-icon{ font-size: 13px; line-height: 1; }
+  .eyebrow-text{
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 11px; letter-spacing: 0.16em;
+    color: var(--c-maroon-pale);
+  }
+
+  .meditation-copy h2{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1.18;
+    color: var(--c-cream);
+    margin: 0 0 22px;
+  }
+
+  .orb-divider{
+    width: 56px; height: 2px;
+    background: linear-gradient(90deg, var(--c-maroon-pale), var(--c-maroon-dark));
+    margin-bottom: 22px;
+    border-radius: 2px;
+  }
+
+  .meditation-copy p{
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--c-muted);
+    margin: 0;
+  }
+
+  /* ══ CENTER ══ */
+  .orb-center{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .center-glow{
+    position: absolute;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,19,42,0.32), rgba(69,4,12,0.22) 55%, transparent 75%);
+    filter: blur(20px);
+    z-index: 0;
+  }
+
+  .orb-container{
+    position: relative;
+    width: 280px; height: 280px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 26px;
+  }
+
+  .outer-orbit{
+    position: absolute; inset: -28px;
+    border: 1px dashed rgba(226,120,95,0.22);
+    border-radius: 50%;
+    animation: orbit-spin 40s linear infinite;
+  }
+  .outer-orbit:nth-of-type(2){
+    inset: -52px;
+    border-color: rgba(114,7,20,0.2);
+    animation-duration: 60s;
+    animation-direction: reverse;
+  }
+  @keyframes orbit-spin{ to{ transform: rotate(360deg); } }
+
+  .orb-glow{
+    position: absolute; inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(168,19,42,0.28), transparent 60%);
+    filter: blur(8px);
+  }
+
+  .breathing-ring{
+    position: relative;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 25%, rgba(114,7,20,0.4), rgba(5,3,2,0.92) 70%);
+    border: 1.5px solid transparent;
+    background-clip: padding-box;
+    box-shadow:
+      inset 0 0 40px rgba(0,0,0,0.6),
+      0 0 0 1.5px rgba(226,120,95,0.35),
+      0 0 32px rgba(114,7,20,0.32);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
+  }
+
+  .breathing-ring.inhale-active{
+    transform: scale(1.08);
+    box-shadow:
+      inset 0 0 40px rgba(0,0,0,0.5),
+      0 0 0 1.5px rgba(242,169,143,0.55),
+      0 0 46px rgba(168,19,42,0.5);
+  }
+  .breathing-ring.exhale-active{
+    transform: scale(0.92);
+    transition: transform 6s ease-in-out, box-shadow 6s ease-in-out;
+    box-shadow:
+      inset 0 0 40px rgba(0,0,0,0.65),
+      0 0 0 1.5px rgba(69,4,12,0.6),
+      0 0 38px rgba(45,2,5,0.5);
+  }
+
+  .orb-content{ display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .orb-label-top{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-maroon-pale);
+    transition: color 0.6s ease;
+  }
+  .orb-number{
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--c-cream);
+  }
+  .orb-unit{
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--c-muted);
+  }
+
+  .orb-tagline{
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13.5px;
+    color: var(--c-muted);
+  }
+  .orb-tagline svg{ color: var(--c-maroon-light); flex-shrink: 0; }
+
+  /* ══ RIGHT ══ */
+  .orb-right{ display: flex; flex-direction: column; align-items: flex-start; }
+
+  .breath-steps{ margin-bottom: 34px; }
+  .step-item{ display: flex; align-items: center; gap: 14px; }
+  .step-item h5{
+    font-family: var(--font-body); font-weight: 600;
+    font-size: 14.5px; margin: 0 0 2px; color: var(--c-cream);
+  }
+  .step-item small{ font-size: 12px; color: var(--c-muted); }
+
+  .step-dot{
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.04);
+  }
+  /* same hue, lighter → darker as the breath cycle deepens */
+  .step-item.inhale .step-dot{ background: var(--c-maroon-pale); box-shadow: 0 0 10px rgba(242,169,143,0.55); }
+  .step-item.hold .step-dot{ background: var(--c-maroon-bright); box-shadow: 0 0 10px rgba(168,19,42,0.5); }
+  .step-item.exhale .step-dot{ background: var(--c-maroon-dark); box-shadow: 0 0 10px rgba(69,4,12,0.55); }
+
+  .step-connector{
+    width: 1px; height: 22px;
+    margin-left: 5.5px;
+    background: linear-gradient(180deg, rgba(243,236,227,0.25), rgba(243,236,227,0.05));
+  }
+
+  .btn-start-breathe{
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 1px solid rgba(226,120,95,0.45);
+    background: linear-gradient(135deg, rgba(69,4,12,0.4), rgba(168,19,42,0.28));
+    color: var(--c-cream);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14.5px;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-start-breathe:hover{
+    border-color: rgba(242,169,143,0.65);
+    background: linear-gradient(135deg, rgba(69,4,12,0.55), rgba(168,19,42,0.4));
+    transform: translateY(-1px);
+  }
+  .btn-start-breathe .bp{
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--c-maroon-pale), var(--c-maroon-bright));
+    color: var(--c-black);
+    font-size: 9px;
+  }
+
+  /* ══ Scroll reveal ══ */
+  .reveal-left, .reveal, .reveal-right{
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal-left.in-view, .reveal.in-view, .reveal-right.in-view{
+    opacity: 1; transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .orb-shimmer, .outer-orbit, .particle{ animation: none !important; }
+    .breathing-ring{ transition: none !important; }
+  }
+
+  @media (max-width: 920px){
+    .meditation-orb-section{ padding: 56px 28px; }
+    .meditation-layout{ grid-template-columns: 1fr; gap: 44px; text-align: center; }
+    .meditation-copy h2{ font-size: 34px; }
+    .orb-center, .orb-right{ align-items: center; }
+    .breath-steps{ align-items: center; }
+    .step-item{ width: 100%; max-width: 220px; }
+  }
+</style>
+
 <section class="meditation-orb-section">
+
+    <!-- Background video — replace src with your own clip -->
+    <video class="orb-bg-video" autoplay muted loop playsinline>
+        <source src="assets/videos/meditation-bg.mp4" type="video/mp4">
+    </video>
 
     <div class="orb-noise"></div>
     <div class="orb-shimmer"></div>
     <div class="orb-particles" id="orbParticles"></div>
-
-    <!-- Leaf grows from bottom-left corner -->
-   
 
     <div class="container">
         <div class="meditation-layout">
@@ -30,10 +367,6 @@
             <div class="orb-center reveal">
 
                 <div class="center-glow"></div>
-
-                <!-- background wave decoration -->
-
-
 
                 <div class="orb-container">
                     <div class="outer-orbit"></div>
@@ -99,7 +432,7 @@
 </section>
 
 <script>
-    /* ── Gold particles ── */
+    /* ── Ember particles ── */
     (function () {
         var container = document.getElementById('orbParticles');
         var pts = [
@@ -131,11 +464,26 @@
         });
     })();
 
-    /* ── Breathing engine ── */
+    /* ── Scroll reveal ── */
+    (function () {
+        var targets = document.querySelectorAll('.reveal-left, .reveal, .reveal-right');
+        if (!('IntersectionObserver' in window)) {
+            targets.forEach(function (t) { t.classList.add('in-view'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) entry.target.classList.add('in-view');
+            });
+        }, { threshold: 0.2 });
+        targets.forEach(function (t) { obs.observe(t); });
+    })();
+
+    /* ── Breathing engine — single hue, depth shifts with the breath ── */
     var phases = [
-        { label: 'Inhale', sec: 4, color: '#8cf3af', ringClass: 'inhale-active' },
-        { label: 'Hold', sec: 4, color: '#ffcb6a', ringClass: '' },
-        { label: 'Exhale', sec: 6, color: '#ffb85a', ringClass: 'exhale-active' },
+        { label: 'Inhale', sec: 4, color: '#F2A98F', ringClass: 'inhale-active' },
+        { label: 'Hold', sec: 4, color: '#A8132A', ringClass: '' },
+        { label: 'Exhale', sec: 6, color: '#8C1220', ringClass: 'exhale-active' },
     ];
 
     var running = false;
@@ -154,7 +502,6 @@
         labelEl.textContent = p.label;
         labelEl.style.color = p.color;
         numEl.textContent = cnt;
-        /* ring scale animation class */
         ringEl.classList.remove('inhale-active', 'exhale-active');
         if (p.ringClass) ringEl.classList.add(p.ringClass);
     }
@@ -179,12 +526,11 @@
             btxtEl.textContent = 'Pause';
         } else {
             clearInterval(timer);
-            /* reset to idle */
             pi = 0;
             cnt = phases[0].sec;
             ringEl.classList.remove('inhale-active', 'exhale-active');
             labelEl.textContent = 'Inhale';
-            labelEl.style.color = '#8cf3af';
+            labelEl.style.color = '#F2A98F';
             numEl.textContent = '4';
             biconEl.textContent = '▶';
             btxtEl.textContent = 'Start Breathing';
