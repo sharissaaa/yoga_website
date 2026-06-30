@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel – Bhumi Mantra</title>
+  <link rel="stylesheet" href="travel.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <a href="#" class="nav__logo">
+      <!-- Replace src with your actual logo SVG/PNG -->
+      <img src="logo.png" alt="Bhumi Mantra – Sanctuary for Souls" class="nav__logo-img"/>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Teachings</a></li>
+      <li><a href="#">Retreats</a></li>
+      <li><a href="#" class="active">Travel</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#" class="btn btn--outline nav__cta">
+      Enquire Now
+      <!-- Replace with your lotus icon -->
+      <img src="lotus-icon.png" alt="" class="btn__icon"/>
+    </a>
+    <button class="nav__burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Replace hero-bg.jpg with your actual hero image -->
+    <img src="hero-bg.jpg" alt="" class="hero__bg" aria-hidden="true"/>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="eyebrow">· Our Travel Retreats ·</p>
+      <h1 class="hero__heading">
+        Journeys that<br/>
+        <em>Awaken the Soul.</em>
+      </h1>
+      <p class="hero__sub">Carefully curated retreats in sacred destinations<br/>for your transformation.</p>
+      <div class="hero__pillars">
+        <div class="pillar">
+          <!-- Replace icon-sacred.svg with your own line-art SVG -->
+          <img src="icon-sacred.svg" alt="" class="pillar__icon"/>
+          <span>Sacred<br/>Destinations</span>
+        </div>
+        <div class="pillar">
+          <img src="icon-yoga.svg" alt="" class="pillar__icon"/>
+          <span>Authentic Yogic<br/>Experience</span>
+        </div>
+        <div class="pillar">
+          <img src="icon-leaf.svg" alt="" class="pillar__icon"/>
+          <span>Holistic<br/>Wellness</span>
+        </div>
+        <div class="pillar">
+          <img src="icon-globe.svg" alt="" class="pillar__icon"/>
+          <span>Global<br/>Community</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RETREATS ===== -->
+  <section class="retreats" id="retreats">
+    <p class="eyebrow eyebrow--center">· Explore Our Retreats ·</p>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <div class="filter-select">
+        <img src="icon-location.svg" alt="" class="filter-select__icon"/>
+        <select>
+          <option>All Destinations</option>
+          <option>Indonesia</option>
+          <option>India</option>
+          <option>Sri Lanka</option>
+        </select>
+        <img src="icon-chevron.svg" alt="" class="filter-select__arrow"/>
+      </div>
+      <div class="filter-select">
+        <img src="icon-duration.svg" alt="" class="filter-select__icon"/>
+        <select>
+          <option>Duration</option>
+          <option>6 Days</option>
+          <option>7 Days</option>
+          <option>8 Days</option>
+        </select>
+        <img src="icon-chevron.svg" alt="" class="filter-select__arrow"/>
+      </div>
+      <div class="filter-select">
+        <img src="icon-calendar.svg" alt="" class="filter-select__icon"/>
+        <select>
+          <option>Month</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+        </select>
+        <img src="icon-chevron.svg" alt="" class="filter-select__arrow"/>
+      </div>
+      <div class="filter-select">
+        <img src="icon-person.svg" alt="" class="filter-select__icon"/>
+        <select>
+          <option>Experience Level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>All Levels</option>
+        </select>
+        <img src="icon-chevron.svg" alt="" class="filter-select__arrow"/>
+      </div>
+      <div class="filter-select filter-select--right">
+        <select>
+          <option>Sort By</option>
+          <option>Date</option>
+          <option>Duration</option>
+          <option>Destination</option>
+        </select>
+        <img src="icon-chevron.svg" alt="" class="filter-select__arrow"/>
+      </div>
+    </div>
+
+    <!-- CARD 1 -->
+    <article class="retreat-card">
+      <div class="retreat-card__badge">Popular</div>
+      <!-- Replace bali.jpg with your actual retreat image -->
+      <img src="bali.jpg" alt="Bali temple gardens" class="retreat-card__img"/>
+      <div class="retreat-card__body">
+        <h2 class="retreat-card__title">Bali Healing Retreat</h2>
+        <p class="retreat-card__meta">
+          <span class="meta-loc">Indonesia</span>
+          <span class="meta-dot">•</span>
+          <span>7 Days</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-tag">Limited Seats</span>
+        </p>
+        <p class="retreat-card__desc">Experience deep healing through yoga, meditation, sacred temple visits, sound baths, and mindful living in the heart of Bali.</p>
+
+        <details class="retreat-card__more">
+          <summary>More Information</summary>
+          <ul class="features">
+            <li><img src="icon-check.svg" alt=""/>Daily Yoga Sessions</li>
+            <li><img src="icon-check.svg" alt=""/>Guided Meditation</li>
+            <li><img src="icon-check.svg" alt=""/>Sacred Temple Tours</li>
+            <li><img src="icon-check.svg" alt=""/>Healthy Organic Meals</li>
+            <li><img src="icon-check.svg" alt=""/>Luxury Eco Stay</li>
+            <li><img src="icon-check.svg" alt=""/>Airport Pickup</li>
+            <li><img src="icon-check.svg" alt=""/>Sound Healing</li>
+            <li><img src="icon-check.svg" alt=""/>Small Group Experience</li>
+          </ul>
+        </details>
+      </div>
+      <div class="retreat-card__aside">
+        <div class="aside-block">
+          <img src="icon-calendar.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Dates</p>
+            <p class="aside-block__value">15 Aug 2026 – 21 Aug 2026</p>
+          </div>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-block">
+          <img src="icon-email.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Email</p>
+            <a href="mailto:travel@innerjourney.com" class="aside-block__value aside-block__link">travel@innerjourney.com</a>
+          </div>
+        </div>
+        <a href="#" class="btn btn--gold">Reserve Your Spot <span class="btn__arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="retreat-card">
+      <!-- Replace rishikesh.jpg with your actual retreat image -->
+      <img src="rishikesh.jpg" alt="Rishikesh on the Ganges" class="retreat-card__img"/>
+      <div class="retreat-card__body">
+        <h2 class="retreat-card__title">Rishikesh Yoga Retreat</h2>
+        <p class="retreat-card__meta">
+          <span class="meta-loc">India</span>
+          <span class="meta-dot">•</span>
+          <span>6 Days</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-tag meta-tag--green">All Levels</span>
+        </p>
+        <p class="retreat-card__desc">Rejuvenate your body and mind with traditional yoga, meditation and Ayurvedic healing on the banks of the Ganges.</p>
+
+        <details class="retreat-card__more">
+          <summary>More Information</summary>
+          <ul class="features">
+            <li><img src="icon-check.svg" alt=""/>Daily Yoga Practices</li>
+            <li><img src="icon-check.svg" alt=""/>Meditation & Pranayama</li>
+            <li><img src="icon-check.svg" alt=""/>Ayurvedic Treatments</li>
+            <li><img src="icon-check.svg" alt=""/>Sattvic Vegetarian Meals</li>
+            <li><img src="icon-check.svg" alt=""/>Ganga Aarti Experience</li>
+            <li><img src="icon-check.svg" alt=""/>Nature & River Walks</li>
+            <li><img src="icon-check.svg" alt=""/>Comfortable Stay</li>
+            <li><img src="icon-check.svg" alt=""/>All Levels Welcome</li>
+          </ul>
+        </details>
+      </div>
+      <div class="retreat-card__aside">
+        <div class="aside-block">
+          <img src="icon-calendar.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Dates</p>
+            <p class="aside-block__value">10 Sep 2026 – 15 Sep 2026</p>
+          </div>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-block">
+          <img src="icon-email.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Email</p>
+            <a href="mailto:travel@innerjourney.com" class="aside-block__value aside-block__link">travel@innerjourney.com</a>
+          </div>
+        </div>
+        <a href="#" class="btn btn--gold">Reserve Your Spot <span class="btn__arrow">→</span></a>
+      </div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="retreat-card">
+      <!-- Replace srilanka.jpg with your actual retreat image -->
+      <img src="srilanka.jpg" alt="Sri Lanka rock fortress" class="retreat-card__img"/>
+      <div class="retreat-card__body">
+        <h2 class="retreat-card__title">Sri Lanka Wellness Escape</h2>
+        <p class="retreat-card__meta">
+          <span class="meta-loc">Sri Lanka</span>
+          <span class="meta-dot">•</span>
+          <span>8 Days</span>
+          <span class="meta-dot">•</span>
+          <span class="meta-tag">Limited Seats</span>
+        </p>
+        <p class="retreat-card__desc">A journey of wellness, nature and culture. Reconnect with yourself in serene beaches and lush tea country.</p>
+
+        <details class="retreat-card__more">
+          <summary>More Information</summary>
+          <ul class="features">
+            <li><img src="icon-check.svg" alt=""/>Yoga & Meditation</li>
+            <li><img src="icon-check.svg" alt=""/>Spa & Relaxation</li>
+            <li><img src="icon-check.svg" alt=""/>Cultural Experiences</li>
+            <li><img src="icon-check.svg" alt=""/>Organic & Local Cuisine</li>
+            <li><img src="icon-check.svg" alt=""/>Beach & Nature Time</li>
+            <li><img src="icon-check.svg" alt=""/>Tea Estate Visits</li>
+            <li><img src="icon-check.svg" alt=""/>Wildlife Safari</li>
+            <li><img src="icon-check.svg" alt=""/>Supportive Community</li>
+          </ul>
+        </details>
+      </div>
+      <div class="retreat-card__aside">
+        <div class="aside-block">
+          <img src="icon-calendar.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Dates</p>
+            <p class="aside-block__value">05 Oct 2026 – 12 Oct 2026</p>
+          </div>
+        </div>
+        <div class="aside-divider"></div>
+        <div class="aside-block">
+          <img src="icon-email.svg" alt="" class="aside-block__icon"/>
+          <div>
+            <p class="aside-block__label">Email</p>
+            <a href="mailto:travel@innerjourney.com" class="aside-block__value aside-block__link">travel@innerjourney.com</a>
+          </div>
+        </div>
+        <a href="#" class="btn btn--gold">Reserve Your Spot <span class="btn__arrow">→</span></a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== TAGLINE BANNER ===== -->
+  <section class="tagline-banner">
+    <!-- Replace candles-bg.jpg with your actual candles/lotus image -->
+    <img src="candles-bg.jpg" alt="" class="tagline-banner__bg" aria-hidden="true"/>
+    <div class="tagline-banner__overlay" aria-hidden="true"></div>
+    <p class="tagline-banner__text"><em>Travel inwards. Return transformed.</em></p>
+    <!-- Replace lotus-divider.svg with your actual ornament SVG -->
+    <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament"/>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <img src="logo.png" alt="Bhumi Mantra" class="footer__logo"/>
+      <p class="footer__tagline">A sanctuary for soul seekers, where ancient yogic traditions meet modern understanding.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Quick links">
+      <h3 class="footer__col-heading">Quick Links</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Teachings</a></li>
+        <li><a href="#">Retreats</a></li>
+        <li><a href="#">Travel</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Our offerings">
+      <h3 class="footer__col-heading">Our Offerings</h3>
+      <ul>
+        <li><a href="#">Yoga Retreats</a></li>
+        <li><a href="#">Wellness Programs</a></li>
+        <li><a href="#">Meditation Retreats</a></li>
+        <li><a href="#">Teacher Trainings</a></li>
+        <li><a href="#">Ayurvedic Healing</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer__col" aria-label="Support">
+      <h3 class="footer__col-heading">Support</h3>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Terms &amp; Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__col footer__col--newsletter">
+      <h3 class="footer__col-heading">Stay Connected</h3>
+      <p>Join our newsletter for updates and inspiration.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address" aria-label="Email address"/>
+        <button type="submit" aria-label="Subscribe">→</button>
+      </form>
+      <div class="footer__social">
+        <!-- Replace with your actual social icon SVGs/PNGs -->
+        <a href="#" aria-label="Instagram"><img src="icon-instagram.svg" alt="Instagram"/></a>
+        <a href="#" aria-label="Facebook"><img src="icon-facebook.svg" alt="Facebook"/></a>
+        <a href="#" aria-label="YouTube"><img src="icon-youtube.svg" alt="YouTube"/></a>
+        <a href="#" aria-label="Website"><img src="icon-web.svg" alt="Website"/></a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Bhumi Mantra. All Rights Reserved.</span>
+      <!-- Replace lotus-small.svg with your own ornament -->
+      <img src="lotus-small.svg" alt="" class="footer__lotus"/>
+    </div>
+  </footer>
+
+</body>
+</html>
