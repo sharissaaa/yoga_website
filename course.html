@@ -5,41 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yoga for Body, Mind &amp; Soul – Ātmayoga</title>
   <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="aboucss" />
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <a href="#" class="nav__logo">
-      <!-- Replace with your actual lotus/seated-figure logo SVG -->
-      <img src="logo-icon.svg" alt="" class="nav__logo-icon"/>
-      <span class="nav__logo-text">
-        ĀTMAYOGA
-        <small>Ancient Wisdom. Inner Peace.</small>
-      </span>
-    </a>
-    <ul class="nav__links">
-      <li><a href="#" class="active">Home</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Benefits</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <a href="#" class="btn btn--gold nav__cta">Enroll Now <span class="btn__arrow">→</span></a>
-    <button class="nav__burger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <a href="#" class="nav__logo">
+            <!-- Replace src with your actual trident/logo SVG -->
+            <img src="logo-icon.svg" alt="" class="nav__logo-icon" />
+            <span class="nav__logo-text">
+                BHUMI MANTRA
+                <small>Heal. Transform. Transcend.</small>
+            </span>
+        </a>
+        <ul class="nav__links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore The Teachings</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#" class="active">About Us</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="btn btn--outline nav__cta">Join Us</a>
+        <button class="nav__burger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
 
   <!-- ===== HERO ===== -->
   <section class="hero">
     <!-- Replace hero-bg.jpg with your actual temple/meditation photo -->
-    <img src="hero-bg.jpg" alt="" class="hero__bg" aria-hidden="true"/>
+    <img src="assets/gallery/home-image/course-hero-budha.png" alt="" class="hero__bg" aria-hidden="true"/>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
-      <p class="hero__sanskrit">|| योग: चित्तवृति निरोय: ||</p>
       <h1 class="hero__heading">
         <span class="hero__heading-accent">Yoga</span> for<br/>
         Body, Mind &amp; Soul
@@ -59,185 +61,365 @@
     <img src="ornament-border-strip.svg" alt="" class="hero__border-strip" aria-hidden="true"/>
   </section>
 
-  <!-- ===== COURSE HIGHLIGHTS ===== -->
-  <section class="highlights reveal">
-    <!-- Faint rotating mandala watermarks -->
-    <img src="mandala-ornament.svg" alt="" class="highlights__mandala highlights__mandala--left mandala-spin" aria-hidden="true"/>
-    <img src="mandala-ornament.svg" alt="" class="highlights__mandala highlights__mandala--right mandala-spin mandala-spin--reverse" aria-hidden="true"/>
+<!-- ===== COURSE HIGHLIGHTS ===== -->
+<section class="highlights reveal">
 
-    <img src="icon-lotus-small.svg" alt="" class="highlights__top-icon"/>
-    <p class="eyebrow eyebrow--center">— Course Highlights —</p>
-
-    <div class="highlights__grid">
-      <div class="highlight-item">
-        <!-- Replace icon-lotus.svg with your own line-art SVG -->
-        <img src="icon-lotus.svg" alt="" class="highlight-item__icon"/>
-        <h3 class="highlight-item__title">Ancient Wisdom</h3>
-        <p class="highlight-item__desc">Learn yoga the traditional way rooted in authentic yogic teachings.</p>
-      </div>
-      <div class="highlight-item">
-        <img src="icon-meditate.svg" alt="" class="highlight-item__icon"/>
-        <h3 class="highlight-item__title">Holistic Growth</h3>
-        <p class="highlight-item__desc">Improve physical strength, mental clarity and emotional balance.</p>
-      </div>
-      <div class="highlight-item">
-        <img src="icon-mandala-circle.svg" alt="" class="highlight-item__icon"/>
-        <h3 class="highlight-item__title">For All Levels</h3>
-        <p class="highlight-item__desc">Suitable for beginners and experienced practitioners.</p>
-      </div>
-      <div class="highlight-item">
-        <img src="icon-flame.svg" alt="" class="highlight-item__icon"/>
-        <h3 class="highlight-item__title">Inner Transformation</h3>
-        <p class="highlight-item__desc">Awaken your inner potential and live a more mindful and peaceful life.</p>
-      </div>
+  <!-- Header -->
+  <div class="highlights__header">
+    <div class="highlights__eyebrow-row">
+      <span class="highlights__eyebrow-line"></span>
+      <span class="highlights__eyebrow-text">OUR ESSENCE</span>
+      <span class="highlights__eyebrow-line"></span>
     </div>
-  </section>
+    <div class="highlights__eyebrow-lotus">
+      <img src="assets/gallery/home-image/lotus.png" alt=""/>
+    </div>
 
-  <!-- ===== WHAT YOU'LL LEARN ===== -->
-  <section class="learn reveal">
+    <h2 class="highlights__title">
+      More Than a Place,<br/>
+      It's a <em>Way of Being.</em>
+    </h2>
+
+    <p class="highlights__desc">
+      At Bhumi Mantra, we believe transformation happens when you feel
+      safe, seen and supported. Our teachings and retreats are designed
+      to awaken your inner light and help you create a life you truly love.
+    </p>
+  </div>
+
+  <!-- Carousel -->
+  <div class="highlights__carousel">
+
+    <button class="highlights__arrow highlights__arrow--prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="highlights__track">
+
+      <article class="hl-card">
+        <div class="hl-card__media">
+          <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Ancient temple ruins in a forest"/>
+        </div>
+        <div class="hl-card__icon-wrap">
+          <img src="icon-lotus.svg" alt="" class="hl-card__icon"/>
+        </div>
+        <h4 class="hl-card__title">Ancient Wisdom</h4>
+        <p class="hl-card__desc">Learn yoga the traditional way rooted in authentic yogic teachings.</p>
+      </article>
+
+      <article class="hl-card">
+        <div class="hl-card__media">
+          <img src="assets/gallery/home-image/Holistic.png" alt="Woman meditating by water at sunrise"/>
+        </div>
+        <div class="hl-card__icon-wrap">
+          <img src="icon-meditate.svg" alt="" class="hl-card__icon"/>
+        </div>
+        <h4 class="hl-card__title">Holistic Growth</h4>
+        <p class="hl-card__desc">Improve physical strength, mental clarity and emotional balance.</p>
+      </article>
+
+      <article class="hl-card">
+        <div class="hl-card__media">
+          <img src="assets/gallery/home-image/mat.png" alt="Rolled yoga mat outdoors"/>
+        </div>
+        <div class="hl-card__icon-wrap">
+          <img src="icon-leaf.svg" alt="" class="hl-card__icon"/>
+        </div>
+        <h4 class="hl-card__title">For All Levels</h4>
+        <p class="hl-card__desc">Suitable for beginners and experienced practitioners.</p>
+      </article>
+
+      <article class="hl-card">
+        <div class="hl-card__media">
+          <img src="assets/gallery/home-image/stone budha.png" alt="Stone Buddha statue among candles"/>
+        </div>
+        <div class="hl-card__icon-wrap">
+          <img src="icon-drop.svg" alt="" class="hl-card__icon"/>
+        </div>
+        <h4 class="hl-card__title">Inner Transformation</h4>
+        <p class="hl-card__desc">Awaken your inner potential and live a more mindful and peaceful life.</p>
+      </article>
+
+      <article class="hl-card">
+        <div class="hl-card__media">
+          <img src="assets/gallery/home-image/mindful living.png" alt="Yoga pose overlooking mountain sunrise"/>
+        </div>
+        <div class="hl-card__icon-wrap">
+          <img src="icon-sun.svg" alt="" class="hl-card__icon"/>
+        </div>
+        <h4 class="hl-card__title">Mindful Living</h4>
+        <p class="hl-card__desc">Cultivate awareness in everyday life and experience lasting inner peace.</p>
+      </article>
+
+    </div>
+
+    <button class="highlights__arrow highlights__arrow--next" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Pagination dots -->
+  <div class="highlights__dots">
+    <button class="highlights__dot is-active" aria-label="Slide 1"></button>
+    <button class="highlights__dot" aria-label="Slide 2"></button>
+    <button class="highlights__dot" aria-label="Slide 3"></button>
+    <button class="highlights__dot" aria-label="Slide 4"></button>
+    <button class="highlights__dot" aria-label="Slide 5"></button>
+  </div>
+
+  <!-- Bottom divider -->
+  <div class="highlights__divider" aria-hidden="true">
+    <span></span>
+    <img src="assets/gallery/home-image/lotus.png" alt=""/>
+    <span></span>
+  </div>
+
+</section>
+
+
+<!-- ===== WHAT YOU'LL LEARN ===== -->
+<section class="learn reveal">
+
+  <!-- BG image + overlay -->
+  <div class="learn__bg" aria-hidden="true">
+    <img src="assets/gallery/home-image/learn-bg.png" alt="" class="learn__bg-img" />
+    <div class="learn__bg-overlay"></div>
+  </div>
+
+  <div class="learn__inner">
+
+    <!-- Left — skill list -->
     <div class="learn__left">
       <ul class="learn-list">
+
         <li class="learn-list__item">
-          <img src="icon-meditate.svg" alt="" class="learn-list__icon"/>
+          <div class="learn-list__icon-wrap">
+            <img src="icon-meditate.svg" alt="" class="learn-list__icon"/>
+          </div>
           <div>
             <h4>Asanas</h4>
             <p>Build strength, flexibility and posture.</p>
           </div>
         </li>
+
+        <li class="learn-list__sep" aria-hidden="true">
+          <span></span>
+          <img src="assets/gallery/home-image/lotus.png" alt="" />
+          <span></span>
+        </li>
+
         <li class="learn-list__item">
-          <img src="icon-breath.svg" alt="" class="learn-list__icon"/>
+          <div class="learn-list__icon-wrap">
+            <img src="icon-breath.svg" alt="" class="learn-list__icon"/>
+          </div>
           <div>
             <h4>Pranayama</h4>
             <p>Control your breath and increase vital energy.</p>
           </div>
         </li>
+
+        <li class="learn-list__sep" aria-hidden="true">
+          <span></span>
+          <img src="assets/gallery/home-image/lotus.png" alt="" />
+          <span></span>
+        </li>
+
         <li class="learn-list__item">
-          <img src="icon-lotus.svg" alt="" class="learn-list__icon"/>
+          <div class="learn-list__icon-wrap">
+            <img src="icon-lotus.svg" alt="" class="learn-list__icon"/>
+          </div>
           <div>
             <h4>Meditation</h4>
             <p>Calm your mind and cultivate inner peace.</p>
           </div>
         </li>
+
+        <li class="learn-list__sep" aria-hidden="true">
+          <span></span>
+          <img src="assets/gallery/home-image/lotus.png" alt="" />
+          <span></span>
+        </li>
+
         <li class="learn-list__item">
-          <img src="icon-scroll.svg" alt="" class="learn-list__icon"/>
+          <div class="learn-list__icon-wrap">
+            <img src="icon-scroll.svg" alt="" class="learn-list__icon"/>
+          </div>
           <div>
             <h4>Yoga Philosophy</h4>
             <p>Understand ancient teachings and apply in daily life.</p>
           </div>
         </li>
+
       </ul>
     </div>
 
+    <!-- Center — eyebrow + arch image -->
     <div class="learn__center">
-      <p class="eyebrow eyebrow--center">— What You'll Learn —</p>
+      <p class="learn__eyebrow">— What You'll Learn —</p>
       <div class="learn__img-wrap">
-        <!-- Replace statue.jpg with your actual statue/temple photo -->
-        <img src="statue.jpg" alt="" class="learn__img"/>
+        <img src="assets/gallery/home-image/meditating course.png" alt="" class="learn__img"/>
         <div class="learn__img-gradient" aria-hidden="true"></div>
+        <div class="learn__img-frame" aria-hidden="true"></div>
       </div>
     </div>
 
+    <!-- Right — quote -->
     <div class="learn__right">
       <span class="learn__quote-mark">&ldquo;</span>
       <p class="learn__quote-text">The body is your temple. Keep it pure and clean for the soul to reside in.</p>
       <p class="learn__quote-author">— B.K.S. Iyengar</p>
-      <!-- Replace ornament-divider.svg with your own -->
-      <img src="ornament-divider.svg" alt="" class="learn__quote-ornament"/>
-      <!-- Replace icon-lotus-outline.svg with your own line-art lotus -->
-      <img src="icon-lotus-outline.svg" alt="" class="learn__lotus-deco"/>
     </div>
-  </section>
 
-  <!-- ===== COURSE INCLUDES ===== -->
-  <section class="includes reveal">
-    <p class="eyebrow eyebrow--center">— Course Includes —</p>
-    <div class="includes__grid">
-      <div class="include-item">
+  </div>
+</section>
+
+<!-- ===== COURSE INCLUDES ===== -->
+<section class="includes reveal">
+
+  <div class="includes__eyebrow-row">
+    <span class="includes__eyebrow-line"></span>
+    <span class="includes__eyebrow-text">COURSE INCLUDES</span>
+    <span class="includes__eyebrow-line"></span>
+  </div>
+  <div class="includes__eyebrow-lotus">
+    <img src="assets/gallery/home-image/lotus.png" alt=""/>
+  </div>
+
+  <div class="includes__grid">
+
+    <div class="include-item">
+      <div class="include-item__icon-wrap">
         <img src="icon-video.svg" alt="" class="include-item__icon"/>
-        <h4>40+<br/>Video Lessons</h4>
-        <p>Step-by-step guided sessions</p>
       </div>
-      <div class="include-item">
+      <h4>40+<br/>Video Lessons</h4>
+      <p>Step-by-step guided sessions to deepen your practice.</p>
+    </div>
+
+    <div class="includes__dot" aria-hidden="true"></div>
+
+    <div class="include-item">
+      <div class="include-item__icon-wrap">
         <img src="icon-ebook.svg" alt="" class="include-item__icon"/>
-        <h4>E-Books &amp;<br/>Study Materials</h4>
-        <p>In-depth resources for your practice</p>
       </div>
-      <div class="include-item">
+      <h4>E-Books &amp;<br/>Study Materials</h4>
+      <p>In-depth resources and practical guides to support your journey.</p>
+    </div>
+
+    <div class="includes__dot" aria-hidden="true"></div>
+
+    <div class="include-item">
+      <div class="include-item__icon-wrap">
         <img src="icon-calendar.svg" alt="" class="include-item__icon"/>
-        <h4>30 Days<br/>Practice Plan</h4>
-        <p>Structured plan to build consistency</p>
       </div>
-      <div class="include-item">
+      <h4>30 Days<br/>Practice Plan</h4>
+      <p>A structured plan to build consistency and progress.</p>
+    </div>
+
+    <div class="includes__dot" aria-hidden="true"></div>
+
+    <div class="include-item">
+      <div class="include-item__icon-wrap">
         <img src="icon-infinity.svg" alt="" class="include-item__icon"/>
-        <h4>Lifetime<br/>Access</h4>
-        <p>Learn at your own pace, anytime anywhere</p>
       </div>
-      <div class="include-item">
+      <h4>Lifetime<br/>Access</h4>
+      <p>Learn at your own pace, anytime, anywhere forever.</p>
+    </div>
+
+    <div class="includes__dot" aria-hidden="true"></div>
+
+    <div class="include-item">
+      <div class="include-item__icon-wrap">
         <img src="icon-community.svg" alt="" class="include-item__icon"/>
-        <h4>Community<br/>Support</h4>
-        <p>Connect, share and grow with fellow yogis</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== GUIDE / CTA ===== -->
-  <section class="guide reveal">
-    <div class="guide__left">
-      <!-- Replace guide-photo.jpg with your actual instructor photo -->
-      <img src="guide-photo.jpg" alt="Acharya Dev" class="guide__photo"/>
-      <div class="guide__photo-gradient" aria-hidden="true"></div>
+      <h4>Community<br/>Support</h4>
+      <p>Connect, share and grow with fellow yogis.</p>
     </div>
 
-    <div class="guide__center">
-      <p class="eyebrow">YOUR GUIDE</p>
-      <h2 class="guide__name">Acharya Dev</h2>
-      <img src="ornament-divider-short.svg" alt="" class="guide__ornament"/>
-      <p class="guide__bio">
-        With over 20 years of experience in yoga and meditation, Acharya Dev shares the timeless wisdom of yoga in a simple and practical way to help you transform your life.
-      </p>
-    </div>
+  </div>
 
-    <div class="guide__right">
-      <img src="icon-lotus-outline.svg" alt="" class="guide__cta-icon"/>
-      <p class="guide__cta-text">Begin your journey towards a healthier, happier and more peaceful you.</p>
-      <a href="#" class="btn btn--gold">Enroll Now <span class="btn__arrow">→</span></a>
-    </div>
-  </section>
+  <div class="includes__bottom-lotus">
+    <span></span>
+    <img src="assets/gallery/home-image/lotus.png" alt=""/>
+    <span></span>
+  </div>
+
+</section>
 
   <!-- ===== CLOSING BANNER ===== -->
   <section class="closing reveal">
     <!-- Replace om-ornament.svg with your actual Om / decorative emblem SVG -->
-    <img src="om-ornament.svg" alt="Om" class="closing__emblem"/>
+    <img src="assets/gallery/home-image/lotus-orb.png" alt="Om" class="closing__emblem"/>
     <p class="closing__text">Let Yoga Transform You</p>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <a href="#" class="footer__logo">
-      <img src="logo-icon.svg" alt="" class="footer__logo-icon"/>
-      <span class="footer__logo-text">
-        ĀTMAYOGA
-        <small>Ancient Wisdom. Inner Peace.</small>
-      </span>
-    </a>
+   <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer__brand">
+            <img src="logo-icon.svg" alt="" class="footer__logo-icon" />
+            <span class="footer__logo-text">BHUMI MANTRA</span>
+            <p class="footer__tagline">A sanctuary for soul seekers, where ancient yogic traditions meet modern
+                understanding.</p>
+        </div>
 
-    <ul class="footer__links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Benefits</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+        <nav class="footer__col" aria-label="Quick links">
+            <h3 class="footer__col-heading">Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Teachings</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-    <div class="footer__social">
-      <a href="#" aria-label="Facebook"><img src="icon-facebook.svg" alt="Facebook"/></a>
-      <a href="#" aria-label="Instagram"><img src="icon-instagram.svg" alt="Instagram"/></a>
-      <a href="#" aria-label="YouTube"><img src="icon-youtube.svg" alt="YouTube"/></a>
-    </div>
-  </footer>
+        <nav class="footer__col" aria-label="Our offerings">
+            <h3 class="footer__col-heading">Our Offerings</h3>
+            <ul>
+                <li><a href="#">Yoga Retreats</a></li>
+                <li><a href="#">Wellness Programs</a></li>
+                <li><a href="#">Meditation Retreats</a></li>
+                <li><a href="#">Teacher Trainings</a></li>
+                <li><a href="#">Ayurvedic Healing</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer__col" aria-label="Support">
+            <h3 class="footer__col-heading">Support</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer__col footer__col--newsletter">
+            <h3 class="footer__col-heading">Stay Connected</h3>
+            <p>Join our newsletter for updates and inspiration.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" aria-label="Email address" />
+                <button type="submit" aria-label="Subscribe">→</button>
+            </form>
+
+            <div class="footer-social">
+                <a href="#" class="f-social"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="f-social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="f-social"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <span>© 2026 Bhumi Mantra. All Rights Reserved.</span>
+            <img src="assets/gallery/home-image/lotus.png" alt="" class="footer__lotus" />
+        </div>
+    </footer>
 
   <script src="course.js"></script>
+  
   <script>/* ============================================================
    ĀTMAYOGA – Course Page Script
    course.js
