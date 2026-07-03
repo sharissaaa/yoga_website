@@ -16,6 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="assets/main.css" />
+    <!-- Shared header/footer design system — loaded right after main.css so its
+         --nav-accent tokens can see --dark/--cream/--gold defined there -->
+    <link rel="stylesheet" href="assets/header-footer.css" />
     <link rel="stylesheet" href="assets/home.css" />
     <link rel="stylesheet" href="assets/home-page-css/home-about.css" />
     <link rel="stylesheet" href="assets/home-page-css/home-experience.css" />
@@ -54,14 +57,13 @@
            navbar's actual rendered height differs. */
         #partial-about,
         #partial-experience,
-        #partial-destinations,
-        #siteFooter {
+        #partial-destinations {
             scroll-margin-top: 90px;
         }
     </style>
 </head>
 
-<body class="loading">
+<body class="loading theme-gold">
 
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: PRELOADER                     -->
@@ -96,40 +98,32 @@
 
 
     <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: NAVBAR                        -->
+    <!-- SECTION: HEADER (shared across site)   -->
     <!-- ══════════════════════════════════════ -->
-    <nav id="mainNav" class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand nav-brand" href="index.html">
-                <div class="nav-brand-icon">
-                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 36 C22 36 10 28 10 17 C10 10 16 8 22 15 C28 8 34 10 34 17 C34 28 22 36 22 36Z"
-                            fill="#c8922a" opacity="0.9" />
-                        <path d="M22 15 C22 15 15 22 15 30 M22 15 C22 15 29 22 29 30" stroke="rgba(244,236,224,0.25)"
-                            stroke-width="0.8" />
-                        <circle cx="22" cy="34" r="1.8" fill="#c8922a" opacity="0.7" />
-                    </svg>
-                </div>
-                <div class="nav-brand-text">
-                    Bhumi Mantra
-                    <small>Yoga · Travel · Mindfulness</small>
-                </div>
-            </a>
+    <nav class="site-nav" id="siteNav">
+        <a href="index.html" class="site-nav__logo">
+            <!-- PLACEHOLDER: replace with your lotus logo image -->
+            <img src="assets/images/logo.png" alt="" class="site-nav__logo-icon">
+            <span class="site-nav__logo-text">
+                BHUMI MANTRA
+                <small>Heal. Transform. Transcend.</small>
+            </span>
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <ul class="site-nav__links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="teachings.html">Explore The Teachings</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-            <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partial-experience">Course</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partial-destinations">Travel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partial-about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#siteFooter">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+        <a href="join.html" class="site-nav__cta">Join Us</a>
+
+        <button type="button" class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"
+            aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
 
@@ -594,102 +588,111 @@
 
 
     <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: FOOTER                        -->
+    <!-- SECTION: FOOTER (shared across site)   -->
     <!-- ══════════════════════════════════════ -->
-    <footer class="site-footer" id="siteFooter">
-        <div class="footer-mandala" aria-hidden="true">
-            <svg viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="210" cy="210" r="160" stroke="#c8922a" stroke-width="0.6" />
-                <circle cx="210" cy="210" r="110" stroke="#c8922a" stroke-width="0.6" />
-                <circle cx="210" cy="210" r="60" stroke="#c8922a" stroke-width="0.6" />
-                <g stroke="#c8922a" stroke-width="0.6">
-                    <line x1="210" y1="10" x2="210" y2="50" />
-                    <line x1="210" y1="370" x2="210" y2="410" />
-                    <line x1="10" y1="210" x2="50" y2="210" />
-                    <line x1="370" y1="210" x2="410" y2="210" />
-                    <line x1="68" y1="68" x2="96" y2="96" />
-                    <line x1="324" y1="324" x2="352" y2="352" />
-                    <line x1="68" y1="352" x2="96" y2="324" />
-                    <line x1="324" y1="96" x2="352" y2="68" />
-                </g>
-            </svg>
+    <footer class="site-footer">
+
+        <div class="site-footer__brand">
+            <!-- PLACEHOLDER: replace with your lotus logo image -->
+            <img src="assets/images/logo.png" alt="" class="site-footer__logo-icon">
+            <span class="site-footer__logo-text">BHUMI MANTRA</span>
+            <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing,
+                ritual and transformation.</p>
         </div>
 
-        <div class="container">
-            <div class="footer-inner">
+        <nav class="site-footer__col" aria-label="Quick links">
+            <h3 class="site-footer__col-heading">Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="teachings.html">Explore The Teachings</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-                <div class="footer-cta">
-                    <div class="footer-cta-text">
-                        <h4>Stay on the path</h4>
-                        <p>Retreat dates, mindful travel notes, and quiet wisdom — once a month, never spam.</p>
-                    </div>
-                    <form class="footer-cta-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
-                    </form>
-                </div>
+        <nav class="site-footer__col" aria-label="Our offerings">
+            <h3 class="site-footer__col-heading">Our Offerings</h3>
+            <ul>
+                <li><a href="travel.html">Sacred Journeys</a></li>
+                <li><a href="course.html">Retreats &amp; Immersions</a></li>
+                <li><a href="course.html">Ceremony &amp; Ritual</a></li>
+                <li><a href="course.html">Private Sessions</a></li>
+                <li><a href="course.html">Wellness Programs</a></li>
+            </ul>
+        </nav>
 
-                <div class="footer-top">
-                    <div class="footer-brand-block">
-                        <div class="footer-brand-wrap">
-                            <div class="footer-logo-icon">
-                                <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M22 36 C22 36 10 28 10 17 C10 10 16 8 22 15 C28 8 34 10 34 17 C34 28 22 36 22 36Z"
-                                        fill="#c8922a" />
-                                    <circle cx="22" cy="34" r="1.8" fill="#c8922a" opacity="0.65" />
-                                </svg>
-                            </div>
-                            <div class="footer-logo-name">Bhumi Mantra<small>Yoga · Travel · Mindfulness</small></div>
-                        </div>
-                        <p class="footer-desc">Curated yoga journeys across India for a more mindful, meaningful life.
-                        </p>
-                        <div class="footer-social">
-                            <a href="#" class="f-social"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="f-social"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="f-social"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
+        <div class="site-footer__col site-footer__col--newsletter">
+            <h3 class="site-footer__col-heading">Stay Connected</h3>
+            <p>Join our circle for stories, rituals and journey updates.</p>
+            <form class="site-newsletter-form" onsubmit="return false;">
+                <label for="newsletterEmail" class="sr-only">Your email address</label>
+                <input id="newsletterEmail" type="email" placeholder="Your email address">
+                <button type="submit" aria-label="Subscribe">→</button>
+            </form>
 
-                    <div class="footer-nav-cluster">
-                        <div class="footer-col">
-                            <h6 class="footer-col-head">Explore</h6>
-                            <ul class="footer-link-list">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#partial-experience">Course</a></li>
-                                <li><a href="#partial-destinations">Travel</a></li>
-                                <li><a href="#partial-about">About</a></li>
-                                <li><a href="#siteFooter">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col">
-                            <h6 class="footer-col-head">Support</h6>
-                            <ul class="footer-link-list">
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Travel Info</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-col footer-contact">
-                            <h6 class="footer-col-head">Connect</h6>
-                            <p><a href="mailto:hello@bhumimantra.com">hello@bhumimantra.com</a></p>
-                            <p><a href="tel:+919670543210">+91 96705 43210</a></p>
-                            <p>Rishikesh, India</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <span>© 2024 Bhumi Mantra. All rights reserved.</span>
-                    <span class="footer-bottom-dot">·</span>
-                    <span>Designed for the journey within.</span>
-                </div>
+            <div class="site-footer-social">
+                <a href="#" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.3" cy="6.7" r="1" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <rect x="3" y="6" width="18" height="12" rx="3" />
+                        <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+                    </svg>
+                </a>
             </div>
+        </div>
+
+        <div class="site-footer__bottom">
+            <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
+            <!-- PLACEHOLDER: small lotus icon -->
+            <img src="assets/images/lotus-small.png" alt="" class="site-footer__lotus">
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Shared header/footer behavior: mobile burger toggle + sticky-nav scroll shadow -->
+    <script>
+        (function () {
+            var siteNav = document.getElementById('siteNav');
+            var burger = document.getElementById('navBurger');
+            var links = document.getElementById('navLinks');
+            if (!burger || !links) return;
+
+            burger.addEventListener('click', function () {
+                var open = links.classList.toggle('is-open');
+                burger.classList.toggle('is-open', open);
+                burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            links.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    links.classList.remove('is-open');
+                    burger.classList.remove('is-open');
+                    burger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            if (siteNav) {
+                var onScroll = function () {
+                    siteNav.classList.toggle('site-nav--scrolled', window.scrollY > 10);
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        })();
+    </script>
 
     <script>
         /* ── PRELOADER ── */
@@ -698,12 +701,6 @@
                 document.getElementById('preloader').classList.add('hide');
                 document.body.classList.remove('loading');
             }, 2700);
-        });
-
-        /* ── NAVBAR SCROLL ── */
-        var nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', function () {
-            nav.classList.toggle('scrolled', window.scrollY > 55);
         });
 
         /* ── SCROLL REVEAL ── */

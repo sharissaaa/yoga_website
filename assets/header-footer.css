@@ -55,6 +55,7 @@
   align-items: center;
   gap: .75rem;
   flex-shrink: 0;
+  text-decoration: none;
 }
 .site-nav__logo-icon{
   height: 36px;
@@ -69,6 +70,7 @@
   letter-spacing: .08em;
   color: var(--nav-accent-light);
   line-height: 1.2;
+  text-decoration: none;
 }
 .site-nav__logo-text small{
   font-family: var(--font-body, sans-serif);
@@ -77,6 +79,7 @@
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--cream-muted, rgba(245,237,214,.6));
+  text-decoration: none;
 }
 
 .site-nav__links{
@@ -280,6 +283,7 @@
   display: flex; align-items: center; justify-content: center;
   color: var(--nav-accent-light);
   transition: background .2s, color .2s;
+  text-decoration: none;
 }
 .site-footer-social a svg{ width: 16px; height: 16px; }
 .site-footer-social a:hover{ background: var(--nav-accent); color: var(--dark, #0D0101); }
@@ -304,6 +308,17 @@
 @media (max-width: 720px){
   .site-footer{ grid-template-columns: 1fr; padding: 44px 24px 0; }
   .site-newsletter-form{ max-width: 100%; }
+}
+
+/* Opt-in: add class="site-footer site-footer--5col" for pages that need
+   an extra column (e.g. a Support/Legal list) alongside the usual
+   Brand / Quick Links / Offerings / Newsletter. Layout + colors still
+   come from the same tokens, so it stays visually consistent. */
+.site-footer--5col{
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 1024px){
+  .site-footer--5col{ grid-template-columns: 1fr 1fr; }
 }
 
 /* =========================================================
