@@ -76,21 +76,7 @@
     <!-- ══════════════════════════════════════ -->
     <div id="preloader">
         <div class="preloader-lotus">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="38" stroke="#c8922a" stroke-width="0.7" opacity="0.45" />
-                <circle cx="40" cy="40" r="30" stroke="#c8922a" stroke-width="0.5" opacity="0.25" />
-                <path d="M40 58 C40 58 22 46 22 32 C22 22 30 18 40 28 C50 18 58 22 58 32 C58 46 40 58 40 58Z"
-                    stroke="#c8922a" stroke-width="1.1" fill="rgba(200,146,42,0.08)" />
-                <path d="M40 28 C40 28 28 38 28 50 M40 28 C40 28 52 38 52 50" stroke="#c8922a" stroke-width="0.8"
-                    opacity="0.55" />
-                <path d="M24 30 C24 30 16 36 18 48 M56 30 C56 30 64 36 62 48" stroke="#c8922a" stroke-width="0.7"
-                    opacity="0.35" />
-                <circle cx="40" cy="56" r="2.2" fill="#c8922a" opacity="0.75" />
-                <path d="M40 25 C40 25 36 18 28 18 C22 18 18 24 26 30" stroke="#c8922a" stroke-width="0.7" fill="none"
-                    opacity="0.4" />
-                <path d="M40 25 C40 25 44 18 52 18 C58 18 62 24 54 30" stroke="#c8922a" stroke-width="0.7" fill="none"
-                    opacity="0.4" />
-            </svg>
+            <img src="assets/gallery/home-image/logo.png" alt="Bhumi Mantra" class="preloader-logo-img" />
         </div>
         <div class="preloader-title">
             Bhumi Mantra
@@ -108,8 +94,7 @@
     <!-- ══════════════════════════════════════ -->
     <nav class="site-nav" id="siteNav">
         <a href="index.html" class="site-nav__logo">
-            <!-- PLACEHOLDER: replace with your lotus logo image -->
-            <img src="assets/images/logo.png" alt="" class="site-nav__logo-icon">
+            <img src="assets/gallery/home-image/logo.png" alt="" class="site-nav__logo-icon">
             <span class="site-nav__logo-text">
                 BHUMI MANTRA
                 <small>Heal. Transform. Transcend.</small>
@@ -118,8 +103,8 @@
 
         <ul class="site-nav__links" id="navLinks">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="teachings.html">Explore The Teachings</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="course.html">Explore The Teachings</a></li>
+            <li><a href="travel.html">Destinations</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -165,8 +150,8 @@
                     </p>
 
                     <div class="hero-btns">
-                        <a href="#" class="btn-primary-sy">Explore The Teachings &nbsp;→</a>
-                        <a href="#" class="btn-outline-sy">Our Destinations &nbsp;→</a>
+                        <a href="course.html" class="btn-primary-sy">Explore The Teachings &nbsp;→</a>
+                        <a href="travel.html" class="btn-outline-sy">Our Destinations &nbsp;→</a>
                     </div>
 
                     <button class="hero-film-row">
@@ -604,8 +589,7 @@
     <footer class="site-footer">
 
         <div class="site-footer__brand">
-            <!-- PLACEHOLDER: replace with your lotus logo image -->
-            <img src="assets/images/logo.png" alt="" class="site-footer__logo-icon">
+            <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
             <span class="site-footer__logo-text">BHUMI MANTRA</span>
             <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing,
                 ritual and transformation.</p>
@@ -615,8 +599,8 @@
             <h3 class="site-footer__col-heading">Quick Links</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="teachings.html">Explore The Teachings</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="course.html">Explore The Teachings</a></li>
+                <li><a href="travel.html">Destinations</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -666,8 +650,8 @@
 
         <div class="site-footer__bottom">
             <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-            <!-- PLACEHOLDER: small lotus icon -->
-            <img src="assets/images/lotus-small.png" alt="" class="site-footer__lotus">
+            <!-- PLACEHOLDER: small lotus icon (path unchanged — let me know if this one also moved) -->
+            <img src="assets/gallery/home-image/lotus-orb.png" alt="" class="site-footer__lotus">
         </div>
     </footer>
 
@@ -743,22 +727,22 @@
             var container = document.getElementById('orbParticles');
             if (!container || container.children.length) return;
             var pts = [
-                { t: '18%', l: '5%',  s: 2.5, d: '5s',   dl: '0s' },
-                { t: '55%', l: '3%',  s: 1.8, d: '8s',   dl: '1s' },
+                { t: '18%', l: '5%', s: 2.5, d: '5s', dl: '0s' },
+                { t: '55%', l: '3%', s: 1.8, d: '8s', dl: '1s' },
                 { t: '75%', l: '10%', s: 2.2, d: '6.5s', dl: '.5s' },
-                { t: '30%', l: '18%', s: 1.5, d: '9s',   dl: '2s' },
-                { t: '85%', l: '28%', s: 2,   d: '7s',   dl: '1.5s' },
-                { t: '12%', l: '42%', s: 1.6, d: '10s',  dl: '.8s' },
+                { t: '30%', l: '18%', s: 1.5, d: '9s', dl: '2s' },
+                { t: '85%', l: '28%', s: 2, d: '7s', dl: '1.5s' },
+                { t: '12%', l: '42%', s: 1.6, d: '10s', dl: '.8s' },
                 { t: '65%', l: '38%', s: 2.8, d: '5.5s', dl: '2.5s' },
                 { t: '40%', l: '55%', s: 1.4, d: '8.5s', dl: '.3s' },
-                { t: '22%', l: '68%', s: 2,   d: '7s',   dl: '1.8s' },
-                { t: '80%', l: '62%', s: 1.7, d: '6s',   dl: '3s' },
-                { t: '50%', l: '74%', s: 2.4, d: '9s',   dl: '.6s' },
-                { t: '15%', l: '82%', s: 1.5, d: '11s',  dl: '2.2s' },
-                { t: '70%', l: '88%', s: 2,   d: '7.5s', dl: '1.2s' },
-                { t: '35%', l: '94%', s: 1.8, d: '8s',   dl: '.4s' },
-                { t: '90%', l: '46%', s: 2.2, d: '6s',   dl: '3.5s' },
-                { t: '8%',  l: '55%', s: 1.6, d: '9.5s', dl: '1s' }
+                { t: '22%', l: '68%', s: 2, d: '7s', dl: '1.8s' },
+                { t: '80%', l: '62%', s: 1.7, d: '6s', dl: '3s' },
+                { t: '50%', l: '74%', s: 2.4, d: '9s', dl: '.6s' },
+                { t: '15%', l: '82%', s: 1.5, d: '11s', dl: '2.2s' },
+                { t: '70%', l: '88%', s: 2, d: '7.5s', dl: '1.2s' },
+                { t: '35%', l: '94%', s: 1.8, d: '8s', dl: '.4s' },
+                { t: '90%', l: '46%', s: 2.2, d: '6s', dl: '3.5s' },
+                { t: '8%', l: '55%', s: 1.6, d: '9.5s', dl: '1s' }
             ];
             pts.forEach(function (p) {
                 var el = document.createElement('span');

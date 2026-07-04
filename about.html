@@ -9,20 +9,18 @@
     <!-- Shared across every page: same nav + footer design, color set per page below -->
     <link rel="stylesheet" href="assets/header-footer.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
 </head>
 
-<!-- theme-indigo gives About Us its own accent while keeping the same
-     nav/footer layout as every other page (see assets/header-footer.css) -->
+<!-- theme-gold matches the home page's nav/footer accent (no more blue) -->
 
-<body class="theme-indigo">
+<body class="theme-gold">
 
     <!-- ================= HEADER (shared) ================= -->
     <nav class="site-nav" id="siteNav">
         <a href="index.html" class="site-nav__logo">
-            <!-- PLACEHOLDER: replace with your lotus logo image -->
-            <img src="assets/images/logo.png" alt="" class="site-nav__logo-icon">
+            <img src="assets/gallery/home-image/logo.png" alt="" class="site-nav__logo-icon">
             <span class="site-nav__logo-text">
                 BHUMI MANTRA
                 <small>Heal. Transform. Transcend.</small>
@@ -30,11 +28,11 @@
         </a>
 
         <ul class="site-nav__links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="teachings.html">Explore The Teachings</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="course.html">Explore The Teachings</a></li>
+            <li><a href="travel.html">Destinations</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <a href="join.html" class="site-nav__cta">Join Us</a>
@@ -49,8 +47,7 @@
     <!-- ===== HERO ===== -->
     <section class="hero about-hero">
         <!-- Decorative spinning mandala watermark -->
-        <img src="assets/gallery/home-image/about-mandala.png" alt="" class="hero__mandala mandala-spin"
-            aria-hidden="true" />
+        
         <div class="hero__left ah-left">
             <div class="ah-eyebrow">
                 <span class="ah-eyebrow__text">ABOUT US</span>
@@ -227,12 +224,13 @@
         <img src="assets/gallery/home-image/about-awaken.png" alt="" class="quote__ornament" />
     </section>
 
-    <!-- ================= FOOTER (shared) ================= -->
+    <!-- ══════════════════════════════════════ -->
+    <!-- SECTION: FOOTER (shared across site)   -->
+    <!-- ══════════════════════════════════════ -->
     <footer class="site-footer">
 
         <div class="site-footer__brand">
-            <!-- PLACEHOLDER: replace with your lotus logo image -->
-            <img src="assets/images/logo.png" alt="" class="site-footer__logo-icon">
+            <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
             <span class="site-footer__logo-text">BHUMI MANTRA</span>
             <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing,
                 ritual and transformation.</p>
@@ -264,7 +262,6 @@
             <h3 class="site-footer__col-heading">Stay Connected</h3>
             <p>Join our circle for stories, rituals and journey updates.</p>
             <form class="site-newsletter-form" onsubmit="return false;">
-                <label for="newsletterEmail" class="sr-only">Your email address</label>
                 <input id="newsletterEmail" type="email" placeholder="Your email address">
                 <button type="submit" aria-label="Subscribe">→</button>
             </form>
@@ -293,12 +290,10 @@
 
         <div class="site-footer__bottom">
             <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-            <!-- PLACEHOLDER: small lotus icon -->
-            <img src="assets/images/lotus-small.png" alt="" class="site-footer__lotus">
+            <!-- PLACEHOLDER: small lotus icon (path unchanged — let me know if this one also moved) -->
+            <img src="assets/gallery/home-image/lotus-orb.png" alt="" class="site-footer__lotus">
         </div>
     </footer>
-    <!-- ================= /FOOTER ================= -->
-
     <script>
         (function () {
             var siteNav = document.getElementById('siteNav');
@@ -328,7 +323,6 @@
         })();
     </script>
 
-    <script src="about.js"></script>
     <script>/* ============================================================
 BHUMI MANTRA – About Page Script
 (mobile-nav toggle and nav-scroll handling now live in the
@@ -451,7 +445,7 @@ shared script above, shared by every page)
             if (newsletterForm) {
                 newsletterForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const input = newsletterForm.querySelector('input[type="email"]');
+                    const input = newsletterForm.querySelector('#newsletterEmail');
                     const email = input ? input.value.trim() : '';
 
                     if (!email) return;

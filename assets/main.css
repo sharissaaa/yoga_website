@@ -113,9 +113,10 @@ ul {
 .preloader-lotus {
   animation: fadeInDown 0.9s ease both;
 }
-.preloader-lotus svg {
+.preloader-logo-img {
   width: 60px;
   height: 60px;
+  object-fit: contain;
   animation: spinSlow 8s linear infinite;
   filter: drop-shadow(0 0 12px rgba(200, 146, 42, 0.4));
 }
