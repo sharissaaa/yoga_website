@@ -1,13 +1,6 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/home-page-css/home-meditation-orb.css">
-
 <section class="meditation-orb-section">
 
-    <video class="orb-bg-video" autoplay muted loop playsinline>
-        <source src="assets/videos/meditation-bg.mp4" type="video/mp4">
-    </video>
+    <img class="orb-bg-image" src="assets/gallery/home-image/orb-bg.png" alt="Sacred lake at sunset surrounded by lotus blossoms and mist" onerror="this.style.display='none'">
 
     <div class="orb-noise"></div>
     <div class="orb-shimmer"></div>
@@ -16,7 +9,6 @@
     <div class="container">
         <div class="meditation-layout">
 
-            <!-- LEFT -->
             <div class="meditation-copy reveal-left">
                 <div class="orb-eyebrow">
                     <div class="eyebrow-pill">
@@ -24,12 +16,15 @@
                         <span class="eyebrow-text">PAUSE. BREATHE. BE.</span>
                     </div>
                 </div>
-                <h2>Take a Moment<br>for Yourself</h2>
+                <h2>Return to Stillness<br>Beside the <span class="hl">Sacred Lake</span></h2>
                 <div class="orb-divider"></div>
-                <p>A simple breath can<br>change your entire state.</p>
+                <p>Let the gentle water, morning mist, and lotus blossoms guide you back to the present moment.</p>
+                <div class="orb-mini-line">
+                    <span class="orb-mini-icon">🌿</span>
+                    <span class="orb-mini-text">Breathe with nature.<br><span class="dim">Inhale peace. Exhale tension.</span></span>
+                </div>
             </div>
 
-            <!-- CENTER -->
             <div class="orb-center reveal">
                 <div class="center-glow"></div>
                 <div class="orb-container">
@@ -44,16 +39,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="orb-tagline">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                    </svg>
-                    Find your calm. One breath at a time.
-                </div>
+                <div class="orb-tagline">♡ Find your calm among the lotus waters.</div>
             </div>
 
-            <!-- RIGHT -->
             <div class="orb-right reveal-right">
                 <div class="breath-steps">
                     <div class="step-item inhale">
@@ -73,7 +61,7 @@
                 </div>
                 <button class="btn-start-breathe" id="startBtn" onclick="toggleBreathing()">
                     <span class="bp" id="btnIcon">▶</span>
-                    <span id="btnText">Start Breathing</span>
+                    <span id="btnText">Begin Breathing</span>
                 </button>
             </div>
 
@@ -83,103 +71,101 @@
 </section>
 
 <script>
-    (function () {
-        var container = document.getElementById('orbParticles');
-        var pts = [
-            { t: '18%', l: '5%',  s: 2.5, d: '5s',    dl: '0s'   },
-            { t: '55%', l: '3%',  s: 1.8, d: '8s',    dl: '1s'   },
-            { t: '75%', l: '10%', s: 2.2, d: '6.5s',  dl: '.5s'  },
-            { t: '30%', l: '18%', s: 1.5, d: '9s',    dl: '2s'   },
-            { t: '85%', l: '28%', s: 2,   d: '7s',    dl: '1.5s' },
-            { t: '12%', l: '42%', s: 1.6, d: '10s',   dl: '.8s'  },
-            { t: '65%', l: '38%', s: 2.8, d: '5.5s',  dl: '2.5s' },
-            { t: '40%', l: '55%', s: 1.4, d: '8.5s',  dl: '.3s'  },
-            { t: '22%', l: '68%', s: 2,   d: '7s',    dl: '1.8s' },
-            { t: '80%', l: '62%', s: 1.7, d: '6s',    dl: '3s'   },
-            { t: '50%', l: '74%', s: 2.4, d: '9s',    dl: '.6s'  },
-            { t: '15%', l: '82%', s: 1.5, d: '11s',   dl: '2.2s' },
-            { t: '70%', l: '88%', s: 2,   d: '7.5s',  dl: '1.2s' },
-            { t: '35%', l: '94%', s: 1.8, d: '8s',    dl: '.4s'  },
-            { t: '90%', l: '46%', s: 2.2, d: '6s',    dl: '3.5s' },
-            { t: '8%',  l: '55%', s: 1.6, d: '9.5s',  dl: '1s'   },
-        ];
-        pts.forEach(function (p) {
-            var el = document.createElement('span');
-            el.className = 'particle';
-            el.style.cssText =
-                'top:' + p.t + ';left:' + p.l +
-                ';width:' + p.s + 'px;height:' + p.s + 'px' +
-                ';--dur:' + p.d + ';--delay:' + p.dl;
-            container.appendChild(el);
-        });
-    })();
-
-    (function () {
-        var targets = document.querySelectorAll('.reveal-left, .reveal, .reveal-right');
-        if (!('IntersectionObserver' in window)) {
-            targets.forEach(function (t) { t.classList.add('in-view'); });
-            return;
-        }
-        var obs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) entry.target.classList.add('in-view');
-            });
-        }, { threshold: 0.2 });
-        targets.forEach(function (t) { obs.observe(t); });
-    })();
-
-    var phases = [
-        { label: 'Inhale', sec: 4, color: '#8FF2A9', ringClass: 'inhale-active' },
-        { label: 'Hold',   sec: 4, color: '#13A832', ringClass: '' },
-        { label: 'Exhale', sec: 6, color: '#076B1A', ringClass: 'exhale-active' },
+(function () {
+    var container = document.getElementById('orbParticles');
+    if (!container) return;
+    var pts = [
+        { t: '18%', l: '5%',  s: 2.5, d: '5s',   dl: '0s' },
+        { t: '55%', l: '3%',  s: 1.8, d: '8s',   dl: '1s' },
+        { t: '75%', l: '10%', s: 2.2, d: '6.5s', dl: '.5s' },
+        { t: '30%', l: '18%', s: 1.5, d: '9s',   dl: '2s' },
+        { t: '85%', l: '28%', s: 2,   d: '7s',   dl: '1.5s' },
+        { t: '12%', l: '42%', s: 1.6, d: '10s',  dl: '.8s' },
+        { t: '65%', l: '38%', s: 2.8, d: '5.5s', dl: '2.5s' },
+        { t: '40%', l: '55%', s: 1.4, d: '8.5s', dl: '.3s' },
+        { t: '22%', l: '68%', s: 2,   d: '7s',   dl: '1.8s' },
+        { t: '80%', l: '62%', s: 1.7, d: '6s',   dl: '3s' },
+        { t: '50%', l: '74%', s: 2.4, d: '9s',   dl: '.6s' },
+        { t: '15%', l: '82%', s: 1.5, d: '11s',  dl: '2.2s' },
+        { t: '70%', l: '88%', s: 2,   d: '7.5s', dl: '1.2s' },
+        { t: '35%', l: '94%', s: 1.8, d: '8s',   dl: '.4s' },
+        { t: '90%', l: '46%', s: 2.2, d: '6s',   dl: '3.5s' },
+        { t: '8%',  l: '55%', s: 1.6, d: '9.5s', dl: '1s' }
     ];
+    pts.forEach(function (p) {
+        var el = document.createElement('span');
+        el.className = 'particle';
+        el.style.cssText = 'top:' + p.t + ';left:' + p.l + ';width:' + p.s + 'px;height:' + p.s + 'px;--dur:' + p.d + ';--delay:' + p.dl;
+        container.appendChild(el);
+    });
+})();
 
-    var running = false;
-    var pi = 0;
-    var cnt = 4;
-    var timer = null;
-
-    var labelEl = document.getElementById('orbPhaseLabel');
-    var numEl   = document.getElementById('orbNumber');
-    var ringEl  = document.getElementById('breathingRing');
-    var biconEl = document.getElementById('btnIcon');
-    var btxtEl  = document.getElementById('btnText');
-
-    function applyPhase() {
-        var p = phases[pi];
-        labelEl.textContent = p.label;
-        labelEl.style.color = p.color;
-        numEl.textContent = cnt;
-        ringEl.classList.remove('inhale-active', 'exhale-active');
-        if (p.ringClass) ringEl.classList.add(p.ringClass);
+(function () {
+    var targets = document.querySelectorAll('.reveal-left, .reveal, .reveal-right');
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach(function (t) { t.classList.add('in-view'); });
+        return;
     }
+    var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) entry.target.classList.add('in-view');
+        });
+    }, { threshold: 0.2 });
+    targets.forEach(function (t) { obs.observe(t); });
+})();
 
-    function tick() {
-        cnt--;
-        if (cnt <= 0) {
-            pi = (pi + 1) % phases.length;
-            cnt = phases[pi].sec;
-        }
+var phases = [
+    { label: 'Inhale', sec: 4, color: '#8FF2A9', ringClass: 'inhale-active' },
+    { label: 'Hold',   sec: 4, color: '#13A832', ringClass: '' },
+    { label: 'Exhale', sec: 6, color: '#076B1A', ringClass: 'exhale-active' }
+];
+
+var running = false;
+var pi = 0;
+var cnt = 4;
+var timer = null;
+
+var labelEl = document.getElementById('orbPhaseLabel');
+var numEl   = document.getElementById('orbNumber');
+var ringEl  = document.getElementById('breathingRing');
+var biconEl = document.getElementById('btnIcon');
+var btxtEl  = document.getElementById('btnText');
+
+function applyPhase() {
+    var p = phases[pi];
+    labelEl.textContent = p.label;
+    labelEl.style.color = p.color;
+    numEl.textContent = cnt;
+    ringEl.classList.remove('inhale-active', 'exhale-active');
+    if (p.ringClass) ringEl.classList.add(p.ringClass);
+}
+
+function tick() {
+    cnt--;
+    if (cnt <= 0) {
+        pi = (pi + 1) % phases.length;
+        cnt = phases[pi].sec;
+    }
+    applyPhase();
+}
+
+function toggleBreathing() {
+    running = !running;
+    if (running) {
+        pi = 0; cnt = phases[0].sec;
         applyPhase();
+        timer = setInterval(tick, 1000);
+        biconEl.textContent = '⏸';
+        btxtEl.textContent = 'Pause';
+    } else {
+        clearInterval(timer);
+        pi = 0; cnt = phases[0].sec;
+        ringEl.classList.remove('inhale-active', 'exhale-active');
+        labelEl.textContent = 'Inhale';
+        labelEl.style.color = '#8FF2A9';
+        numEl.textContent = '4';
+        biconEl.textContent = '▶';
+        btxtEl.textContent = 'Begin Breathing';
     }
-
-    function toggleBreathing() {
-        running = !running;
-        if (running) {
-            pi = 0; cnt = phases[0].sec;
-            applyPhase();
-            timer = setInterval(tick, 1000);
-            biconEl.textContent = '⏸';
-            btxtEl.textContent = 'Pause';
-        } else {
-            clearInterval(timer);
-            pi = 0; cnt = phases[0].sec;
-            ringEl.classList.remove('inhale-active', 'exhale-active');
-            labelEl.textContent = 'Inhale';
-            labelEl.style.color = '#8FF2A9';
-            numEl.textContent = '4';
-            biconEl.textContent = '▶';
-            btxtEl.textContent = 'Start Breathing';
-        }
-    }
+}
 </script>

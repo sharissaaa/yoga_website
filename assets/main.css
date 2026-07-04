@@ -25,7 +25,7 @@
   --lux-black: #080808;
   --lux-charcoal: #121212;
   --lux-charcoal-2: #1a1714;
-    --dark:          #0D0101;
+  --dark:          #0D0101;
   --dark-card:     #130202;
   --maroon:        #1a0303;
   --maroon-card:   rgba(35, 5, 5, 0.85);
@@ -160,18 +160,10 @@ ul {
   animation: fadeIn 0.6s 0.7s both;
 }
 
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar {
-  width: 3px;
-}
-::-webkit-scrollbar-track {
-  background: var(--deep-forest);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--gold-dim);
-}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--deep-forest); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); }
 
-/* ── UTILITY ── */
 .eyebrow {
   display: block;
   font-family: var(--font-body);
@@ -197,10 +189,7 @@ ul {
   padding: 12px 22px;
   border: none;
   cursor: pointer;
-  transition:
-    background 0.3s,
-    transform 0.2s,
-    box-shadow 0.3s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   white-space: nowrap;
 }
 .btn-primary-sy:hover {
@@ -224,10 +213,7 @@ ul {
   padding: 11px 22px;
   border: 1px solid rgba(244, 236, 224, 0.3);
   cursor: pointer;
-  transition:
-    border-color 0.3s,
-    background 0.3s,
-    transform 0.2s;
+  transition: border-color 0.3s, background 0.3s, transform 0.2s;
 }
 .btn-outline-sy:hover {
   border-color: var(--gold);
@@ -248,10 +234,7 @@ ul {
   gap: 6px;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
-  transition:
-    border-color 0.3s,
-    gap 0.3s,
-    color 0.3s;
+  transition: border-color 0.3s, gap 0.3s, color 0.3s;
 }
 .view-all-link:hover {
   color: var(--gold-light);
@@ -259,18 +242,15 @@ ul {
   gap: 10px;
 }
 
-/* ── NAVBAR ── */
+/* Legacy #mainNav rules — no longer used now that the shared
+   header (header-footer.css .site-nav) is on every page, but
+   left here in case any other page hasn't migrated yet. */
 #mainNav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition:
-    background 0.4s,
-    padding 0.4s,
-    backdrop-filter 0.4s;
+  transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
 }
 #mainNav.scrolled {
   background: rgba(7, 14, 8, 0.93);
@@ -280,262 +260,33 @@ ul {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-brand-icon {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(200, 146, 42, 0.45);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px;
-}
-.nav-brand-icon svg {
-  width: 22px;
-  height: 22px;
-}
-.nav-brand-text {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  color: var(--off-white);
-}
-.nav-brand-text small {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.48rem;
-  font-weight: 400;
-  letter-spacing: 0.38em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-
-.navbar-nav .nav-link {
-  font-family: var(--font-body);
-  font-size: 0.73rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: rgba(244, 236, 224, 0.82) !important;
-  padding: 5px 14px !important;
-  position: relative;
-  transition: color 0.3s;
-}
-.navbar-nav .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 14px;
-  width: 0;
-  height: 1px;
-  background: var(--gold);
-  transition: width 0.3s;
-}
-.navbar-nav .nav-link:hover {
-  color: var(--off-white) !important;
-}
-.navbar-nav .nav-link:hover::after {
-  width: calc(100% - 28px);
-}
-
-.navbar-toggler {
-  border: none;
-  padding: 6px;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.navbar-toggler-icon {
-  filter: invert(1);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(26px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-26px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(26px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes loadBar {
-  0% {
-    width: 0;
-  }
-  60% {
-    width: 78%;
-  }
-  85% {
-    width: 91%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(200, 146, 42, 0.35);
-  }
-  50% {
-    box-shadow: 0 0 0 14px rgba(200, 146, 42, 0);
-  }
-}
-@keyframes heroZoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.07);
-  }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeInRight { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes loadBar { 0% { width: 0; } 60% { width: 78%; } 85% { width: 91%; } 100% { width: 100%; } }
+@keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(200, 146, 42, 0.35); } 50% { box-shadow: 0 0 0 14px rgba(200, 146, 42, 0); } }
+@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.07); } }
 @keyframes particleDrift {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-55px) translateX(18px) scale(1.2);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-110px) translateX(-8px) scale(0.7);
-    opacity: 0;
-  }
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-55px) translateX(18px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-110px) translateX(-8px) scale(0.7); opacity: 0; }
 }
-@keyframes lineGrow {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes breatheOrb {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.75;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-@keyframes rotateSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+@keyframes lineGrow { from { width: 0; } to { width: 100%; } }
+@keyframes breatheOrb { 0%, 100% { transform: scale(1); opacity: 0.75; } 50% { transform: scale(1.1); opacity: 1; } }
+@keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
-/* ── REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition:
-    opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-26px);
-  transition:
-    opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(26px);
-  transition:
-    opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.72s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.reveal.visible,
-.reveal-left.visible,
-.reveal-right.visible {
-  opacity: 1;
-  transform: translate(0, 0);
-}
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
+.reveal-left { opacity: 0; transform: translateX(-26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
+.reveal-right { opacity: 0; transform: translateX(26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
+.reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0, 0); }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

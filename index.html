@@ -15,6 +15,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
+    <!-- Extra weights + Manrope needed by the meditation-orb partial.
+         Kept here in <head> instead of inside that partial's own HTML,
+         so the font is ready before the fragment is injected. -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="stylesheet" href="assets/main.css" />
     <!-- Shared header/footer design system — loaded right after main.css so its
          --nav-accent tokens can see --dark/--cream/--gold defined there -->
@@ -25,7 +32,6 @@
     <link rel="stylesheet" href="assets/home-page-css/home-destination.css" />
     <link rel="stylesheet" href="assets/home-page-css/home-meditation-orb.css" />
     <link rel="stylesheet" href="assets/home-page-css/home-quote.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-stories.css" />
 
     <style>
         /* FIX for absolute positioned quote block – ensure relative container */
@@ -212,6 +218,11 @@
 
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: DESTINATIONS                  -->
+    <!-- (no divider between this and Experience -->
+    <!-- above — they're meant to read as one    -->
+    <!-- continuous block, bridged by            -->
+    <!-- .exp-dest-bridge inside the experience   -->
+    <!-- partial)                                 -->
     <!-- ══════════════════════════════════════ -->
     <div id="partial-destinations"></div>
 
@@ -577,12 +588,12 @@
     <div id="partial-meditation-orb"></div>
 
     <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: QUOTE                         -->
-    <!-- ══════════════════════════════════════ -->
-    <div id="partial-quote"></div>
-
-    <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: STORIES (TESTIMONIALS)        -->
+    <!-- SECTION: STORIES                       -->
+    <!-- (stats ribbon + quote + Buddha +        -->
+    <!-- stories + newsletter — all one partial   -->
+    <!-- so the Buddha image can size against a   -->
+    <!-- single shared wrapper, matching the      -->
+    <!-- reference design)                        -->
     <!-- ══════════════════════════════════════ -->
     <div id="partial-stories"></div>
 
@@ -722,26 +733,67 @@
 
         /* ── BREATHING ORB ── */
         var phases = [
-            { label: 'Inhale', count: 4, unit: 'SEC' },
-            { label: 'Hold', count: 4, unit: 'SEC' },
-            { label: 'Exhale', count: 6, unit: 'SEC' }
+            { label: 'Inhale', count: 4, unit: 'SEC', color: '#8FF2A9', ringClass: 'inhale-active' },
+            { label: 'Hold', count: 4, unit: 'SEC', color: '#13A832', ringClass: '' },
+            { label: 'Exhale', count: 6, unit: 'SEC', color: '#076B1A', ringClass: 'exhale-active' }
         ];
         var phaseIndex = 0, timer = null, current = 0, running = false;
+
+        function seedOrbParticles() {
+            var container = document.getElementById('orbParticles');
+            if (!container || container.children.length) return;
+            var pts = [
+                { t: '18%', l: '5%',  s: 2.5, d: '5s',   dl: '0s' },
+                { t: '55%', l: '3%',  s: 1.8, d: '8s',   dl: '1s' },
+                { t: '75%', l: '10%', s: 2.2, d: '6.5s', dl: '.5s' },
+                { t: '30%', l: '18%', s: 1.5, d: '9s',   dl: '2s' },
+                { t: '85%', l: '28%', s: 2,   d: '7s',   dl: '1.5s' },
+                { t: '12%', l: '42%', s: 1.6, d: '10s',  dl: '.8s' },
+                { t: '65%', l: '38%', s: 2.8, d: '5.5s', dl: '2.5s' },
+                { t: '40%', l: '55%', s: 1.4, d: '8.5s', dl: '.3s' },
+                { t: '22%', l: '68%', s: 2,   d: '7s',   dl: '1.8s' },
+                { t: '80%', l: '62%', s: 1.7, d: '6s',   dl: '3s' },
+                { t: '50%', l: '74%', s: 2.4, d: '9s',   dl: '.6s' },
+                { t: '15%', l: '82%', s: 1.5, d: '11s',  dl: '2.2s' },
+                { t: '70%', l: '88%', s: 2,   d: '7.5s', dl: '1.2s' },
+                { t: '35%', l: '94%', s: 1.8, d: '8s',   dl: '.4s' },
+                { t: '90%', l: '46%', s: 2.2, d: '6s',   dl: '3.5s' },
+                { t: '8%',  l: '55%', s: 1.6, d: '9.5s', dl: '1s' }
+            ];
+            pts.forEach(function (p) {
+                var el = document.createElement('span');
+                el.className = 'particle';
+                el.style.cssText =
+                    'top:' + p.t + ';left:' + p.l +
+                    ';width:' + p.s + 'px;height:' + p.s + 'px' +
+                    ';--dur:' + p.d + ';--delay:' + p.dl;
+                container.appendChild(el);
+            });
+        }
 
         function initBreathing() {
             var orbLabel = document.querySelector('.orb-label-top');
             var orbNumber = document.querySelector('.orb-number');
             var orbUnit = document.querySelector('.orb-unit');
+            var ringEl = document.getElementById('breathingRing');
             var startBtn = document.querySelector('.btn-start-breathe');
+            var btnIcon = document.getElementById('btnIcon');
+            var btnText = document.getElementById('btnText');
             if (!startBtn) return;
+
+            seedOrbParticles();
 
             function runBreath() {
                 clearInterval(timer);
                 var phase = phases[phaseIndex];
                 current = phase.count;
-                if (orbLabel) orbLabel.textContent = phase.label;
+                if (orbLabel) { orbLabel.textContent = phase.label; orbLabel.style.color = phase.color; }
                 if (orbNumber) orbNumber.textContent = current;
                 if (orbUnit) orbUnit.textContent = phase.unit;
+                if (ringEl) {
+                    ringEl.classList.remove('inhale-active', 'exhale-active');
+                    if (phase.ringClass) ringEl.classList.add(phase.ringClass);
+                }
                 timer = setInterval(function () {
                     current--;
                     if (orbNumber) orbNumber.textContent = current;
@@ -756,14 +808,15 @@
             startBtn.addEventListener('click', function () {
                 if (!running) {
                     running = true;
-                    startBtn.innerHTML = '<span class="bp">■</span> Stop';
+                    if (btnText) btnText.textContent = 'Pause';
                     runBreath();
                 } else {
                     running = false;
                     clearInterval(timer);
                     phaseIndex = 0; current = 0;
-                    startBtn.innerHTML = '<span class="bp">▶</span> Start Breathing';
-                    if (orbLabel) orbLabel.textContent = 'Inhale';
+                    if (btnText) btnText.textContent = 'Begin Breathing';
+                    if (ringEl) ringEl.classList.remove('inhale-active', 'exhale-active');
+                    if (orbLabel) { orbLabel.textContent = 'Inhale'; orbLabel.style.color = phases[0].color; }
                     if (orbNumber) orbNumber.textContent = '4';
                     if (orbUnit) orbUnit.textContent = 'SEC';
                 }
@@ -803,9 +856,7 @@
             { id: 'partial-about', src: 'home/home-about.html' },
             { id: 'partial-destinations', src: 'home/home-destinations.html' },
             { id: 'partial-meditation-orb', src: 'home/home-meditation-orb.html' },
-            { id: 'partial-breathe', src: 'home/home-breathe.html' },
             { id: 'partial-stories', src: 'home/home-stories.html' },
-            { id: 'partial-quote', src: 'home/home-quote.html' },
         ];
 
         var loadPromises = partials.map(function (p) {

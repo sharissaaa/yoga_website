@@ -1,13 +1,8 @@
 /* ============================================================
    BHUMI MANTRA — ABOUT SECTION
-   Matches: two-part layout, dark maroon bg, gold type & icons,
-   hero image right, arch image left, 2×3 feature cards.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500;600&display=swap');
-
-/* ── Tokens ── */
-:root {
+.about-hero, .about-essence {
   --gold:          #C9922A;
   --gold-light:    #E8B84B;
   --gold-pale:     #f0d080;
@@ -23,21 +18,12 @@
   --font-caps:     'Cinzel', serif;
 }
 
-/* ── Global reset for these sections ── */
-.about-hero *,
-.about-hero *::before,
-.about-hero *::after,
-.about-essence *,
-.about-essence *::before,
-.about-essence *::after {
+.about-hero *, .about-hero *::before, .about-hero *::after,
+.about-essence *, .about-essence *::before, .about-essence *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-/* ============================================================
-   PART 1 — HERO ABOUT
-   ============================================================ */
 
 .about-hero {
   display: grid;
@@ -50,7 +36,6 @@
   position: relative;
 }
 
-/* Subtle vignette on the whole section */
 .about-hero::before {
   content: '';
   position: absolute;
@@ -60,7 +45,6 @@
   z-index: 0;
 }
 
-/* ── Left column ── */
 .ah-left {
   position: relative;
   z-index: 1;
@@ -68,38 +52,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0;
 }
 
-/* Eyebrow */
-.ah-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-}
+.ah-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.ah-eyebrow__text { font-family: var(--font-caps); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--gold); }
+.ah-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
 
-.ah-eyebrow__text {
-  font-family: var(--font-caps);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-}
-
-.ah-eyebrow__rule {
-  display: block;
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.5;
-}
-
-.ah-eyebrow__lotus {
-  width: 22px;
-  height: 16px;
-}
-
-/* Headline */
 .ah-headline {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4vw, 3.6rem);
@@ -109,146 +67,42 @@
   letter-spacing: -0.01em;
   margin-bottom: 28px;
 }
+.ah-headline--gold { color: var(--gold-light); font-style: italic; font-weight: 400; }
 
-.ah-headline--gold {
-  color: var(--gold-light);
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Divider */
-.ah-divider {
+.ah-divider { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; }
+.ah-divider__line { display: block; width: 52px; height: 1px; background: var(--gold); opacity: 0.45; }
+.ah-divider__icon-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 32px;
-}
-
-.ah-divider__line {
-  display: block;
-  width: 52px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.45;
-}
-
-.ah-divider__lotus {
-  width: 22px;
-  height: 18px;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
 }
-
-/* Body */
-.ah-body {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 52px;
-}
-
-.ah-body p {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.72;
-  color: var(--cream-dim);
-  max-width: 480px;
-}
-
-/* Pillars row */
-.ah-pillars {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;                                          /* changed from 20px */
-}
-
-.ah-pillar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 10px;
-  padding: 0 24px;                                 /* spacing between pillars */
-  border-right: 1px solid rgba(201, 146, 42, 0.40); /* vertical gold line */
-}
-
-.ah-pillar:last-child {
-  border-right: none;                              /* remove line after last */
-}
-
-/* Icon with short gold lines on both sides */
-.ah-pillar__icon-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.ah-divider__icon-wrap img {
   width: 100%;
-  justify-content: center;
-  margin-bottom: 4px;
-}
-
-.ah-pillar__icon-wrap::before,
-.ah-pillar__icon-wrap::after {
-  display: none;
-}
-
-.ah-pillar__icon-wrap img {
-  width: 60px;
-  height: 60px;
+  height: 100%;
   object-fit: contain;
   display: block;
 }
 
-.ah-pillar__icon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
+.ah-body { display: flex; flex-direction: column; gap: 16px; margin-bottom: 52px; }
+.ah-body p { font-family: var(--font-display); font-size: 1.05rem; font-weight: 300; line-height: 1.72; color: var(--cream-dim); max-width: 480px; }
+
+.ah-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.ah-pillar {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;
+  padding: 0 24px; border-right: 1px solid rgba(201, 146, 42, 0.40);
 }
+.ah-pillar:last-child { border-right: none; }
+.ah-pillar__icon-wrap { display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center; margin-bottom: 4px; }
+.ah-pillar__icon-wrap img { width: 60px; height: 60px; object-fit: contain; display: block; }
+.ah-pillar__title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
+.ah-pillar__sub { font-family: var(--font-display); font-size: 0.82rem; font-weight: 300; color: var(--cream-muted); line-height: 1.55; }
 
-.ah-pillar__title {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--cream);
-  line-height: 1.3;
-}
+.ah-right { position: relative; overflow: hidden; }
+.ah-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; background: #2a0808; min-height: 600px; }
 
-.ah-pillar__sub {
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: var(--cream-muted);
-  line-height: 1.55;
-}
-
-/* ── Right column — hero image ── */
-.ah-right {
-  position: relative;
-  overflow: hidden;
-}
-
-.ah-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  /* Placeholder styles — remove when real image is added */
-  background: #2a0808;
-  min-height: 600px;
-}
-
-/* Placeholder fallback if image missing */
-.ah-hero-img:not([src]),
-.ah-hero-img[src=""],
-.ah-hero-img[src*="about-hero.jpg"]:not([naturalWidth]) {
-  background: linear-gradient(135deg, #2a0808 0%, #1a0505 50%, #3d1010 100%);
-}
-
-
-/* ============================================================
-   PART 2 — ESSENCE  (corrected to match Image 1)
-   Replace the entire PART 2 block in about.css with this.
-   ============================================================ */
 .about-essence {
   display: grid;
   grid-template-columns: 30% 1fr 1.8fr;
@@ -261,216 +115,43 @@
   min-height: 560px;
 }
 
-/* ── Left — full-height arch image ── */
-.ae-left {
-  display: flex;
-  align-items: stretch;
-  padding: 0;
-  position: relative;
-}
+.ae-left { display: flex; align-items: stretch; padding: 0; position: relative; }
+.ae-img-wrap { position: relative; width: 100%; height: 100%; min-height: 520px; }
+.ae-img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0; border: none; background: #1e0505; }
 
-.ae-img-wrap {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
-}
+.ae-mid { padding: 56px 48px 56px 52px; display: flex; flex-direction: column; justify-content: center; gap: 0; }
+.ae-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.ae-eyebrow__text { font-family: var(--font-caps); font-size: 0.68rem; letter-spacing: 0.22em; color: var(--gold); }
+.ae-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
 
-.ae-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-  border: none;
-  background: #1e0505;
-}
+.ae-headline { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.18; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 24px; }
+.ae-headline--gold { color: var(--gold-light); font-style: italic; font-weight: 400; }
 
-.ae-lotus-circle {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 1.5px solid #C9922A;
-  background: rgba(13, 1, 1, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.ae-lotus-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transform: scale(1.8);
-}
-
-/* ── Middle — text block ── */
-.ae-mid {
-  padding: 56px 48px 56px 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0;
-}
-
-.ae-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.ae-eyebrow__text {
-  font-family: var(--font-caps);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-}
-
-.ae-eyebrow__rule {
-  display: block;
-  width: 36px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.5;
-}
-
-.ae-eyebrow__lotus {
-  width: 16px;
-  height: 14px;
-}
-
-.ae-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3vw, 3rem);
-  font-weight: 300;
-  line-height: 1.18;
-  color: var(--cream);
-  letter-spacing: -0.01em;
-  margin-bottom: 24px;
-}
-
-.ae-headline--gold {
-  color: var(--gold-light);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.ae-body {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--cream-dim);
-  margin-bottom: 36px;
-  max-width: 340px;
-}
+.ae-body { font-family: var(--font-display); font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--cream-dim); margin-bottom: 36px; max-width: 340px; }
 
 .ae-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border: 1.5px solid var(--gold);
-  border-radius: 6px;
-  font-family: var(--font-caps);
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-decoration: none;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
+  border: 1.5px solid var(--gold); border-radius: 6px;
+  font-family: var(--font-caps); font-size: 0.66rem; letter-spacing: 0.18em; color: var(--gold);
+  text-decoration: none; background: transparent; cursor: pointer; transition: all 0.25s ease; align-self: flex-start;
 }
+.ae-cta:hover { background: rgba(201, 146, 42, 0.08); border-color: var(--gold-light); color: var(--gold-light); }
 
-.ae-cta:hover {
-  background: rgba(201, 146, 42, 0.08);
-  border-color: var(--gold-light);
-  color: var(--gold-light);
-}
+.ae-cards { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 12px; background: transparent; border: none; border-radius: 0; overflow: visible; margin: 40px 48px 40px 12px; align-self: center; }
 
-/* ── Right — 2×3 INDIVIDUAL cards with gaps ── */
-.ae-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 12px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  overflow: visible;
-  margin: 40px 48px 40px 12px;
-  align-self: center;
-}
-
-/* Individual card: dark bg + own gold border + rounded */
 .ae-card {
-  background: #100202;
-  border: 1px solid rgba(201, 146, 42, 0.28);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 30px 16px 26px;
-  gap: 10px;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  background: #100202; border: 1px solid rgba(201, 146, 42, 0.28); border-radius: 10px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 30px 16px 26px; gap: 10px; transition: border-color 0.2s ease, background 0.2s ease;
 }
+.ae-card:hover { border-color: rgba(201, 146, 42, 0.60); background: #160303; }
 
-.ae-card:hover {
-  border-color: rgba(201, 146, 42, 0.60);
-  background: #160303;
-}
+.ae-card__icon-wrap { width: 58px; height: 58px; border-radius: 50%; border: 1px solid rgba(201, 146, 42, 0.45); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; flex-shrink: 0; overflow: hidden; }
+.ae-card__icon { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ae-card__title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
+.ae-card__sub { font-family: var(--font-display); font-size: 0.82rem; font-weight: 300; color: var(--cream-muted); line-height: 1.6; }
 
-/* Circle wrapper around each icon image */
-.ae-card__icon-wrap {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  border: 1px solid rgba(201, 146, 42, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.ae-card__icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.ae-card__title {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--cream);
-  line-height: 1.3;
-}
-
-.ae-card__sub {
-  font-family: var(--font-display);
-  font-size: 0.82rem;
-  font-weight: 300;
-  color: var(--cream-muted);
-  line-height: 1.6;
-}
-
-/* ── Responsive ── */
-@media (max-width: 1200px) {
-  .about-essence { grid-template-columns: 28% 1fr 1.6fr; }
-}
-
+@media (max-width: 1200px) { .about-essence { grid-template-columns: 28% 1fr 1.6fr; } }
 @media (max-width: 1024px) {
   .about-essence { grid-template-columns: 1fr; min-height: auto; }
   .ae-left { height: 400px; }
@@ -478,12 +159,10 @@
   .ae-mid { padding: 48px 40px; }
   .ae-cards { margin: 0 40px 48px; grid-template-columns: repeat(3, 1fr); }
 }
-
 @media (max-width: 768px) {
   .ae-mid { padding: 40px 24px; }
   .ae-cards { margin: 0 24px 40px; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
-
 @media (max-width: 480px) {
   .ae-cards { grid-template-columns: 1fr; }
   .ae-card { padding: 24px 16px; }
