@@ -193,7 +193,7 @@ details > summary::-webkit-details-marker { display: none; }
   height: 36px;
   object-fit: contain;
   /* If you use line-art PNGs, tint them gold using CSS filter */
-  filter: invert(72%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  filter: invert(72%) sepia(78%) saturate(720%) hue-rotate(3deg) brightness(106%) contrast(103%);
 }
 
 /* ============================================================

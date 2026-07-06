@@ -31,6 +31,17 @@
 .exp-left h2 { font-family: var(--font-display); color: #f7f4ec; font-size: clamp(2.1rem, 2.8vw, 3.4rem); line-height: 1.12; font-weight: 500; margin: 0; letter-spacing: -.01em; }
 .exp-left h2 em { font-style: italic; color: rgba(199, 163, 92, .85); }
 
+/* Heading is now a link to course.html — keep it visually identical
+   to the plain heading it replaced, with a subtle hover cue */
+.exp-left__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color .3s ease;
+}
+.exp-left__link:hover {
+  color: rgba(199, 163, 92, .85);
+}
+
 .exp-right { min-width: 0; }
 .exp-cards-row { display: flex; gap: 14px; }
 

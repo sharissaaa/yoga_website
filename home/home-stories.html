@@ -1,897 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stories That Inspire — Premium</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --maroon-deep: #1a0404;
-      --maroon-mid: #3d0c0c;
-      --maroon-light: #6e1a1a;
-      --cream: #f4ece0;
-      --cream-dim: rgba(244, 236, 224, 0.55);
-      --cream-faint: rgba(244, 236, 224, 0.25);
-      --gold: #cf9b5c;
-      --gold-soft: #e0b377;
-      --gold-dim: rgba(207, 155, 92, 0.35);
-      --near-black: #0b0b0b;
-      --card-bg: #131110;
-      --card-bg-hover: #1a1714;
-      --card-border: rgba(244, 236, 224, 0.07);
-      --card-border-hover: rgba(207, 155, 92, 0.22);
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', sans-serif;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--near-black);
-      font-family: var(--font-body);
-      color: var(--cream);
-      overflow-x: hidden;
-    }
-
-    .wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 48px;
-    }
-
-    /* ─── THIN RULES ─── */
-    .rule {
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(207, 155, 92, 0.18) 40%, rgba(207, 155, 92, 0.18) 60%, transparent 100%);
-    }
-
-    /* ═══════════════════════════════════════════
-       HERO / QUOTE
-    ═══════════════════════════════════════════ */
-    .hero-stories-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .quote-section {
-      position: relative;
-      min-height: 480px;
-      padding: 80px 0 64px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse 70% 80% at 72% 40%, rgba(110, 26, 26, 0.6), transparent 65%),
-        radial-gradient(ellipse 45% 55% at 15% 85%, rgba(74, 15, 16, 0.4), transparent 55%),
-        linear-gradient(135deg, var(--maroon-deep) 0%, #2a0a0a 45%, #0e0202 100%);
-    }
-
-    /* Mandala — line art in top-left */
-    .mandala-image {
-      position: absolute;
-      top: -90px;
-      left: -90px;
-      width: 520px;
-      height: 480px;
-      object-fit: contain;
-      opacity: 0.6;
-      pointer-events: none;
-      z-index: 1;
-      filter: sepia(1) brightness(0.38) contrast(1.25);
-    }
-
-    /* Inline mandala SVG fallback if image missing */
-    .mandala-svg {
-      position: absolute;
-      top: -90px;
-      left: -90px;
-      width: 520px;
-      height: 480px;
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Subtle noise grain overlay */
-    .quote-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      pointer-events: none;
-    }
-
-    /* Warm ember glows */
-    .ember {
-      position: absolute;
-      pointer-events: none;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .ember-1 {
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(255, 160, 70, 0.28) 0%, transparent 70%);
-      bottom: -20px;
-      left: 26%;
-      filter: blur(1px);
-    }
-
-    .ember-2 {
-      width: 90px;
-      height: 90px;
-      background: radial-gradient(circle, rgba(255, 120, 40, 0.2) 0%, transparent 70%);
-      bottom: 10px;
-      right: 38%;
-      filter: blur(1px);
-    }
-
-    .ember-3 {
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, rgba(207, 155, 92, 0.25) 0%, transparent 70%);
-      top: 30px;
-      right: 36%;
-    }
-
-    /* Quote content */
-    .quote-inner {
-      position: relative;
-      z-index: 3;
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-      padding-top: 10px;
-    }
-
-    .quote-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 22px;
-    }
-
-    .quote-eyebrow::before,
-    .quote-eyebrow::after {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--gold-dim);
-    }
-
-    .quote-glyph {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 5rem;
-      color: var(--gold-soft);
-      opacity: 0.7;
-      line-height: 0.6;
-      margin-bottom: 10px;
-    }
-
-    .quote-text {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-weight: 400;
-      font-size: 2.25rem;
-      line-height: 1.38;
-      color: var(--cream);
-      margin-bottom: 22px;
-    }
-
-    .quote-attr {
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      color: var(--cream-dim);
-      margin-bottom: 32px;
-    }
-
-    /* Quote bottom bar */
-    .quote-bottom {
-      position: absolute;
-      bottom: 28px;
-      left: 48px;
-      right: 48px;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .quote-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .play-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(207, 155, 92, 0.5);
-      background: rgba(207, 155, 92, 0.06);
-      color: var(--cream);
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background .2s, border-color .2s, transform .2s;
-      flex-shrink: 0;
-    }
-
-    .play-btn:hover {
-      background: rgba(207, 155, 92, 0.16);
-      border-color: var(--gold);
-      transform: scale(1.06);
-    }
-
-    .play-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(244, 236, 224, 0.4);
-    }
-
-    /* Progress dots */
-    .quote-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(244, 236, 224, 0.2);
-      transition: background .2s, width .2s;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background: var(--gold);
-      width: 18px;
-      border-radius: 3px;
-    }
-
-    /* Scroll hint */
-    .scroll-hint {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.58rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(244, 236, 224, 0.28);
-    }
-
-    .scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, transparent, rgba(207, 155, 92, 0.35));
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-
-      0%,
-      100% {
-        opacity: 0.4;
-        transform: scaleY(0.9);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(1.1);
-      }
-    }
-
-    /* Buddha / statue image */
-
-    .buddha-image {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 38%;
-      /* slightly wider so face isn't cropped */
-      min-width: 300px;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      /* was "right top" — centers face */
-      pointer-events: none;
-      z-index: 2;
-      mask-image: linear-gradient(to left,
-          rgba(0, 0, 0, 0.9) 40%,
-          rgba(0, 0, 0, 0.5) 75%,
-          transparent 100%);
-      -webkit-mask-image: linear-gradient(to left,
-          rgba(0, 0, 0, 0.9) 50%,
-          rgba(0, 0, 0, 0.5) 75%,
-          transparent 100%);
-      opacity: 1;
-      filter: brightness(1.5) contrast(1.0) sepia(0.1);
-      /* was 1.15 — push it up */
-    }
-
-
-    /* ═══════════════════════════════════════════
-       STATS RIBBON
-    ═══════════════════════════════════════════ */
-    .stats-ribbon {
-      background: #100e0c;
-      border-top: 1px solid rgba(207, 155, 92, 0.12);
-      border-bottom: 1px solid rgba(207, 155, 92, 0.12);
-      padding: 28px 0;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-
-    .stat-item {
-      text-align: center;
-      padding: 4px 20px;
-      border-right: 1px solid rgba(244, 236, 224, 0.07);
-    }
-
-    .stat-item:last-child {
-      border-right: none;
-    }
-
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 500;
-      color: var(--gold-soft);
-      display: block;
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-
-    .stat-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--cream-dim);
-    }
-
-    /* ═══════════════════════════════════════════
-       STORIES SECTION
-    ═══════════════════════════════════════════ */
-    .stories-section {
-      background: var();
-      padding: var(--section-py) 0;
-      z-index: 10;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Header right controls */
-    .header-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .ctrl-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid rgba(244, 236, 224, 0.14);
-      background: transparent;
-      color: var(--cream-dim);
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color .2s, color .2s, background .2s;
-    }
-
-    .ctrl-btn:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(207, 155, 92, 0.06);
-    }
-
-    /* Filter tags */
-    .filter-strip {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-
-    .filter-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 100px;
-      border: 1px solid rgba(244, 236, 224, 0.12);
-      background: transparent;
-      color: var(--cream-dim);
-      cursor: pointer;
-      transition: border-color .2s, color .2s, background .2s;
-    }
-
-    .filter-tag.active,
-    .filter-tag:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-      background: rgba(207, 155, 92, 0.07);
-    }
-
-    /* Story cards */
-    .story-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 28px 26px 24px;
-      height: 100%;
-      transition: border-color .3s, background .3s, transform .3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .story-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 10%, rgba(207, 155, 92, 0.18) 50%, transparent 90%);
-      opacity: 0;
-      transition: opacity .3s;
-    }
-
-    .story-card:hover {
-      border-color: var(--card-border-hover);
-      background: var(--card-bg-hover);
-      transform: translateY(-3px);
-    }
-
-    .story-card:hover::before {
-      opacity: 1;
-    }
-
-    /* Card tag badge */
-    .card-badge {
-      display: inline-block;
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background: rgba(207, 155, 92, 0.1);
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    /* Quote mark inside card */
-    .card-quote-glyph {
-      position: absolute;
-      right: 22px;
-      top: 20px;
-      font-family: var(--font-display);
-      font-size: 3rem;
-      line-height: 1;
-      color: rgba(207, 155, 92, 0.1);
-      pointer-events: none;
-    }
-
-    .story-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .story-av {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1.5px solid rgba(207, 155, 92, 0.2);
-    }
-
-    .av-placeholder {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(207, 155, 92, 0.2);
-      background: var(--maroon-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      color: var(--gold-soft);
-      flex-shrink: 0;
-    }
-
-    .story-name {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 2px;
-    }
-
-    .story-meta {
-      font-size: 0.72rem;
-      color: var(--cream-dim);
-    }
-
-    .story-quote {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 0.92rem;
-      line-height: 1.6;
-      color: rgba(244, 236, 224, 0.72);
-      margin-bottom: 18px;
-    }
-
-    .story-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .story-stars {
-      color: var(--gold-soft);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-    }
-
-    .story-read {
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(207, 155, 92, 0.5);
-      cursor: pointer;
-      transition: color .2s;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-
-    .story-read:hover {
-      color: var(--gold);
-    }
-
-    /* Featured / large card */
-    .story-card.featured {
-      border-color: rgba(207, 155, 92, 0.16);
-      background: linear-gradient(145deg, #161210 0%, #110d0b 100%);
-    }
-
-    .story-card.featured .story-quote {
-      font-size: 1.05rem;
-      line-height: 1.65;
-    }
-
-    .stories-section {
-      position: relative;
-      z-index: 10;
-    }
-
-    .stories-section {
-      position: relative;
-      z-index: 10;
-      overflow: hidden;
-    }
-
-    /* Shimmer particles */
-    .shimmer-dot {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1;
-      background: radial-gradient(circle, rgba(207, 155, 92, 0.9) 0%, rgba(207, 155, 92, 0.3) 40%, transparent 70%);
-      animation: floatShimmer linear infinite;
-    }
-
-    @keyframes floatShimmer {
-      0% {
-        transform: translateY(0px) scale(1);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      50% {
-        transform: translateY(-40px) scale(1.2);
-        opacity: 0.8;
-      }
-
-      90% {
-        opacity: 0.4;
-      }
-
-      100% {
-        transform: translateY(-90px) scale(0.8);
-        opacity: 0;
-      }
-    }
-
-    .stories-left-image {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 320px;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-      mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.5) 50%,
-          transparent 100%);
-      -webkit-mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.5) 50%,
-          transparent 100%);
-    }
-
-    /* ═══════════════════════════════════════════
-       NEWSLETTER / STAY INSPIRED
-    ═══════════════════════════════════════════ */
-    .newsletter-section {
-      position: relative;
-      padding: 72px 0 80px;
-      background:
-        radial-gradient(ellipse 60% 70% at 50% 50%, rgba(74, 15, 16, 0.5), transparent 65%),
-        linear-gradient(160deg, #110505 0%, var(--maroon-deep) 50%, #0b0b0b 100%);
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .nl-lotus {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px;
-      height: 420px;
-      opacity: 0.06;
-      pointer-events: none;
-    }
-
-    .nl-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    .nl-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.63rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .nl-eyebrow::before,
-    .nl-eyebrow::after {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: var(--gold-dim);
-    }
-
-    .nl-title {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 500;
-      line-height: 1.28;
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-
-    .nl-title em {
-      font-style: italic;
-      color: var(--gold-soft);
-    }
-
-    .nl-sub {
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: var(--cream-dim);
-      margin-bottom: 36px;
-    }
-
-    .nl-form {
-      display: flex;
-      gap: 0;
-      max-width: 420px;
-      margin: 0 auto 24px;
-      border: 1px solid rgba(207, 155, 92, 0.3);
-      border-radius: 100px;
-      overflow: hidden;
-      background: rgba(244, 236, 224, 0.03);
-      transition: border-color .2s;
-    }
-
-    .nl-form:focus-within {
-      border-color: rgba(207, 155, 92, 0.6);
-    }
-
-    .nl-input {
-      flex: 1;
-      background: none;
-      border: none;
-      outline: none;
-      padding: 14px 22px;
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      color: var(--cream);
-    }
-
-    .nl-input::placeholder {
-      color: rgba(244, 236, 224, 0.3);
-    }
-
-    .nl-btn {
-      padding: 12px 24px;
-      border-radius: 100px;
-      border: none;
-      margin: 4px;
-      background: linear-gradient(135deg, var(--gold) 0%, #b87c3a 100%);
-      color: #1a0a02;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: opacity .2s, transform .2s;
-    }
-
-    .nl-btn:hover {
-      opacity: 0.9;
-      transform: scale(1.02);
-    }
-
-    .nl-note {
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      color: rgba(244, 236, 224, 0.28);
-    }
-
-    /* Privacy badges */
-    .nl-badges {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .nl-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.66rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(244, 236, 224, 0.3);
-    }
-
-    .nl-badge svg {
-      width: 13px;
-      height: 13px;
-      opacity: 0.5;
-    }
-
-    /* ═══════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════ */
-    @media (max-width: 991px) {
-      .buddha-image {
-        display: none;
-      }
-
-      .quote-text {
-        font-size: 1.75rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stat-item:nth-child(2) {
-        border-right: none;
-      }
-
-      .stat-item:nth-child(3) {
-        border-top: 1px solid rgba(244, 236, 224, 0.07);
-      }
-
-      .stat-item:nth-child(4) {
-        border-top: 1px solid rgba(244, 236, 224, 0.07);
-        border-right: none;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .wrapper {
-        padding: 0 24px;
-      }
-
-      .quote-bottom {
-        left: 24px;
-        right: 24px;
-      }
-
-      .stories-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-      }
-
-      .nl-title {
-        font-size: 1.7rem;
-      }
-
-      .scroll-hint {
-        display: none;
-      }
-    }
-
-    @media (max-width: 575px) {
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mandala-image {
-        width: 260px;
-        height: 240px;
-        top: -50px;
-        left: -50px;
-      }
-
-      .filter-strip {
-        gap: 6px;
-      }
-    }
-  </style>
-</head>
-
-<body>
+<div class="stories-premium">
 
   <!-- ─────────── STATS RIBBON ─────────── -->
   <div class="stats-ribbon">
@@ -918,127 +25,82 @@
   </div>
 
   <div class="rule"></div>
+
   <div class="hero-stories-wrapper">
 
     <!-- ─────────── HERO QUOTE ─────────── -->
     <section class="quote-section">
-      <!-- Floating shimmers -->
-      <div class="shimmer-dot"
-        style="width:6px;height:6px;  left:12%; top:60%; animation-duration:4s; animation-delay:0s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:28%; top:75%; animation-duration:5s; animation-delay:1s;"></div>
-      <div class="shimmer-dot"
-        style="width:8px;height:8px;  left:42%; top:50%; animation-duration:6s; animation-delay:2s;"></div>
-      <div class="shimmer-dot"
-        style="width:5px;height:5px;  left:58%; top:80%; animation-duration:4.5s; animation-delay:0.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:7px;height:7px;  left:70%; top:65%; animation-duration:5.5s; animation-delay:1.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:85%; top:55%; animation-duration:3.8s; animation-delay:2.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:6px;height:6px;  left:20%; top:40%; animation-duration:6.2s; animation-delay:3s;"></div>
-      <div class="shimmer-dot"
-        style="width:5px;height:5px;  left:50%; top:70%; animation-duration:4.8s; animation-delay:0.8s;"></div>
-      <div class="shimmer-dot"
-        style="width:9px;height:9px;  left:75%; top:45%; animation-duration:5.2s; animation-delay:1.8s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:90%; top:72%; animation-duration:3.5s; animation-delay:3.5s;"></div>
+      <div class="shimmer-dot" style="width:6px;height:6px;left:12%;top:60%;animation-duration:4s;animation-delay:0s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:28%;top:75%;animation-duration:5s;animation-delay:1s;"></div>
+      <div class="shimmer-dot" style="width:8px;height:8px;left:42%;top:50%;animation-duration:6s;animation-delay:2s;"></div>
+      <div class="shimmer-dot" style="width:5px;height:5px;left:58%;top:80%;animation-duration:4.5s;animation-delay:0.5s;"></div>
+      <div class="shimmer-dot" style="width:7px;height:7px;left:70%;top:65%;animation-duration:5.5s;animation-delay:1.5s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:85%;top:55%;animation-duration:3.8s;animation-delay:2.5s;"></div>
+      <div class="shimmer-dot" style="width:6px;height:6px;left:20%;top:40%;animation-duration:6.2s;animation-delay:3s;"></div>
+      <div class="shimmer-dot" style="width:5px;height:5px;left:50%;top:70%;animation-duration:4.8s;animation-delay:0.8s;"></div>
+      <div class="shimmer-dot" style="width:9px;height:9px;left:75%;top:45%;animation-duration:5.2s;animation-delay:1.8s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:90%;top:72%;animation-duration:3.5s;animation-delay:3.5s;"></div>
 
-
-      <!-- rest of your existing content unchanged -->
-      <!-- Mandala line art -->
       <img src="assets/gallery/home-image/luxury mandala.png" alt="" class="mandala-image" aria-hidden="true"
-        onerror="this.style.display='none'; document.querySelector('.mandala-svg').style.display='block';" />
+        onerror="this.style.display='none'; document.querySelector('.stories-premium .mandala-svg').style.display='block';" />
 
-      <!-- Inline SVG mandala fallback (geometric lotus / yantra) -->
-      <svg class="mandala-svg" style="display:none;" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true">
+      <svg class="mandala-svg" style="display:none;" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <g transform="translate(240,240)" stroke="rgba(207,155,92,0.6)" fill="none" stroke-width="0.6">
-          <!-- Outer circles -->
-          <circle r="220" />
-          <circle r="200" />
-          <circle r="180" />
-          <!-- Petals via rotated ellipses -->
-          <g>
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(45)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(90)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(135)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(180)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(225)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(270)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <g transform="rotate(315)">
-            <ellipse rx="28" ry="80" transform="translate(0,-140)" />
-          </g>
-          <!-- Inner star -->
+          <circle r="220" /><circle r="200" /><circle r="180" />
+          <g><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(45)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(90)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(135)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(180)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(225)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(270)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
+          <g transform="rotate(315)"><ellipse rx="28" ry="80" transform="translate(0,-140)" /></g>
           <polygon points="0,-120 28,-40 110,-40 46,20 70,100 0,54 -70,100 -46,20 -110,-40 -28,-40" />
-          <!-- Inner circles -->
-          <circle r="100" />
-          <circle r="70" />
-          <circle r="44" />
-          <!-- Spokes -->
-          <line x1="0" y1="-44" x2="0" y2="44" />
-          <line x1="-44" y1="0" x2="44" y2="0" />
-          <line x1="-31" y1="-31" x2="31" y2="31" />
-          <line x1="31" y1="-31" x2="-31" y2="31" />
-          <!-- Tiny center -->
+          <circle r="100" /><circle r="70" /><circle r="44" />
+          <line x1="0" y1="-44" x2="0" y2="44" /><line x1="-44" y1="0" x2="44" y2="0" />
+          <line x1="-31" y1="-31" x2="31" y2="31" /><line x1="31" y1="-31" x2="-31" y2="31" />
           <circle r="6" fill="rgba(207,155,92,0.4)" stroke="none" />
           <circle r="3" fill="rgba(207,155,92,0.7)" stroke="none" />
-          <!-- Second petal ring (offset) -->
-          <g transform="rotate(22.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(67.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(112.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(157.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(202.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(247.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(292.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
-          <g transform="rotate(337.5)">
-            <ellipse rx="14" ry="50" transform="translate(0,-160)" />
-          </g>
+          <g transform="rotate(22.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(67.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(112.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(157.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(202.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(247.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(292.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
+          <g transform="rotate(337.5)"><ellipse rx="14" ry="50" transform="translate(0,-160)" /></g>
         </g>
       </svg>
 
-      <!-- Ember atmosphere -->
       <div class="ember ember-1"></div>
       <div class="ember ember-2"></div>
       <div class="ember ember-3"></div>
 
-      <!-- Main quote -->
+      <!-- Main quote — auto-cycling carousel, 4 quotes, sideways slide -->
       <div class="wrapper quote-inner">
         <p class="quote-eyebrow">Words of wisdom</p>
         <span class="quote-glyph">&ldquo;</span>
-        <p class="quote-text">The journey of a thousand miles<br>begins with a single breath.</p>
-        <p class="quote-attr">— Ancient Wisdom &ensp;·&ensp; Tao Te Ching</p>
+
+        <div class="quote-carousel">
+          <div class="quote-slide">
+            <p class="quote-text">The journey of a thousand miles<br>begins with a single breath.</p>
+            <p class="quote-attr">— Ancient Wisdom &ensp;·&ensp; Tao Te Ching</p>
+          </div>
+          <div class="quote-slide">
+            <p class="quote-text">Yoga is the journey of the self,<br>through the self, to the self.</p>
+            <p class="quote-attr">— The Bhagavad Gita</p>
+          </div>
+          <div class="quote-slide">
+            <p class="quote-text">Stillness is where creativity<br>and solutions to problems are found.</p>
+            <p class="quote-attr">— Eckhart Tolle</p>
+          </div>
+          <div class="quote-slide">
+            <p class="quote-text">The mind is everything.<br>What you think, you become.</p>
+            <p class="quote-attr">— The Buddha</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Bottom bar -->
       <div class="quote-bottom">
         <div class="quote-actions">
           <button class="play-btn" aria-label="Listen to quote">▶</button>
@@ -1055,65 +117,46 @@
           <span>Scroll</span>
         </div>
       </div>
-
-      <!-- Buddha image -->
-      <!-- <img src="assets/gallery/home-image/budha.png" alt="Buddha statue" class="buddha-image" /> -->
     </section>
 
     <div class="rule"></div>
 
     <section class="stories-section">
-      <!-- Floating shimmers -->
-      <div class="shimmer-dot"
-        style="width:6px;height:6px;  left:12%; top:60%; animation-duration:4s; animation-delay:0s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:28%; top:75%; animation-duration:5s; animation-delay:1s;"></div>
-      <div class="shimmer-dot"
-        style="width:8px;height:8px;  left:42%; top:50%; animation-duration:6s; animation-delay:2s;"></div>
-      <div class="shimmer-dot"
-        style="width:5px;height:5px;  left:58%; top:80%; animation-duration:4.5s; animation-delay:0.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:7px;height:7px;  left:70%; top:65%; animation-duration:5.5s; animation-delay:1.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:85%; top:55%; animation-duration:3.8s; animation-delay:2.5s;"></div>
-      <div class="shimmer-dot"
-        style="width:6px;height:6px;  left:20%; top:40%; animation-duration:6.2s; animation-delay:3s;"></div>
-      <div class="shimmer-dot"
-        style="width:5px;height:5px;  left:50%; top:70%; animation-duration:4.8s; animation-delay:0.8s;"></div>
-      <div class="shimmer-dot"
-        style="width:9px;height:9px;  left:75%; top:45%; animation-duration:5.2s; animation-delay:1.8s;"></div>
-      <div class="shimmer-dot"
-        style="width:4px;height:4px;  left:90%; top:72%; animation-duration:3.5s; animation-delay:3.5s;"></div>
+      <div class="shimmer-dot" style="width:6px;height:6px;left:12%;top:60%;animation-duration:4s;animation-delay:0s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:28%;top:75%;animation-duration:5s;animation-delay:1s;"></div>
+      <div class="shimmer-dot" style="width:8px;height:8px;left:42%;top:50%;animation-duration:6s;animation-delay:2s;"></div>
+      <div class="shimmer-dot" style="width:5px;height:5px;left:58%;top:80%;animation-duration:4.5s;animation-delay:0.5s;"></div>
+      <div class="shimmer-dot" style="width:7px;height:7px;left:70%;top:65%;animation-duration:5.5s;animation-delay:1.5s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:85%;top:55%;animation-duration:3.8s;animation-delay:2.5s;"></div>
+      <div class="shimmer-dot" style="width:6px;height:6px;left:20%;top:40%;animation-duration:6.2s;animation-delay:3s;"></div>
+      <div class="shimmer-dot" style="width:5px;height:5px;left:50%;top:70%;animation-duration:4.8s;animation-delay:0.8s;"></div>
+      <div class="shimmer-dot" style="width:9px;height:9px;left:75%;top:45%;animation-duration:5.2s;animation-delay:1.8s;"></div>
+      <div class="shimmer-dot" style="width:4px;height:4px;left:90%;top:72%;animation-duration:3.5s;animation-delay:3.5s;"></div>
 
-      <!-- rest of your existing content unchanged -->
       <div class="container">
         <div class="stories-top reveal">
           <div>
             <span class="eyebrow">Voices from the Journey</span>
             <h2>Stories That Inspire</h2>
           </div>
-          <button class="prev-btn">‹</button>
         </div>
         <div class="row g-4">
           <div class="col-lg-4 col-md-6 reveal">
             <div class="story-card">
               <div class="story-top">
-                <img class="story-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80"
-                  alt="Ananya Sharma" />
+                <img class="story-av" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Ananya Sharma" />
                 <div>
                   <p class="story-name">Ananya Sharma</p>
                   <span class="story-tag">Rishikesh Retreat</span>
                 </div>
               </div>
-              <p class="story-quote">"This journey helped me find a peace I was searching for years. Life
-                changing!"</p>
+              <p class="story-quote">"This journey helped me find a peace I was searching for years. Life changing!"</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.1s">
             <div class="story-card">
               <div class="story-top">
-                <img class="story-av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
-                  alt="Karan Mehta" />
+                <img class="story-av" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Karan Mehta" />
                 <div>
                   <p class="story-name">Karan Mehta</p>
                   <span class="story-tag">Kerala Ayurveda</span>
@@ -1125,41 +168,33 @@
           <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.2s">
             <div class="story-card">
               <div class="story-top">
-                <img class="story-av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80"
-                  alt="Meera Iyer" />
+                <img class="story-av" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Meera Iyer" />
                 <div>
                   <p class="story-name">Meera Iyer</p>
                   <span class="story-tag">Himalayas Meditation</span>
                 </div>
               </div>
-              <p class="story-quote">"Disconnecting from the noise and connecting with myself was priceless."
-              </p>
+              <p class="story-quote">"Disconnecting from the noise and connecting with myself was priceless."</p>
             </div>
           </div>
         </div>
       </div>
       <img src="assets/gallery/home-image/temple.png" alt="" class="stories-left-image" aria-hidden="true" />
-
     </section>
 
     <img src="assets/gallery/home-image/budha.png" alt="Buddha statue" class="buddha-image" />
   </div>
 
-
   <!-- ─────────── NEWSLETTER ─────────── -->
   <section class="newsletter-section">
-
     <div class="nl-inner">
       <h2 class="nl-title">Embrace the <em>Essence of Yoga</em><br>One Breath at a Time</h2>
-      <p class="nl-sub">Thoughtfully curated yoga wisdom, meditation insights, mindful rituals, and exclusive retreat
-        invitations to inspire a life of harmony, presence, and purpose.</p>
+      <p class="nl-sub">Thoughtfully curated yoga wisdom, meditation insights, mindful rituals, and exclusive retreat invitations to inspire a life of harmony, presence, and purpose.</p>
       <div class="nl-form">
         <input class="nl-input" type="email" placeholder="Your email address" aria-label="Email address" />
         <button class="nl-btn">Subscribe</button>
       </div>
-
       <p class="nl-note">No clutter. Unsubscribe anytime.</p>
-
       <div class="nl-badges">
         <span class="nl-badge">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1181,14 +216,8 @@
           </svg>
           Weekly cadence
         </span>
-        
       </div>
     </div>
   </section>
 
-  </div><!-- /hero-stories-wrapper -->
-
-
-</body>
-
-</html>
+</div>

@@ -75,3 +75,41 @@
   .dest-content { left: 12px; right: 12px; bottom: 12px; }
   .dest-content h3 { font-size: 1rem; margin-bottom: 3px; }
 }
+
+/* ── AUTO CAROUSEL CARD (cycles between two destinations, pure CSS) ── */
+.dest-card--carousel { padding: 0; }
+
+.dest-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.dest-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: destCarouselFade 8s infinite;
+}
+.dest-carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dest-carousel__slide--1 { animation-delay: 0s; }
+.dest-carousel__slide--2 { animation-delay: 4s; }
+
+/* Each slide: invisible → fade in → hold → fade out → invisible,
+   timed so slide 1 and slide 2 alternate every 4s within an 8s loop */
+@keyframes destCarouselFade {
+  0%    { opacity: 0; }
+  4%    { opacity: 1; }
+  46%   { opacity: 1; }
+  50%   { opacity: 0; }
+  100%  { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-carousel__slide { animation: none; opacity: 0; }
+  .dest-carousel__slide--1 { opacity: 1; }
+}
