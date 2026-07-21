@@ -88,7 +88,9 @@ img {
 ul {
   list-style: none;
 }
-
+body.loading {
+  overflow: hidden;
+}
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--deep-forest); }

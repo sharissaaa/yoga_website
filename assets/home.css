@@ -26,13 +26,7 @@
 
 .hero-content { position:relative; z-index:2; padding-top:115px; padding-bottom:80px; }
 
-.hero-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.59rem; letter-spacing: 0.52em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 18px;
-  opacity: 0.9;
-  animation: fadeInLeft 0.9s 0.7s both;
-}
+
 .hero-rule {
   width: 36px; height: 1px;
   background: var(--gold); opacity: 0.45;
@@ -63,13 +57,7 @@
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   animation: fadeInLeft 0.9s 1.35s both;
 }
-.hero-film-row {
-  display: flex; align-items: center; gap: 12px;
-  margin-top: 26px;
-  animation: fadeInLeft 0.9s 1.5s both;
-  background: transparent; border: none; cursor: pointer; padding: 0;
-  color: var(--off-white);
-}
+
 .play-circle {
   width: 36px; height: 36px; border-radius: 50%;
   border: 1px solid rgba(244,236,224,0.28);

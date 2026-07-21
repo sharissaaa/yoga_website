@@ -114,7 +114,6 @@
             <div class="row">
                 <div class="col-lg-6 col-md-9">
 
-                    <p class="hero-eyebrow">Journey Inward</p>
 
                     <h1 class="hero-h1">
                         Heal
@@ -134,14 +133,7 @@
                         <a href="travel.html" class="btn-outline-sy">Our Destinations &nbsp;→</a>
                     </div>
 
-                    <button class="hero-film-row">
-                        <span class="play-circle">▶</span>
-                        <span class="film-text">
-                            <b>Watch Journey Film</b>
-                            <small>1:28 min</small>
-                        </span>
-                    </button>
-
+                   
                 </div>
             </div>
         </div>
@@ -316,10 +308,11 @@
     </script>
 
     <script>
-        /* ── PRELOADER ── */
+         /* ── PRELOADER ── */
         window.addEventListener('load', function () {
             setTimeout(function () {
-                document.getElementById('preloader').classList.add('hide');
+                var preloaderEl = document.getElementById('preloader');
+                if (preloaderEl) preloaderEl.classList.add('hide');
                 document.body.classList.remove('loading');
             }, 2700);
         });
