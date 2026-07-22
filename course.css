@@ -94,14 +94,7 @@ em { font-style: italic; color: var(--clr-gold); }
 }
 .btn--gold:hover { background: var(--clr-gold-light); transform: translateY(-1px); }
 
-.btn--gold-pill {
-  padding: 0.9rem 2rem;
-  background: var(--clr-gold);
-  color: var(--clr-bg);
-  border-radius: var(--radius-pill);
-  font-size: var(--fs-sm);
-}
-.btn--gold-pill:hover { background: var(--clr-gold-light); transform: translateY(-1px); }
+
 .btn__icon { width: 16px; height: 16px; filter: brightness(0); }
 .btn__arrow { font-size: 1rem; }
 
