@@ -628,27 +628,6 @@
       }
     }
 
-    .stories-left-image {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 320px;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-      mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.5) 50%,
-          transparent 100%);
-      -webkit-mask-image: linear-gradient(to right,
-          rgba(0, 0, 0, 0.8) 0%,
-          rgba(0, 0, 0, 0.5) 50%,
-          transparent 100%);
-    }
 
     /* ═══════════════════════════════════════════
        NEWSLETTER / STAY INSPIRED
