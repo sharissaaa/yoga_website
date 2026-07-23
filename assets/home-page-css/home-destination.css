@@ -18,25 +18,45 @@
   background: radial-gradient(circle at top center, transparent 60%);
 }
 
-.dest-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 42px; gap: 30px; }
-.dest-heading .eyebrow { display: block; margin-bottom: 14px; color: rgba(199,163,92,.7); font-size: 11px; font-weight: 600; letter-spacing: .32em; }
-.dest-heading h2 { margin: 0; font-family: var(--font-display); color: #f5f1e8; font-size: clamp(2rem,3vw,3rem); font-weight: 500; line-height: 1.2; }
+.dest-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 42px; gap: 30px; }
 
-.dest-actions { display: flex; align-items: center; gap: 30px; }
-.dest-view-all { color: rgba(255,255,255,.9); text-decoration: none; font-size: .95rem; transition: .3s; }
-.dest-view-all:hover { color: #c7a35c; }
-
-.dest-nav { display: flex; gap: 12px; }
-.dest-arrow {
-  width: 52px; height: 52px; border-radius: 50%; background: transparent;
-  border: 1px solid rgba(199,163,92,.28); color: #d0a45c; cursor: pointer; transition: .3s;
+.dest-heading .eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px;
+  color: rgba(199,163,92,.7); font-size: 11px; font-weight: 600; letter-spacing: .32em;
 }
-.dest-arrow:hover, .dest-arrow.active { border-color: rgba(199,163,92,.75); box-shadow: 0 0 20px rgba(199,163,92,.15); }
+.dest-heading .eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: rgba(199,163,92,.55); flex-shrink: 0; }
+.dest-heading h2 { margin: 0; font-family: var(--font-display); color: #f5f1e8; font-size: clamp(2rem,3vw,3rem); font-weight: 500; line-height: 1.2; max-width: 460px; }
 
-.dest-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.dest-actions { display: flex; align-items: center; gap: 30px; padding-bottom: 10px; margin-left: auto; }
+.dest-view-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(199,163,92,.85); text-decoration: none;
+  font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  transition: .3s;
+}
+.dest-view-all:hover { color: #f0d080; }
+.dest-view-all__arrow { font-size: .95rem; line-height: 1; transition: transform .3s ease; }
+.dest-view-all:hover .dest-view-all__arrow { transform: translateX(3px); }
+
+/* ── Layout: one large featured card (Rishikesh) + a 2x2 grid ── */
+.dest-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: repeat(2, 210px);
+  grid-template-areas:
+    "feature hampi   kerala"
+    "feature varanasi ladakh";
+  gap: 18px;
+}
+
+.dest-card--feature  { grid-area: feature; }
+.dest-card--hampi    { grid-area: hampi; }
+.dest-card--kerala   { grid-area: kerala; }
+.dest-card--varanasi { grid-area: varanasi; }
+.dest-card--ladakh   { grid-area: ladakh; }
 
 .dest-card {
-  position: relative; height: 420px; border-radius: 18px; overflow: hidden;
+  position: relative; height: 100%; border-radius: 18px; overflow: hidden;
   border: 1px solid rgba(255,255,255,.08); cursor: pointer; transition: .45s;
 }
 .dest-card img { width: 100%; height: 100%; object-fit: cover; transition: .8s; }
@@ -47,69 +67,64 @@
 .dest-card:hover { transform: translateY(-8px); }
 .dest-card:hover img { transform: scale(1.08); }
 
+/* Thin gold divider under the subtitle */
+.dest-content__divider {
+  display: block;
+  width: 26px;
+  height: 1px;
+  background: rgba(199,163,92,.6);
+  margin: 12px 0 0;
+}
+
+/* "Explore →" link — feature card only */
+.dest-content__explore {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 12px;
+  color: rgba(199,163,92,.9); text-decoration: none;
+  font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  transition: .3s;
+}
+.dest-content__explore:hover { color: #f0d080; }
+.dest-content__explore-arrow { font-size: .95rem; line-height: 1; transition: transform .3s ease; }
+.dest-content__explore:hover .dest-content__explore-arrow { transform: translateX(4px); }
+
+/* Smaller cards keep tighter type since they have less room */
+.dest-card:not(.dest-card--feature) .dest-content h3 { font-size: 1.5rem; }
+.dest-card:not(.dest-card--feature) .dest-content p { font-size: .82rem; }
+
 @media (max-width: 1400px) {
-  .dest-grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
-  .dest-card { height: 360px; }
+  .dest-grid { gap: 14px; grid-template-rows: repeat(2, 180px); }
 }
 @media (max-width: 991px) {
-  .dest-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; }
   .dest-header { flex-direction: column; align-items: flex-start; }
-  .dest-card { height: 300px; }
-  .dest-content h3 { font-size: 1.4rem; }
+  .dest-grid { gap: 12px; grid-template-rows: repeat(2, 160px); }
+  .dest-content h3 { font-size: 1.5rem; }
+  .dest-card:not(.dest-card--feature) .dest-content h3 { font-size: 1.2rem; }
 }
 @media (max-width: 768px) {
   .dest-grid {
-    grid-template-columns: repeat(5, minmax(160px, 1fr));
-    gap: 10px; overflow-x: auto; padding-bottom: 10px;
-    scrollbar-width: thin; scrollbar-color: rgba(199,163,92,.3) transparent;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 200px 200px;
+    grid-template-areas:
+      "feature feature"
+      "hampi   kerala"
+      "varanasi ladakh";
+    gap: 10px;
   }
-  .dest-grid::-webkit-scrollbar { height: 3px; }
-  .dest-grid::-webkit-scrollbar-thumb { background: rgba(199,163,92,.3); border-radius: 2px; }
-  .dest-card { height: 260px; }
-  .dest-content h3 { font-size: 1.1rem; }
-  .dest-content p { font-size: .78rem; }
+  .dest-content h3 { font-size: 1.6rem; }
+  .dest-card:not(.dest-card--feature) .dest-content h3 { font-size: 1.15rem; }
+  .dest-card:not(.dest-card--feature) .dest-content p { font-size: .78rem; }
 }
-@media (max-width: 576px) {
-  .dest-grid { grid-template-columns: repeat(5, minmax(140px, 1fr)); }
-  .dest-card { height: 240px; }
+@media (max-width: 480px) {
+  .dest-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 240px repeat(4, 200px);
+    grid-template-areas:
+      "feature"
+      "hampi"
+      "kerala"
+      "varanasi"
+      "ladakh";
+  }
   .dest-content { left: 12px; right: 12px; bottom: 12px; }
-  .dest-content h3 { font-size: 1rem; margin-bottom: 3px; }
-}
-
-/* ── AUTO CAROUSEL CARD (cycles between two destinations, pure CSS) ── */
-.dest-card--carousel { padding: 0; }
-
-.dest-carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.dest-carousel__slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  animation: destCarouselFade 8s infinite;
-}
-.dest-carousel__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.dest-carousel__slide--1 { animation-delay: 0s; }
-.dest-carousel__slide--2 { animation-delay: 4s; }
-
-/* Each slide: invisible → fade in → hold → fade out → invisible,
-   timed so slide 1 and slide 2 alternate every 4s within an 8s loop */
-@keyframes destCarouselFade {
-  0%    { opacity: 0; }
-  4%    { opacity: 1; }
-  46%   { opacity: 1; }
-  50%   { opacity: 0; }
-  100%  { opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dest-carousel__slide { animation: none; opacity: 0; }
-  .dest-carousel__slide--1 { opacity: 1; }
+  .dest-content h3 { font-size: 1.3rem; margin-bottom: 3px; }
 }

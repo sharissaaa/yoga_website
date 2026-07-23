@@ -1,64 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap');
 
-:root {
-  --c-black:          #020805;
-  --c-green-deepest:  #021A07;
-  --c-green-dark:     #044C12;
-  --c-green:          #076B1A;
-  --c-green-bright:   #13A832;
-  --c-green-light:    #5FE27A;
-  --c-green-pale:     #8FF2A9;
-  --c-cream:  #F3ECE3;
-  --c-muted:  #C7D6CB;
-  --font-display: 'Cormorant Garamond', serif;
-  --font-body: 'Manrope', sans-serif;
+.meditation-orb-section {
+  /* Same structural pattern as the site's other sections (thin-line
+     eyebrow, simple divider, bordered outline button, full-bleed layout)
+     but keeping this section's own green accent instead of gold. */
+  --green-deepest: #021A07;
+  --green-dark:    #044C12;
+  --green:         #076B1A;
+  --green-bright:  #13A832;
+  --green-light:   #5FE27A;
+  --green-pale:    #8FF2A9;
+  --cream:         #F3ECE3;
+  --cream-dim:     rgba(243, 236, 227, 0.82);
+  --cream-muted:   #C7D6CB;
+  --dark:          #020805;
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-body:     'Manrope', sans-serif;
 }
 
 .meditation-orb-section {
   position: relative;
   overflow: hidden;
-  background: var(--c-black);
-  border-radius: 28px;
-  padding: 86px 64px;
-  isolation: isolate;
-  color: var(--c-cream);
+  background: linear-gradient(180deg, #0d0b09 0%, #0c0a08 45%, #0d0b09 100%);
+  padding: 110px 0;
+  color: var(--cream);
   font-family: var(--font-body);
 }
 
-.orb-bg-image {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: center; z-index: 0;
-  background: radial-gradient(circle at 50% 40%, var(--c-green-deepest), var(--c-black) 70%);
-}
-
 .meditation-orb-section::before {
-  content: ''; position: absolute; inset: 0; z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(2,8,5,0.76) 0%, rgba(2,8,5,0.42) 32%, rgba(2,8,5,0.26) 55%, rgba(2,8,5,0.46) 78%, rgba(2,8,5,0.76) 100%),
-    linear-gradient(180deg, rgba(2,8,5,0.4) 0%, rgba(2,8,5,0.18) 30%, rgba(2,8,5,0.3) 70%, rgba(2,8,5,0.68) 100%);
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 380px;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(ellipse 70% 55% at 50% 20%, rgba(19, 168, 50, 0.08), transparent 100%);
 }
 
+/* Subtle grain for tactile, premium depth — kept very low opacity so it
+   reads as texture rather than visible noise */
 .orb-noise {
-  position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  opacity: 0.04; mix-blend-mode: overlay;
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.025; mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.orb-shimmer {
-  position: absolute; inset: -20%; z-index: 1; pointer-events: none;
-  background: conic-gradient(from 0deg at 50% 50%, transparent, rgba(19,168,50,0.06), transparent 30%);
-  animation: shimmer-rotate 18s linear infinite;
+/* Ornamental corner frame — echoes the corner-bracket motif used on the
+   Teachings & Courses stage, tying the two sections together visually */
+.orb-frame-corner {
+  position: absolute;
+  width: 30px; height: 30px;
+  border: 1px solid rgba(95, 226, 122, 0.28);
+  pointer-events: none;
+  z-index: 4;
 }
-@keyframes shimmer-rotate { to { transform: rotate(360deg); } }
+.orb-frame-corner--tl { top: 28px; left: 28px; border-right: none; border-bottom: none; }
+.orb-frame-corner--tr { top: 28px; right: 28px; border-left: none; border-bottom: none; }
+.orb-frame-corner--bl { bottom: 28px; left: 28px; border-right: none; border-top: none; }
+.orb-frame-corner--br { bottom: 28px; right: 28px; border-left: none; border-top: none; }
 
 .orb-particles { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 .particle {
-  position: absolute; border-radius: 50%; background: var(--c-green-light);
-  box-shadow: 0 0 6px 1px rgba(95,226,122,0.6); opacity: 0;
+  position: absolute; border-radius: 50%; background: var(--green-bright);
+  box-shadow: 0 0 6px 1px rgba(19, 168, 50, 0.5); opacity: 0;
   animation: float-up var(--dur) ease-in var(--delay) infinite;
 }
-.particle:nth-of-type(3n) { background: var(--c-green-pale); box-shadow: 0 0 6px 1px rgba(143,242,169,0.55); }
-.particle:nth-of-type(5n) { background: var(--c-green-bright); box-shadow: 0 0 6px 1px rgba(19,168,50,0.6); }
+.particle:nth-of-type(3n) { background: var(--green-pale); box-shadow: 0 0 6px 1px rgba(143, 242, 169, 0.5); }
+.particle:nth-of-type(5n) { background: var(--green); box-shadow: 0 0 6px 1px rgba(19, 168, 50, 0.5); }
 
 @keyframes float-up {
   0%   { opacity: 0; transform: translateY(0) scale(0.8); }
@@ -67,7 +75,7 @@
   100% { opacity: 0; transform: translateY(-90px) scale(1.1); }
 }
 
-.container { position: relative; z-index: 3; max-width: 1280px; margin: 0 auto; }
+.container { position: relative; z-index: 3; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
 .meditation-layout {
   display: grid;
@@ -76,47 +84,34 @@
   gap: 40px;
 }
 
-.orb-eyebrow { margin-bottom: 26px; }
-.eyebrow-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 18px; border: 1px solid rgba(95,226,122,0.4);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(4,76,18,0.4), rgba(19,168,50,0.15));
-}
-.eyebrow-icon { font-size: 13px; line-height: 1; }
-.eyebrow-text {
+/* ── Eyebrow — matches the dash-line pattern used elsewhere on the site ── */
+.orb-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
+.orb-eyebrow__text {
   font-family: var(--font-body); font-weight: 600;
-  font-size: 11px; letter-spacing: 0.16em; color: var(--c-green-pale);
+  font-size: 11px; letter-spacing: 0.22em; color: var(--green-bright);
 }
+.orb-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--green-bright); opacity: 0.5; }
 
 .meditation-copy h2 {
   font-family: var(--font-display); font-weight: 500;
-  font-size: clamp(30px, 2.6vw, 42px); line-height: 1.2;
-  color: var(--c-cream); margin: 0 0 22px;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  font-size: clamp(32px, 2.8vw, 46px); line-height: 1.18;
+  color: var(--cream); margin: 0 0 22px;
+  letter-spacing: -0.01em;
 }
-.meditation-copy h2 .hl { color: var(--c-green-pale); font-style: italic; }
+.meditation-copy h2 .hl { color: var(--green-pale); font-style: italic; }
 
 .orb-divider {
-  width: 56px; height: 2px;
-  background: linear-gradient(90deg, var(--c-green-pale), var(--c-green-dark));
-  margin-bottom: 22px; border-radius: 2px;
+  display: block;
+  width: 52px; height: 1px;
+  background: var(--green-bright);
+  opacity: 0.55;
+  margin-bottom: 26px;
 }
 
 .meditation-copy p {
-  font-size: 15.5px; line-height: 1.7; color: var(--c-muted);
-  margin: 0 0 30px; text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  font-size: 15.5px; line-height: 1.7; color: var(--cream-dim);
+  margin: 0; max-width: 460px;
 }
-
-.orb-mini-line { display: flex; align-items: center; gap: 14px; }
-.orb-mini-icon {
-  flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg, rgba(4,76,18,0.55), rgba(19,168,50,0.25));
-  border: 1px solid rgba(95,226,122,0.35); font-size: 15px;
-}
-.orb-mini-text { font-size: 13.5px; line-height: 1.55; color: var(--c-cream); }
-.orb-mini-text .dim { color: var(--c-muted); }
 
 .orb-center {
   position: relative; display: flex; flex-direction: column;
@@ -125,12 +120,20 @@
 
 .center-glow {
   position: absolute; width: 380px; height: 380px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(19,168,50,0.32), rgba(4,76,18,0.22) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(19, 168, 50, 0.32), rgba(4, 76, 18, 0.22) 55%, transparent 75%);
   filter: blur(20px); z-index: 0;
+  /* Slow ambient pulse, synced to the ring, so the whole halo feels like
+     it's breathing even before anyone presses "Begin Breathing" */
+  animation: halo-pulse 6s ease-in-out infinite;
 }
 .center-glow::before {
   content: ''; position: absolute; inset: 60px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(2,8,5,0.6) 0%, rgba(2,8,5,0.42) 55%, transparent 78%);
+  background: radial-gradient(circle, rgba(2, 8, 5, 0.6) 0%, rgba(2, 8, 5, 0.42) 55%, transparent 78%);
+}
+
+@keyframes halo-pulse {
+  0%, 100% { transform: scale(1);    opacity: .85; }
+  50%      { transform: scale(1.08); opacity: 1;   }
 }
 
 .orb-container {
@@ -140,76 +143,98 @@
 
 .outer-orbit {
   position: absolute; inset: -28px;
-  border: 1.5px dashed rgba(143,242,169,0.45); border-radius: 50%;
+  border: 1.5px dashed rgba(143, 242, 169, 0.45); border-radius: 50%;
   animation: orbit-spin 40s linear infinite;
 }
 .outer-orbit:nth-of-type(2) {
-  inset: -52px; border-color: rgba(95,226,122,0.32); border-style: dotted;
+  inset: -52px; border-color: rgba(95, 226, 122, 0.32); border-style: dotted;
   animation-duration: 60s; animation-direction: reverse;
 }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 
 .orb-glow {
   position: absolute; inset: 6px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, rgba(19,168,50,0.28), transparent 60%);
+  background: radial-gradient(circle at 35% 30%, rgba(19, 168, 50, 0.28), transparent 60%);
   filter: blur(8px);
 }
 
+/* ── The breathing ring itself ───────────────────────────────
+   Default (idle) state: a slow, calm heartbeat-like pulse — grows and
+   shrinks gently on its own, with no button press required, so the whole
+   section feels alive at rest.
+   Active (guided) state: JS adds .is-running, which turns the idle
+   animation off and hands control to the .inhale-active / .exhale-active
+   classes below, timed to the actual 4s/4s/6s breath cycle. */
 .breathing-ring {
   position: relative; width: 220px; height: 220px; border-radius: 50%;
-  background: radial-gradient(circle at 30% 25%, rgba(7,107,26,0.4), rgba(2,8,5,0.92) 70%);
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 0 0 1.5px rgba(95,226,122,0.35), 0 0 32px rgba(7,107,26,0.32);
+  background: radial-gradient(circle at 30% 25%, rgba(7, 107, 26, 0.4), rgba(2, 8, 5, 0.92) 70%);
   display: flex; align-items: center; justify-content: center;
   transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
+  animation: idle-heartbeat 6s ease-in-out infinite;
 }
+
+@keyframes idle-heartbeat {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 0 0 1.5px rgba(95, 226, 122, 0.3), 0 0 28px rgba(7, 107, 26, 0.3);
+  }
+  50% {
+    transform: scale(1.045);
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 0 0 1.5px rgba(143, 242, 169, 0.42), 0 0 42px rgba(19, 168, 50, 0.4);
+  }
+}
+
+.breathing-ring.is-running { animation: none; }
+
 .breathing-ring.inhale-active {
   transform: scale(1.08);
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 0 0 1.5px rgba(143,242,169,0.55), 0 0 46px rgba(19,168,50,0.5);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5), 0 0 0 1.5px rgba(143, 242, 169, 0.55), 0 0 46px rgba(19, 168, 50, 0.5);
 }
 .breathing-ring.exhale-active {
   transform: scale(0.92);
   transition: transform 6s ease-in-out, box-shadow 6s ease-in-out;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.65), 0 0 0 1.5px rgba(4,76,18,0.6), 0 0 38px rgba(2,26,7,0.5);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.65), 0 0 0 1.5px rgba(4, 76, 18, 0.6), 0 0 38px rgba(2, 26, 7, 0.5);
 }
 
 .orb-content { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .orb-label-top {
   font-family: var(--font-body); font-weight: 600; font-size: 13px;
-  letter-spacing: 0.08em; text-transform: uppercase; color: var(--c-green-pale);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-pale);
   transition: color 0.6s ease;
 }
-.orb-number { font-family: var(--font-display); font-weight: 300; font-size: 64px; line-height: 1; color: var(--c-cream); }
-.orb-unit { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; color: var(--c-muted); }
-
-.orb-tagline { font-size: 13.5px; color: var(--c-cream); text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
+.orb-number { font-family: var(--font-display); font-weight: 300; font-size: 64px; line-height: 1; color: var(--cream); }
+.orb-unit { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.18em; color: var(--cream-muted); }
 
 .orb-right { display: flex; flex-direction: column; align-items: flex-start; }
 
 .breath-steps { margin-bottom: 34px; }
 .step-item { display: flex; align-items: center; gap: 14px; }
-.step-item h5 { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 2px; color: var(--c-cream); }
-.step-item small { font-size: 12.5px; color: var(--c-muted); }
+.step-item h5 { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 2px; color: var(--cream); }
+.step-item small { font-size: 12.5px; color: var(--cream-muted); }
 
 .step-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.04); }
-.step-item.inhale .step-dot { background: var(--c-green-pale); box-shadow: 0 0 10px rgba(143,242,169,0.55); }
-.step-item.hold .step-dot   { background: var(--c-green-bright); box-shadow: 0 0 10px rgba(19,168,50,0.5); }
-.step-item.exhale .step-dot { background: var(--c-green-dark); box-shadow: 0 0 10px rgba(4,76,18,0.55); }
+.step-item.inhale .step-dot { background: var(--green-pale); box-shadow: 0 0 10px rgba(143, 242, 169, 0.55); }
+.step-item.hold .step-dot   { background: var(--green-bright); box-shadow: 0 0 10px rgba(19, 168, 50, 0.5); }
+.step-item.exhale .step-dot { background: var(--green); box-shadow: 0 0 10px rgba(19, 168, 50, 0.5); }
 
-.step-connector { width: 1px; height: 22px; margin-left: 5.5px; background: linear-gradient(180deg, rgba(243,236,227,0.25), rgba(243,236,227,0.05)); }
+.step-connector { width: 1px; height: 22px; margin-left: 5.5px; background: linear-gradient(180deg, rgba(243, 236, 227, 0.25), rgba(243, 236, 227, 0.05)); }
 
+/* Bordered outline button — matches the CTA style used everywhere else
+   on the site (About, Experience, Destinations) */
 .meditation-orb-section .btn-start-breathe {
   display: inline-flex; align-items: center; gap: 12px;
-  padding: 13px 30px; border-radius: 999px;
-  border: 1px solid rgba(95,226,122,0.5);
-  background: linear-gradient(135deg, rgba(4,76,18,0.65), rgba(19,168,50,0.4));
-  box-shadow: 0 0 20px rgba(19,168,50,0.22);
-  color: var(--c-cream); font-family: var(--font-body); font-weight: 600; font-size: 15px;
-  cursor: pointer; transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  padding: 14px 28px; border-radius: 8px;
+  border: 1.5px solid var(--green-bright);
+  background: transparent;
+  color: var(--green-bright); font-family: var(--font-body); font-weight: 600;
+  font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.25s ease;
 }
 .meditation-orb-section .btn-start-breathe:hover {
-  border-color: rgba(143,242,169,0.7);
-  background: linear-gradient(135deg, rgba(4,76,18,0.78), rgba(19,168,50,0.54));
-  transform: translateY(-1px);
+  background: rgba(19, 168, 50, 0.08);
+  border-color: var(--green-pale);
+  color: var(--green-pale);
+  box-shadow: 0 0 24px rgba(19, 168, 50, 0.2);
 }
 .meditation-orb-section .btn-start-breathe .bp { font-size: 13px; }
 
@@ -220,16 +245,22 @@
 .reveal-left.in-view, .reveal.in-view, .reveal-right.in-view { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .orb-shimmer, .outer-orbit, .particle { animation: none !important; }
+  .outer-orbit, .particle, .breathing-ring, .center-glow { animation: none !important; }
   .breathing-ring { transition: none !important; }
 }
 
 @media (max-width: 920px) {
-  .meditation-orb-section { padding: 56px 28px; }
+  .meditation-orb-section { padding: 72px 0; }
   .meditation-layout { grid-template-columns: 1fr; gap: 44px; text-align: center; }
   .meditation-copy h2 { font-size: 34px; }
-  .orb-mini-line { justify-content: center; }
+  .orb-eyebrow, .orb-divider { margin-left: auto; margin-right: auto; }
+  .meditation-copy p { margin-left: auto; margin-right: auto; }
   .orb-center, .orb-right { align-items: center; }
   .breath-steps { align-items: center; }
   .step-item { width: 100%; max-width: 220px; }
+  .orb-frame-corner { width: 20px; height: 20px; }
+  .orb-frame-corner--tl, .orb-frame-corner--tr { top: 16px; }
+  .orb-frame-corner--bl, .orb-frame-corner--br { bottom: 16px; }
+  .orb-frame-corner--tl, .orb-frame-corner--bl { left: 16px; }
+  .orb-frame-corner--tr, .orb-frame-corner--br { right: 16px; }
 }

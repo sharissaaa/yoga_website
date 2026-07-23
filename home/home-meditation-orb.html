@@ -1,9 +1,11 @@
 <section class="meditation-orb-section">
 
-    <img class="orb-bg-image" src="assets/gallery/home-image/orb-bg.png" alt="Sacred lake at sunset surrounded by lotus blossoms and mist" onerror="this.style.display='none'">
+    <span class="orb-frame-corner orb-frame-corner--tl"></span>
+    <span class="orb-frame-corner orb-frame-corner--tr"></span>
+    <span class="orb-frame-corner orb-frame-corner--bl"></span>
+    <span class="orb-frame-corner orb-frame-corner--br"></span>
 
     <div class="orb-noise"></div>
-    <div class="orb-shimmer"></div>
     <div class="orb-particles" id="orbParticles"></div>
 
     <div class="container">
@@ -11,18 +13,12 @@
 
             <div class="meditation-copy reveal-left">
                 <div class="orb-eyebrow">
-                    <div class="eyebrow-pill">
-                        <span class="eyebrow-icon">🌿</span>
-                        <span class="eyebrow-text">PAUSE. BREATHE. BE.</span>
-                    </div>
+                    <span class="orb-eyebrow__text">PAUSE. BREATHE. BE.</span>
+                    <span class="orb-eyebrow__rule"></span>
                 </div>
                 <h2>Return to Stillness<br>Beside the <span class="hl">Sacred Lake</span></h2>
-                <div class="orb-divider"></div>
+                <span class="orb-divider"></span>
                 <p>Let the gentle water, morning mist, and lotus blossoms guide you back to the present moment.</p>
-                <div class="orb-mini-line">
-                    <span class="orb-mini-icon">🌿</span>
-                    <span class="orb-mini-text">Breathe with nature.<br><span class="dim">Inhale peace. Exhale tension.</span></span>
-                </div>
             </div>
 
             <div class="orb-center reveal">
@@ -39,7 +35,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="orb-tagline"> Find your calm among the lotus waters.</div>
             </div>
 
             <div class="orb-right reveal-right">
@@ -152,6 +147,9 @@ function tick() {
 function toggleBreathing() {
     running = !running;
     if (running) {
+        // Hand control over from the slow idle "resting heartbeat" pulse
+        // to the actual guided inhale/hold/exhale timing.
+        ringEl.classList.add('is-running');
         pi = 0; cnt = phases[0].sec;
         applyPhase();
         timer = setInterval(tick, 1000);
@@ -160,7 +158,7 @@ function toggleBreathing() {
     } else {
         clearInterval(timer);
         pi = 0; cnt = phases[0].sec;
-        ringEl.classList.remove('inhale-active', 'exhale-active');
+        ringEl.classList.remove('inhale-active', 'exhale-active', 'is-running');
         labelEl.textContent = 'Inhale';
         labelEl.style.color = '#8FF2A9';
         numEl.textContent = '4';

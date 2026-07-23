@@ -1,77 +1,101 @@
 <!-- ══════════════════════════════════════════ -->
-<!-- EXPERIENCES SECTION -->
+<!-- EXPERIENCES SECTION — TAB & STAGE SHOWCASE -->
 <!-- ══════════════════════════════════════════ -->
 
 <section class="exp-section">
     <div class="container">
-        <div class="exp-layout">
-            <!-- LEFT CONTENT -->
-            <div class="exp-left reveal-left">  
-                <h2>
-                    <a href="course.html" class="exp-left__link">Teachings and Courses</a>
-                </h2>
+
+        <!-- INTRO -->
+        <div class="exp-intro reveal-left">
+            <span class="exp-intro__eyebrow">OUR OFFERINGS</span>
+            <h2>Teachings<br>and Courses</h2>
+            <span class="exp-intro__divider"></span>
+            <p class="exp-intro__desc">
+                Explore our range of teachings and courses designed to support your journey of
+                self-discovery, healing and inner transformation.
+            </p>
+            <a href="course.html" class="exp-intro__cta">
+                <span>EXPLORE ALL COURSES</span>
+                <span class="exp-intro__cta-arrow">→</span>
+            </a>
+        </div>
+
+        <!-- SHOWCASE -->
+        <div class="exp-showcase reveal">
+
+            <!-- Tab selector -->
+            <div class="exp-tabs" role="tablist" aria-label="Courses">
+                <button class="exp-tab is-active" type="button" role="tab" aria-selected="true" data-exp-tab="0">
+                    <span class="exp-tab__index">01</span>
+                    <span class="exp-tab__title">Sadhana Immersion</span>
+                </button>
+                <button class="exp-tab" type="button" role="tab" aria-selected="false" data-exp-tab="1">
+                    <span class="exp-tab__index">02</span>
+                    <span class="exp-tab__title">Yoga TTC Online</span>
+                </button>
+                <button class="exp-tab" type="button" role="tab" aria-selected="false" data-exp-tab="2">
+                    <span class="exp-tab__index">03</span>
+                    <span class="exp-tab__title">Prana Vidya Courses Online</span>
+                </button>
+                <button class="exp-tab" type="button" role="tab" aria-selected="false" data-exp-tab="3">
+                    <span class="exp-tab__index">04</span>
+                    <span class="exp-tab__title">Regular guided practice and Meditation Online</span>
+                </button>
             </div>
 
-            <!-- RIGHT CARDS -->
-            <div class="exp-right">
-
-                <div class="exp-cards-row">
-
-                    <!-- CARD 1 -->
-                    <div class="exp-card reveal">
-                        <div class="exp-icon-wrap">
-                            <img src="assets/gallery/home-image/yogapose.png"
-                                alt="Yoga TTC Online"
-                                class="exp-icon-img">
-                        </div>
-                        <h4 class="exp-card-title">Yoga TTC Online</h4>
-                        
-                    </div>
-
-                    <!-- CARD 2 -->
-                    <div class="exp-card reveal">
-                        <div class="exp-icon-wrap">
-                            <img src="assets/gallery/home-image/spirit.png"
-                                alt="Sadhana Immersion"
-                                class="exp-icon-img">
-                        </div>
-                        <h4 class="exp-card-title">Sadhana Immersion Residential in India</h4>
-                        
-                    </div>
-
-                    <!-- CARD 3 -->
-                    <div class="exp-card reveal">
-                        <div class="exp-icon-wrap">
-                            <img src="assets/gallery/home-image/mortar.png"
-                                alt="Prana Vidya"
-                                class="exp-icon-img">
-                        </div>
-                        <h4 class="exp-card-title">Prana Vidya Courses Online</h4>
-                        
-                    </div>
-
-                    <!-- CARD 4 -->
-                    <div class="exp-card reveal">
-                        <div class="exp-icon-wrap">
-                            <img src="assets/gallery/home-image/spirit.png"
-                                alt="Meditation"
-                                class="exp-icon-img">
-                        </div>
-                        <h4 class="exp-card-title">Regular guided practice and Meditation Online</h4>
-                    </div>
-
+            <!-- Stage -->
+            <div class="exp-stage">
+                <!-- Background image layers — one per course that has a
+                     photo. Only "Sadhana Immersion" (index 0) has one for
+                     now; add more <div class="exp-stage__bg" data-exp-bg="N">
+                     blocks the same way to give other courses a photo too. -->
+                <div class="exp-stage__bg is-active" data-exp-bg="0">
+                    <img src="assets/gallery/home-image/course-sadhana.png" alt="">
                 </div>
 
-            </div>
+                <span class="exp-stage__corner exp-stage__corner--tl"></span>
+                <span class="exp-stage__corner exp-stage__corner--tr"></span>
+                <span class="exp-stage__corner exp-stage__corner--bl"></span>
+                <span class="exp-stage__corner exp-stage__corner--br"></span>
+                <div class="exp-stage__glow"></div>
 
-            <!-- RIGHT ARROW -->
-            <div class="exp-slider-arrow">
-    <button class="exp-main-arrow" aria-label="Next experience">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 6 15 12 9 18"></polyline>
-        </svg>
-    </button>
-</div>
+                <div class="exp-stage__panel is-active" data-exp-panel="0">
+                    <span class="exp-stage__eyebrow">COURSE 01 / 04</span>
+                    <h3 class="exp-stage__title">Sadhana Immersion</h3>
+                    <span class="exp-stage__sub">Residential in India</span>
+                    <a href="course.html" class="exp-stage__cta">
+                        <span>View Course</span>
+                        <span class="exp-stage__cta-arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="exp-stage__panel" data-exp-panel="1">
+                    <span class="exp-stage__eyebrow">COURSE 02 / 04</span>
+                    <h3 class="exp-stage__title">Yoga TTC Online</h3>
+                    <a href="course.html" class="exp-stage__cta">
+                        <span>View Course</span>
+                        <span class="exp-stage__cta-arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="exp-stage__panel" data-exp-panel="2">
+                    <span class="exp-stage__eyebrow">COURSE 03 / 04</span>
+                    <h3 class="exp-stage__title">Prana Vidya Courses Online</h3>
+                    <a href="course.html" class="exp-stage__cta">
+                        <span>View Course</span>
+                        <span class="exp-stage__cta-arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="exp-stage__panel" data-exp-panel="3">
+                    <span class="exp-stage__eyebrow">COURSE 04 / 04</span>
+                    <h3 class="exp-stage__title">Regular guided practice<br>and Meditation Online</h3>
+                    <a href="course.html" class="exp-stage__cta">
+                        <span>View Course</span>
+                        <span class="exp-stage__cta-arrow">→</span>
+                    </a>
+                </div>
+            </div>
 
         </div>
 
@@ -81,3 +105,38 @@
 
     </div>
 </section>
+
+<script>
+(function () {
+    var tabs   = document.querySelectorAll('[data-exp-tab]');
+    var panels = document.querySelectorAll('[data-exp-panel]');
+    var bgs    = document.querySelectorAll('[data-exp-bg]');
+    if (!tabs.length || !panels.length) return;
+
+    function activate(index) {
+        tabs.forEach(function (tab) {
+            var isActive = tab.getAttribute('data-exp-tab') === String(index);
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        panels.forEach(function (panel) {
+            panel.classList.toggle('is-active', panel.getAttribute('data-exp-panel') === String(index));
+        });
+        // Only courses with a matching [data-exp-bg] get a background photo;
+        // switching to any other course just fades it back out, leaving the
+        // plain dark stage for those.
+        bgs.forEach(function (bg) {
+            bg.classList.toggle('is-active', bg.getAttribute('data-exp-bg') === String(index));
+        });
+    }
+
+    tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            activate(tab.getAttribute('data-exp-tab'));
+        });
+        tab.addEventListener('mouseenter', function () {
+            activate(tab.getAttribute('data-exp-tab'));
+        });
+    });
+})();
+</script>
