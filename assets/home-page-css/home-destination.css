@@ -95,6 +95,14 @@
 .dest-card:hover { transform: translateY(-8px); }
 .dest-card:hover img { transform: scale(1.08); }
 
+/* Small date line — sits under the subtitle line on every card */
+.dest-content__dates {
+  font-size: .74rem;
+  letter-spacing: .06em;
+  color: rgba(199,163,92,.85);
+  margin-top: 4px;
+}
+
 /* Thin gold divider under the subtitle */
 .dest-content__divider {
   display: block;

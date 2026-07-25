@@ -4,14 +4,19 @@
   <div class="site-footer__brand">
     <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
     <span class="site-footer__logo-text">BHUMI MANTRA</span>
-    <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing, ritual and transformation.</p>
+    <!-- Tagline slot now holds the Yoga Sutra verse supplied by the client. -->
+    <blockquote class="site-footer__tagline site-footer__verse">
+      <p class="site-footer__verse-sanskrit" lang="sa">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+      <p class="site-footer__verse-translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+      <p class="site-footer__verse-meaning">Then pure awareness is established in itself.</p>
+    </blockquote>
   </div>
 
   <nav class="site-footer__col" aria-label="Quick links">
     <h3 class="site-footer__col-heading">Quick Links</h3>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="course.html">Explore The Teachings</a></li>
+      <li><a href="course.html">Courses</a></li>
       <li><a href="travel.html">Destinations</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -21,17 +26,15 @@
   <nav class="site-footer__col" aria-label="Our offerings">
     <h3 class="site-footer__col-heading">Our Offerings</h3>
     <ul>
-      <li><a href="travel.html">Sacred Journeys</a></li>
-      <li><a href="course.html">Retreats &amp; Immersions</a></li>
-      <li><a href="course.html">Ceremony &amp; Ritual</a></li>
-      <li><a href="course.html">Private Sessions</a></li>
-      <li><a href="course.html">Wellness Programs</a></li>
+      <li><a href="course.html">Sadhana Immersion</a></li>
+      <li><a href="course.html">Yoga TTC Online</a></li>
+      <li><a href="course.html">Prana Vidya Courses Online</a></li>
+      <li><a href="course.html">Regular Guided Practice &amp; Meditation Online</a></li>
     </ul>
   </nav>
 
   <div class="site-footer__col site-footer__col--newsletter">
-    <h3 class="site-footer__col-heading">Stay Connected</h3>
-    <p>Join our circle for stories, rituals and journey updates.</p>
+    <h3 class="site-footer__col-heading">Join Our Community</h3>
     <form class="site-newsletter-form" onsubmit="return false;" autocomplete="off">
       <label for="newsletterEmail" class="sr-only">Your email address</label>
       <input
@@ -70,7 +73,8 @@
 
   <div class="site-footer__bottom">
     <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-    <img src="assets/gallery/home-image/lotus-orb.png" alt="" class="site-footer__lotus">
+    <!-- Replaced the lotus mark with the site logo, per feedback -->
+    <img src="assets/gallery/home-image/logo.png" alt="Bhumi Mantra" class="site-footer__lotus">
   </div>
 </footer>
 <!-- ================= /FOOTER ================= -->
@@ -80,21 +84,21 @@
     var siteNav = document.getElementById('siteNav');
     var burger = document.getElementById('navBurger');
     var links = document.getElementById('navLinks');
-    if (!burger || !links) return;
-
-    burger.addEventListener('click', function () {
-      var open = links.classList.toggle('is-open');
-      burger.classList.toggle('is-open', open);
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-
-    links.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        links.classList.remove('is-open');
-        burger.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
+    if (burger && links) {
+      burger.addEventListener('click', function () {
+        var open = links.classList.toggle('is-open');
+        burger.classList.toggle('is-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-    });
+
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          links.classList.remove('is-open');
+          burger.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
 
     if (siteNav) {
       var onScroll = function () {
@@ -103,5 +107,38 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+  })();
+
+  /* ── Site-wide scroll reveal ─────────────────────────────────
+     Every section on the home page uses .reveal / .reveal-left /
+     .reveal-right to fade+slide in on scroll (see main.css for the
+     base styles). This single observer — added once here in the
+     shared footer include so every page gets it automatically —
+     watches for all of them and adds .visible (or .in-view, used
+     by a couple of older sections) once each element scrolls into
+     view, so nothing needs its own duplicate observer script. */
+  (function () {
+    var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (!targets.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (t) {
+        t.classList.add('visible');
+        t.classList.add('in-view');
+      });
+      return;
+    }
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    targets.forEach(function (t) { obs.observe(t); });
   })();
 </script>

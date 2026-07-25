@@ -72,10 +72,6 @@ body {
   overflow-x: hidden;
 }
 
-body.loading {
-  overflow: hidden;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -87,9 +83,6 @@ img {
 }
 ul {
   list-style: none;
-}
-body.loading {
-  overflow: hidden;
 }
 
 ::-webkit-scrollbar { width: 3px; }
@@ -107,15 +100,20 @@ body.loading {
   margin-bottom: 10px;
 }
 
+/* Primary CTA — was solid crimson/red per the old design; client asked
+   for the red to be taken out, so this is now the same gold treatment
+   used everywhere else on the site. --crimson-btn/--crimson-mid are
+   kept defined above (harmless) in case something else still
+   references them, but this button no longer uses them. */
 .btn-primary-sy {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  background: var(--crimson-btn);
-  color: var(--off-white);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold));
+  color: var(--lux-black);
   font-family: var(--font-body);
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 12px 22px;
@@ -125,10 +123,10 @@ body.loading {
   white-space: nowrap;
 }
 .btn-primary-sy:hover {
-  background: var(--crimson-mid);
+  background: linear-gradient(180deg, var(--gold), var(--gold-dim));
   transform: translateY(-1px);
-  box-shadow: 0 8px 28px rgba(139, 28, 28, 0.4);
-  color: var(--off-white);
+  box-shadow: 0 8px 28px rgba(200, 146, 42, 0.35);
+  color: var(--lux-black);
 }
 
 .btn-outline-sy {
@@ -215,7 +213,8 @@ body.loading {
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
 .reveal-left { opacity: 0; transform: translateX(-26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
 .reveal-right { opacity: 0; transform: translateX(26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
-.reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0, 0); }
+.reveal.visible, .reveal-left.visible, .reveal-right.visible,
+.reveal.in-view, .reveal-left.in-view, .reveal-right.in-view { opacity: 1; transform: translate(0, 0); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

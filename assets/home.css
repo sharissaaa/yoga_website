@@ -17,11 +17,16 @@
 
 /* ════════════════════════════════════════════════════════════════
    1. HERO — SCROLL-STORY
-════════════════════════════════════════════════════════════════ */
 
-/* ════════════════════════════════════════════════
-   SCROLL-STORY HERO
-════════════════════════════════════════════════ */
+   NOTE: unchanged in this update. The client's hero feedback
+   (removing panel copy like "Lights moving" / "Watch your journey" /
+   "Soundscape on" / "Journey inward", swapping "yoga journeys" text,
+   the new hero photo, and the loading screen on Home) all lives in
+   the hero markup itself, which wasn't included in what was shared —
+   that content sits in index.html, not any of these section files.
+   Flagging this so it doesn't get missed; send that file over and
+   these can go in the same pass.
+════════════════════════════════════════════════════════════════ */
 
 .scrollstory {
   --gold:        #C9922A;
@@ -33,28 +38,21 @@
   --font-body:    'Manrope', sans-serif;
 }
 
-/* The tall scroll runway. 500vh ≈ 4 screen-heights of scrolling to move
-   through: intro → panel 1 → panel 2 → panel 3. Increase/decrease this
-   to make the whole sequence take more or less scrolling. */
 .scrollstory {
   position: relative;
   height: 500vh;
   background: var(--dark);
 }
 
-/* The actual visible stage — pinned to the viewport for the entire
-   height of .scrollstory above, then released back into normal flow
-   once the user scrolls past it. */
 .scrollstory__pin {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: var(--nav-h, 76px);
+  height: calc(100vh - var(--nav-h, 76px));
   overflow: hidden;
   color: var(--cream);
   font-family: var(--font-body);
 }
 
-/* ── Background photo ────────────────────────────────────────── */
 .scrollstory__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
 .scrollstory__bg-img {
   position: absolute; inset: 0;
@@ -62,10 +60,8 @@
   object-fit: cover; object-position: center;
   will-change: transform, opacity;
   transform-origin: center center;
-  opacity: 0; /* JS controls the actual crossfade each frame */
+  opacity: 0;
 }
-/* heropose.png is the starting image — visible immediately, before any
-   JS has run on the very first paint */
 #ssImg0 { opacity: 1; }
 .scrollstory__overlay {
   position: absolute; inset: 0;
@@ -75,7 +71,6 @@
   will-change: opacity;
 }
 
-/* Intro stays centered — it's the opening splash moment */
 .scrollstory__intro {
   position: absolute;
   top: 50%; left: 50%;
@@ -86,10 +81,6 @@
   will-change: transform, opacity;
 }
 
-/* Panels: asymmetric, full-bleed editorial hero layout — left-aligned,
-   generous negative space, text sitting directly on the photo (no boxed
-   "card" background). Legibility comes from the overlay gradient below,
-   the same technique premium travel/hospitality hero banners use. */
 .scrollstory__panel {
   position: absolute;
   top: 50%; left: 7%;
@@ -102,8 +93,6 @@
   will-change: transform, opacity, filter;
 }
 
-/* Large faint numeral bleeding off to the right of the text — a scale
-   cue and decorative flourish, not a boxed element */
 .ss-panel__ghost-num {
   position: absolute;
   top: 50%; left: 100%;
@@ -129,7 +118,6 @@
   margin: 22px 0 26px;
 }
 
-/* ── Intro content ──────────────────────────────────────────────── */
 .ss-eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 26px; }
 .ss-eyebrow__text { font-weight: 600; font-size: 11px; letter-spacing: 0.28em; color: var(--gold-light); }
 .ss-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.6; }
@@ -165,7 +153,6 @@
 }
 .ss-scroll-cue__text { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; color: var(--cream-dim); }
 
-/* ── Panel content ─────────────────────────────────────────────── */
 .ss-panel__eyebrow {
   display: inline-block; font-weight: 600; font-size: 11px; letter-spacing: 0.28em;
   color: var(--gold-light); margin-bottom: 24px;
@@ -200,10 +187,6 @@
 .ss-panel__cta-arrow { font-size: 0.85rem; transition: transform 0.3s ease; }
 .ss-panel__cta:hover .ss-panel__cta-arrow { transform: translateX(4px); }
 
-/* ── Progress dots ───────────────────────────────────────────────
-   Fixed to the right edge, only shown while the story is actually
-   pinned/mid-sequence — hidden before you scroll to it or after
-   you've scrolled past it entirely. */
 .scrollstory__dots {
   position: fixed;
   right: 28px; top: 50%;
@@ -231,13 +214,9 @@
 }
 
 @media (max-width: 768px) {
-  .scrollstory { height: 420vh; } /* slightly shorter runway on mobile */
+  .scrollstory { height: 420vh; }
   .scrollstory__dots { right: 14px; gap: 12px; }
   .ss-dot { width: 7px; height: 7px; }
-
-  /* The left-bleed editorial layout needs room to breathe — on narrow
-     screens, center the panel instead and drop the bleeding ghost
-     numeral rather than cramping both against the text. */
   .scrollstory__panel {
     left: 50%;
     width: min(88%, 480px);
@@ -253,14 +232,7 @@
    2. TEACHINGS & COURSES
 ════════════════════════════════════════════════════════════════ */
 
-/* ════════════════════════════════════════════════
-   SOUL YATRA — EXPERIENCE SECTION (tab & stage showcase)
-════════════════════════════════════════════════ */
-
 .exp-section {
-  /* Starts on the same dark maroon (#0D0101) the About section above ends
-     on, then eases into this section's own black/brown gradient — removes
-     the hard visible seam between the two sections. */
   background: linear-gradient(180deg, #0D0101 0%, #0a0706 10%, #080808 26%, #0c0a08 55%, #0d0b09 100%);
   padding-top: 64px;
   padding-bottom: 56px;
@@ -277,15 +249,10 @@
   height: 340px;
   pointer-events: none;
   background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200, 146, 42, 0.07), transparent 100%);
-  /* Fades the glow itself in over the first ~35% of its own height, instead
-     of switching on at near-full strength the instant this section starts —
-     that abrupt "turn on" right at the boundary was the real cause of the
-     visible cut, not a color mismatch. */
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 35%, black 100%);
           mask-image: linear-gradient(180deg, transparent 0%, black 35%, black 100%);
 }
 
-/* ── Intro block ─────────────────────────────────────────── */
 .exp-intro { max-width: 560px; margin: 0 auto 40px; text-align: center; position: relative; z-index: 1; }
 
 .exp-intro__eyebrow {
@@ -316,10 +283,8 @@
 .exp-intro__cta-arrow { font-size: 0.85rem; line-height: 1; transition: transform .3s ease; }
 .exp-intro__cta:hover .exp-intro__cta-arrow { transform: translateX(3px); }
 
-/* ── Showcase shell ──────────────────────────────────────── */
 .exp-showcase { position: relative; z-index: 1; width: 100%; }
 
-/* Tab selector — a row of four toggle buttons */
 .exp-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -379,7 +344,6 @@
 .exp-tab.is-active .exp-tab__title,
 .exp-tab:hover .exp-tab__title { color: #f7f4ec; }
 
-/* Stage — the large focal panel below the tabs */
 .exp-stage {
   position: relative;
   z-index: 0;
@@ -394,21 +358,35 @@
   background: linear-gradient(160deg, rgba(24, 20, 17, .5) 0%, rgba(12, 10, 9, .3) 100%);
 }
 
-/* ── Background photo layer (course-specific, optional) ──────
-   Sits behind the glow/corners/text. Courses without a matching
-   [data-exp-bg] element just show the plain dark stage above. */
-.exp-stage__bg {
+.exp-stage__bg-carousel {
   position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity .7s ease;
   pointer-events: none;
 }
-.exp-stage__bg.is-active { opacity: 1; }
 
-.exp-stage__bg img {
+.exp-stage__bg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: expBgCarouselFade 25s infinite;
+}
+.exp-stage__bg-slide:nth-child(1) { animation-delay: 0s;   }
+.exp-stage__bg-slide:nth-child(2) { animation-delay: -5s;  }
+.exp-stage__bg-slide:nth-child(3) { animation-delay: -10s; }
+.exp-stage__bg-slide:nth-child(4) { animation-delay: -15s; }
+.exp-stage__bg-slide:nth-child(5) { animation-delay: -20s; }
+
+@keyframes expBgCarouselFade {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }
+  16%  { opacity: 1; }
+  20%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.exp-stage__bg-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -416,14 +394,13 @@
   display: block;
 }
 
-/* Darkens the photo so the centered title/CTA stay legible on any image */
-.exp-stage__bg::after {
+.exp-stage__bg-slide::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(8, 6, 4, .55), rgba(8, 6, 4, .82) 75%),
-    linear-gradient(180deg, rgba(8, 6, 4, .5) 0%, rgba(8, 6, 4, .35) 40%, rgba(8, 6, 4, .75) 100%);
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(8, 6, 4, .35), rgba(8, 6, 4, .6) 75%),
+    linear-gradient(180deg, rgba(8, 6, 4, .32) 0%, rgba(8, 6, 4, .2) 40%, rgba(8, 6, 4, .55) 100%);
 }
 
 .exp-stage__glow {
@@ -436,7 +413,6 @@
   z-index: 0;
 }
 
-/* Ornamental corner brackets */
 .exp-stage__corner { position: absolute; width: 26px; height: 26px; border: 1px solid rgba(199, 163, 92, .5); pointer-events: none; z-index: 1; }
 .exp-stage__corner--tl { top: 16px; left: 16px; border-right: none; border-bottom: none; }
 .exp-stage__corner--tr { top: 16px; right: 16px; border-left: none; border-bottom: none; }
@@ -501,8 +477,6 @@
 .exp-stage__cta-arrow { font-size: 0.95rem; line-height: 1; transition: transform .3s ease; }
 .exp-stage__cta:hover .exp-stage__cta-arrow { transform: translateX(4px); }
 
-/* Bridge divider — connects this section visually into Destinations
-   right below it, so the two read as one continuous block */
 .exp-dest-bridge {
   margin: 56px auto 0;
   width: 50%;
@@ -540,12 +514,8 @@
    3. DESTINATIONS
 ════════════════════════════════════════════════════════════════ */
 
-/* ════════════════════════════════════════════════
-   DESTINATIONS
-════════════════════════════════════════════════ */
-
 .dest-section {
-  background: linear-gradient(180deg, #0d0b09 0%, #0d0b09 40%, #120e0b 100%);
+  background: linear-gradient(180deg, #0d0b09 0%, #0d0b09 60%, #0d0b09 100%);
   padding-top: 0;
   padding-bottom: 90px;
   margin-top: 0;
@@ -558,6 +528,22 @@
   inset: 0;
   pointer-events: none;
   background: radial-gradient(circle at top center, transparent 60%);
+}
+
+.dest-section::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 320px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 100%, rgba(19, 168, 50, 0.09), transparent 70%),
+    linear-gradient(180deg, transparent 0%, #0d0b09 75%);
+}
+
+.dest-section .container {
+  max-width: 1500px;
+  padding: 0 16px;
 }
 
 .dest-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 42px; gap: 30px; }
@@ -580,7 +566,6 @@
 .dest-view-all__arrow { font-size: .95rem; line-height: 1; transition: transform .3s ease; }
 .dest-view-all:hover .dest-view-all__arrow { transform: translateX(3px); }
 
-/* ── Layout: one large featured card (Rishikesh) + a 2x2 grid ── */
 .dest-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
@@ -609,7 +594,13 @@
 .dest-card:hover { transform: translateY(-8px); }
 .dest-card:hover img { transform: scale(1.08); }
 
-/* Thin gold divider under the subtitle */
+.dest-content__dates {
+  font-size: .74rem;
+  letter-spacing: .06em;
+  color: rgba(199,163,92,.85);
+  margin-top: 4px;
+}
+
 .dest-content__divider {
   display: block;
   width: 26px;
@@ -618,7 +609,6 @@
   margin: 12px 0 0;
 }
 
-/* "Explore →" link — feature card only */
 .dest-content__explore {
   display: inline-flex; align-items: center; gap: 10px; margin-top: 12px;
   color: rgba(199,163,92,.9); text-decoration: none;
@@ -629,7 +619,6 @@
 .dest-content__explore-arrow { font-size: .95rem; line-height: 1; transition: transform .3s ease; }
 .dest-content__explore:hover .dest-content__explore-arrow { transform: translateX(4px); }
 
-/* Smaller cards keep tighter type since they have less room */
 .dest-card:not(.dest-card--feature) .dest-content h3 { font-size: 1.5rem; }
 .dest-card:not(.dest-card--feature) .dest-content p { font-size: .82rem; }
 
@@ -657,6 +646,7 @@
   .dest-card:not(.dest-card--feature) .dest-content p { font-size: .78rem; }
 }
 @media (max-width: 480px) {
+  .dest-section .container { padding: 0 12px; }
   .dest-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 240px repeat(4, 200px);
@@ -676,7 +666,6 @@
    4. BREATHING
 ════════════════════════════════════════════════════════════════ */
 
-
 .meditation-orb-section {
   --green-deepest: #021A07;
   --green-dark:    #044C12;
@@ -684,6 +673,9 @@
   --green-bright:  #13A832;
   --green-light:   #5FE27A;
   --green-pale:    #8FF2A9;
+  --gold:          #C9A24B;
+  --gold-bright:   #F0DFA6;
+  --gold-dim:      rgba(201, 162, 75, 0.4);
   --cream:         #F3ECE3;
   --cream-dim:     rgba(243, 236, 227, 0.82);
   --cream-muted:   #C7D6CB;
@@ -717,43 +709,8 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Ornamental corner frame — now hugs the actual content column (tied to
-   .container) instead of floating far out at the section's outer edges,
-   so it reads as a deliberate frame around the layout rather than
-   disconnected corner marks */
 .container { position: relative; z-index: 3; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
-.orb-frame-corner {
-  position: absolute;
-  width: 26px; height: 26px;
-  border: 1px solid rgba(95, 226, 122, 0.4);
-  pointer-events: none;
-  z-index: 4;
-}
-.orb-frame-corner--tl { top: -36px; left: 8px;  border-right: none; border-bottom: none; }
-.orb-frame-corner--tr { top: -36px; right: 8px; border-left: none;  border-bottom: none; }
-.orb-frame-corner--bl { bottom: -36px; left: 8px;  border-right: none; border-top: none; }
-.orb-frame-corner--br { bottom: -36px; right: 8px; border-left: none;  border-top: none; }
-
-.orb-particles { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
-.particle {
-  position: absolute; border-radius: 50%; background: var(--green-bright);
-  box-shadow: 0 0 6px 1px rgba(19, 168, 50, 0.5); opacity: 0;
-  animation: float-up var(--dur) ease-in var(--delay) infinite;
-}
-.particle:nth-of-type(3n) { background: var(--green-pale); box-shadow: 0 0 6px 1px rgba(143, 242, 169, 0.5); }
-.particle:nth-of-type(5n) { background: var(--green); box-shadow: 0 0 6px 1px rgba(19, 168, 50, 0.5); }
-
-@keyframes float-up {
-  0%   { opacity: 0; transform: translateY(0) scale(0.8); }
-  15%  { opacity: 0.85; }
-  85%  { opacity: 0.4; }
-  100% { opacity: 0; transform: translateY(-90px) scale(1.1); }
-}
-
-/* Tighter, better-balanced grid — narrower gap, columns weighted so the
-   orb reads as the clear focal point without the side columns feeling
-   like they're floating in empty space */
 .meditation-layout {
   display: grid;
   grid-template-columns: 1.1fr 1fr 0.85fr;
@@ -761,7 +718,6 @@
   gap: 24px;
 }
 
-/* ── Eyebrow ─────────────────────────────────────────────── */
 .orb-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
 .orb-eyebrow--right { justify-content: flex-start; margin-bottom: 22px; }
 .orb-eyebrow__text {
@@ -817,6 +773,9 @@
   display: flex; align-items: center; justify-content: center; margin-bottom: 0;
 }
 
+/* Just two calm, slow-turning rings — trimmed back down from a busier
+   6-ring version per feedback, to remove the extra "small light and
+   movement" and restore the simpler look. */
 .outer-orbit {
   position: absolute; inset: -28px;
   border: 1.5px dashed rgba(143, 242, 169, 0.45); border-radius: 50%;
@@ -828,36 +787,21 @@
 }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 
-/* ── Countdown progress ring ─────────────────────────────────
-   Hidden (faint track only) at rest; becomes visible and fills in over
-   each phase once a guided session is running */
-.orb-progress {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  overflow: visible;
-  pointer-events: none;
-}
-.orb-progress__track {
-  fill: none;
-  stroke: rgba(95, 226, 122, 0.14);
-  stroke-width: 2;
-}
-.orb-progress__fill {
-  fill: none;
-  stroke: var(--green-pale);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-dashoffset: 1005; /* full circumference — starts empty */
-  opacity: 0;
-  transition: stroke-dashoffset 1s linear, stroke 0.4s ease, opacity 0.4s ease;
-}
-.orb-progress.is-visible .orb-progress__fill { opacity: 1; }
-
 .orb-glow {
   position: absolute; inset: 6px; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, rgba(19, 168, 50, 0.28), transparent 60%);
   filter: blur(8px);
+}
+
+.ring-inner-accent {
+  position: absolute; inset: 14px; border-radius: 50%;
+  border: 1px solid rgba(143, 242, 169, 0.18);
+  pointer-events: none;
+}
+.ring-inner-accent::before {
+  content: '';
+  position: absolute; inset: 5px; border-radius: 50%;
+  border: 1px solid rgba(212, 175, 100, 0.14);
 }
 
 .breathing-ring {
@@ -903,26 +847,16 @@
 .orb-right { display: flex; flex-direction: column; align-items: flex-start; }
 
 .breath-steps { margin-bottom: 30px; width: 100%; }
-.step-item { display: flex; align-items: center; gap: 16px; }
-
-/* Numbered step indicators — matches the "01 / 02 / 03" index style
-   used on the Teachings & Courses stage, tying the two sections together */
-.step-index {
-  display: flex; align-items: center; justify-content: center;
-  width: 30px; height: 30px; border-radius: 50%;
-  font-family: var(--font-display); font-size: 13px; font-weight: 500;
-  color: var(--cream); flex-shrink: 0;
-  border: 1px solid rgba(95, 226, 122, 0.35);
-  background: rgba(19, 168, 50, 0.06);
-}
-.step-item.inhale .step-index { border-color: rgba(143, 242, 169, 0.55); color: var(--green-pale); }
-.step-item.hold   .step-index { border-color: rgba(19, 168, 50, 0.55);  color: var(--green-bright); }
-.step-item.exhale .step-index { border-color: rgba(7, 107, 26, 0.55);   color: var(--green-light); }
-
+.step-item { display: flex; align-items: center; gap: 14px; position: relative; padding: 3px 0; }
 .step-item h5 { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 2px; color: var(--cream); }
 .step-item small { font-size: 12.5px; color: var(--cream-muted); }
 
-.step-connector { width: 1px; height: 22px; margin-left: 20px; background: linear-gradient(180deg, rgba(243, 236, 227, 0.25), rgba(243, 236, 227, 0.05)); }
+.step-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(255,255,255,0.04); }
+.step-item.inhale .step-dot { background: var(--green-pale); box-shadow: 0 0 10px rgba(143, 242, 169, 0.55); }
+.step-item.hold .step-dot   { background: var(--gold-bright); box-shadow: 0 0 10px rgba(212, 175, 100, 0.5); }
+.step-item.exhale .step-dot { background: var(--green); box-shadow: 0 0 10px rgba(19, 168, 50, 0.5); }
+
+.step-connector { width: 1px; height: 22px; margin-left: 5.5px; background: linear-gradient(180deg, rgba(243, 236, 227, 0.25), rgba(243, 236, 227, 0.05)); }
 
 .meditation-orb-section .btn-start-breathe {
   display: inline-flex; align-items: center; justify-content: center; gap: 12px;
@@ -942,6 +876,16 @@
 }
 .meditation-orb-section .btn-start-breathe .bp { font-size: 13px; }
 
+.orb-ripple {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle, rgba(143, 242, 169, 0.32) 0%, transparent 70%);
+  transform: scale(0); opacity: 0.9;
+  animation: ripple-out 0.7s ease-out forwards;
+}
+@keyframes ripple-out {
+  to { transform: scale(1); opacity: 0; }
+}
+
 .reveal-left, .reveal, .reveal-right {
   opacity: 0; transform: translateY(16px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -949,9 +893,8 @@
 .reveal-left.in-view, .reveal.in-view, .reveal-right.in-view { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
-  .outer-orbit, .particle, .breathing-ring, .center-glow { animation: none !important; }
+  .outer-orbit, .breathing-ring, .center-glow { animation: none !important; }
   .breathing-ring { transition: none !important; }
-  .orb-progress__fill { transition: opacity 0.4s ease !important; }
 }
 
 @media (max-width: 920px) {
@@ -963,20 +906,13 @@
   .orb-center, .orb-right { align-items: center; }
   .breath-steps { align-items: center; max-width: 240px; margin-left: auto; margin-right: auto; }
   .step-item { width: 100%; }
-  .step-connector { margin-left: 20px; }
-  .orb-frame-corner { width: 18px; height: 18px; }
-  .orb-frame-corner--tl, .orb-frame-corner--tr { top: -24px; }
-  .orb-frame-corner--bl, .orb-frame-corner--br { bottom: -24px; }
+  .step-connector { margin-left: 5.5px; }
 }
 
 
 /* ════════════════════════════════════════════════════════════════
    5. ABOUT US
 ════════════════════════════════════════════════════════════════ */
-
-/* ============================================================
-   BHUMI MANTRA — ABOUT SECTION
-   ============================================================ */
 
 .about-hero, .about-essence {
   --gold:          #C9922A;
@@ -1010,18 +946,6 @@
   color: var(--cream);
   overflow: hidden;
   position: relative;
-
-  /* ── Gradual "curtain over the hero" reveal ────────────────────
-     Assumes this section directly follows the pinned scroll-story
-     hero (.scrollstory, 500vh tall with a sticky inner stage) in the
-     DOM. Pulling this section up with a negative top margin makes its
-     top edge start overlapping the final stretch of the hero's scroll
-     range; combined with a higher z-index and an opaque background,
-     that means as the user scrolls through that overlap zone, this
-     section visually rises up from below and gradually covers the
-     still-pinned hero underneath — entirely through normal scrolling,
-     no JS required. Adjust the margin-top value to make the reveal
-     happen sooner (larger negative number) or later (smaller). */
   z-index: 10;
   margin-top: -35vh;
   border-top-left-radius: 36px;
@@ -1064,7 +988,6 @@
 }
 .ah-headline--gold { color: var(--gold-light); font-style: italic; font-weight: 400; }
 
-/* Simple single-line divider (no icon) */
 .ah-divider {
   display: block;
   width: 52px;
@@ -1076,8 +999,10 @@
 
 .ah-body { display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px; }
 .ah-body p { font-family: var(--font-display); font-size: 1.05rem; font-weight: 300; line-height: 1.72; color: var(--cream-dim); max-width: 480px; }
+/* Empty paragraphs (copy pending from client) still hold their line-height
+   worth of space so the layout doesn't jump once real text is added. */
+.ah-body p:empty { min-height: 1.72em; }
 
-/* CTA button — replaces the old pillars row */
 .ah-cta {
   display: inline-flex; align-items: center; gap: 14px; padding: 14px 28px;
   border: 1.5px solid var(--gold); border-radius: 8px;
@@ -1088,7 +1013,6 @@
 .ah-cta:hover { background: rgba(201, 146, 42, 0.08); border-color: var(--gold-light); color: var(--gold-light); }
 .ah-cta__arrow { font-size: 0.85rem; line-height: 1; }
 
-/* ── Right column — instructor photo grid ──────────────────── */
 .ah-right {
   position: relative;
   z-index: 1;
@@ -1127,16 +1051,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  /* Reaches full solid opacity before the true bottom edge (rather than
-     stopping at .88) so every card ends on the exact same flat #0D0101 —
-     no per-photo color bleeds through right where this section meets the
-     one below it, which is what was reading as a visible "cut". */
+  /* Lighter fade than the original — just enough dark at the very
+     bottom to keep the name/role legible, without covering most of
+     the photo. */
   background: linear-gradient(
     180deg,
-    transparent 45%,
-    rgba(13, 1, 1, 0.88) 78%,
-    rgba(13, 1, 1, 1) 92%,
-    rgba(13, 1, 1, 1) 100%
+    transparent 60%,
+    rgba(13, 1, 1, 0.35) 82%,
+    rgba(13, 1, 1, 0.68) 100%
   );
   pointer-events: none;
 }
@@ -1170,56 +1092,6 @@
   opacity: 0.65;
 }
 
-.about-essence {
-  display: grid;
-  grid-template-columns: 30% 1fr 1.8fr;
-  gap: 0;
-  background-color: var(--dark);
-  border-top: 1px solid rgba(201, 146, 42, 0.15);
-  align-items: stretch;
-  font-family: var(--font-display);
-  color: var(--cream);
-  min-height: 560px;
-}
-
-.ae-left { display: flex; align-items: stretch; padding: 0; position: relative; }
-.ae-img-wrap { position: relative; width: 100%; height: 100%; min-height: 520px; }
-.ae-img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 0; border: none; background: #1e0505; }
-
-.ae-mid { padding: 56px 48px 56px 52px; display: flex; flex-direction: column; justify-content: center; gap: 0; }
-.ae-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-.ae-eyebrow__text { font-family: var(--font-caps); font-size: 0.68rem; letter-spacing: 0.22em; color: var(--gold); }
-.ae-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
-
-.ae-headline { font-family: var(--font-display); font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.18; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 24px; }
-.ae-headline--gold { color: var(--gold-light); font-style: italic; font-weight: 400; }
-
-.ae-body { font-family: var(--font-display); font-size: 1rem; font-weight: 300; line-height: 1.75; color: var(--cream-dim); margin-bottom: 36px; max-width: 340px; }
-
-.ae-cta {
-  display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px;
-  border: 1.5px solid var(--gold); border-radius: 6px;
-  font-family: var(--font-caps); font-size: 0.66rem; letter-spacing: 0.18em; color: var(--gold);
-  text-decoration: none; background: transparent; cursor: pointer; transition: all 0.25s ease; align-self: flex-start;
-}
-.ae-cta:hover { background: rgba(201, 146, 42, 0.08); border-color: var(--gold-light); color: var(--gold-light); }
-
-.ae-cards { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, auto); gap: 12px; background: transparent; border: none; border-radius: 0; overflow: visible; margin: 40px 48px 40px 12px; align-self: center; }
-
-.ae-card {
-  background: #100202; border: 1px solid rgba(201, 146, 42, 0.28); border-radius: 10px;
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 30px 16px 26px; gap: 10px; transition: border-color 0.2s ease, background 0.2s ease;
-}
-.ae-card:hover { border-color: rgba(201, 146, 42, 0.60); background: #160303; }
-
-.ae-card__icon-wrap { width: 58px; height: 58px; border-radius: 50%; border: 1px solid rgba(201, 146, 42, 0.45); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; flex-shrink: 0; overflow: hidden; }
-.ae-card__icon { width: 100%; height: 100%; object-fit: contain; display: block; }
-.ae-card__title { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--cream); line-height: 1.3; }
-.ae-card__sub { font-family: var(--font-display); font-size: 0.82rem; font-weight: 300; color: var(--cream-muted); line-height: 1.6; }
-
-@media (max-width: 1200px) { .about-essence { grid-template-columns: 28% 1fr 1.6fr; } }
-
 @media (max-width: 1100px) {
   .about-hero {
     grid-template-columns: 1fr; min-height: auto;
@@ -1240,20 +1112,7 @@
   .ah-photo-card--c { min-height: 320px; }
 }
 
-@media (max-width: 1024px) {
-  .about-essence { grid-template-columns: 1fr; min-height: auto; }
-  .ae-left { height: 400px; }
-  .ae-img-wrap { min-height: 400px; }
-  .ae-mid { padding: 48px 40px; }
-  .ae-cards { margin: 0 40px 48px; grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 768px) {
   .ah-right { grid-template-columns: 1fr; grid-template-areas: "a" "b" "d" "c"; padding: 0 24px 40px; }
   .ah-photo-card, .ah-photo-card--c { min-height: 280px; }
-  .ae-mid { padding: 40px 24px; }
-  .ae-cards { margin: 0 24px 40px; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-}
-@media (max-width: 480px) {
-  .ae-cards { grid-template-columns: 1fr; }
-  .ae-card { padding: 24px 16px; }
 }
