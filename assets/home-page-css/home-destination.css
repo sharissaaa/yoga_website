@@ -3,7 +3,10 @@
 ════════════════════════════════════════════════ */
 
 .dest-section {
-  background: linear-gradient(180deg, #0d0b09 0%, #0d0b09 40%, #120e0b 100%);
+  /* Unified end-color with .meditation-orb-section's start-color (#0d0b09)
+     so the two sections blend into one continuous background instead of
+     meeting at a visible hard edge/seam. */
+  background: linear-gradient(180deg, #0d0b09 0%, #0d0b09 60%, #0d0b09 100%);
   padding-top: 0;
   padding-bottom: 90px;
   margin-top: 0;
@@ -16,6 +19,31 @@
   inset: 0;
   pointer-events: none;
   background: radial-gradient(circle at top center, transparent 60%);
+}
+
+/* Bridges the handoff into the meditation section below: its ::before
+   starts a green glow right at its own top edge, so without this, the
+   glow appears to switch on abruptly at the section boundary. Fading the
+   same green tint in gradually here — growing as it nears the bottom
+   edge — means the glow is already present by the time the next section
+   begins, so the seam reads as one continuous flow instead of a cut. */
+.dest-section::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 320px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 100% at 50% 100%, rgba(19, 168, 50, 0.09), transparent 70%),
+    linear-gradient(180deg, transparent 0%, #0d0b09 75%);
+}
+
+/* Tighter side gutters just for this section's container, so the cards
+   sit closer to the viewport edges without affecting other sections that
+   reuse the shared .container class. */
+.dest-section .container {
+  max-width: 1500px;
+  padding: 0 16px;
 }
 
 .dest-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 42px; gap: 30px; }
@@ -115,6 +143,7 @@
   .dest-card:not(.dest-card--feature) .dest-content p { font-size: .78rem; }
 }
 @media (max-width: 480px) {
+  .dest-section .container { padding: 0 12px; }
   .dest-grid {
     grid-template-columns: 1fr;
     grid-template-rows: 240px repeat(4, 200px);

@@ -45,12 +45,31 @@
 
             <!-- Stage -->
             <div class="exp-stage">
-                <!-- Background image layers — one per course that has a
-                     photo. Only "Sadhana Immersion" (index 0) has one for
-                     now; add more <div class="exp-stage__bg" data-exp-bg="N">
-                     blocks the same way to give other courses a photo too. -->
-                <div class="exp-stage__bg is-active" data-exp-bg="0">
-                    <img src="assets/gallery/home-image/course-sadhana.png" alt="">
+                <!-- Background photo carousel — auto-cycles through these 5
+                     images forever, using a pure CSS animation (no JavaScript
+                     involved). Each .exp-stage__bg-slide fades in, holds, and
+                     fades out on a staggered delay so only one is visible at
+                     a time. To swap photos, just change the src paths below.
+                     To change how many photos are in the loop, see the
+                     matching CSS comment in home-experience.css — the slide
+                     count, duration-per-image, and delays must be updated
+                     together there. -->
+                <div class="exp-stage__bg-carousel">
+                    <div class="exp-stage__bg-slide">
+                        <img src="assets\gallery\home-image\kerala1.jpg" alt="">
+                    </div>
+                    <div class="exp-stage__bg-slide">
+                        <img src="assets\gallery\home-image\orb-bg.png" alt="">
+                    </div>
+                    <div class="exp-stage__bg-slide">
+                        <img src="assets\gallery\home-image\travel.png" alt="">
+                    </div>
+                    <div class="exp-stage__bg-slide">
+                        <img src="assets\gallery\home-image\travel1.png" alt="">
+                    </div>
+                    <div class="exp-stage__bg-slide">
+                        <img src="assets\gallery\home-image\sri lanka.png" alt="">
+                    </div>
                 </div>
 
                 <span class="exp-stage__corner exp-stage__corner--tl"></span>
@@ -110,7 +129,6 @@
 (function () {
     var tabs   = document.querySelectorAll('[data-exp-tab]');
     var panels = document.querySelectorAll('[data-exp-panel]');
-    var bgs    = document.querySelectorAll('[data-exp-bg]');
     if (!tabs.length || !panels.length) return;
 
     function activate(index) {
@@ -121,12 +139,6 @@
         });
         panels.forEach(function (panel) {
             panel.classList.toggle('is-active', panel.getAttribute('data-exp-panel') === String(index));
-        });
-        // Only courses with a matching [data-exp-bg] get a background photo;
-        // switching to any other course just fades it back out, leaving the
-        // plain dark stage for those.
-        bgs.forEach(function (bg) {
-            bg.classList.toggle('is-active', bg.getAttribute('data-exp-bg') === String(index));
         });
     }
 

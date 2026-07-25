@@ -151,16 +151,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  /* Reaches full solid opacity before the true bottom edge (rather than
-     stopping at .88) so every card ends on the exact same flat #0D0101 —
-     no per-photo color bleeds through right where this section meets the
-     one below it, which is what was reading as a visible "cut". */
+  /* Lighter fade than before — just enough dark at the very bottom to
+     keep the name/role legible, without covering most of the photo. */
   background: linear-gradient(
     180deg,
-    transparent 45%,
-    rgba(13, 1, 1, 0.88) 78%,
-    rgba(13, 1, 1, 1) 92%,
-    rgba(13, 1, 1, 1) 100%
+    transparent 60%,
+    rgba(13, 1, 1, 0.35) 82%,
+    rgba(13, 1, 1, 0.68) 100%
   );
   pointer-events: none;
 }

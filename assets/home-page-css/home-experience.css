@@ -139,21 +139,58 @@
   background: linear-gradient(160deg, rgba(24, 20, 17, .5) 0%, rgba(12, 10, 9, .3) 100%);
 }
 
-/* ── Background photo layer (course-specific, optional) ──────
-   Sits behind the glow/corners/text. Courses without a matching
-   [data-exp-bg] element just show the plain dark stage above. */
-.exp-stage__bg {
+/* ── Background photo carousel ────────────────────────────────
+   Auto-cycles through 5 images continuously behind the stage,
+   independent of which course tab is selected. Sits behind the
+   glow/corners/text.
+
+   This runs on a pure CSS animation — no JavaScript involved — so
+   it can't be silently broken by the HTML being injected in a way
+   that skips <script> execution (e.g. fetch + innerHTML includes).
+
+   HOW THE TIMING WORKS (edit these two numbers together if you
+   change the number of slides):
+     SLIDE_COUNT = 5      → currently 5 <img> slides in the HTML
+     SECONDS_EACH = 5     → each photo is fully visible for ~5s
+     TOTAL = SLIDE_COUNT * SECONDS_EACH = 25s   → one full loop
+   Every slide shares the same 25s keyframe animation, but each is
+   given a negative animation-delay of -(its index * 5s), which
+   staggers where in the 25s cycle it starts — so only one photo
+   is visible (faded in) at any given moment, then it fades out
+   right as the next one fades in.
+
+   To add a 6th slide: change TOTAL to 30s below, add a 6th
+   :nth-child rule with delay -25s, and adjust the keyframe percents
+   (each slide's "on" window is 1/SLIDE_COUNT of the total). */
+.exp-stage__bg-carousel {
   position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity .7s ease;
   pointer-events: none;
 }
-.exp-stage__bg.is-active { opacity: 1; }
 
-.exp-stage__bg img {
+.exp-stage__bg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: expBgCarouselFade 25s infinite;
+}
+.exp-stage__bg-slide:nth-child(1) { animation-delay: 0s;   }
+.exp-stage__bg-slide:nth-child(2) { animation-delay: -5s;  }
+.exp-stage__bg-slide:nth-child(3) { animation-delay: -10s; }
+.exp-stage__bg-slide:nth-child(4) { animation-delay: -15s; }
+.exp-stage__bg-slide:nth-child(5) { animation-delay: -20s; }
+
+@keyframes expBgCarouselFade {
+  0%   { opacity: 0; }
+  4%   { opacity: 1; }  /* finished fading in (~1s) */
+  16%  { opacity: 1; }  /* held fully visible until here (~4s hold) */
+  20%  { opacity: 0; }  /* faded back out (~1s) */
+  100% { opacity: 0; }  /* stays hidden for the rest of the 25s loop */
+}
+
+.exp-stage__bg-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -161,14 +198,14 @@
   display: block;
 }
 
-/* Darkens the photo so the centered title/CTA stay legible on any image */
-.exp-stage__bg::after {
+/* Darkens each photo so the centered title/CTA stay legible on any image */
+.exp-stage__bg-slide::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(8, 6, 4, .55), rgba(8, 6, 4, .82) 75%),
-    linear-gradient(180deg, rgba(8, 6, 4, .5) 0%, rgba(8, 6, 4, .35) 40%, rgba(8, 6, 4, .75) 100%);
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(8, 6, 4, .35), rgba(8, 6, 4, .6) 75%),
+    linear-gradient(180deg, rgba(8, 6, 4, .32) 0%, rgba(8, 6, 4, .2) 40%, rgba(8, 6, 4, .55) 100%);
 }
 
 .exp-stage__glow {
