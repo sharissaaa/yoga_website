@@ -25,20 +25,44 @@
 .meditation-orb-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #0d0b09 0%, #0c0a08 45%, #0d0b09 100%);
+  /* Smoother top blend: the old 2-stop gradient (light → light again, with
+     a single sharp turn at 45%) created a faint but visible "Mach band" —
+     a perceptual edge right at the point the gradient direction reverses.
+     Adding intermediate stops eases that turn out so there's no line. */
+  background: linear-gradient(
+    180deg,
+    #0d0b09 0%,
+    #0c0b08 20%,
+    #0b0906 45%,
+    #0c0b08 70%,
+    #0d0b09 100%
+  );
   padding: 110px 0;
   color: var(--cream);
   font-family: var(--font-body);
 }
-
 .meditation-orb-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 380px;
+  inset: 0;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(ellipse 70% 55% at 50% 20%, rgba(19, 168, 50, 0.08), transparent 100%);
+  /* IMPORTANT: no glow peak near the top. .dest-section::after already
+     peaks its own green glow exactly at this seam (centered at its own
+     50% 100%, i.e. right at the boundary) — adding a second peak here
+     right on top of it is what doubled the brightness and made the seam
+     MORE visible instead of less. So this layer stays essentially flat
+     near y:0 and only builds ambient light gradually, centered near the
+     orb further down the section — nothing new happens right at the
+     handoff, which is what actually makes it disappear. */
+  background: radial-gradient(
+    ellipse 75% 55% at 50% 58%,
+    rgba(19, 168, 50, 0.05) 0%,
+    rgba(19, 168, 50, 0.032) 30%,
+    rgba(19, 168, 50, 0.016) 55%,
+    rgba(19, 168, 50, 0.006) 75%,
+    transparent 92%
+  );
 }
 
 .orb-noise {

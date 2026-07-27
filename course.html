@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yoga for Body, Mind &amp; Soul – Bhumi Mantra</title>
+  <title>Residential and Online Practices and Courses – Bhumi Mantra</title>
   <link rel="stylesheet" href="course.css" />
   <!-- Shared across every page: same nav + footer design, color set per page below -->
   <link rel="stylesheet" href="assets/header-footer.css" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Cinzel: the shared nav (header-footer.css) sets its labels in
+       Cinzel, but this page never loaded that font, so the nav was quietly
+       falling back to a generic serif here while looking correct on every
+       other page. -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <!-- theme-gold keeps this page's original gold palette; swap the class
      (see assets/header-footer.css) for theme-forest / theme-maroon /
@@ -27,7 +31,7 @@
 
     <ul class="site-nav__links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="course.html" class="active" aria-current="page">Teaching and Courses</a></li>
+      <li><a href="course.html" class="active" aria-current="page">Explore The Teachings</a></li>
       <li><a href="travel.html">Destinations</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -47,294 +51,268 @@
     <img src="assets/gallery/home-image/course-hero-budha.png" alt="" class="hero__bg" aria-hidden="true"/>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
+      <p class="hero__sanskrit" lang="sa">विद्या ददाति विनयम्</p>
+      <p class="hero__translit">Vidyā dadāti vinayam</p>
       <h1 class="hero__heading">
-        <span class="hero__heading-accent">Residential and Online practices and courses</span>
+        <span class="hero__heading-accent">Residential and <em>Online</em> practices and courses</span>
       </h1>
       <!-- Replace ornament-divider.svg with your actual line-art divider -->
       <img src="assets/gallery/home-image/lotus-orb.png" alt="" class="hero__ornament"/>
       <p class="hero__sub">
         Deepen your practice and define your daily Sadhana.
       </p>
+      <div class="hero__actions">
+        <a href="#path-select" class="btn btn--gold-pill">
+          <span>Explore Programs</span>
+          <span class="btn__arrow">→</span>
+        </a>
+        <a href="#instructors" class="hero__secondary-link">Meet your instructors</a>
+      </div>
     </div>
     <!-- Decorative ornamental border strip -->
     <img src="ornament-border-strip.svg" alt="" class="hero__border-strip" aria-hidden="true"/>
   </section>
 
-  <!-- EXPERIENCES SECTION -->
-<!-- ══════════════════════════════════════════ -->
-<section class="exp-section">
-  <div class="container">
-    <div class="exp-layout">
-
-      <!-- LEFT CONTENT -->
-      <div class="exp-left reveal-left">
-        <h2>
-          <a href="course.html" class="exp-left__link">Teachings and Courses</a>
-        </h2>
-      </div>
-
-      <!-- RIGHT CARDS -->
-      <div class="exp-right">
-        <div class="exp-cards-row">
-
-          <!-- CARD 1 -->
-          <div class="exp-card reveal">
-            <div class="exp-icon-wrap">
-              <img src="assets/gallery/home-image/yogapose.png"
-                   alt="Yoga TTC Online"
-                   class="exp-icon-img">
-            </div>
-            <h4 class="exp-card-title">Yoga TTC Online</h4>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="exp-card reveal">
-            <div class="exp-icon-wrap">
-              <img src="assets/gallery/home-image/spirit.png"
-                   alt="Sadhana Immersion"
-                   class="exp-icon-img">
-            </div>
-            <h4 class="exp-card-title">Sadhana Immersion Residential in India</h4>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="exp-card reveal">
-            <div class="exp-icon-wrap">
-              <img src="assets/gallery/home-image/mortar.png"
-                   alt="Prana Vidya"
-                   class="exp-icon-img">
-            </div>
-            <h4 class="exp-card-title">Prana Vidya Courses Online</h4>
-          </div>
-
-          <!-- CARD 4 -->
-          <div class="exp-card reveal">
-            <div class="exp-icon-wrap">
-              <img src="assets/gallery/home-image/spirit.png"
-                   alt="Meditation"
-                   class="exp-icon-img">
-            </div>
-            <h4 class="exp-card-title">Regular guided practice and Meditation Online</h4>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- RIGHT ARROW -->
-      <div class="exp-slider-arrow">
-        <button class="exp-main-arrow" aria-label="Next experience">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-               stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="9 6 15 12 9 18"></polyline>
-          </svg>
-        </button>
-      </div>
-
+  <!-- ===== FOUR PATHS — WAYFINDER =====
+       Signature navigational device: four nodes, in the same order as
+       the four course cards directly below, each linking straight to
+       its matching card. The numbering here is real (there are exactly
+       four programs), not a decorative 01/02/03. -->
+  <section class="path-select reveal" id="path-select" aria-label="Choose your path">
+    <div class="path-select__intro">
+      <p class="path-select__sanskrit" lang="sa">चत्वारि पदानि</p>
+      <p class="path-select__translit">Catvāri padāni — the four paths</p>
+      <h2 class="path-select__title">Four Paths, One Practice</h2>
     </div>
-  </div>
-</section>
-<!-- ===== COURSE HIGHLIGHTS ===== -->
+
+    <nav class="path-wheel" aria-label="Jump to a course">
+      <span class="path-wheel__line" aria-hidden="true"></span>
+
+      <a href="#path-immersion" class="path-node">
+        <span class="path-node__ring"><span class="path-node__num">01</span></span>
+        <span class="path-node__label">Sadhana<br>Immersion</span>
+      </a>
+
+      <a href="#path-ttc" class="path-node">
+        <span class="path-node__ring"><span class="path-node__num">02</span></span>
+        <span class="path-node__label">Yoga<br>TTC</span>
+      </a>
+
+      <a href="#path-prana" class="path-node">
+        <span class="path-node__ring"><span class="path-node__num">03</span></span>
+        <span class="path-node__label">Prana<br>Vidya</span>
+      </a>
+
+      <a href="#path-meditation" class="path-node">
+        <span class="path-node__ring"><span class="path-node__num">04</span></span>
+        <span class="path-node__label">Guided<br>Meditation</span>
+      </a>
+    </nav>
+  </section>
+
+<!-- ===== COURSE PREVIEWS ===== -->
 <section class="highlights reveal">
 
-  <!-- Header -->
-  <div class="highlights__header">
-    <div class="highlights__eyebrow-row">
-      <span class="highlights__eyebrow-line"></span>
-      <span class="highlights__eyebrow-text">OUR ESSENCE</span>
-      <span class="highlights__eyebrow-line"></span>
-    </div>
-    <div class="highlights__eyebrow-lotus">
-      <img src="assets/gallery/home-image/lotus.png" alt=""/>
-    </div>
+  <div class="highlights__track">
 
-    <h2 class="highlights__title">
-      More Than a Place,<br/>
-      It's a <em>Way of Being.</em>
-    </h2>
+    <article class="hl-card" id="path-immersion">
+      <div class="hl-card__media">
+        <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Sadhana Immersion"/>
+        <span class="hl-card__badge">01</span>
+        <span class="hl-card__format">Residential</span>
+      </div>
+      <h4 class="hl-card__title">Sadhana Immersion</h4>
+      <p class="hl-card__meta">With Jeo Varghese and Nidish Nidhiri and Alice Avaldi</p>
+      <p class="hl-card__meta">Residential in India</p>
+      <p class="hl-card__desc"></p>
+      <button type="button" class="hl-card__toggle" aria-expanded="false">Read more</button>
+    </article>
 
-    <p class="highlights__desc">
-      At Bhumi Mantra, we believe transformation happens when you feel
-      safe, seen and supported. Our teachings and retreats are designed
-      to awaken your inner light and help you create a life you truly love.
-    </p>
+    <article class="hl-card" id="path-ttc">
+      <div class="hl-card__media">
+        <img src="assets/gallery/home-image/Holistic.png" alt="Yoga TTC"/>
+        <span class="hl-card__badge">02</span>
+        <span class="hl-card__format">Online</span>
+      </div>
+      <h4 class="hl-card__title">Yoga TTC</h4>
+      <p class="hl-card__meta">Online</p>
+      <p class="hl-card__meta">With Jeo Varghese and Nidish Nidhiri</p>
+      <p class="hl-card__desc"></p>
+      <button type="button" class="hl-card__toggle" aria-expanded="false">Read more</button>
+    </article>
+
+    <article class="hl-card" id="path-prana">
+      <div class="hl-card__media">
+        <img src="assets/gallery/home-image/Holistic.png" alt="Prana Vidya Courses"/>
+        <span class="hl-card__badge">03</span>
+        <span class="hl-card__format">Hybrid</span>
+      </div>
+      <h4 class="hl-card__title">Prana Vidya Courses</h4>
+      <p class="hl-card__meta">Residential and online</p>
+      <p class="hl-card__meta">With Jeo Varghese</p>
+      <p class="hl-card__desc"></p>
+      <button type="button" class="hl-card__toggle" aria-expanded="false">Read more</button>
+    </article>
+
+    <article class="hl-card" id="path-meditation">
+      <div class="hl-card__media">
+        <img src="assets/gallery/home-image/mat.png" alt="Regular guided practice and Meditation"/>
+        <span class="hl-card__badge">04</span>
+        <span class="hl-card__format">Online</span>
+      </div>
+      <h4 class="hl-card__title">Regular guided practice and Meditation</h4>
+      <p class="hl-card__meta">With Jeo Varghese and Alice Avaldi</p>
+      <p class="hl-card__meta">Online</p>
+      <p class="hl-card__desc"></p>
+      <button type="button" class="hl-card__toggle" aria-expanded="false">Read more</button>
+    </article>
+
   </div>
 
-  <!-- Carousel -->
-  <div class="highlights__carousel">
+</section>
 
-    <button class="highlights__arrow highlights__arrow--prev" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
+<!-- ===== MEET YOUR INSTRUCTORS ===== -->
+<section class="instructors reveal" id="instructors">
 
-    <div class="highlights__track">
-
-      <article class="hl-card">
-        <div class="hl-card__media">
-          <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Ancient temple ruins in a forest"/>
-        </div>
-        
-        <h4 class="hl-card__title">Sadhana Immersion</h4>
-        <p class="hl-card__desc">With Jeo Varghese and Nidish Nidhiri and Alice Avaldi Residential in India.</p>
-      </article>
-
-      <article class="hl-card">
-        <div class="hl-card__media">
-          <img src="assets/gallery/home-image/Holistic.png" alt="Woman meditating by water at sunrise"/>
-        </div>
-        <h4 class="hl-card__title">Yoga TTC Online</h4>
-        <p class="hl-card__desc">With Jeo Varghese and Nidish Nidhiri.</p>
-      </article>
-
-      <article class="hl-card">
-        <div class="hl-card__media">
-          <img src="assets/gallery/home-image/Holistic.png" alt="Woman meditating by water at sunrise"/>
-        </div>
-        <h4 class="hl-card__title">Prana Vidya Courses Residential and online</h4>
-        <p class="hl-card__desc"> With Jeo Varghese.</p>
-      </article>
-
-      <article class="hl-card">
-        <div class="hl-card__media">
-          <img src="assets/gallery/home-image/mat.png" alt="Rolled yoga mat outdoors"/>
-        </div>
-        
-        <h4 class="hl-card__title">Regular guided practice and Meditation</h4>
-        <p class="hl-card__desc">With Jeo Varghese and Alice Avaldi Online.</p>
-      </article>
-
-    </div>
-
-    <button class="highlights__arrow highlights__arrow--next" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
+  <div class="instructors__eyebrow-row">
+    <span class="instructors__eyebrow-line"></span>
+    <span class="instructors__eyebrow-text">YOUR GUIDES</span>
+    <span class="instructors__eyebrow-line"></span>
   </div>
 
-  <!-- Pagination dots -->
-  <div class="highlights__dots">
-    <button class="highlights__dot is-active" aria-label="Slide 1"></button>
-    <button class="highlights__dot" aria-label="Slide 2"></button>
-    <button class="highlights__dot" aria-label="Slide 3"></button>
-    <button class="highlights__dot" aria-label="Slide 4"></button>
-  </div>
+  <h2 class="instructors__title">Meet Your Instructors</h2>
 
-  <!-- Bottom divider -->
-  <div class="highlights__divider" aria-hidden="true">
-    <span></span>
-    <img src="assets/gallery/home-image/lotus.png" alt=""/>
-    <span></span>
+  <div class="instructors__grid">
+
+    <article class="instructor-card">
+      <div class="instructor-card__photo">
+        <img src="assets/gallery/home-image/hero1.png" alt="Jeo Varghese">
+      </div>
+      <h4 class="instructor-card__name">Jeo Varghese</h4>
+      <p class="instructor-card__role">Sadhana Immersion &middot; Yoga TTC &middot; Prana Vidya &middot; Meditation</p>
+      <!-- Bio copy pending from client — reserved space so layout doesn't shift once added -->
+      <p class="instructor-card__bio"></p>
+    </article>
+
+    <article class="instructor-card">
+      <div class="instructor-card__photo">
+        <img src="assets/gallery/home-image/hero2.png" alt="Nidish Nidhiri">
+      </div>
+      <h4 class="instructor-card__name">Nidish Nidhiri</h4>
+      <p class="instructor-card__role">Sadhana Immersion &middot; Yoga TTC</p>
+      <p class="instructor-card__bio"></p>
+    </article>
+
+    <article class="instructor-card">
+      <div class="instructor-card__photo">
+        <img src="assets/gallery/home-image/heropose.png" alt="Alice Avaldi">
+      </div>
+      <h4 class="instructor-card__name">Alice Avaldi</h4>
+      <p class="instructor-card__role">Sadhana Immersion &middot; Meditation</p>
+      <p class="instructor-card__bio"></p>
+    </article>
+
   </div>
 
 </section>
 
 
-<!-- ===== WHAT YOU'LL LEARN ===== -->
+<!-- ===== WHAT YOU'LL LEARN — editorial photo lessons =====
+     Five full-width rows, alternating image left/right, connected by
+     a center spine. Reuses the badge (circle number) and format-chip
+     (pill tag) language already established on the course cards
+     above, so this reads as the same design system rather than a
+     new pattern. -->
 <section class="learn reveal">
-
-  <!-- BG image + overlay -->
-  <div class="learn__bg" aria-hidden="true">
-    <img src="assets/gallery/home-image/learn-bg.png" alt="" class="learn__bg-img" />
-    <div class="learn__bg-overlay"></div>
-  </div>
 
   <div class="learn__inner">
 
-    <!-- Left — skill list -->
-    <div class="learn__left">
-      <ul class="learn-list">
-
-        <li class="learn-list__item">
-          <div class="learn-list__icon-wrap">
-            <img src="assets/gallery/home-image/asana.png" alt="" class="learn-list__icon"/>
-          </div>
-          <div>
-            <h4>Asanas</h4>
-            <p>Learn how to meditate in each of your body parts.</p>
-          </div>
-        </li>
-
-        <li class="learn-list__sep" aria-hidden="true">
-          <span></span>
-          <img src="assets/gallery/home-image/lotus.png" alt="" />
-          <span></span>
-        </li>
-
-        <li class="learn-list__item">
-          <div class="learn-list__icon-wrap">
-            <img src="assets/gallery/home-image/pranayama.png" alt="" class="learn-list__icon"/>
-          </div>
-          <div>
-            <h4>Pranayama</h4>
-            <p>Expand your awareness trough breathing techniques.</p>
-          </div>
-        </li>
-
-        <li class="learn-list__sep" aria-hidden="true">
-          <span></span>
-          <img src="assets/gallery/home-image/lotus.png" alt="" />
-          <span></span>
-        </li>
-
-        <li class="learn-list__item">
-          <div class="learn-list__icon-wrap">
-            <img src="assets/gallery/home-image/yoga5.png" alt="" class="learn-list__icon"/>
-          </div>
-          <div>
-            <h4>Prana Vidya</h4>
-            <p>Energy Healing to overcome habitual patterns and common sufferings.</p>
-          </div>
-        </li>
-
-        <li class="learn-list__sep" aria-hidden="true">
-          <span></span>
-          <img src="assets/gallery/home-image/lotus.png" alt="" />
-          <span></span>
-        </li>
-
-        <li class="learn-list__item">
-          <div class="learn-list__icon-wrap">
-            <img src="assets/gallery/home-image/yoga5.png" alt="" class="learn-list__icon"/>
-          </div>
-          <div>
-            <h4>Meditation </h4>
-            <p>From sitting Meditation to Mindful living.</p>
-          </div>
-        </li>
-
-        <li class="learn-list__sep" aria-hidden="true">
-          <span></span>
-          <img src="assets/gallery/home-image/lotus.png" alt="" />
-          <span></span>
-        </li>
-
-        <li class="learn-list__item">
-          <div class="learn-list__icon-wrap">
-            <img src="assets/gallery/home-image/yoga4.png" alt="" class="learn-list__icon"/>
-          </div>
-          <div>
-            <h4>Yoga Philosophy</h4>
-            <p>Understand ancient teachings and apply in daily life.</p>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- Center — eyebrow + arch image -->
-    <div class="learn__center">
+    <div class="learn__intro">
       <p class="learn__eyebrow">— What You'll Learn —</p>
-      <div class="learn__img-wrap">
-        <img src="assets/gallery/home-image/meditating course.png" alt="" class="learn__img"/>
-        <div class="learn__img-gradient" aria-hidden="true"></div>
-        <div class="learn__img-frame" aria-hidden="true"></div>
-      </div>
+      <h2 class="learn__title">The Syllabus</h2>
+      <p class="learn__sub">Five subjects, taught in this order, across every course we offer.</p>
     </div>
 
-    <!-- Right — quote -->
-    <div class="learn__right">
+    <div class="lessons">
+
+      <article class="lesson">
+        <div class="lesson__media">
+          <img src="assets/gallery/home-image/demo.jpg" alt="A student practicing Asana"/>
+          <span class="lesson__badge">01</span>
+          <span class="lesson__corner lesson__corner--tl" aria-hidden="true"></span>
+          <span class="lesson__corner lesson__corner--br" aria-hidden="true"></span>
+        </div>
+        <div class="lesson__text">
+          <span class="lesson__tag">Module 01</span>
+          <p class="lesson__sanskrit" lang="sa">आसन</p>
+          <h3 class="lesson__title">Asana</h3>
+          <p class="lesson__desc">Learn how to meditate in each of your body parts.</p>
+        </div>
+      </article>
+
+      <article class="lesson lesson--reverse">
+        <div class="lesson__media">
+          <img src="assets/gallery/home-image/pranayama.png" alt="A student practicing Pranayama"/>
+          <span class="lesson__badge">02</span>
+          <span class="lesson__corner lesson__corner--tl" aria-hidden="true"></span>
+          <span class="lesson__corner lesson__corner--br" aria-hidden="true"></span>
+        </div>
+        <div class="lesson__text">
+          <span class="lesson__tag">Module 02</span>
+          <p class="lesson__sanskrit" lang="sa">प्राणायाम</p>
+          <h3 class="lesson__title">Pranayama</h3>
+          <p class="lesson__desc">Expand your awareness through breathing techniques.</p>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <div class="lesson__media">
+          <img src="assets/gallery/home-image/yoga5.png" alt="A student practicing Prana Vidya"/>
+          <span class="lesson__badge">03</span>
+          <span class="lesson__corner lesson__corner--tl" aria-hidden="true"></span>
+          <span class="lesson__corner lesson__corner--br" aria-hidden="true"></span>
+        </div>
+        <div class="lesson__text">
+          <span class="lesson__tag">Module 03</span>
+          <p class="lesson__sanskrit" lang="sa">प्राणविद्या</p>
+          <h3 class="lesson__title">Prana Vidya</h3>
+          <p class="lesson__desc">Energy Healing to overcome habitual patterns and common sufferings.</p>
+        </div>
+      </article>
+
+      <article class="lesson lesson--reverse">
+        <div class="lesson__media">
+          <img src="assets/gallery/home-image/meditating course.png" alt="A student in seated meditation"/>
+          <span class="lesson__badge">04</span>
+          <span class="lesson__corner lesson__corner--tl" aria-hidden="true"></span>
+          <span class="lesson__corner lesson__corner--br" aria-hidden="true"></span>
+        </div>
+        <div class="lesson__text">
+          <span class="lesson__tag">Module 04</span>
+          <p class="lesson__sanskrit" lang="sa">ध्यान</p>
+          <h3 class="lesson__title">Meditation</h3>
+          <p class="lesson__desc">From sitting Meditation to Mindful living.</p>
+        </div>
+      </article>
+
+      <article class="lesson">
+        <div class="lesson__media">
+          <img src="assets/gallery/home-image/yoga4.png" alt="Studying Yoga Philosophy"/>
+          <span class="lesson__badge">05</span>
+          <span class="lesson__corner lesson__corner--tl" aria-hidden="true"></span>
+          <span class="lesson__corner lesson__corner--br" aria-hidden="true"></span>
+        </div>
+        <div class="lesson__text">
+          <span class="lesson__tag">Module 05</span>
+          <p class="lesson__sanskrit" lang="sa">योगदर्शन</p>
+          <h3 class="lesson__title">Yoga Philosophy</h3>
+          <p class="lesson__desc">Understand ancient teachings and apply in daily life.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="learn__quote">
       <span class="learn__quote-mark">&ldquo;</span>
       <p class="learn__quote-text">The body is your temple. Keep it pure and clean for the soul to reside in.</p>
       <p class="learn__quote-author">— B.K.S. Iyengar</p>
@@ -343,65 +321,55 @@
   </div>
 </section>
 
-<!-- ===== COURSE INCLUDES ===== -->
-<section class="includes reveal">
+<!-- ===== TESTIMONIALS ===== -->
+<section class="course-testimonials reveal">
 
-  <div class="includes__eyebrow-row">
-    <span class="includes__eyebrow-line"></span>
-    <span class="includes__eyebrow-text">COURSE INCLUDES</span>
-    <span class="includes__eyebrow-line"></span>
-  </div>
-  <div class="includes__eyebrow-lotus">
-    <img src="assets/gallery/home-image/lotus.png" alt=""/>
+  <div class="course-testimonials__eyebrow-row">
+    <span class="course-testimonials__eyebrow-line"></span>
+    <span class="course-testimonials__eyebrow-text">STUDENT VOICES</span>
+    <span class="course-testimonials__eyebrow-line"></span>
   </div>
 
-  <div class="includes__grid">
+  <h2 class="course-testimonials__title">What Our Students Say</h2>
 
-    <div class="include-item">
-      <div class="include-item__icon-wrap">
-        <img src="icon-video.svg" alt="" class="include-item__icon"/>
-      </div>
-      <h4>Live classes</h4>
-      <p>Interactive sessions and one to one attention</p>
-      
-    </div>
+  <div class="course-testimonials__grid">
 
-    <div class="includes__dot" aria-hidden="true"></div>
+    <!-- Testimonial copy, student name and course pending from client —
+         reserved space so the layout doesn't shift once added -->
+    <article class="course-testimonial-card">
+      <span class="course-testimonial-card__quote-mark">&ldquo;</span>
+      <p class="course-testimonial-card__text"></p>
+      <button type="button" class="course-testimonial-card__toggle" aria-expanded="false">Read more</button>
+      <p class="course-testimonial-card__name">Student Name</p>
+      <p class="course-testimonial-card__course">Course Taken</p>
+    </article>
 
-    <div class="include-item">
-      <div class="include-item__icon-wrap">
-        <img src="icon-ebook.svg" alt="" class="include-item__icon"/>
-      </div>
-      <h4>Study Materials</h4>
-      <p>In-depth resources and practical guides to support your journey</p>
-      
-    </div>
+    <article class="course-testimonial-card">
+      <span class="course-testimonial-card__quote-mark">&ldquo;</span>
+      <p class="course-testimonial-card__text"></p>
+      <button type="button" class="course-testimonial-card__toggle" aria-expanded="false">Read more</button>
+      <p class="course-testimonial-card__name">Student Name</p>
+      <p class="course-testimonial-card__course">Course Taken</p>
+    </article>
 
-    <div class="includes__dot" aria-hidden="true"></div>
+    <article class="course-testimonial-card">
+      <span class="course-testimonial-card__quote-mark">&ldquo;</span>
+      <p class="course-testimonial-card__text"></p>
+      <button type="button" class="course-testimonial-card__toggle" aria-expanded="false">Read more</button>
+      <p class="course-testimonial-card__name">Student Name</p>
+      <p class="course-testimonial-card__course">Course Taken</p>
+    </article>
 
-    <div class="include-item">
-      <div class="include-item__icon-wrap">
-        <img src="icon-infinity.svg" alt="" class="include-item__icon"/>
-      </div>
-      <h4>Community support</h4>
-      <p>Stay connected with other practitioners and share your journey</p>
-      
-    </div>
-  </div>
-
-  <div class="includes__bottom-lotus">
-    <span></span>
-    <img src="assets/gallery/home-image/lotus.png" alt=""/>
-    <span></span>
   </div>
 
 </section>
 
   <!-- ===== CLOSING BANNER ===== -->
   <section class="closing reveal">
-    <!-- Replace om-ornament.svg with your actual Om / decorative emblem SVG -->
-    <img src="assets/gallery/home-image/lotus-orb.png" alt="Om" class="closing__emblem"/>
-    <p class="closing__text">Let Yoga Transform You</p>
+    <img src="assets/gallery/home-image/logo.png" alt="Mandala" class="closing__emblem"/>
+    <p class="closing__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+    <p class="closing__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+    <p class="closing__text">Then pure awareness is established in itself.</p>
   </section>
 
   <!-- ================= FOOTER (shared) ================= -->
@@ -417,7 +385,7 @@
       <h3 class="site-footer__col-heading">Quick Links</h3>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="course.html">Explore The Courses</a></li>
+        <li><a href="course.html">Explore The Teachings</a></li>
         <li><a href="travel.html">Destinations</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -469,7 +437,7 @@
 
     <div class="site-footer__bottom">
       <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-      <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
+      <img src="assets/gallery/home-image/lotus-orb.png" alt="" class="site-footer__lotus">
     </div>
   </footer>
   <!-- ================= /FOOTER ================= -->
@@ -566,6 +534,29 @@
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
+      });
+    });
+
+    /* 4. EXPANDABLE COURSE PREVIEWS */
+    document.querySelectorAll('.hl-card__toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const desc = btn.previousElementSibling;
+        if (!desc || !desc.classList.contains('hl-card__desc')) return;
+        const expanded = desc.classList.toggle('is-expanded');
+        btn.textContent = expanded ? 'Read less' : 'Read more';
+        btn.setAttribute('aria-expanded', String(expanded));
+      });
+    });
+
+    /* 5. EXPANDABLE TESTIMONIALS — same read-more/read-less pattern as
+          the course cards above */
+    document.querySelectorAll('.course-testimonial-card__toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.previousElementSibling;
+        if (!text || !text.classList.contains('course-testimonial-card__text')) return;
+        const expanded = text.classList.toggle('is-expanded');
+        btn.textContent = expanded ? 'Read less' : 'Read more';
+        btn.setAttribute('aria-expanded', String(expanded));
       });
     });
 
