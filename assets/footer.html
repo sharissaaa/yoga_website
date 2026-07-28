@@ -7,7 +7,7 @@
     <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing, ritual and transformation.</p>
   </div>
 
-  <nav class="site-footer__col" aria-label="Quick links">
+  <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
     <h3 class="site-footer__col-heading">Quick Links</h3>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -18,7 +18,7 @@
     </ul>
   </nav>
 
-  <nav class="site-footer__col" aria-label="Our offerings">
+  <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
     <h3 class="site-footer__col-heading">Our Offerings</h3>
     <ul>
       <li><a href="travel.html">Sacred Journeys</a></li>
@@ -103,5 +103,26 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+
+    document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
+      var heading = col.querySelector('.site-footer__col-heading');
+      if (!heading) return;
+      heading.addEventListener('click', function () {
+        col.classList.toggle('is-open');
+      });
+    });
+
+    /* Scroll-reveal: fades/slides .reveal, .reveal-left, .reveal-right
+       elements into view once they enter the viewport (see header-footer.css) */
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+      .forEach(function (el) { revealObserver.observe(el); });
   })();
 </script>
