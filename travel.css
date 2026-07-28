@@ -230,6 +230,7 @@ details > summary::-webkit-details-marker { display: none; }
 .filter-select:hover { border-color: var(--clr-gold-dim); }
 .filter-select select {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   color: var(--clr-white);
@@ -409,6 +410,8 @@ details > summary::-webkit-details-marker { display: none; }
   font-size: var(--fs-sm);
   color: var(--clr-white);
   font-weight: 400;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .aside-block__link:hover { color: var(--clr-gold); }
 
