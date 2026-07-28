@@ -517,6 +517,7 @@
   .meditation-copy p { margin-left: auto; margin-right: auto; }
   .orb-quote { margin-left: auto; margin-right: auto; text-align: left; }
   .orb-center, .orb-right { align-items: center; }
+  .orb-center { padding: 0 24px; }
   .breath-steps { align-items: center; }
   .step-item { width: 100%; max-width: 220px; }
   .orb-frame-corner { width: 20px; height: 20px; }
@@ -524,4 +525,16 @@
   .orb-frame-corner--bl, .orb-frame-corner--br { bottom: 16px; }
   .orb-frame-corner--tl, .orb-frame-corner--bl { left: 16px; }
   .orb-frame-corner--tr, .orb-frame-corner--br { right: 16px; }
+}
+
+@media (max-width: 480px) {
+  .meditation-orb-section { padding: 56px 0; }
+  .orb-center { padding: 0 12px; }
+  .center-glow { width: 260px; height: 260px; }
+  .orb-container { width: 260px; height: 200px; }
+  .orb-flow-lines { width: 320px; height: 320px; }
+  .orb-progress { width: 160px; height: 160px; }
+  .breathing-ring { width: 160px; height: 160px; }
+  .orb-number { font-size: 44px; }
+  .meditation-copy h2 { font-size: 26px; }
 }
