@@ -511,6 +511,8 @@ details > summary::-webkit-details-marker { display: none; }
   .hero__pillars { gap: 1.25rem; }
 
   .retreats { padding: 2.5rem 1rem 3rem; }
+  .retreat-card__title { font-size: 1.5rem; }
+  .features { grid-template-columns: 1fr; }
 
   .footer { grid-template-columns: 1fr; padding: 2.5rem 1.25rem 1.25rem; }
 
