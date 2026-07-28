@@ -705,8 +705,29 @@
         gap: 18px;
       }
 
+      .newsletter-section {
+        padding: 48px 0 56px;
+      }
+
       .nl-title {
         font-size: 1.7rem;
+        margin-bottom: 24px;
+        padding: 0 12px;
+      }
+
+      .nl-form {
+        max-width: 300px;
+        margin: 0 auto 16px;
+      }
+
+      .nl-input {
+        padding: 10px 14px;
+        font-size: 0.75rem;
+      }
+
+      .nl-btn {
+        padding: 8px 16px;
+        font-size: 0.65rem;
       }
 
       .scroll-hint {

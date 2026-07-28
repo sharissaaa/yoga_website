@@ -34,13 +34,46 @@
       </span>
     </a>
 
-    <ul class="site-nav__links" id="navLinks">
+    <div class="site-nav__panel" id="navLinks">
+      <ul class="site-nav__links">
       <li><a href="index.html">Home</a></li>
       <li><a href="course.html">Explore The Teachings</a></li>
       <li><a href="travel.html">Destinations</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
     </ul>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Contact Information</h4>
+        <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
+        <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
+        <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
+      </div>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Follow Us</h4>
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.3" cy="6.7" r="1"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="6" width="18" height="12" rx="3"/>
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <a href="join.html" class="site-nav__cta">Join Us</a>
 
@@ -57,7 +90,7 @@
     <section class="hero">
       <div class="hero-grid">
 
-        <div class="hero-text">
+        <div class="hero-text reveal-left">
           <p class="eyebrow">
             Connect With Us
             <!-- PLACEHOLDER: small lotus icon -->
@@ -125,8 +158,8 @@
               </span>
               <div class="hero-info-text">
                 <strong>Office Hours</strong>
-                <span>Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM</span>
-                <span>Sat &ndash; Sun: 9:00 AM &ndash; 2:00 PM</span>
+                <span class="hero-info-hours">Mon &ndash; Fri: 9:00&nbsp;AM &ndash; 6:00&nbsp;PM</span>
+                <span class="hero-info-hours">Sat &ndash; Sun: 9:00&nbsp;AM &ndash; 2:00&nbsp;PM</span>
               </div>
             </div>
           </div>
@@ -134,7 +167,7 @@
           <a href="#send-message" class="btn btn-primary hero-cta">Get In Touch <span class="arrow">→</span></a>
         </div>
 
-        <div class="hero-image-full">
+        <div class="hero-image-full reveal-right">
           <!-- PLACEHOLDER: replace with your temple/garden entrance image -->
           <img src="assets/gallery/home-image/contact.png" alt="Open temple doors leading to a sunlit garden path">
         </div>
@@ -156,7 +189,7 @@
           </div>
 
           <!-- LEFT: GET IN TOUCH -->
-          <div class="panel panel-maroon">
+          <div class="panel panel-maroon reveal-left">
             <h2>Get In Touch</h2>
             <div class="divider divider-center"></div>
 
@@ -221,7 +254,7 @@
           </div>
 
           <!-- RIGHT: SEND US A MESSAGE -->
-          <div class="panel panel-green" id="send-message">
+          <div class="panel panel-green reveal-right" id="send-message">
             <h2>Send Us A Message</h2>
             <div class="divider divider-center"></div>
 
@@ -261,7 +294,7 @@
     <section class="info-strip">
       <div class="container info-strip-inner">
 
-        <div class="info-item">
+        <div class="info-item reveal">
           <span class="icon-circle icon-circle-green">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
@@ -277,7 +310,7 @@
 
         <span class="info-sep" aria-hidden="true"></span>
 
-        <div class="info-item">
+        <div class="info-item reveal" style="transition-delay:.1s">
           <span class="icon-circle icon-circle-maroon">
             <!-- PLACEHOLDER: lotus icon -->
             <img src="assets/gallery/home-image/healing.png" alt="">
@@ -291,7 +324,7 @@
 
         <span class="info-sep" aria-hidden="true"></span>
 
-        <div class="info-item">
+        <div class="info-item reveal" style="transition-delay:.2s">
           <span class="icon-circle icon-circle-green">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M4 13a8 8 0 0 1 16 0" />
@@ -316,7 +349,7 @@
       <img src="assets/gallery/home-image/path.png" alt="" class="quote-bg" aria-hidden="true">
       <div class="quote-overlay" aria-hidden="true"></div>
 
-      <div class="container quote-content">
+      <div class="container quote-content reveal">
         <span class="quote-mark" aria-hidden="true">&ldquo;</span>
         <div class="divider divider-center"></div>
         <p class="quote-text">
@@ -344,7 +377,7 @@
         and transformation.</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="Quick links">
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
       <h3 class="site-footer__col-heading">Quick Links</h3>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -355,7 +388,7 @@
       </ul>
     </nav>
 
-    <nav class="site-footer__col" aria-label="Our offerings">
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
       <h3 class="site-footer__col-heading">Our Offerings</h3>
        <ul>
         <li><a href="travel.html">Sacred Journeys</a></li>
@@ -432,6 +465,27 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
       }
+
+      document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
+        var heading = col.querySelector('.site-footer__col-heading');
+        if (!heading) return;
+        heading.addEventListener('click', function () {
+          col.classList.toggle('is-open');
+        });
+      });
+
+      /* Scroll-reveal: fades/slides .reveal, .reveal-left, .reveal-right
+         elements into view once they enter the viewport (see header-footer.css) */
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+        .forEach(function (el) { revealObserver.observe(el); });
     })();
   </script>
 
