@@ -44,6 +44,7 @@
 .dest-content { position: absolute; left: 22px; right: 22px; bottom: 20px; z-index: 3; }
 .dest-content h3 { color: #fff; font-family: var(--font-display); font-size: 2rem; margin-bottom: 6px; font-weight: 500; }
 .dest-content p { color: rgba(255,255,255,.8); font-size: .9rem; margin: 0; }
+.dest-content__dates { color: rgba(199,163,92,.85); font-size: .78rem; letter-spacing: .04em; }
 .dest-card:hover { transform: translateY(-8px); }
 .dest-card:hover img { transform: scale(1.08); }
 

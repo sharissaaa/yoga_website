@@ -1,37 +1,32 @@
 <section class="meditation-orb-section">
 
-    <img class="orb-bg-image" src="assets/gallery/home-image/orb-bg.png" alt="Sacred lake at sunset surrounded by lotus blossoms and mist" onerror="this.style.display='none'">
-
     <div class="orb-noise"></div>
-    <div class="orb-shimmer"></div>
-    <div class="orb-particles" id="orbParticles"></div>
 
     <div class="container">
         <div class="meditation-layout">
 
             <div class="meditation-copy reveal-left">
                 <div class="orb-eyebrow">
-                    <div class="eyebrow-pill">
-                        <span class="eyebrow-icon">🌿</span>
-                        <span class="eyebrow-text">PAUSE. BREATHE. BE.</span>
-                    </div>
+                    <span class="orb-eyebrow__text">PAUSE. BREATHE. BE.</span>
+                    <span class="orb-eyebrow__rule"></span>
                 </div>
                 <h2>Return to Stillness<br>Beside the <span class="hl">Sacred Lake</span></h2>
-                <div class="orb-divider"></div>
+                <span class="orb-divider"></span>
                 <p>Let the gentle water, morning mist, and lotus blossoms guide you back to the present moment.</p>
-                <div class="orb-mini-line">
-                    <span class="orb-mini-icon">🌿</span>
-                    <span class="orb-mini-text">Breathe with nature.<br><span class="dim">Inhale peace. Exhale tension.</span></span>
-                </div>
             </div>
 
             <div class="orb-center reveal">
                 <div class="center-glow"></div>
-                <div class="orb-container">
+                <div class="orb-container" id="orbContainer">
+                    <div class="outer-orbit"></div>
+                    <div class="outer-orbit"></div>
+                    <div class="outer-orbit"></div>
+                    <div class="outer-orbit"></div>
                     <div class="outer-orbit"></div>
                     <div class="outer-orbit"></div>
                     <div class="orb-glow"></div>
                     <div class="breathing-ring" id="breathingRing">
+                        <div class="ring-inner-accent"></div>
                         <div class="orb-content">
                             <span class="orb-label-top" id="orbPhaseLabel">Inhale</span>
                             <div class="orb-number" id="orbNumber">4</div>
@@ -39,7 +34,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="orb-tagline"> Find your calm among the lotus waters.</div>
             </div>
 
             <div class="orb-right reveal-right">
@@ -72,35 +66,6 @@
 
 <script>
 (function () {
-    var container = document.getElementById('orbParticles');
-    if (!container) return;
-    var pts = [
-        { t: '18%', l: '5%',  s: 2.5, d: '5s',   dl: '0s' },
-        { t: '55%', l: '3%',  s: 1.8, d: '8s',   dl: '1s' },
-        { t: '75%', l: '10%', s: 2.2, d: '6.5s', dl: '.5s' },
-        { t: '30%', l: '18%', s: 1.5, d: '9s',   dl: '2s' },
-        { t: '85%', l: '28%', s: 2,   d: '7s',   dl: '1.5s' },
-        { t: '12%', l: '42%', s: 1.6, d: '10s',  dl: '.8s' },
-        { t: '65%', l: '38%', s: 2.8, d: '5.5s', dl: '2.5s' },
-        { t: '40%', l: '55%', s: 1.4, d: '8.5s', dl: '.3s' },
-        { t: '22%', l: '68%', s: 2,   d: '7s',   dl: '1.8s' },
-        { t: '80%', l: '62%', s: 1.7, d: '6s',   dl: '3s' },
-        { t: '50%', l: '74%', s: 2.4, d: '9s',   dl: '.6s' },
-        { t: '15%', l: '82%', s: 1.5, d: '11s',  dl: '2.2s' },
-        { t: '70%', l: '88%', s: 2,   d: '7.5s', dl: '1.2s' },
-        { t: '35%', l: '94%', s: 1.8, d: '8s',   dl: '.4s' },
-        { t: '90%', l: '46%', s: 2.2, d: '6s',   dl: '3.5s' },
-        { t: '8%',  l: '55%', s: 1.6, d: '9.5s', dl: '1s' }
-    ];
-    pts.forEach(function (p) {
-        var el = document.createElement('span');
-        el.className = 'particle';
-        el.style.cssText = 'top:' + p.t + ';left:' + p.l + ';width:' + p.s + 'px;height:' + p.s + 'px;--dur:' + p.d + ';--delay:' + p.dl;
-        container.appendChild(el);
-    });
-})();
-
-(function () {
     var targets = document.querySelectorAll('.reveal-left, .reveal, .reveal-right');
     if (!('IntersectionObserver' in window)) {
         targets.forEach(function (t) { t.classList.add('in-view'); });
@@ -130,6 +95,8 @@ var numEl   = document.getElementById('orbNumber');
 var ringEl  = document.getElementById('breathingRing');
 var biconEl = document.getElementById('btnIcon');
 var btxtEl  = document.getElementById('btnText');
+var orbContainerEl = document.getElementById('orbContainer');
+var startBtnEl = document.getElementById('startBtn');
 
 function applyPhase() {
     var p = phases[pi];
@@ -152,6 +119,9 @@ function tick() {
 function toggleBreathing() {
     running = !running;
     if (running) {
+        // Hand control over from the slow idle "resting heartbeat" pulse
+        // to the actual guided inhale/hold/exhale timing.
+        ringEl.classList.add('is-running');
         pi = 0; cnt = phases[0].sec;
         applyPhase();
         timer = setInterval(tick, 1000);
@@ -160,7 +130,7 @@ function toggleBreathing() {
     } else {
         clearInterval(timer);
         pi = 0; cnt = phases[0].sec;
-        ringEl.classList.remove('inhale-active', 'exhale-active');
+        ringEl.classList.remove('inhale-active', 'exhale-active', 'is-running');
         labelEl.textContent = 'Inhale';
         labelEl.style.color = '#8FF2A9';
         numEl.textContent = '4';
@@ -168,4 +138,85 @@ function toggleBreathing() {
         btxtEl.textContent = 'Begin Breathing';
     }
 }
+
+/* ── Premium scroll-tied reveal ──────────────────────────────
+   As the meditation section scrolls up from the bottom of the viewport
+   into place, --orb-scroll-progress climbs from 0 → 1. CSS reads this
+   variable to fade/lift the top glow and center halo, so the transition
+   from the destinations section above feels like one continuous motion
+   rather than a static handoff. Respects reduced-motion by no-op'ing. */
+(function () {
+    var prefersReduced = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    var section = document.querySelector('.meditation-orb-section');
+    if (!section) return;
+
+    var ticking = false;
+
+    function updateProgress() {
+        var rect = section.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight;
+
+        // progress 0: section top is at the bottom edge of the viewport
+        // progress 1: section top has scrolled up to ~35% of viewport height
+        var start = vh;
+        var end = vh * 0.35;
+        var raw = (start - rect.top) / (start - end);
+        var progress = Math.min(1, Math.max(0, raw));
+
+        document.documentElement.style.setProperty('--orb-scroll-progress', progress.toFixed(3));
+        ticking = false;
+    }
+
+    function onScrollOrResize() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateProgress);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
+    updateProgress();
+})();
+
+/* ── Ripple helper — spawns a water-drop ripple centered on the click
+   point inside a given container element ── */
+function spawnRipple(container, evt, sizeMultiplier, bg) {
+    var rect = container.getBoundingClientRect();
+    var size = Math.max(rect.width, rect.height) * (sizeMultiplier || 1.6);
+    var x = evt.clientX - rect.left - size / 2;
+    var y = evt.clientY - rect.top - size / 2;
+
+    var ripple = document.createElement('span');
+    ripple.className = 'orb-ripple';
+    ripple.style.width = size + 'px';
+    ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    if (bg) ripple.style.background = bg;
+
+    container.appendChild(ripple);
+    ripple.addEventListener('animationend', function () {
+        ripple.remove();
+    });
+}
+
+/* Clicking anywhere on the orb ring cluster ripples + toggles breathing */
+orbContainerEl.addEventListener('click', function (e) {
+    spawnRipple(orbContainerEl, e, 1.6);
+    toggleBreathing();
+});
+
+/* Ripple on the "Begin Breathing" / "Pause" button, contained within it */
+startBtnEl.addEventListener('click', function (e) {
+    spawnRipple(
+        startBtnEl,
+        e,
+        2,
+        'radial-gradient(circle, rgba(95, 226, 122, 0.35) 0%, transparent 70%)'
+    );
+});
 </script>

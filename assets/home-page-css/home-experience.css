@@ -23,11 +23,6 @@
 .exp-layout { display: grid; grid-template-columns: 260px 1fr 96px; align-items: center; gap: 32px; position: relative; z-index: 1; }
 
 .exp-left { max-width: 240px; }
-.exp-left .eyebrow {
-  display: flex; align-items: center; gap: 10px; color: rgba(199, 163, 92, .65);
-  font-size: 10px; font-weight: 600; letter-spacing: .42em; text-transform: uppercase; margin-bottom: 24px;
-}
-.exp-left .eyebrow::before { content: ""; display: block; width: 22px; height: 1px; background: rgba(199, 163, 92, .45); flex-shrink: 0; }
 .exp-left h2 { font-family: var(--font-display); color: #f7f4ec; font-size: clamp(2.1rem, 2.8vw, 3.4rem); line-height: 1.12; font-weight: 500; margin: 0; letter-spacing: -.01em; }
 .exp-left h2 em { font-style: italic; color: rgba(199, 163, 92, .85); }
 
@@ -76,7 +71,6 @@
 .exp-card:hover .exp-icon-img { transform: scale(1.12) translateY(-3px); filter: brightness(1.25) sepia(1) saturate(2.2) hue-rotate(348deg) drop-shadow(0 4px 18px rgba(199, 163, 92, .4)); }
 
 .exp-card-title { color: #f8f6f0; font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; text-align: center; margin-bottom: 10px; line-height: 1.25; letter-spacing: .01em; position: relative; z-index: 1; }
-.exp-card-desc { color: rgba(255, 255, 255, .5); font-size: .8rem; text-align: center; line-height: 1.75; margin: 0; position: relative; z-index: 1; }
 
 .exp-slider-arrow { display: flex; justify-content: center; align-items: center; }
 .exp-main-arrow {
