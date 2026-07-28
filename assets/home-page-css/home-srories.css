@@ -716,7 +716,16 @@
 
     @media (max-width: 575px) {
       .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+        border-right: none !important;
+        border-top: 1px solid rgba(244, 236, 224, 0.07);
+      }
+
+      .stat-item:first-child {
+        border-top: none;
       }
 
       .filter-strip {

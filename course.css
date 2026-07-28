@@ -631,6 +631,11 @@ em { font-style: italic; color: var(--clr-gold); }
     display: none;
   }
 }
+@media (max-width: 480px) {
+  .highlights__track {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 /* ============================================================

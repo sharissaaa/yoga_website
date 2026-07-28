@@ -147,3 +147,21 @@
   color: var(--gold);
 }
 
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .ah-left { padding: 56px 40px; }
+  .ah-right { padding: 56px 40px; }
+}
+@media (max-width: 480px) {
+  .ah-left { padding: 40px 24px; }
+  .ah-right { padding: 40px 24px; }
+  .ah-headline { margin-bottom: 20px; }
+  .ah-body { margin-bottom: 32px; }
+  .ah-quote__mark { font-size: 3.5rem; margin-bottom: 12px; }
+  .ah-quote__text { font-size: 1.1rem; }
+}
+
