@@ -660,11 +660,6 @@ em { font-style: italic; color: var(--clr-gold); }
   text-align: center;
 }
 .include-item__icon-wrap {
-  width: 80px;
-  height: 80px;
-  border: 1px solid var(--clr-gold);
-  border-radius: 50%;
-  background: rgba(201,168,76,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -672,8 +667,8 @@ em { font-style: italic; color: var(--clr-gold); }
   flex-shrink: 0;
 }
 .include-item__icon {
-  width: 36px;
-  height: 36px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 .include-item h4 {

@@ -147,13 +147,7 @@
             <span class="scroll-num">05</span>
         </div>
 
-        <button class="soundscape-btn">
-            Soundscape
-            <span class="sound-ring">
-                <i class="fas fa-volume-up" style="font-size:0.58rem;"></i>
-            </span>
-            <span style="font-size:0.58rem;">On</span>
-        </button>
+        
     </section>
 
     <div class="section-sep"></div>
@@ -394,6 +388,38 @@
             pathObserver.observe(svgWrap);
         }
 
+        /* ── EXPERIENCE SECTION: "Next experience" arrow → Teaching and
+              Courses page (same destination as the section heading link) ── */
+        function initExperienceArrow() {
+            var arrow = document.querySelector('.exp-main-arrow');
+            if (!arrow) return;
+            arrow.addEventListener('click', function () {
+                window.location.href = 'course.html';
+            });
+        }
+
+        /* ── DESTINATIONS: prev/next arrows scroll the card grid ──
+              .dest-grid already becomes horizontally scrollable on mobile
+              (overflow-x: auto in home-destination.css); this just gives
+              the header arrows something to do. No-ops harmlessly on
+              desktop widths where the grid doesn't overflow. */
+        function initDestinationArrows() {
+            var grid = document.querySelector('.dest-grid');
+            var prevBtn = document.querySelector('.dest-arrow[aria-label="Previous destination"]');
+            var nextBtn = document.querySelector('.dest-arrow[aria-label="Next destination"]');
+            if (!grid || !prevBtn || !nextBtn) return;
+
+            function scrollByCard(direction) {
+                var card = grid.querySelector('.dest-card');
+                var gap = 18;
+                var amount = card ? card.getBoundingClientRect().width + gap : 300;
+                grid.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            }
+
+            prevBtn.addEventListener('click', function () { scrollByCard(-1); });
+            nextBtn.addEventListener('click', function () { scrollByCard(1); });
+        }
+
         /* ── LOAD HTML PARTIALS ── */
         var partials = [
             { id: 'partial-experience', src: 'home/home-experience.html' },
@@ -422,6 +448,8 @@
             initReveal();
             initBreathing();
             initJourneyPath();
+            initExperienceArrow();
+            initDestinationArrows();
         });
 
     </script>
