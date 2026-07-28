@@ -37,15 +37,15 @@
   align-items: center;
   column-gap: 1.5rem;
   padding: 0 2.5rem;
-  height: 76px;
+  min-height: 76px;
   background: rgba(13, 1, 1, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-gold, rgba(201,146,42,.3));
-  transition: background .3s ease, height .3s ease;
+  transition: background .3s ease, min-height .3s ease;
 }
 .site-nav--scrolled{
   background: rgba(10, 1, 1, 0.98);
-  height: 64px;
+  min-height: 64px;
 }
 
 .site-nav__logo{
@@ -71,6 +71,7 @@
   color: var(--nav-accent-light);
   line-height: 1.2;
   text-decoration: none;
+  white-space: nowrap;
 }
 .site-nav__logo-text small{
   font-family: var(--font-body, sans-serif);
@@ -80,6 +81,17 @@
   text-transform: uppercase;
   color: var(--cream-muted, rgba(245,237,214,.6));
   text-decoration: none;
+}
+
+/* Wraps .site-nav__links (+ mobile-only panel sections below). On desktop
+   it disappears from the box tree so .site-nav__links still slots directly
+   into the nav grid as before; only the mobile media query turns it into
+   the full-screen menu panel. */
+.site-nav__panel{
+  display: contents;
+}
+.site-nav__panel-section{
+  display: none;
 }
 
 .site-nav__links{
@@ -166,29 +178,88 @@
 .site-nav__burger.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 720px){
-  .site-nav{ padding: 0 20px; }
+  .site-nav{ grid-template-columns: auto 1fr auto; padding: 10px 20px; }
+  .site-nav__logo-text small{ display: none; }
   .site-nav__burger{ display: flex; }
   .site-nav__cta{ display: none; }
+
+  /* Logo + burger must stay visible above the full-screen panel below */
+  .site-nav__logo,
+  .site-nav__burger{
+    position: relative;
+    z-index: 95;
+  }
+
+  /* Full-screen slide-down menu panel */
+  .site-nav__panel{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 90;
+    background: rgba(13, 1, 1, 0.98);
+    padding: 90px 28px 40px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
+  }
+  .site-nav__panel.is-open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
   .site-nav__links{
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
+    position: static;
+    grid-column: auto;
+    justify-self: auto;
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: flex;
     flex-direction: column;
     gap: 0;
-    margin-left: 0;
-    background: rgba(13, 1, 1, 0.97);
-    border-bottom: 1px solid var(--border-gold, rgba(201,146,42,.3));
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
+    background: none;
   }
-  .site-nav__links.is-open{ max-height: 360px; }
   .site-nav__links a{
     display: block;
-    padding: 14px 20px;
+    padding: 14px 0;
+    font-size: 19px;
     border-top: 1px solid var(--border-gold, rgba(201,146,42,.3));
   }
+  .site-nav__links li:last-child a{
+    border-bottom: 1px solid var(--border-gold, rgba(201,146,42,.3));
+  }
   .site-nav__links a.active::after{ display: none; }
+
+  /* Contact Information / Follow Us sections inside the panel */
+  .site-nav__panel-section{
+    display: block;
+    margin-bottom: 32px;
+  }
+  .site-nav__panel-heading{
+    font-family: var(--font-caps, 'Cinzel', serif);
+    font-size: 14px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--nav-accent-light);
+    margin-bottom: 14px;
+  }
+  .site-nav__panel-line{
+    display: block;
+    font-size: 14px;
+    color: var(--cream-dim, rgba(245,237,214,.82));
+    margin-bottom: 8px;
+    text-decoration: none;
+  }
+  a.site-nav__panel-line:hover{
+    color: var(--nav-accent-light);
+  }
 }
 
 /* =========================================================
@@ -317,8 +388,103 @@
   .site-footer{ grid-template-columns: 1fr 1fr; padding-inline: 32px; }
 }
 @media (max-width: 720px){
-  .site-footer{ grid-template-columns: 1fr; padding: 44px 24px 0; }
-  .site-newsletter-form{ max-width: 100%; }
+  .site-footer{ grid-template-columns: 1fr; padding: 36px 24px 0; gap: 0; }
+
+  .site-footer__brand{
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+  .site-footer__tagline{ max-width: 320px; }
+  .site-footer__tagline:empty{ min-height: 0; }
+
+  .site-footer__col{ text-align: left; }
+  .site-footer__col ul li{ margin-bottom: 6px; }
+
+  /* Quick Links / Our Offerings collapse into accordion rows */
+  .site-footer__col--collapsible{
+    border-top: 1px solid var(--border-gold, rgba(201,146,42,.3));
+  }
+  .site-footer__col--collapsible .site-footer__col-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding: 16px 0;
+    cursor: pointer;
+  }
+  .site-footer__col--collapsible .site-footer__col-heading::after{
+    content: '+';
+    font-size: 18px;
+    line-height: 1;
+    color: var(--nav-accent-light);
+  }
+  .site-footer__col--collapsible.is-open .site-footer__col-heading::after{
+    content: '\2212';
+  }
+  .site-footer__col--collapsible ul{
+    display: none;
+    padding-bottom: 16px;
+  }
+  .site-footer__col--collapsible.is-open ul{
+    display: block;
+  }
+
+  .site-footer__col--newsletter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid var(--border-gold, rgba(201,146,42,.3));
+    padding-top: 26px;
+  }
+  .site-footer__col--newsletter .site-footer__col-heading{ margin-bottom: 10px; }
+  .site-footer__col--newsletter p{ margin-bottom: 10px; max-width: 260px; }
+  .site-newsletter-form{ max-width: 100%; margin: 0 auto 14px; }
+  .site-footer-social{ justify-content: center; }
+  .site-footer-social a{ width: 34px; height: 34px; }
+
+  .site-footer__bottom{
+    margin-top: 24px;
+    padding: 14px 0;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   SCROLL REVEAL — shared across every page
+   Pair with the initReveal() IntersectionObserver script in
+   each page's own <script> block. Add .reveal (fade+slide up),
+   .reveal-left (slide in from left) or .reveal-right (slide in
+   from right) to any element; the observer adds .visible once
+   it scrolls into view.
+========================================================= */
+.reveal,
+.reveal-left,
+.reveal-right{
+  opacity: 0;
+  transition: opacity .72s cubic-bezier(.4,0,.2,1), transform .72s cubic-bezier(.4,0,.2,1);
+}
+.reveal{ transform: translateY(26px); }
+.reveal-left{ transform: translateX(-26px); }
+.reveal-right{ transform: translateX(26px); }
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible{
+  opacity: 1;
+  transform: translate(0, 0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal,
+  .reveal-left,
+  .reveal-right{
+    transition-duration: .01ms;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Opt-in: add class="site-footer site-footer--5col" for pages that need

@@ -25,13 +25,46 @@
       </span>
     </a>
 
-    <ul class="site-nav__links" id="navLinks">
+    <div class="site-nav__panel" id="navLinks">
+      <ul class="site-nav__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="course.html">Explore The Teachings</a></li>
             <li><a href="travel.html" class="active" aria-current="page">Destinations</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Contact Information</h4>
+        <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
+        <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
+        <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
+      </div>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Follow Us</h4>
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.3" cy="6.7" r="1"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="6" width="18" height="12" rx="3"/>
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <a href="join.html" class="site-nav__cta">Join Us</a>
 
@@ -47,80 +80,81 @@
     <!-- Replace hero-bg.jpg with your actual hero image -->
     <img src="assets/gallery/home-image/travel1.png" alt="" class="hero__bg" aria-hidden="true" />
     <div class="hero__overlay" aria-hidden="true"></div>
-    <div class="hero__content">
+    <div class="hero__content reveal">
       <p class="eyebrow">· Our Travel Retreats ·</p>
       <h1 class="hero__heading">
         Journeys that<br />
         <em>Awaken the Soul.</em>
       </h1>
       <p class="hero__sub">Carefully curated retreats in sacred destinations<br />for your transformation.</p>
-      <div class="hero__pillars">
-        <div class="pillar">
-          <!-- Replace icon-sacred.svg with your own line-art SVG -->
-          <img src="assets/gallery/home-image/temple1.png" alt="" class="pillar__icon" />
-          <span>Sacred<br />Destinations</span>
-        </div>
-        <div class="pillar">
-          <img src="assets/gallery/home-image/about-retreat.png" alt="" class="pillar__icon" />
-          <span>Authentic Yogic<br />Experience</span>
-        </div>
-        <div class="pillar">
-          <img src="assets/gallery/home-image/healing.png" alt="" class="pillar__icon" />
-          <span>Holistic<br />Wellness</span>
-        </div>
-        <div class="pillar">
-          <img src="assets/gallery/home-image/global.png" alt="" class="pillar__icon" />
-          <span>Global<br />Community</span>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ===== RETREATS ===== -->
   <section class="retreats" id="retreats">
-    <p class="eyebrow eyebrow--center">· Explore Our Retreats ·</p>
+    <p class="eyebrow eyebrow--center reveal">· Explore Our Retreats ·</p>
 
     <!-- FILTERS -->
     <div class="filters">
       <div class="filter-select">
-        <img src="icon-location.svg" alt="" class="filter-select__icon" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon" aria-hidden="true">
+          <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" />
+          <circle cx="12" cy="9" r="2.5" />
+        </svg>
         <select>
           <option>All Destinations</option>
           <option>Indonesia</option>
           <option>India</option>
           <option>Sri Lanka</option>
         </select>
-        <img src="icon-chevron.svg" alt="" class="filter-select__arrow" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </div>
       <div class="filter-select">
-        <img src="icon-duration.svg" alt="" class="filter-select__icon" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3.5 2" />
+        </svg>
         <select>
           <option>Duration</option>
           <option>6 Days</option>
           <option>7 Days</option>
           <option>8 Days</option>
         </select>
-        <img src="icon-chevron.svg" alt="" class="filter-select__arrow" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </div>
       <div class="filter-select">
-        <img src="icon-calendar.svg" alt="" class="filter-select__icon" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2" />
+          <path d="M3 9h18M8 3v4M16 3v4" />
+        </svg>
         <select>
           <option>Month</option>
           <option>August</option>
           <option>September</option>
           <option>October</option>
         </select>
-        <img src="icon-chevron.svg" alt="" class="filter-select__arrow" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </div>
       <div class="filter-select">
-        <img src="icon-person.svg" alt="" class="filter-select__icon" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.5" />
+          <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+        </svg>
         <select>
           <option>Experience Level</option>
           <option>Beginner</option>
           <option>Intermediate</option>
           <option>All Levels</option>
         </select>
-        <img src="icon-chevron.svg" alt="" class="filter-select__arrow" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </div>
       <div class="filter-select filter-select--right">
         <select>
@@ -129,12 +163,14 @@
           <option>Duration</option>
           <option>Destination</option>
         </select>
-        <img src="icon-chevron.svg" alt="" class="filter-select__arrow" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </div>
     </div>
 
     <!-- CARD 1 -->
-    <article class="retreat-card">
+    <article class="retreat-card reveal">
       <div class="retreat-card__badge">Popular</div>
       <!-- Replace bali.jpg with your actual retreat image -->
       <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" class="retreat-card__img" />
@@ -166,7 +202,10 @@
       </div>
       <div class="retreat-card__aside">
         <div class="aside-block">
-          <img src="icon-calendar.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M3 9h18M8 3v4M16 3v4" />
+          </svg>
           <div>
             <p class="aside-block__label">Dates</p>
             <p class="aside-block__value">15 Aug 2026 – 21 Aug 2026</p>
@@ -174,7 +213,10 @@
         </div>
         <div class="aside-divider"></div>
         <div class="aside-block">
-          <img src="icon-email.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
           <div>
             <p class="aside-block__label">Email</p>
             <a href="mailto:travel@innerjourney.com"
@@ -186,7 +228,7 @@
     </article>
 
     <!-- CARD 2 -->
-    <article class="retreat-card">
+    <article class="retreat-card reveal" style="transition-delay:.1s">
       <!-- Replace rishikesh.jpg with your actual retreat image -->
       <img src="assets/gallery/home-image/Rishikesh.jpg" alt="Rishikesh on the Ganges" class="retreat-card__img" />
       <div class="retreat-card__body">
@@ -217,7 +259,10 @@
       </div>
       <div class="retreat-card__aside">
         <div class="aside-block">
-          <img src="icon-calendar.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M3 9h18M8 3v4M16 3v4" />
+          </svg>
           <div>
             <p class="aside-block__label">Dates</p>
             <p class="aside-block__value">10 Sep 2026 – 15 Sep 2026</p>
@@ -225,7 +270,10 @@
         </div>
         <div class="aside-divider"></div>
         <div class="aside-block">
-          <img src="icon-email.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
           <div>
             <p class="aside-block__label">Email</p>
             <a href="mailto:travel@innerjourney.com"
@@ -237,7 +285,7 @@
     </article>
 
     <!-- CARD 3 -->
-    <article class="retreat-card">
+    <article class="retreat-card reveal" style="transition-delay:.2s">
       <!-- Replace srilanka.jpg with your actual retreat image -->
       <img src="assets/gallery/home-image/sri lanka.png" alt="Sri Lanka rock fortress" class="retreat-card__img" />
       <div class="retreat-card__body">
@@ -268,7 +316,10 @@
       </div>
       <div class="retreat-card__aside">
         <div class="aside-block">
-          <img src="icon-calendar.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M3 9h18M8 3v4M16 3v4" />
+          </svg>
           <div>
             <p class="aside-block__label">Dates</p>
             <p class="aside-block__value">05 Oct 2026 – 12 Oct 2026</p>
@@ -276,7 +327,10 @@
         </div>
         <div class="aside-divider"></div>
         <div class="aside-block">
-          <img src="icon-email.svg" alt="" class="aside-block__icon" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
           <div>
             <p class="aside-block__label">Email</p>
             <a href="mailto:travel@innerjourney.com"
@@ -293,7 +347,7 @@
     <!-- Replace candles-bg.jpg with your actual candles/lotus image -->
     <img src="assets/gallery/home-image/path.png" alt="" class="tagline-banner__bg" aria-hidden="true" />
     <div class="tagline-banner__overlay" aria-hidden="true"></div>
-    <p class="tagline-banner__text"><em>Travel inwards. Return transformed.</em></p>
+    <p class="tagline-banner__text reveal"><em>Travel inwards. Return transformed.</em></p>
     <!-- Replace lotus-divider.svg with your actual ornament SVG -->
     <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
   </section>
@@ -308,7 +362,7 @@
         and transformation.</p>
     </div>
 
-    <nav class="site-footer__col" aria-label="Quick links">
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
       <h3 class="site-footer__col-heading">Quick Links</h3>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -319,7 +373,7 @@
       </ul>
     </nav>
 
-    <nav class="site-footer__col" aria-label="Our offerings">
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
       <h3 class="site-footer__col-heading">Our Offerings</h3>
        <ul>
         <li><a href="travel.html">Sacred Journeys</a></li>
@@ -397,6 +451,27 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
       }
+
+      document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
+        var heading = col.querySelector('.site-footer__col-heading');
+        if (!heading) return;
+        heading.addEventListener('click', function () {
+          col.classList.toggle('is-open');
+        });
+      });
+
+      /* Scroll-reveal: fades/slides .reveal, .reveal-left, .reveal-right
+         elements into view once they enter the viewport (see header-footer.css) */
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+        .forEach(function (el) { revealObserver.observe(el); });
     })();
   </script>
 

@@ -295,7 +295,7 @@
 @media (max-width: 767px) {
   :root { --section-py: 60px; }
   .hero-h1 { font-size: 2.4rem; }
-  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-btns { flex-direction: column; align-items: stretch; }
   .soundscape-btn { display: none; }
-  .btn-primary-sy { width: 100%; justify-content: center; }
+  .btn-primary-sy, .btn-outline-sy { width: 100%; justify-content: center; }
 }

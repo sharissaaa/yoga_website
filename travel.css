@@ -227,6 +227,7 @@ details > summary::-webkit-details-marker { display: none; }
 }
 .filter-select:hover { border-color: var(--clr-gold-dim); }
 .filter-select select {
+  flex: 1;
   background: transparent;
   border: none;
   color: var(--clr-white);
@@ -241,12 +242,12 @@ details > summary::-webkit-details-marker { display: none; }
 .filter-select__icon {
   width: 16px; height: 16px;
   flex-shrink: 0;
-  filter: invert(72%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  color: var(--clr-gold-dim);
 }
 .filter-select__arrow {
   width: 12px; height: 12px;
   flex-shrink: 0;
-  filter: invert(72%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  color: var(--clr-gold-dim);
   pointer-events: none;
 }
 .filter-select__chevron {
@@ -293,8 +294,7 @@ details > summary::-webkit-details-marker { display: none; }
 /* Image */
 .retreat-card__img {
   width: 100%;
-  height: 100%;
-  min-height: 280px;
+  height: 280px;
   object-fit: cover;
   display: block;
 }
@@ -393,7 +393,7 @@ details > summary::-webkit-details-marker { display: none; }
   width: 18px; height: 18px;
   flex-shrink: 0;
   margin-top: 2px;
-  filter: invert(72%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%);
+  color: var(--clr-gold-dim);
 }
 .aside-block__label {
   font-size: var(--fs-xs);
@@ -495,8 +495,13 @@ details > summary::-webkit-details-marker { display: none; }
   }
   .retreat-card__body { border-right: none; border-bottom: 1px solid var(--clr-border); }
 
-  .filters { gap: 0.5rem; }
-  .filter-select--right { margin-left: 0; }
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .filter-select { width: 100%; }
+  .filter-select--right { grid-column: 1 / -1; margin-left: 0; }
 
   .footer {
     grid-template-columns: 1fr 1fr;
