@@ -377,7 +377,7 @@
             });
         }
 
-        /* ── JOURNEY PATH & SHIMMER ── */
+        /* ── JOURNEY PATH ── */
         function initJourneyPath() {
             var svgWrap = document.querySelector('.journey-svg-wrap');
             if (!svgWrap) return;
@@ -392,16 +392,6 @@
             }, { threshold: 0.25 });
 
             pathObserver.observe(svgWrap);
-
-            document.querySelectorAll('.journey-node').forEach(function (node) {
-                node.addEventListener('mouseenter', function () {
-                    var shimmer = node.querySelector('.shimmer-rect');
-                    if (!shimmer) return;
-                    shimmer.style.animation = 'none';
-                    shimmer.offsetHeight; /* force reflow */
-                    shimmer.style.animation = '';
-                });
-            });
         }
 
         /* ── LOAD HTML PARTIALS ── */
