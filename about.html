@@ -134,12 +134,68 @@
                 Today, we are a team of yoga teachers, healers and travel curators dedicated to holding space for your
                 transformation.
             </p>
-            <a href="#" class="btn btn--outline-light">Meet The Team</a>
+            <a href="#meet-the-team" class="btn btn--outline-light">Meet The Team</a>
         </div>
         <div class="story__right">
             <!-- Replace story-temple.jpg with your actual image -->
             <img src="assets/gallery/home-image/about-temple.png" alt="" class="story__img" />
             <div class="story__img-gradient" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- ===== MEET THE TEAM ===== -->
+    <section class="team reveal" id="meet-the-team">
+        <p class="eyebrow eyebrow--center">· Meet The Team ·</p>
+        <h2 class="team__heading">The Teachers Guiding Your Practice</h2>
+
+        <div class="team__grid">
+
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Sadhana Immersion">
+                </div>
+                <h4 class="team-card__title">1. Sadhana Immersion</h4>
+                <p class="team-card__meta">With Jeo Varghese and Nidish Nidhiri and Alice Avaldi</p>
+                <p class="team-card__meta">Residential in India</p>
+                <!-- Bio copy pending from client — reserved space so the card
+                     layout doesn't shift once the longer text is added -->
+                <p class="team-card__desc"></p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </article>
+
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/Holistic.png" alt="Yoga TTC">
+                </div>
+                <h4 class="team-card__title">2. Yoga TTC</h4>
+                <p class="team-card__meta">Online</p>
+                <p class="team-card__meta">With Jeo Varghese and Nidish Nidhiri</p>
+                <p class="team-card__desc"></p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </article>
+
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/mat.png" alt="Prana Vidya Courses">
+                </div>
+                <h4 class="team-card__title">3. Prana Vidya Courses</h4>
+                <p class="team-card__meta">Residential and online</p>
+                <p class="team-card__meta">With Jeo Varghese</p>
+                <p class="team-card__desc"></p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </article>
+
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/mindful living.png" alt="Regular guided practice and Meditation">
+                </div>
+                <h4 class="team-card__title">4. Regular guided practice and Meditation</h4>
+                <p class="team-card__meta">With Jeo Varghese and Alice Avaldi</p>
+                <p class="team-card__meta">Online</p>
+                <p class="team-card__desc"></p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </article>
+
         </div>
     </section>
 
@@ -396,7 +452,20 @@ shared script above, shared by every page)
             }
 
             /* ----------------------------------------------------------
-               4. NEWSLETTER FORM (placeholder submit handler)
+               4. MEET THE TEAM — expandable card previews
+               ---------------------------------------------------------- */
+            document.querySelectorAll('.team-card__toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const desc = btn.previousElementSibling;
+                    if (!desc || !desc.classList.contains('team-card__desc')) return;
+                    const expanded = desc.classList.toggle('is-expanded');
+                    btn.textContent = expanded ? 'Read less' : 'Read more';
+                    btn.setAttribute('aria-expanded', String(expanded));
+                });
+            });
+
+            /* ----------------------------------------------------------
+               5. NEWSLETTER FORM (placeholder submit handler)
                ---------------------------------------------------------- */
             const newsletterForm = document.querySelector('.site-newsletter-form');
             if (newsletterForm) {

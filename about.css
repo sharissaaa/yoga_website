@@ -317,6 +317,111 @@ em {
 }
 
 /* ============================================================
+   MEET THE TEAM
+   ============================================================ */
+.team {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+}
+.team__heading {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--clr-white);
+  margin: 0.75rem 0 3rem;
+}
+
+.team__grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--clr-border);
+  border-radius: 14px;
+  padding-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+.team-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+}
+.team-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.team-card__title {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--clr-gold);
+  margin-top: 1rem;
+}
+.team-card__meta {
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--clr-muted);
+  padding: 0 1.25rem;
+  margin-top: 0.35rem;
+}
+.team-card__desc {
+  font-family: var(--ff-body);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--clr-muted);
+  padding: 0 1.25rem;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.65em * 2);
+}
+.team-card__desc.is-expanded {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  overflow: visible;
+}
+.team-card__toggle {
+  margin-top: 0.75rem;
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.4);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.team-card__toggle:hover {
+  color: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+}
+
+@media (max-width: 1100px) {
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .team__grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
    STATS
    ============================================================ */
 .stats {
