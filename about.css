@@ -631,6 +631,21 @@ em {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  position: relative;
+  padding-left: 22px;
+}
+/* Slim gold "spine" beside the passage, echoing the eyebrow/divider
+   rules elsewhere on the page — turns a plain text block into a
+   deliberate editorial column instead of a wall of copy */
+.ah-body::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold) 0%, rgba(201, 146, 42, 0.15) 100%);
+  opacity: 0.55;
 }
 .ah-body p {
   font-family: var(--ff-display);
@@ -638,12 +653,26 @@ em {
   font-weight: 300;
   line-height: 1.75;
   color: var(--cream-dim);
-  max-width: 460px;
+  max-width: 600px;
 }
 
 /* Lead line stays a touch brighter than the collapsed detail below it,
    so the eye has one clear thing to read before deciding to go deeper */
 .ah-body__lead { color: var(--cream); }
+
+/* Large opening capital on the lead line — a small editorial flourish
+   that gives the passage a focal point instead of reading as one more
+   flat paragraph */
+.ah-body__dropcap {
+  font-family: var(--ff-display);
+  font-size: 3.1rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold-light);
+  float: left;
+  padding-right: 10px;
+  padding-top: 4px;
+}
 
 .ah-body__more {
   display: flex;
@@ -685,4 +714,11 @@ em {
 
 @media (max-width: 820px) {
   .about-hero .ah-left { padding: 3rem 1.5rem; }
+  .ah-body { padding-left: 16px; }
+  .ah-body p { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .ah-body::before { display: none; }
+  .ah-body { padding-left: 0; }
 }
