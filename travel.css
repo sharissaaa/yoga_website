@@ -449,6 +449,19 @@ details > summary::-webkit-details-marker { display: none; }
   height: 1px;
   background: var(--clr-border);
 }
+.reserve-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  color: var(--clr-gold);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.reserve-link:hover {
+  text-decoration: underline;
+}
 
 /* ============================================================
    TAGLINE BANNER
