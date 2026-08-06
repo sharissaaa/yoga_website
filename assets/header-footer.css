@@ -261,7 +261,34 @@
     color: var(--nav-accent-light);
   }
 }
+.site-nav__social {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
 
+.site-nav__social a {
+  color: var(--nav-accent-light);
+  display: flex;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.site-nav__social a:hover {
+  color: var(--nav-accent);
+  transform: translateY(-2px);
+}
+
+.site-nav__social svg {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 720px){
+  /* Icons already reappear inside the full-screen panel's "Follow Us"
+     section below — no room for them in the compact mobile bar */
+  .site-nav__social{ display: none; }
+}
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -289,6 +316,20 @@
   font-size: 12.5px;
   letter-spacing: .06em;
   color: var(--cream-muted, rgba(245,237,214,.6));
+}
+.site-footer__brand-title{
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--nav-accent-light);
+  max-width: 300px;
+}
+.site-footer__brand-subtitle{
+  font-size: 12.5px;
+  font-style: italic;
+  letter-spacing: .02em;
+  color: var(--nav-accent-light);
 }
 .site-footer__tagline{
   font-size: 13.5px;
@@ -324,6 +365,18 @@
   color: var(--cream-muted, rgba(245,237,214,.6));
   margin-bottom: 14px;
   max-width: 240px;
+}
+/* Visually-hidden but screen-reader-accessible label for the
+   newsletter email input (footer.html is shared across every
+   page, so this can't rely on a page-specific stylesheet) */
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
 }
 .site-newsletter-form{
   display: flex;

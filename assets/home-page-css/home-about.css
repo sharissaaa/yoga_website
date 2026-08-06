@@ -1,5 +1,6 @@
 /* ============================================================
    BHUMI MANTRA — ABOUT SECTION
+   Centered intro + two-column body copy, same palette as before.
    ============================================================ */
 
 .about-hero {
@@ -25,10 +26,8 @@
 }
 
 .about-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-  background-color: var(--dark);
+  padding: 92px 28px 80px;
+  background: linear-gradient(160deg, var(--maroon-card) 0%, var(--dark-card) 100%);
   font-family: var(--font-display);
   color: var(--cream);
   overflow: hidden;
@@ -44,124 +43,174 @@
   z-index: 0;
 }
 
-.ah-left {
+/* Faint decorative lotus — texture, not illustration; barely visible */
+.ah-watermark {
+  position: absolute;
+  top: 50%;
+  right: -70px;
+  width: 440px;
+  height: 440px;
+  transform: translateY(-50%);
+  opacity: .05;
+  pointer-events: none;
+  z-index: 0;
+}
+.ah-watermark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.ah-intro {
   position: relative;
   z-index: 1;
-  padding: 72px 64px 72px 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
 }
 
-.ah-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-.ah-eyebrow__text { font-family: var(--font-caps); font-size: 0.72rem; letter-spacing: 0.22em; color: var(--gold); }
+.ah-eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+.ah-eyebrow__text { font-family: var(--font-caps); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
 .ah-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
 
-.ah-headline {
+.ah-title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
-  font-weight: 300;
-  line-height: 1.12;
-  color: var(--cream);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.28;
   letter-spacing: -0.01em;
-  margin-bottom: 28px;
-}
-.ah-headline--gold { color: var(--gold-light); font-style: italic; font-weight: 400; }
-
-.ah-divider { display: flex; align-items: center; gap: 10px; margin-bottom: 32px; }
-.ah-divider__line { display: block; width: 52px; height: 1px; background: var(--gold); opacity: 0.45; }
-.ah-divider__icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-}
-.ah-divider__icon-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
+  margin-bottom: 14px;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-pale) 30%, var(--cream) 55%, var(--gold-pale) 78%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.ah-body { display: flex; flex-direction: column; gap: 16px; margin-bottom: 52px; }
-.ah-body p { font-family: var(--font-display); font-size: 1.05rem; font-weight: 300; line-height: 1.72; color: var(--cream-dim); max-width: 480px; }
-
-.ah-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 72px 64px;
-  background: linear-gradient(160deg, var(--maroon-card) 0%, var(--dark-card) 100%);
-  border-left: 1px solid var(--border-gold);
-  overflow: hidden;
-}
-.ah-right::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 70% 30%, rgba(201, 146, 42, 0.12) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.ah-quote { position: relative; z-index: 1; max-width: 420px; text-align: center; }
-.ah-quote__mark {
-  font-family: var(--font-display);
-  font-size: 5rem;
-  line-height: 0.5;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 20px;
-}
-.ah-quote__sanskrit {
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-  color: var(--gold-light);
-  line-height: 1.4;
-  margin-bottom: 10px;
-}
-.ah-quote__translit {
+.ah-subtitle {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.05rem;
-  color: var(--cream-muted);
-  margin-bottom: 24px;
+  color: var(--gold-light);
 }
-.ah-quote__text {
+
+.ah-body {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  row-gap: 22px;
+}
+.ah-body p {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.02rem;
   font-weight: 300;
-  font-style: italic;
-  color: var(--cream);
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 1.75;
+  color: var(--cream-dim);
 }
-.ah-quote__author {
-  display: block;
+
+/* Homepage teaser reuses the same two-column .ah-body layout — just
+   a shorter margin below it since it's followed by the Read More
+   link rather than going straight to the mentors divider */
+.ah-body--teaser { margin-bottom: 0; }
+
+.ah-readmore-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+.ah-readmore {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-caps);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 146, 42, .4);
+  padding-bottom: 3px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.ah-readmore:hover { color: var(--gold-pale); border-color: rgba(201, 146, 42, .8); }
+
+.ah-mentors {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 72px auto 0;
+}
+.ah-mentors__eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.ah-mentors__eyebrow span:first-child {
+  font-family: var(--font-caps);
+  font-size: .72rem;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: var(--gold);
 }
+.ah-mentors__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: .5; }
+
+.ah-mentors__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ah-mentor {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, rgba(35, 5, 5, .5) 0%, rgba(19, 2, 2, .6) 100%);
+  border: 1px solid var(--border-gold);
+  border-top: 2px solid rgba(201, 146, 42, .55);
+  border-radius: 16px;
+  padding: 36px 24px 32px;
+  text-align: center;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.ah-mentor:hover { transform: translateY(-6px); border-color: rgba(201, 146, 42, .55); }
+
+.ah-mentor__photo {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.ah-mentor__photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, .4));
+}
+
+.ah-mentor__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.ah-mentor__role {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--gold-light);
+  opacity: .85;
+}
 
 /* ── Responsive ── */
+@media (max-width: 900px) {
+  .ah-body { grid-template-columns: 1fr; row-gap: 18px; }
+}
+@media (max-width: 720px) {
+  .ah-mentors__grid { grid-template-columns: 1fr; gap: 20px; }
+}
 @media (max-width: 1024px) {
-  .about-hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .ah-left { padding: 56px 40px; }
-  .ah-right { padding: 56px 40px; }
+  .about-hero { padding: 64px 40px; }
+  .ah-watermark { display: none; }
 }
 @media (max-width: 480px) {
-  .ah-left { padding: 40px 24px; }
-  .ah-right { padding: 40px 24px; }
-  .ah-headline { margin-bottom: 20px; }
-  .ah-body { margin-bottom: 32px; }
-  .ah-quote__mark { font-size: 3.5rem; margin-bottom: 12px; }
-  .ah-quote__text { font-size: 1.1rem; }
+  .about-hero { padding: 48px 24px; }
+  .ah-title { margin-bottom: 8px; }
 }
-
