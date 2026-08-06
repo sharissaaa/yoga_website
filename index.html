@@ -94,7 +94,7 @@
         />
         <span class="site-nav__logo-text">
           BHUMI MANTRA
-          <small>Heal. Transform. Transcend.</small>
+          <small>Explore. Transform. Transcend.</small>
         </span>
       </a>
 
@@ -120,7 +120,7 @@
           >
         </div>
 
-        <div class="site-nav__panel-section">
+        <div class="site-nav__panel-section">   
           <h4 class="site-nav__panel-heading">Follow Us</h4>
           <div class="site-footer-social">
             <a href="#" aria-label="Facebook">
@@ -165,7 +165,26 @@
         </div>
       </div>
 
-      <a href="join.html" class="site-nav__cta">Join Us</a>
+    <div class="site-nav__social">
+        <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+            </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+    </div>
 
       <button
         type="button"
@@ -211,17 +230,7 @@
         </div>
       </div>
 
-      <div class="hero-scroll-indicator">
-        <span class="scroll-num">01</span>
-        <div class="scroll-dots">
-          <span class="s-dot active"></span>
-          <span class="s-dot"></span>
-          <span class="s-dot"></span>
-          <span class="s-dot"></span>
-          <span class="s-dot"></span>
-        </div>
-        <span class="scroll-num">05</span>
-      </div>
+    
     </section>
 
     <div class="section-sep"></div>
@@ -269,10 +278,16 @@
           alt=""
           class="site-footer__logo-icon"
         />
-        <span class="site-footer__logo-text">BHUMI MANTRA</span>
+        <h2 class="site-footer__brand-title">
+          Bhoomi Mantra Yoga &amp; Meditation Research Center
+        </h2>
+        <p class="site-footer__brand-subtitle">
+          A sister project of Terra Mantra, Italy
+        </p>
         <p class="site-footer__tagline">
-          Rooted in the earth's oldest wisdom, we guide sacred journeys of
-          healing, ritual and transformation.
+          Preserving and sharing authentic yogic traditions that support
+          profound self-transformation, inner awareness, and holistic
+          well-being.
         </p>
       </div>
 
@@ -298,9 +313,9 @@
         <ul>
           <li><a href="travel.html">Sacred Journeys</a></li>
           <li><a href="course.html">Retreats &amp; Immersions</a></li>
-          <li><a href="about.html">Ceremony &amp; Ritual</a></li>
-          <li><a href="contact.html">Private Sessions</a></li>
-          <li><a href="index.html">Wellness Programs</a></li>
+          <li><a href="course.html">Ceremony &amp; Ritual</a></li>
+          <li><a href="course.html">Private Sessions</a></li>
+          <li><a href="course.html">Wellness Programs</a></li>
         </ul>
       </nav>
 
@@ -312,13 +327,13 @@
           onsubmit="return false;"
           autocomplete="off"
         >
+          <label for="newsletterEmail" class="sr-only">Your email address</label>
           <input
             id="newsletterEmail"
-            name="bhumi_nl_field_xz9"
-            type="text"
-            inputmode="email"
+            name="newsletter_email_bhumi"
+            type="email"
             placeholder="Your email address"
-            autocomplete="new-password"
+            autocomplete="off"
             autocorrect="off"
             autocapitalize="off"
             spellcheck="false"
@@ -596,6 +611,18 @@
         });
       }
 
+      /* ── STORY CARDS: "Read more" expands the truncated testimonial
+              text in place; card grows, others stay the same size ── */
+      function initStoryToggle() {
+        document.querySelectorAll(".story-card .story-read").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var card = btn.closest(".story-card");
+            var expanded = card.classList.toggle("is-expanded");
+            btn.textContent = expanded ? "Read less" : "Read more";
+          });
+        });
+      }
+
       /* ── LOAD HTML PARTIALS ── */
       var partials = [
         { id: "partial-experience", src: "home/home-experience.html" },
@@ -626,6 +653,7 @@
         initJourneyPath();
         initExperienceArrow();
         initDestinationArrows();
+        initStoryToggle();
       });
     </script>
   </body>
