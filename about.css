@@ -176,9 +176,22 @@ em {
   overflow: hidden;
 }
 .hero__img {
+  /* Taken out of flow so its own (possibly tall/"long") aspect
+     ratio can never inflate the hero row's auto-computed height —
+     it sizes strictly against .hero__right's resolved box and gets
+     cropped to fit via object-fit, no matter the source image */
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Fades the photo itself to nothing at the left edge, so the
+     section's own maroon background (same var, same section) shows
+     through underneath — an exact colour match instead of an
+     overlay trying to approximate it, so the seam disappears
+     regardless of what the photo looks like at that edge */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 22%, black 100%);
 }
 .hero__img-gradient {
   position: absolute;
