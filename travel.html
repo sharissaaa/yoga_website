@@ -181,7 +181,7 @@
 
       <!-- FILTERS -->
       <div class="filters">
-        <div class="filter-select">
+        <div class="filter-select" data-dropdown data-filter="destination">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -193,12 +193,9 @@
             <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" />
             <circle cx="12" cy="9" r="2.5" />
           </svg>
-          <select>
-            <option>All Destinations</option>
-            <option>Indonesia</option>
-            <option>India</option>
-            <option>Sri Lanka</option>
-          </select>
+          <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-select__label">All Destinations</span>
+          </button>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -209,8 +206,14 @@
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
+          <ul class="filter-select__menu" role="listbox" hidden>
+            <li role="option" aria-selected="true">All Destinations</li>
+            <li role="option" aria-selected="false" data-value="Indonesia">Indonesia</li>
+            <li role="option" aria-selected="false" data-value="India">India</li>
+            <li role="option" aria-selected="false" data-value="Sri Lanka">Sri Lanka</li>
+          </ul>
         </div>
-        <div class="filter-select">
+        <div class="filter-select" data-dropdown data-filter="duration">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -222,12 +225,9 @@
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3.5 2" />
           </svg>
-          <select>
-            <option>Duration</option>
-            <option>6 Days</option>
-            <option>7 Days</option>
-            <option>8 Days</option>
-          </select>
+          <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-select__label">Duration</span>
+          </button>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -238,8 +238,14 @@
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
+          <ul class="filter-select__menu" role="listbox" hidden>
+            <li role="option" aria-selected="true">Duration</li>
+            <li role="option" aria-selected="false" data-value="6">6 Days</li>
+            <li role="option" aria-selected="false" data-value="7">7 Days</li>
+            <li role="option" aria-selected="false" data-value="8">8 Days</li>
+          </ul>
         </div>
-        <div class="filter-select">
+        <div class="filter-select" data-dropdown data-filter="month">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -251,12 +257,9 @@
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M3 9h18M8 3v4M16 3v4" />
           </svg>
-          <select>
-            <option>Month</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-          </select>
+          <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-select__label">Month</span>
+          </button>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -267,8 +270,19 @@
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
+          <ul class="filter-select__menu" role="listbox" hidden>
+            <li role="option" aria-selected="true">Month</li>
+            <li role="option" aria-selected="false" data-value="August">August</li>
+            <li role="option" aria-selected="false" data-value="September">September</li>
+            <li role="option" aria-selected="false" data-value="October">October</li>
+            <li role="option" aria-selected="false" data-value="November">November</li>
+            <li role="option" aria-selected="false" data-value="December">December</li>
+            <li role="option" aria-selected="false" data-value="January">January</li>
+            <li role="option" aria-selected="false" data-value="February">February</li>
+            <li role="option" aria-selected="false" data-value="March">March</li>
+          </ul>
         </div>
-        <div class="filter-select">
+        <div class="filter-select" data-dropdown data-filter="level">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -280,12 +294,9 @@
             <circle cx="12" cy="8" r="3.5" />
             <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
           </svg>
-          <select>
-            <option>Experience Level</option>
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>All Levels</option>
-          </select>
+          <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-select__label">Experience Level</span>
+          </button>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -296,14 +307,17 @@
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
+          <ul class="filter-select__menu" role="listbox" hidden>
+            <li role="option" aria-selected="true">Experience Level</li>
+            <li role="option" aria-selected="false" data-value="Beginner">Beginner</li>
+            <li role="option" aria-selected="false" data-value="Intermediate">Intermediate</li>
+            <li role="option" aria-selected="false" data-value="All Levels">All Levels</li>
+          </ul>
         </div>
-        <div class="filter-select filter-select--right">
-          <select>
-            <option>Sort By</option>
-            <option>Date</option>
-            <option>Duration</option>
-            <option>Destination</option>
-          </select>
+        <div class="filter-select filter-select--right" data-dropdown>
+          <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="filter-select__label">Sort By</span>
+          </button>
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -314,11 +328,22 @@
           >
             <path d="m6 9 6 6 6-6" />
           </svg>
+          <ul class="filter-select__menu" role="listbox" hidden>
+            <li role="option" aria-selected="true">Sort By</li>
+            <li role="option" aria-selected="false">Date</li>
+            <li role="option" aria-selected="false">Duration</li>
+            <li role="option" aria-selected="false">Destination</li>
+          </ul>
         </div>
       </div>
 
+      <!-- CARDS (5 per page — pagination below builds itself from however
+           many .retreat-card elements are inside this list, so adding more
+           cards later via Strapi needs no changes here) -->
+      <div class="retreats-list" id="retreatsList">
+
       <!-- CARD 1 -->
-      <article class="retreat-card reveal">
+      <article class="retreat-card reveal" data-destination="Indonesia" data-duration="7" data-month="August" data-level="Beginner">
         <div class="retreat-card__badge">Popular</div>
         <!-- Replace bali.jpg with your actual retreat image -->
         <img
@@ -333,7 +358,7 @@
             <span class="meta-dot">•</span>
             <span>7 Days</span>
             <span class="meta-dot">•</span>
-            <span class="meta-tag">Limited Seats</span>
+            <span class="meta-tag">Beginner</span>
           </p>
           <p class="retreat-card__desc">
             Experience deep healing through yoga, meditation, sacred temple
@@ -347,6 +372,7 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
@@ -363,7 +389,7 @@
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">15 Aug 2026 – 21 Aug 2026</p>
+              <p class="aside-block__value">15–21 Aug 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
@@ -384,20 +410,21 @@
               <a
                 href="mailto:travel@innerjourney.com"
                 class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
+                >travel@innerjourney<wbr>.com</a
               >
             </div>
           </div>
+          <div class="aside-divider"></div>
           <a
             href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
           >
         </div>
       </article>
 
       <!-- CARD 2 -->
-      <article class="retreat-card reveal" style="transition-delay: 0.1s">
+      <article class="retreat-card reveal" style="transition-delay: 0.1s" data-destination="India" data-duration="6" data-month="September" data-level="All Levels">
         <!-- Replace rishikesh.jpg with your actual retreat image -->
         <img
           src="assets/gallery/home-image/Rishikesh.jpg"
@@ -425,6 +452,7 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
@@ -441,7 +469,7 @@
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">10 Sep 2026 – 15 Sep 2026</p>
+              <p class="aside-block__value">10–15 Sep 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
@@ -462,20 +490,21 @@
               <a
                 href="mailto:travel@innerjourney.com"
                 class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
+                >travel@innerjourney<wbr>.com</a
               >
             </div>
           </div>
+          <div class="aside-divider"></div>
           <a
             href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
           >
         </div>
       </article>
 
       <!-- CARD 3 -->
-      <article class="retreat-card reveal" style="transition-delay: 0.2s">
+      <article class="retreat-card reveal" style="transition-delay: 0.2s" data-destination="Sri Lanka" data-duration="8" data-month="October" data-level="Intermediate">
         <!-- Replace srilanka.jpg with your actual retreat image -->
         <img
           src="assets/gallery/home-image/sri lanka.png"
@@ -489,7 +518,7 @@
             <span class="meta-dot">•</span>
             <span>8 Days</span>
             <span class="meta-dot">•</span>
-            <span class="meta-tag">Limited Seats</span>
+            <span class="meta-tag">Intermediate</span>
           </p>
           <p class="retreat-card__desc">
             A journey of wellness, nature and culture. Reconnect with yourself
@@ -503,6 +532,7 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
@@ -519,7 +549,7 @@
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">05 Oct 2026 – 12 Oct 2026</p>
+              <p class="aside-block__value">05–12 Oct 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
@@ -540,16 +570,428 @@
               <a
                 href="mailto:travel@innerjourney.com"
                 class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
+                >travel@innerjourney<wbr>.com</a
               >
             </div>
           </div>
+          <div class="aside-divider"></div>
           <a
             href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a>
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
         </div>
       </article>
+
+      <!-- CARD 4 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.3s" data-destination="India" data-duration="7" data-month="November" data-level="Intermediate">
+        <!-- Replace ladakh.jpg with your actual retreat image -->
+        <img
+          src="assets/gallery/home-image/ladakh.jpg"
+          alt="Ladakh mountain monastery"
+          class="retreat-card__img"
+        />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Ladakh Himalayan Retreat</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>7 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Intermediate</span>
+          </p>
+          <p class="retreat-card__desc">
+            High-altitude stillness among ancient monasteries — a retreat of
+            silence, breathwork and wide open skies.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">02–09 Nov 2026</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a
+                href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link"
+                >travel@innerjourney<wbr>.com</a
+              >
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a
+            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
+        </div>
+      </article>
+
+      <!-- CARD 5 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.4s" data-destination="India" data-duration="6" data-month="December" data-level="Beginner">
+        <!-- Replace Auroville.jpg with your actual retreat image -->
+        <img
+          src="assets/gallery/home-image/Auroville.jpg"
+          alt="Auroville township gardens"
+          class="retreat-card__img"
+        />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Auroville Mindful Living</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>6 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Beginner</span>
+          </p>
+          <p class="retreat-card__desc">
+            A quiet immersion in Auroville's community gardens — mindful
+            living, meditation and conscious community practice.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">14–20 Dec 2026</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a
+                href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link"
+                >travel@innerjourney<wbr>.com</a
+              >
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a
+            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
+        </div>
+      </article>
+
+      <!-- CARD 6 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.5s" data-destination="India" data-duration="7" data-month="January" data-level="All Levels">
+        <!-- Replace kerala.jpg with your actual retreat image -->
+        <img
+          src="assets/gallery/home-image/kerala.jpg"
+          alt="Kerala backwaters"
+          class="retreat-card__img"
+        />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Kerala Ayurveda Retreat</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>7 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag meta-tag--green">All Levels</span>
+          </p>
+          <p class="retreat-card__desc">
+            Traditional Ayurvedic healing, gentle yoga and calm backwater
+            days — restore body and mind at their own pace.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">10–17 Jan 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a
+                href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link"
+                >travel@innerjourney<wbr>.com</a
+              >
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a
+            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
+        </div>
+      </article>
+
+      <!-- CARD 7 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.6s" data-destination="India" data-duration="6" data-month="February" data-level="Intermediate">
+        <!-- Replace Gujarat.png with your actual retreat image -->
+        <img
+          src="assets/gallery/home-image/Gujarat.png"
+          alt="Gujarat heritage architecture"
+          class="retreat-card__img"
+        />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Gujarat Heritage Journey</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>6 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Intermediate</span>
+          </p>
+          <p class="retreat-card__desc">
+            Sacred stepwells, temple towns and mindful practice woven
+            through Gujarat's timeless heritage landscape.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">08–14 Feb 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a
+                href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link"
+                >travel@innerjourney<wbr>.com</a
+              >
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a
+            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
+        </div>
+      </article>
+
+      <!-- CARD 8 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.7s" data-destination="India" data-duration="8" data-month="March" data-level="Beginner">
+        <!-- Replace TN.jpg with your actual retreat image -->
+        <img
+          src="assets/gallery/home-image/TN.jpg"
+          alt="Tamil Nadu temple"
+          class="retreat-card__img"
+        />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Tamil Nadu Temple Trail</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>8 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Beginner</span>
+          </p>
+          <p class="retreat-card__desc">
+            Chant, ritual and stillness among South India's grand temple
+            towns — a devotional path for body and spirit.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">05–13 Mar 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="aside-block__icon"
+              aria-hidden="true"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a
+                href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link"
+                >travel@innerjourney<wbr>.com</a
+              >
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a
+            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
+            class="aside-invite-link"
+            >Write to us to reserve & embark on an unforgettable journey.</a
+          >
+        </div>
+      </article>
+
+      </div>
+
+      <!-- Shown by travel.js when the active filters match no cards -->
+      <p class="retreats-empty" id="retreatsEmpty" hidden>
+        No retreats match your filters. Try adjusting your selection.
+      </p>
+
+      <!-- PAGINATION (populated by travel.js, 5 cards per page, rebuilt whenever filters change) -->
+      <nav class="retreats-pagination" id="retreatsPagination" aria-label="Retreats pages"></nav>
     </section>
 
     <!-- ===== TAGLINE BANNER ===== -->
