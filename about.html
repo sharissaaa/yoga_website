@@ -115,7 +115,7 @@
 
             <div class="ah-body">
                 <p class="ah-body__lead">
-                    The project is now beginning to establish its own foundation in India, with the long-term
+                    <span class="ah-body__dropcap">The</span> project is now beginning to establish its own foundation in India, with the long-term
                     vision of creating a dedicated center in the forests of Vagamon, Kerala&mdash;a place for
                     community living, spiritual practice, education, and research.
                 </p>
@@ -157,32 +157,69 @@
 
     <!-- Represented with yoga-pose line art until real portrait
              photos of the team are supplied -->
-    <div class="team__grid">
+    <!-- Bio copy below is placeholder text — swap in the real bios
+             for each teacher when available -->
+    <div class="team__carousel-wrap">
+        <button type="button" class="team__nav team__nav--prev" id="teamPrev" aria-label="Previous teacher">&#10094;</button>
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/yoga5.png" alt="Yoga dancer pose illustration">
-            </div>
-            <h4 class="team-card__title">Jeo Varghese</h4>
-            <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
-        </article>
+        <div class="team__carousel" id="teamCarousel">
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/yoga4.png" alt="Yoga cobra pose illustration">
-            </div>
-            <h4 class="team-card__title">Nidish Nidhiri</h4>
-            <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-        </article>
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/neymar.png" alt="Yoga dancer pose illustration">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Jeo Varghese</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
+                        <p class="team-card__desc">
+                            Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages
+                            across South India, blending rigorous technique with a deeply personal,
+                            meditative teaching style. He leads our retreat programs in Kerala and
+                            continues to research classical yogic texts.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/Sadhanapose.png" alt="Seated meditation pose illustration">
-            </div>
-            <h4 class="team-card__title">Alice Avaldi</h4>
-            <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
-        </article>
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/cristiano.png" alt="Yoga cobra pose illustration">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Nidish Nidhiri</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+                        <p class="team-card__desc">
+                            Nidish guides students into stillness through breath-centred meditation and
+                            sound practice, drawing on years spent training in ashram settings across
+                            India. His sessions are known for their gentle pace and quiet depth.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
 
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/messi.png" alt="Alice Avaldi">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Alice Avaldi</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
+                        <p class="team-card__desc">
+                            Alice bridges Western wellness training with time-honoured yogic philosophy,
+                            creating a warm, holistic space for every student's practice. She is
+                            especially devoted to supporting beginners through their first retreat
+                            experience.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <button type="button" class="team__nav team__nav--next" id="teamNext" aria-label="Next teacher">&#10095;</button>
     </div>
 </section>
    
