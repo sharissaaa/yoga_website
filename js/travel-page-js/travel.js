@@ -7,6 +7,20 @@ document.addEventListener('click', (e) => {
   if (details) details.removeAttribute('open');
 });
 
+/* ── CARD → DETAIL PAGE ──
+   Clicking anywhere on a card opens its destination-detail.html page, except
+   when the click lands on something already interactive inside the card
+   (the More Information toggle, the email link, the reserve line) — those
+   keep their own behavior instead of being hijacked by the card-level nav. */
+document.addEventListener('click', (e) => {
+  const card = e.target.closest('.retreat-card');
+  if (!card) return;
+  if (e.target.closest('a, button, summary')) return;
+
+  const slug = card.dataset.slug;
+  if (slug) window.location.href = `destination-detail.html?slug=${encodeURIComponent(slug)}`;
+});
+
 /* ── FILTER DROPDOWNS + CARD FILTERING + PAGINATION ──
    Each filterable dropdown carries data-filter="destination|duration|month|level"
    and its options carry a matching data-value. Selecting an option narrows

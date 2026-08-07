@@ -299,3 +299,36 @@
   .soundscape-btn { display: none; }
   .btn-primary-sy, .btn-outline-sy { width: 100%; justify-content: center; }
 }
+
+      /* FIX for absolute positioned quote block – ensure relative container */
+      .journey-section .col-lg-9 {
+        position: relative;
+      }
+
+      /* additional micro adjustment to prevent any text overflow */
+      .journey-quote {
+        max-width: 210px;
+        z-index: 5;
+      }
+
+      @media (max-width: 992px) {
+        .journey-quote {
+          position: static;
+          margin-bottom: 20px;
+          max-width: 100%;
+        }
+      }
+
+      /* ✅ FIX: smooth in-page scrolling for nav/footer anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* ✅ FIX: offset anchor targets so the fixed navbar doesn't cover
+           the top of the section when jumped to. Adjust 90px if your
+           navbar's actual rendered height differs. */
+      #partial-about,
+      #partial-experience,
+      #partial-destinations {
+        scroll-margin-top: 90px;
+      }

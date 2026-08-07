@@ -366,10 +366,15 @@ details > summary::-webkit-details-marker { display: none; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   margin-bottom: 1.25rem;
-  transition: border-color 0.25s;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   width: 100%;
 }
-.retreat-card:hover { border-color: var(--clr-gold-dim); }
+.retreat-card:hover {
+  border-color: var(--clr-gold-dim);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
 
 /* Badge */
 .retreat-card__badge {
@@ -557,6 +562,44 @@ details > summary::-webkit-details-marker { display: none; }
   transition: color 0.2s ease;
 }
 .aside-invite-link:hover { color: var(--clr-gold); }
+
+/* ============================================================
+   PERSONALIZED TRAVEL PACKAGE
+   ============================================================ */
+.custom-package {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 5rem;
+}
+.custom-package__content {
+  max-width: 640px;
+  text-align: center;
+  padding: 2.75rem;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
+}
+.custom-package__heading {
+  font-family: var(--ff-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--clr-white);
+  margin: 0.5rem 0 0.9rem;
+}
+.custom-package__text {
+  font-size: var(--fs-sm);
+  color: var(--clr-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.custom-package__link {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--clr-gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.custom-package__link:hover { color: var(--clr-gold-light); }
 
 /* ============================================================
    TAGLINE BANNER
