@@ -575,20 +575,18 @@ shared script above, shared by every page)
                 document.getElementById('teamPrev')?.addEventListener('click', () => rotateBy(STEP));
                 document.getElementById('teamNext')?.addEventListener('click', () => rotateBy(-STEP));
 
-                // Trackpad left/right swipe (deltaX) or a plain vertical
-                // wheel (deltaY) both step the wheel one card at a time —
-                // scrolling/swiping right brings the right-hand neighbour
-                // to center (same as the "next" arrow); left does the
-                // mirror, bringing the left-hand neighbour to center
-                // (same as the "prev" arrow)
+                // Only a horizontal swipe/scroll (trackpad two-finger
+                // left/right, or shift+wheel) turns the ring — a plain
+                // vertical wheel is left alone so the page scrolls
+                // normally instead of spinning the carousel
                 let wheelLocked = false;
                 teamCarousel.addEventListener('wheel', (e) => {
+                    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
                     e.preventDefault();
                     if (wheelLocked) return;
-                    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-                    if (Math.abs(delta) < 4) return;
+                    if (Math.abs(e.deltaX) < 4) return;
                     wheelLocked = true;
-                    rotateBy(delta > 0 ? -STEP : STEP);
+                    rotateBy(e.deltaX > 0 ? -STEP : STEP);
                     window.setTimeout(() => { wheelLocked = false; }, 550);
                 }, { passive: false });
 
