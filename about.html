@@ -115,7 +115,7 @@
 
             <div class="ah-body">
                 <p class="ah-body__lead">
-                    The project is now beginning to establish its own foundation in India, with the long-term
+                    <span class="ah-body__dropcap">The</span> project is now beginning to establish its own foundation in India, with the long-term
                     vision of creating a dedicated center in the forests of Vagamon, Kerala&mdash;a place for
                     community living, spiritual practice, education, and research.
                 </p>
@@ -157,32 +157,69 @@
 
     <!-- Represented with yoga-pose line art until real portrait
              photos of the team are supplied -->
-    <div class="team__grid">
+    <!-- Bio copy below is placeholder text — swap in the real bios
+             for each teacher when available -->
+    <div class="team__carousel-wrap">
+        <button type="button" class="team__nav team__nav--prev" id="teamPrev" aria-label="Previous teacher">&#10094;</button>
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/yoga5.png" alt="Yoga dancer pose illustration">
-            </div>
-            <h4 class="team-card__title">Jeo Varghese</h4>
-            <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
-        </article>
+        <div class="team__carousel" id="teamCarousel">
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/yoga4.png" alt="Yoga cobra pose illustration">
-            </div>
-            <h4 class="team-card__title">Nidish Nidhiri</h4>
-            <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-        </article>
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/neymar.png" alt="Yoga dancer pose illustration">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Jeo Varghese</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
+                        <p class="team-card__desc">
+                            Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages
+                            across South India, blending rigorous technique with a deeply personal,
+                            meditative teaching style. He leads our retreat programs in Kerala and
+                            continues to research classical yogic texts.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
 
-        <article class="team-card">
-            <div class="team-card__media">
-                <img src="assets/gallery/home-image/Sadhanapose.png" alt="Seated meditation pose illustration">
-            </div>
-            <h4 class="team-card__title">Alice Avaldi</h4>
-            <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
-        </article>
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/cristiano.png" alt="Yoga cobra pose illustration">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Nidish Nidhiri</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+                        <p class="team-card__desc">
+                            Nidish guides students into stillness through breath-centred meditation and
+                            sound practice, drawing on years spent training in ashram settings across
+                            India. His sessions are known for their gentle pace and quiet depth.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
 
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/messi.png" alt="Alice Avaldi">
+                    <div class="team-card__overlay">
+                        <h4 class="team-card__title">Alice Avaldi</h4>
+                        <span class="team-card__rule" aria-hidden="true"></span>
+                        <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
+                        <p class="team-card__desc">
+                            Alice bridges Western wellness training with time-honoured yogic philosophy,
+                            creating a warm, holistic space for every student's practice. She is
+                            especially devoted to supporting beginners through their first retreat
+                            experience.
+                        </p>
+                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <button type="button" class="team__nav team__nav--next" id="teamNext" aria-label="Next teacher">&#10095;</button>
     </div>
 </section>
    
@@ -474,7 +511,7 @@ shared script above, shared by every page)
             }
 
             /* ----------------------------------------------------------
-               4. MEET THE TEAM — expandable card previews
+               4. MEET THE TEAM — expandable bio previews
                ---------------------------------------------------------- */
             document.querySelectorAll('.team-card__toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -485,6 +522,104 @@ shared script above, shared by every page)
                     btn.setAttribute('aria-expanded', String(expanded));
                 });
             });
+
+            /* ----------------------------------------------------------
+               4a. MEET THE TEAM — rotating wheel carousel
+               The three cards sit 120° apart on a ring in 3D space.
+               Rotating that ring (via arrows, drag, or wheel) is one
+               continuous animation, so whichever card swings to face
+               the camera becomes the focused "center" one, and the
+               other two are always its immediate neighbours on the
+               ring — never a static left/right pair. This is what
+               produces the 3-1-2 / 1-2-3 / 2-3-1 wrap-around feel
+               instead of a flat left-to-right strip.
+               ---------------------------------------------------------- */
+            const teamCarousel = document.getElementById('teamCarousel');
+            if (teamCarousel) {
+                const teamCards = Array.from(teamCarousel.querySelectorAll('.team-card'));
+                const STEP = 360 / teamCards.length;
+                const RADIUS = 260;
+                let rotation = 0;
+
+                const renderTeamCarousel = () => {
+                    teamCards.forEach((card, i) => {
+                        const theta = i * STEP + rotation;
+                        const rad = theta * Math.PI / 180;
+                        const front = (Math.cos(rad) + 1) / 2; // 1 = facing camera, 0 = facing away
+
+                        const scale = 0.66 + 0.34 * front;
+                        const blur = (1 - front) * 6;
+                        const brightness = 0.5 + 0.5 * front;
+                        const opacity = 0.35 + 0.65 * front;
+
+                        card.style.transform =
+                            `translate(-50%, -50%) rotateY(${theta}deg) translateZ(${RADIUS}px) scale(${scale})`;
+                        card.style.filter = `blur(${blur}px) brightness(${brightness})`;
+                        card.style.opacity = opacity;
+                        card.style.zIndex = String(Math.round(front * 100));
+                        card.classList.toggle('team-card--active', front > 0.98);
+                    });
+                };
+
+                const rotateBy = (deg) => {
+                    rotation += deg;
+                    renderTeamCarousel();
+                };
+                const settleToNearestStep = () => {
+                    rotation = Math.round(rotation / STEP) * STEP;
+                    renderTeamCarousel();
+                };
+
+                renderTeamCarousel();
+
+                document.getElementById('teamPrev')?.addEventListener('click', () => rotateBy(STEP));
+                document.getElementById('teamNext')?.addEventListener('click', () => rotateBy(-STEP));
+
+                // Only a horizontal swipe/scroll (trackpad two-finger
+                // left/right, or shift+wheel) turns the ring — a plain
+                // vertical wheel is left alone so the page scrolls
+                // normally instead of spinning the carousel
+                let wheelLocked = false;
+                teamCarousel.addEventListener('wheel', (e) => {
+                    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+                    e.preventDefault();
+                    if (wheelLocked) return;
+                    if (Math.abs(e.deltaX) < 4) return;
+                    wheelLocked = true;
+                    rotateBy(e.deltaX > 0 ? -STEP : STEP);
+                    window.setTimeout(() => { wheelLocked = false; }, 550);
+                }, { passive: false });
+
+                // Drag / swipe: the ring turns 1:1 with the pointer while
+                // dragging, then eases to the nearest card on release —
+                // continuous rotation the whole time, never a jump-cut
+                let dragging = false, dragStartX = 0, dragStartRotation = 0;
+
+                const dragStart = (clientX) => {
+                    dragging = true;
+                    dragStartX = clientX;
+                    dragStartRotation = rotation;
+                    teamCarousel.classList.add('is-dragging');
+                };
+                const dragMove = (clientX) => {
+                    if (!dragging) return;
+                    // Dragging right = scrolling right = same as the "next"
+                    // arrow (right-hand neighbour comes to center), so the
+                    // sign is inverted relative to raw pointer movement
+                    rotation = dragStartRotation - (clientX - dragStartX) * 0.35;
+                    renderTeamCarousel();
+                };
+                const dragEnd = () => {
+                    if (!dragging) return;
+                    dragging = false;
+                    teamCarousel.classList.remove('is-dragging');
+                    settleToNearestStep();
+                };
+
+                teamCarousel.addEventListener('pointerdown', (e) => dragStart(e.clientX));
+                window.addEventListener('pointermove', (e) => dragMove(e.clientX));
+                window.addEventListener('pointerup', dragEnd);
+            }
 
             /* ----------------------------------------------------------
                4b. ABOUT HERO — "Read More" expands the rest of the story

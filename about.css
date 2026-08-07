@@ -176,9 +176,22 @@ em {
   overflow: hidden;
 }
 .hero__img {
+  /* Taken out of flow so its own (possibly tall/"long") aspect
+     ratio can never inflate the hero row's auto-computed height —
+     it sizes strictly against .hero__right's resolved box and gets
+     cropped to fit via object-fit, no matter the source image */
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Fades the photo itself to nothing at the left edge, so the
+     section's own maroon background (same var, same section) shows
+     through underneath — an exact colour match instead of an
+     overlay trying to approximate it, so the seam disappears
+     regardless of what the photo looks like at that edge */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 22%, black 100%);
 }
 .hero__img-gradient {
   position: absolute;
@@ -267,90 +280,134 @@ em {
   margin: 0.75rem 0 3rem;
 }
 
-.team__grid {
-  max-width: 1080px;
+/* Rotating wheel carousel: the three cards sit 120° apart on a ring
+   in 3D space (see the JS below). Turning the ring — via the arrow
+   buttons, a drag/swipe, or the mouse wheel — is one continuous
+   rotateY animation, so the card that swings around to face the
+   camera becomes the focused center one, and the wrap-around never
+   jump-cuts */
+.team__carousel-wrap {
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
 }
+.team__carousel {
+  position: relative;
+  height: calc(min(300px, 72vw) * 1.55);
+  margin: 2rem auto 3rem;
+  perspective: 1400px;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.team__carousel.is-dragging { cursor: grabbing; }
 
 .team-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  border: 1px solid var(--clr-border);
-  border-top: 2px solid rgba(201, 168, 76, 0.55);
-  border-radius: 16px;
-  padding: 2.25rem 1.5rem 1.75rem;
-  background: linear-gradient(160deg, rgba(42, 14, 12, 0.55) 0%, rgba(14, 11, 7, 0.7) 100%);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(300px, 72vw);
+  aspect-ratio: 3 / 4.3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.6s ease, opacity 0.6s ease;
 }
-.team-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 168, 76, 0.5);
+.team__carousel.is-dragging .team-card {
+  transition: filter 0.6s ease, opacity 0.6s ease;
 }
+.team-card--active {
+  border-color: rgba(201, 168, 76, 0.6);
+}
+
+/* Card is (almost) all picture — the pose art fills the frame and
+   the text sits in a scrim at the bottom, poster-style */
 .team-card__media {
+  position: relative;
   width: 100%;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.25rem;
+  height: 100%;
 }
 .team-card__media img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.4));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.team-card__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(to top, rgba(10, 7, 5, 0.96) 0%, rgba(10, 7, 5, 0.75) 45%, transparent 100%);
 }
 .team-card__title {
   font-family: var(--ff-display);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--clr-white);
-  margin-top: 0;
+  margin: 0;
+}
+/* Thin gold rule under the name, echoing the eyebrow/divider lines
+   used elsewhere on the page */
+.team-card__rule {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--clr-gold);
+  opacity: 0.5;
+  margin: 0.65rem auto 0.75rem;
 }
 .team-card__meta {
   font-family: var(--ff-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   line-height: 1.5;
   color: var(--clr-gold-light);
   opacity: 0.9;
-  padding: 0 1.25rem;
-  margin-top: 0.5rem;
 }
 .team-card__desc {
   font-family: var(--ff-body);
-  font-size: 0.875rem;
-  line-height: 1.65;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: var(--clr-muted);
-  padding: 0 1.25rem;
-  margin-top: 0.5rem;
+  max-width: 260px;
+  margin: 0.65rem auto 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
   overflow: hidden;
-  min-height: calc(1.65em * 2);
+  /* Fades to transparent instead of cutting the line off hard,
+     hinting there's more text before you even reach "Read more" */
+  -webkit-mask-image: linear-gradient(to right, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 78%, transparent 100%);
 }
 .team-card__desc.is-expanded {
-  -webkit-line-clamp: unset;
-  line-clamp: unset;
-  overflow: visible;
+  /* Caps out at 3 lines rather than growing to the full bio, so card
+     heights stay contained; a bottom fade signals there's more text
+     past the cap instead of cutting it off hard */
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
 }
 .team-card__toggle {
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   font-family: var(--ff-body);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--clr-gold);
+  background: none;
+  border: none;
   border-bottom: 1px solid rgba(201, 168, 76, 0.4);
-  padding-bottom: 2px;
+  padding: 0.6rem 0 2px;
+  cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .team-card__toggle:hover {
@@ -358,8 +415,32 @@ em {
   border-color: var(--clr-gold-light);
 }
 
+/* Prev/next arrows floating over the carousel edges */
+.team__nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  background: rgba(10, 7, 5, 0.6);
+  color: var(--clr-gold);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.team__nav:hover {
+  background: rgba(201, 168, 76, 0.16);
+  border-color: var(--clr-gold-light);
+  color: var(--clr-gold-light);
+}
+.team__nav--prev { left: 0; }
+.team__nav--next { right: 0; }
+
 @media (max-width: 820px) {
-  .team__grid { grid-template-columns: 1fr; max-width: 420px; }
+  .team__nav { display: none; }
 }
 
 /* ============================================================
@@ -631,6 +712,21 @@ em {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
+  position: relative;
+  padding-left: 22px;
+}
+/* Slim gold "spine" beside the passage, echoing the eyebrow/divider
+   rules elsewhere on the page — turns a plain text block into a
+   deliberate editorial column instead of a wall of copy */
+.ah-body::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold) 0%, rgba(201, 146, 42, 0.15) 100%);
+  opacity: 0.55;
 }
 .ah-body p {
   font-family: var(--ff-display);
@@ -638,12 +734,26 @@ em {
   font-weight: 300;
   line-height: 1.75;
   color: var(--cream-dim);
-  max-width: 460px;
+  max-width: 600px;
 }
 
 /* Lead line stays a touch brighter than the collapsed detail below it,
    so the eye has one clear thing to read before deciding to go deeper */
 .ah-body__lead { color: var(--cream); }
+
+/* Large opening capital on the lead line — a small editorial flourish
+   that gives the passage a focal point instead of reading as one more
+   flat paragraph */
+.ah-body__dropcap {
+  font-family: var(--ff-display);
+  font-size: 3.1rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold-light);
+  float: left;
+  padding-right: 10px;
+  padding-top: 4px;
+}
 
 .ah-body__more {
   display: flex;
@@ -685,4 +795,11 @@ em {
 
 @media (max-width: 820px) {
   .about-hero .ah-left { padding: 3rem 1.5rem; }
+  .ah-body { padding-left: 16px; }
+  .ah-body p { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .ah-body::before { display: none; }
+  .ah-body { padding-left: 0; }
 }
