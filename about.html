@@ -9,7 +9,7 @@
     <!-- Shared across every page: same nav + footer design, color set per page below -->
     <link rel="stylesheet" href="css/header-footer.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
         rel="stylesheet" />
 </head>
 
@@ -159,67 +159,64 @@
              photos of the team are supplied -->
     <!-- Bio copy below is placeholder text — swap in the real bios
              for each teacher when available -->
-    <div class="team__carousel-wrap">
-        <button type="button" class="team__nav team__nav--prev" id="teamPrev" aria-label="Previous teacher">&#10094;</button>
+    <div class="team__grid">
 
-        <div class="team__carousel" id="teamCarousel">
+        <article class="team-card">
+            <span class="team-card__index">01</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/neymar.png" alt="Jeo Varghese">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Jeo Varghese</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
+                <p class="team-card__desc">
+                    Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages
+                    across South India, blending rigorous technique with a deeply personal,
+                    meditative teaching style. He leads our retreat programs in Kerala and
+                    continues to research classical yogic texts.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
 
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/neymar.png" alt="Yoga dancer pose illustration">
-                    <div class="team-card__overlay">
-                        <h4 class="team-card__title">Jeo Varghese</h4>
-                        <span class="team-card__rule" aria-hidden="true"></span>
-                        <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
-                        <p class="team-card__desc">
-                            Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages
-                            across South India, blending rigorous technique with a deeply personal,
-                            meditative teaching style. He leads our retreat programs in Kerala and
-                            continues to research classical yogic texts.
-                        </p>
-                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-                    </div>
-                </div>
-            </article>
+        <article class="team-card">
+            <span class="team-card__index">02</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/cristiano.png" alt="Nidish Nidhiri">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Nidish Nidhiri</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+                <p class="team-card__desc">
+                    Nidish guides students into stillness through breath-centred meditation and
+                    sound practice, drawing on years spent training in ashram settings across
+                    India. His sessions are known for their gentle pace and quiet depth.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
 
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/cristiano.png" alt="Yoga cobra pose illustration">
-                    <div class="team-card__overlay">
-                        <h4 class="team-card__title">Nidish Nidhiri</h4>
-                        <span class="team-card__rule" aria-hidden="true"></span>
-                        <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-                        <p class="team-card__desc">
-                            Nidish guides students into stillness through breath-centred meditation and
-                            sound practice, drawing on years spent training in ashram settings across
-                            India. His sessions are known for their gentle pace and quiet depth.
-                        </p>
-                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-                    </div>
-                </div>
-            </article>
+        <article class="team-card">
+            <span class="team-card__index">03</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/messi.png" alt="Alice Avaldi">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Alice Avaldi</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
+                <p class="team-card__desc">
+                    Alice bridges Western wellness training with time-honoured yogic philosophy,
+                    creating a warm, holistic space for every student's practice. She is
+                    especially devoted to supporting beginners through their first retreat
+                    experience.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
 
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/messi.png" alt="Alice Avaldi">
-                    <div class="team-card__overlay">
-                        <h4 class="team-card__title">Alice Avaldi</h4>
-                        <span class="team-card__rule" aria-hidden="true"></span>
-                        <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
-                        <p class="team-card__desc">
-                            Alice bridges Western wellness training with time-honoured yogic philosophy,
-                            creating a warm, holistic space for every student's practice. She is
-                            especially devoted to supporting beginners through their first retreat
-                            experience.
-                        </p>
-                        <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-
-        <button type="button" class="team__nav team__nav--next" id="teamNext" aria-label="Next teacher">&#10095;</button>
     </div>
 </section>
    
@@ -284,8 +281,11 @@
 
     <!-- ===== QUOTE ===== -->
     <section class="quote reveal">
-        <span class="quote__mark">&ldquo;</span>
-        <p class="quote__text"><em>The journey within is the greatest adventure.</em></p>
+        <img src="assets/gallery/home-image/logo.png" alt="" class="quote__mandala mandala-spin" aria-hidden="true">
+        <p class="quote__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+        <p class="quote__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+        <p class="quote__text"><em>Then pure awareness is established in itself.</em></p>
+        <p class="quote__attr">&mdash; Patanjali, Yoga Sutras</p>
     </section>
 
     <!-- ══════════════════════════════════════ -->

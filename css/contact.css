@@ -531,10 +531,26 @@ textarea:focus-visible{
 }
 .quote-content{ position:relative; z-index:2; }
 .quote-content .divider-center{ margin: 12px auto; }
-.quote-mark{
+.quote-mandala{
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
+  opacity: .85;
+  filter: invert(72%) sepia(40%) saturate(600%) hue-rotate(5deg) brightness(95%);
+}
+.quote-sanskrit{
+  font-family: 'Noto Serif Devanagari', var(--font-display), Georgia, serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  color: var(--gold-light);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.quote-translit{
   font-family: var(--font-display);
-  font-size: 36px;
-  color: var(--gold);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--cream-muted);
+  margin-bottom: 14px;
 }
 .quote-text{
   font-family: var(--font-display);
@@ -542,6 +558,15 @@ textarea:focus-visible{
   font-size: clamp(1.15rem, 1.4vw + 0.85rem, 1.5rem);
   color: var(--gold-light);
   line-height:1.5;
+}
+.quote-attr{
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .85;
+  margin-top: 14px;
 }
 
 /* =========================================================
