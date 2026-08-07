@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalized Travel Packages – Bhumi Mantra</title>
+    <link rel="stylesheet" href="css/travel-page-css/travel.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/travel-page-css/personalized-package.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="theme-gold">
+    <!-- ================= HEADER (shared) ================= -->
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="site-nav__logo">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-nav__logo-icon"
+        />
+        <span class="site-nav__logo-text">
+          BHUMI MANTRA
+          <small>Heal. Transform. Transcend.</small>
+        </span>
+      </a>
+
+      <div class="site-nav__panel" id="navLinks">
+        <ul class="site-nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li>
+            <a href="travel.html" class="active" aria-current="page"
+              >Destinations</a
+            >
+          </li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="site-nav__panel-section">
+          <h4 class="site-nav__panel-heading">Contact Information</h4>
+          <a href="tel:+393387322276" class="site-nav__panel-line"
+            >+39 3387322276</a
+          >
+          <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line"
+            >hello@bhumimantra.com</a
+          >
+          <span class="site-nav__panel-line"
+            >Italy &mdash; Available for Online &amp; In-Person Sessions</span
+          >
+        </div>
+
+        <div class="site-nav__panel-section">
+          <h4 class="site-nav__panel-heading">Follow Us</h4>
+          <div class="site-footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="site-nav__social">
+        <a href="#" aria-label="Facebook">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path
+              d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+            />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.3" cy="6.7" r="1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="3" y="6" width="18" height="12" rx="3" />
+            <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+
+      <button
+        type="button"
+        class="site-nav__burger"
+        id="navBurger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- ================= /HEADER ================= -->
+
+    <!-- ===== HERO ===== -->
+    <section class="pp-hero">
+      <img
+        src="assets/gallery/home-image/varnasi.jpg"
+        alt="Evening ceremony on the ghats of the Ganges"
+        class="pp-hero__bg"
+        aria-hidden="true"
+      />
+      <div class="pp-hero__overlay" aria-hidden="true"></div>
+      <div class="pp-hero__content reveal">
+        <h1 class="pp-hero__heading">
+          Personalized <em>Travel Packages</em>
+        </h1>
+        <p class="pp-hero__sub">
+          Bring your own group friends, colleagues, or a community you
+          already practice with and we'll design a journey built entirely
+          around your dates, pace and interests.
+        </p>
+        
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="pp-steps">
+      <p class="eyebrow eyebrow--center reveal">· How It Works ·</p>
+      <div class="pp-steps__grid">
+        <div class="pp-steps__item reveal">
+          <span class="pp-steps__num">01</span>
+          <h3>Tell Us About Your Group</h3>
+          <p>Group size, rough dates, and the kind of experience you're after relaxed, active, devotional, or a mix.</p>
+        </div>
+        <div class="pp-steps__item reveal">
+          <span class="pp-steps__num">02</span>
+          <h3>We Design Your Itinerary</h3>
+          <p>Our guides shape a route, pace and set of practices around what you've told us, drawing on the destinations we already know well.</p>
+        </div>
+        <div class="pp-steps__item reveal">
+          <span class="pp-steps__num">03</span>
+          <h3>You Travel, We Hold The Space</h3>
+          <p>The same teachers who lead our group retreats accompany your journey from arrival to departure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMMERSIVE BREAK ===== -->
+    <section class="pp-break">
+      <img
+        src="assets/gallery/home-image/stone budha.png"
+        alt="Buddha statue in a quiet forest setting"
+        class="pp-break__bg"
+        aria-hidden="true"
+      />
+      <div class="pp-break__overlay" aria-hidden="true"></div>
+      <p class="pp-break__quote reveal">
+        <em>Every group is different your itinerary should be too.</em>
+      </p>
+    </section>
+
+    <!-- ===== PACKAGE IDEAS ===== -->
+    <section class="pp-ideas">
+      <p class="eyebrow eyebrow--center reveal">· A Few Starting Points ·</p>
+      <h2 class="pp-ideas__heading reveal">Ways Groups Travel With Us</h2>
+      <p class="pp-ideas__sub reveal">
+        These are starting points, not fixed packages every one of them is
+        reshaped around your group before we call it an itinerary.
+      </p>
+
+      <div class="pp-ideas__grid">
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/livepose.jpg" alt="Yoga teacher assisting a student at a studio in Rishikesh" />
+          </div>
+          <h3>Private Group Retreats</h3>
+          <p>A retreat built just for your circle of friends, family or colleagues same practice, same care, entirely your own dates.</p>
+        </article>
+
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/yogavidyamandiram.jpg" alt="Group meditation by the river with the Himalayan foothills behind" />
+          </div>
+          <h3>Yoga Teacher Training Immersions</h3>
+          <p>Extended, practice heavy itineraries for teacher trainees who need depth, repetition and time with experienced guides.</p>
+        </article>
+
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/Pathway-about.png" alt="Candlelit temple pathway lined with statues and flowers" />
+          </div>
+          <h3>Cultural &amp; Pilgrimage Journeys</h3>
+          <p>Slower, devotional itineraries built around temples, ritual and ceremony rather than sightseeing stops.</p>
+        </article>
+
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/mindful living.png" alt="Quiet journaling beside a lotus pond temple garden" />
+          </div>
+          <h3>Solo &amp; Small Group Wellness Escapes</h3>
+          <p>An unhurried, low-numbers retreat for solo travelers or a very small group who want space more than structure.</p>
+        </article>
+
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Ancient temple ruins beside a lotus pond" />
+          </div>
+          <h3>Heritage &amp; Temple Discovery</h3>
+          <p>Built around a region's history and craftsmanship as much as its spiritual sites a slower, more curious kind of trip.</p>
+        </article>
+
+        <article class="pp-idea reveal">
+          <div class="pp-idea__media">
+            <img src="assets/gallery/home-image/kerala1.jpg" alt="Kerala backwaters at golden hour" />
+          </div>
+          <h3>Multi-Destination Journeys</h3>
+          <p>Combine two or three of our destinations into one custom trip, moving between regions at whatever pace suits your group.</p>
+        </article>
+
+        <div class="pp-idea pp-idea--note reveal">
+          <div class="pp-idea--note__inner">
+            <h3>Don't See Your Style Here?</h3>
+            <p>
+              These six are just where most conversations start. If what
+              you have in mind doesn't fit neatly into any of them, tell us
+              anyway  that's exactly what "personalized" is for.
+            </p>
+            <a href="mailto:travel@innerjourney.com?subject=Personalized Travel Package Enquiry">Tell us what you have in mind &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="pp-cta reveal">
+      <div class="pp-cta__content">
+        <p class="eyebrow eyebrow--center">· Ready When You Are ·</p>
+        <h2 class="pp-cta__heading">Let's Build Your Itinerary</h2>
+        <p class="pp-cta__text">
+          Write to us with your group size and rough dates, and we'll get
+          back to you with a starting shape for the journey.
+        </p>
+        <a
+          href="mailto:travel@innerjourney.com?subject=Personalized Travel Package Enquiry"
+          class="pp-cta__link"
+          >Write to us &rarr;</a
+        >
+        <a href="travel.html" class="pp-cta__secondary">Or browse our set-departure retreats</a>
+      </div>
+    </section>
+
+    <!-- ===== TAGLINE BANNER ===== -->
+    <section class="tagline-banner">
+      <img
+        src="assets/gallery/home-image/path.png"
+        alt=""
+        class="tagline-banner__bg"
+        aria-hidden="true"
+      />
+      <div class="tagline-banner__overlay" aria-hidden="true"></div>
+      <p class="tagline-banner__text reveal">
+        <em>Travel inwards. Return transformed.</em>
+      </p>
+      <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__logo-icon"
+        />
+        <h2 class="site-footer__brand-title">
+          Bhoomi Mantra Yoga &amp; Meditation Research Center
+        </h2>
+        <p class="site-footer__brand-subtitle">
+          A sister project of Terra Mantra, Italy
+        </p>
+        <p class="site-footer__tagline">
+          Preserving and sharing authentic yogic traditions that support
+          profound self-transformation, inner awareness, and holistic
+          well being.
+        </p>
+      </div>
+
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Quick links"
+      >
+        <h3 class="site-footer__col-heading">Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li><a href="travel.html">Destinations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Our offerings"
+      >
+        <h3 class="site-footer__col-heading">Our Offerings</h3>
+        <ul>
+          <li><a href="travel.html">Sacred Journeys</a></li>
+          <li><a href="course.html">Retreats &amp; Immersions</a></li>
+          <li><a href="about.html">Ceremony &amp; Ritual</a></li>
+          <li><a href="contact.html">Private Sessions</a></li>
+          <li><a href="index.html">Wellness Programs</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col site-footer__col--newsletter">
+        <h3 class="site-footer__col-heading">Stay Connected</h3>
+        <p>Join our circle for stories, rituals and journey updates.</p>
+        <form
+          class="site-newsletter-form"
+          onsubmit="return false;"
+          autocomplete="off"
+        >
+          <label for="newsletterEmail" class="sr-only"
+            >Your email address</label
+          >
+          <input
+            id="newsletterEmail"
+            name="newsletter_email_bhumi"
+            type="email"
+            placeholder="Your email address"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="6" width="18" height="12" rx="3" />
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__lotus"
+        />
+      </div>
+    </footer>
+    <!-- ================= /FOOTER ================= -->
+
+    <script src="js/travel-page-js/personalized-package.js"></script>
+  </body>
+</html>

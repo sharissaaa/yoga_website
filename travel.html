@@ -1,331 +1,236 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel – Bhumi Mantra</title>
-    <link rel="stylesheet" href="travel.css" />
-    <link rel="stylesheet" href="assets/header-footer.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <script src="assets/home-js/travel.js"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel – Bhumi Mantra</title>
+  <link rel="stylesheet" href="css/travel-page-css/travel.css" />
+  <link rel="stylesheet" href="css/header-footer.css" />
 
-  <body class="theme-gold">
-    <!-- ================= HEADER (shared) ================= -->
-    <nav class="site-nav" id="siteNav">
-      <a href="index.html" class="site-nav__logo">
-        <img
-          src="assets/gallery/home-image/logo.png"
-          alt=""
-          class="site-nav__logo-icon"
-        />
-        <span class="site-nav__logo-text">
-          BHUMI MANTRA
-          <small>Heal. Transform. Transcend.</small>
-        </span>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <script src="js/travel-page-js/travel.js"></script>
+</head>
+
+<body class="theme-gold">
+  <!-- ================= HEADER (shared) ================= -->
+  <nav class="site-nav" id="siteNav">
+    <a href="index.html" class="site-nav__logo">
+      <img src="assets/gallery/home-image/logo.png" alt="" class="site-nav__logo-icon" />
+      <span class="site-nav__logo-text">
+        BHUMI MANTRA
+        <small>Heal. Transform. Transcend.</small>
+      </span>
+    </a>
+
+    <div class="site-nav__panel" id="navLinks">
+      <ul class="site-nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course.html">Explore The Teachings</a></li>
+        <li>
+          <a href="travel.html" class="active" aria-current="page">Destinations</a>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Contact Information</h4>
+        <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
+        <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
+        <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
+      </div>
+
+      <div class="site-nav__panel-section">
+        <h4 class="site-nav__panel-heading">Follow Us</h4>
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="6" width="18" height="12" rx="3" />
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-nav__social">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+        </svg>
       </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.3" cy="6.7" r="1" />
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="6" width="18" height="12" rx="3" />
+          <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+        </svg>
+      </a>
+    </div>
 
-      <div class="site-nav__panel" id="navLinks">
-        <ul class="site-nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="course.html">Explore The Teachings</a></li>
-          <li>
-            <a href="travel.html" class="active" aria-current="page"
-              >Destinations</a
-            >
-          </li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+    <button type="button" class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <!-- ================= /HEADER ================= -->
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <!-- Replace hero-bg.jpg with your actual hero image -->
+    <img src="assets/gallery/home-image/travel1.png" alt="" class="hero__bg" aria-hidden="true" />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content reveal">
+      <h1 class="hero__heading">
+        Journeys that<br />
+        <em>Awaken the Soul.</em>
+      </h1>
+      <p class="hero__sub">
+        Carefully curated retreats in sacred destinations<br />for your
+        transformation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== RETREATS ===== -->
+  <section class="retreats" id="retreats">
+    <p class="eyebrow eyebrow--center reveal">· Explore Our Retreats ·</p>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <div class="filter-select" data-dropdown data-filter="destination">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon"
+          aria-hidden="true">
+          <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" />
+          <circle cx="12" cy="9" r="2.5" />
+        </svg>
+        <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="filter-select__label">All Destinations</span>
+        </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow"
+          aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+        <ul class="filter-select__menu" role="listbox" hidden>
+          <li role="option" aria-selected="true">All Destinations</li>
+          <li role="option" aria-selected="false" data-value="Indonesia">Indonesia</li>
+          <li role="option" aria-selected="false" data-value="India">India</li>
+          <li role="option" aria-selected="false" data-value="Sri Lanka">Sri Lanka</li>
         </ul>
-
-        <div class="site-nav__panel-section">
-          <h4 class="site-nav__panel-heading">Contact Information</h4>
-          <a href="tel:+393387322276" class="site-nav__panel-line"
-            >+39 3387322276</a
-          >
-          <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line"
-            >hello@bhumimantra.com</a
-          >
-          <span class="site-nav__panel-line"
-            >Italy &mdash; Available for Online &amp; In-Person Sessions</span
-          >
-        </div>
-
-        <div class="site-nav__panel-section">
-          <h4 class="site-nav__panel-heading">Follow Us</h4>
-          <div class="site-footer-social">
-            <a href="#" aria-label="Facebook">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path
-                  d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
-                />
-              </svg>
-            </a>
-            <a href="#" aria-label="Instagram">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.3" cy="6.7" r="1" />
-              </svg>
-            </a>
-            <a href="#" aria-label="YouTube">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <rect x="3" y="6" width="18" height="12" rx="3" />
-                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
-      <div class="site-nav__social">
-        <a href="#" aria-label="Facebook">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <path
-              d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
-            />
-          </svg>
-        </a>
-        <a href="#" aria-label="Instagram">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.3" cy="6.7" r="1" />
-          </svg>
-        </a>
-        <a href="#" aria-label="YouTube">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <rect x="3" y="6" width="18" height="12" rx="3" />
-            <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
-          </svg>
-        </a>
+      <div class="filter-select" data-dropdown data-filter="duration">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon"
+          aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3.5 2" />
+        </svg>
+        <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="filter-select__label">Duration</span>
+        </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow"
+          aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+        <ul class="filter-select__menu" role="listbox" hidden>
+          <li role="option" aria-selected="true">Duration</li>
+          <li role="option" aria-selected="false" data-value="6">6 Days</li>
+          <li role="option" aria-selected="false" data-value="7">7 Days</li>
+          <li role="option" aria-selected="false" data-value="8">8 Days</li>
+        </ul>
       </div>
-
-      <button
-        type="button"
-        class="site-nav__burger"
-        id="navBurger"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="navLinks"
-      >
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-    <!-- ================= /HEADER ================= -->
-
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-      <!-- Replace hero-bg.jpg with your actual hero image -->
-      <img
-        src="assets/gallery/home-image/travel1.png"
-        alt=""
-        class="hero__bg"
-        aria-hidden="true"
-      />
-      <div class="hero__overlay" aria-hidden="true"></div>
-      <div class="hero__content reveal">
-        <h1 class="hero__heading">
-          Journeys that<br />
-          <em>Awaken the Soul.</em>
-        </h1>
-        <p class="hero__sub">
-          Carefully curated retreats in sacred destinations<br />for your
-          transformation.
-        </p>
+      <div class="filter-select" data-dropdown data-filter="month">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon"
+          aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2" />
+          <path d="M3 9h18M8 3v4M16 3v4" />
+        </svg>
+        <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="filter-select__label">Month</span>
+        </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow"
+          aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+        <ul class="filter-select__menu" role="listbox" hidden>
+          <li role="option" aria-selected="true">Month</li>
+          <li role="option" aria-selected="false" data-value="August">August</li>
+          <li role="option" aria-selected="false" data-value="September">September</li>
+          <li role="option" aria-selected="false" data-value="October">October</li>
+          <li role="option" aria-selected="false" data-value="November">November</li>
+          <li role="option" aria-selected="false" data-value="December">December</li>
+          <li role="option" aria-selected="false" data-value="January">January</li>
+          <li role="option" aria-selected="false" data-value="February">February</li>
+          <li role="option" aria-selected="false" data-value="March">March</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ===== RETREATS ===== -->
-    <section class="retreats" id="retreats">
-      <p class="eyebrow eyebrow--center reveal">· Explore Our Retreats ·</p>
-
-      <!-- FILTERS -->
-      <div class="filters">
-        <div class="filter-select">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            class="filter-select__icon"
-            aria-hidden="true"
-          >
-            <path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z" />
-            <circle cx="12" cy="9" r="2.5" />
-          </svg>
-          <select>
-            <option>All Destinations</option>
-            <option>Indonesia</option>
-            <option>India</option>
-            <option>Sri Lanka</option>
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="filter-select__arrow"
-            aria-hidden="true"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
-        <div class="filter-select">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            class="filter-select__icon"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3.5 2" />
-          </svg>
-          <select>
-            <option>Duration</option>
-            <option>6 Days</option>
-            <option>7 Days</option>
-            <option>8 Days</option>
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="filter-select__arrow"
-            aria-hidden="true"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
-        <div class="filter-select">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            class="filter-select__icon"
-            aria-hidden="true"
-          >
-            <rect x="3" y="5" width="18" height="16" rx="2" />
-            <path d="M3 9h18M8 3v4M16 3v4" />
-          </svg>
-          <select>
-            <option>Month</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="filter-select__arrow"
-            aria-hidden="true"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
-        <div class="filter-select">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            class="filter-select__icon"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="8" r="3.5" />
-            <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
-          </svg>
-          <select>
-            <option>Experience Level</option>
-            <option>Beginner</option>
-            <option>Intermediate</option>
-            <option>All Levels</option>
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="filter-select__arrow"
-            aria-hidden="true"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
-        <div class="filter-select filter-select--right">
-          <select>
-            <option>Sort By</option>
-            <option>Date</option>
-            <option>Duration</option>
-            <option>Destination</option>
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            class="filter-select__arrow"
-            aria-hidden="true"
-          >
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </div>
+      <div class="filter-select" data-dropdown data-filter="level">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="filter-select__icon"
+          aria-hidden="true">
+          <circle cx="12" cy="8" r="3.5" />
+          <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
+        </svg>
+        <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="filter-select__label">Experience Level</span>
+        </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow"
+          aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+        <ul class="filter-select__menu" role="listbox" hidden>
+          <li role="option" aria-selected="true">Experience Level</li>
+          <li role="option" aria-selected="false" data-value="Beginner">Beginner</li>
+          <li role="option" aria-selected="false" data-value="Intermediate">Intermediate</li>
+          <li role="option" aria-selected="false" data-value="All Levels">All Levels</li>
+        </ul>
       </div>
+      <div class="filter-select filter-select--right" data-dropdown>
+        <button type="button" class="filter-select__toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="filter-select__label">Sort By</span>
+        </button>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="filter-select__arrow"
+          aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+        <ul class="filter-select__menu" role="listbox" hidden>
+          <li role="option" aria-selected="true">Sort By</li>
+          <li role="option" aria-selected="false">Date</li>
+          <li role="option" aria-selected="false">Duration</li>
+          <li role="option" aria-selected="false">Destination</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CARDS (5 per page — pagination below builds itself from however
+           many .retreat-card elements are inside this list, so adding more
+           cards later via Strapi needs no changes here) -->
+    <div class="retreats-list" id="retreatsList">
 
       <!-- CARD 1 -->
-      <article class="retreat-card reveal">
+      <article class="retreat-card reveal" data-slug="bali" data-destination="Indonesia" data-duration="7"
+        data-month="August" data-level="Beginner">
         <div class="retreat-card__badge">Popular</div>
         <!-- Replace bali.jpg with your actual retreat image -->
-        <img
-          src="assets/gallery/home-image/travel-bali.png"
-          alt="Bali temple gardens"
-          class="retreat-card__img"
-        />
+        <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" class="retreat-card__img" />
         <div class="retreat-card__body">
           <h2 class="retreat-card__title">Bali Healing Retreat</h2>
           <p class="retreat-card__meta">
@@ -333,7 +238,7 @@
             <span class="meta-dot">•</span>
             <span>7 Days</span>
             <span class="meta-dot">•</span>
-            <span class="meta-tag">Limited Seats</span>
+            <span class="meta-tag">Beginner</span>
           </p>
           <p class="retreat-card__desc">
             Experience deep healing through yoga, meditation, sacred temple
@@ -347,63 +252,44 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="16" rx="2" />
               <path d="M3 9h18M8 3v4M16 3v4" />
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">15 Aug 2026 – 21 Aug 2026</p>
+              <p class="aside-block__value">15–21 Aug 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m4 7 8 6 8-6" />
             </svg>
             <div>
               <p class="aside-block__label">Email</p>
-              <a
-                href="mailto:travel@innerjourney.com"
-                class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
-              >
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
             </div>
           </div>
-          <a
-            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a
-          >
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
         </div>
       </article>
 
       <!-- CARD 2 -->
-      <article class="retreat-card reveal" style="transition-delay: 0.1s">
+      <article class="retreat-card reveal" style="transition-delay: 0.1s" data-slug="rishikesh" data-destination="India"
+        data-duration="6" data-month="September" data-level="All Levels">
         <!-- Replace rishikesh.jpg with your actual retreat image -->
-        <img
-          src="assets/gallery/home-image/Rishikesh.jpg"
-          alt="Rishikesh on the Ganges"
-          class="retreat-card__img"
-        />
+        <img src="assets/gallery/home-image/Rishikesh.jpg" alt="Rishikesh on the Ganges" class="retreat-card__img" />
         <div class="retreat-card__body">
           <h2 class="retreat-card__title">Rishikesh Yoga Retreat</h2>
           <p class="retreat-card__meta">
@@ -425,63 +311,44 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="16" rx="2" />
               <path d="M3 9h18M8 3v4M16 3v4" />
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">10 Sep 2026 – 15 Sep 2026</p>
+              <p class="aside-block__value">10–15 Sep 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m4 7 8 6 8-6" />
             </svg>
             <div>
               <p class="aside-block__label">Email</p>
-              <a
-                href="mailto:travel@innerjourney.com"
-                class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
-              >
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
             </div>
           </div>
-          <a
-            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a
-          >
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
         </div>
       </article>
 
       <!-- CARD 3 -->
-      <article class="retreat-card reveal" style="transition-delay: 0.2s">
+      <article class="retreat-card reveal" style="transition-delay: 0.2s" data-slug="sri-lanka"
+        data-destination="Sri Lanka" data-duration="8" data-month="October" data-level="Intermediate">
         <!-- Replace srilanka.jpg with your actual retreat image -->
-        <img
-          src="assets/gallery/home-image/sri lanka.png"
-          alt="Sri Lanka rock fortress"
-          class="retreat-card__img"
-        />
+        <img src="assets/gallery/home-image/sri lanka.png" alt="Sri Lanka rock fortress" class="retreat-card__img" />
         <div class="retreat-card__body">
           <h2 class="retreat-card__title">Sri Lanka Wellness Escape</h2>
           <p class="retreat-card__meta">
@@ -489,7 +356,7 @@
             <span class="meta-dot">•</span>
             <span>8 Days</span>
             <span class="meta-dot">•</span>
-            <span class="meta-tag">Limited Seats</span>
+            <span class="meta-tag">Intermediate</span>
           </p>
           <p class="retreat-card__desc">
             A journey of wellness, nature and culture. Reconnect with yourself
@@ -503,255 +370,451 @@
               <a href="#" class="retreat-card__less">Less Information</a>
             </div>
           </details>
+
         </div>
         <div class="retreat-card__aside">
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="16" rx="2" />
               <path d="M3 9h18M8 3v4M16 3v4" />
             </svg>
             <div>
               <p class="aside-block__label">Dates</p>
-              <p class="aside-block__value">05 Oct 2026 – 12 Oct 2026</p>
+              <p class="aside-block__value">05–12 Oct 2026</p>
             </div>
           </div>
           <div class="aside-divider"></div>
           <div class="aside-block">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              class="aside-block__icon"
-              aria-hidden="true"
-            >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="m4 7 8 6 8-6" />
             </svg>
             <div>
               <p class="aside-block__label">Email</p>
-              <a
-                href="mailto:travel@innerjourney.com"
-                class="aside-block__value aside-block__link"
-                >travel@innerjourney.com</a
-              >
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
             </div>
           </div>
-          <a
-            href="mailto:travel@innerjourney.com?subject=Reserve My Spot"
-            class="reserve-link"
-            >Write to us and reserve your spot</a>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
         </div>
       </article>
-    </section>
 
-    <!-- ===== TAGLINE BANNER ===== -->
-    <section class="tagline-banner">
-      <!-- Replace candles-bg.jpg with your actual candles/lotus image -->
-      <img
-        src="assets/gallery/home-image/path.png"
-        alt=""
-        class="tagline-banner__bg"
-        aria-hidden="true"
-      />
-      <div class="tagline-banner__overlay" aria-hidden="true"></div>
-      <p class="tagline-banner__text reveal">
-        <em>Travel inwards. Return transformed.</em>
-      </p>
-      <!-- Replace lotus-divider.svg with your actual ornament SVG -->
-      <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
-    </section>
+      <!-- CARD 4 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.3s" data-slug="ladakh" data-destination="India"
+        data-duration="7" data-month="November" data-level="Intermediate">
+        <!-- Replace ladakh.jpg with your actual retreat image -->
+        <img src="assets/gallery/home-image/ladakh.jpg" alt="Ladakh mountain monastery" class="retreat-card__img" />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Ladakh Himalayan Retreat</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>7 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Intermediate</span>
+          </p>
+          <p class="retreat-card__desc">
+            High-altitude stillness among ancient monasteries — a retreat of
+            silence, breathwork and wide open skies.
+          </p>
 
-    <footer class="site-footer">
-      <div class="site-footer__brand">
-        <img
-          src="assets/gallery/home-image/logo.png"
-          alt=""
-          class="site-footer__logo-icon"
-        />
-        <h2 class="site-footer__brand-title">
-          Bhoomi Mantra Yoga &amp; Meditation Research Center
-        </h2>
-        <p class="site-footer__brand-subtitle">
-          A sister project of Terra Mantra, Italy
-        </p>
-        <p class="site-footer__tagline">
-          Preserving and sharing authentic yogic traditions that support
-          profound self-transformation, inner awareness, and holistic
-          well-being.
-        </p>
-      </div>
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
 
-      <nav
-        class="site-footer__col site-footer__col--collapsible"
-        aria-label="Quick links"
-      >
-        <h3 class="site-footer__col-heading">Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="course.html">Explore The Teachings</a></li>
-          <li><a href="travel.html">Destinations</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <nav
-        class="site-footer__col site-footer__col--collapsible"
-        aria-label="Our offerings"
-      >
-        <h3 class="site-footer__col-heading">Our Offerings</h3>
-        <ul>
-          <li><a href="travel.html">Sacred Journeys</a></li>
-          <li><a href="course.html">Retreats &amp; Immersions</a></li>
-          <li><a href="about.html">Ceremony &amp; Ritual</a></li>
-          <li><a href="contact.html">Private Sessions</a></li>
-          <li><a href="index.html">Wellness Programs</a></li>
-        </ul>
-      </nav>
-
-      <div class="site-footer__col site-footer__col--newsletter">
-        <h3 class="site-footer__col-heading">Stay Connected</h3>
-        <p>Join our circle for stories, rituals and journey updates.</p>
-        <form
-          class="site-newsletter-form"
-          onsubmit="return false;"
-          autocomplete="off"
-        >
-          <label for="newsletterEmail" class="sr-only"
-            >Your email address</label
-          >
-          <input
-            id="newsletterEmail"
-            name="newsletter_email_bhumi"
-            type="email"
-            placeholder="Your email address"
-            autocomplete="off"
-            autocorrect="off"
-            autocapitalize="off"
-            spellcheck="false"
-          />
-          <button type="submit" aria-label="Subscribe">→</button>
-        </form>
-
-        <div class="site-footer-social">
-          <a href="#" aria-label="Facebook">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <path
-                d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
-              />
-            </svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.3" cy="6.7" r="1" />
-            </svg>
-          </a>
-          <a href="#" aria-label="YouTube">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <rect x="3" y="6" width="18" height="12" rx="3" />
-              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
-            </svg>
-          </a>
         </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">02–09 Nov 2026</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
+        </div>
+      </article>
+
+      <!-- CARD 5 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.4s" data-slug="auroville" data-destination="India"
+        data-duration="6" data-month="December" data-level="Beginner">
+        <!-- Replace Auroville.jpg with your actual retreat image -->
+        <img src="assets/gallery/home-image/Auroville.jpg" alt="Auroville township gardens" class="retreat-card__img" />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Auroville Mindful Living</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>6 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Beginner</span>
+          </p>
+          <p class="retreat-card__desc">
+            A quiet immersion in Auroville's community gardens — mindful
+            living, meditation and conscious community practice.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">14–20 Dec 2026</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
+        </div>
+      </article>
+
+      <!-- CARD 6 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.5s" data-slug="kerala" data-destination="India"
+        data-duration="7" data-month="January" data-level="All Levels">
+        <!-- Replace kerala.jpg with your actual retreat image -->
+        <img src="assets/gallery/home-image/kerala.jpg" alt="Kerala backwaters" class="retreat-card__img" />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Kerala Ayurveda Retreat</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>7 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag meta-tag--green">All Levels</span>
+          </p>
+          <p class="retreat-card__desc">
+            Traditional Ayurvedic healing, gentle yoga and calm backwater
+            days — restore body and mind at their own pace.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">10–17 Jan 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
+        </div>
+      </article>
+
+      <!-- CARD 7 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.6s" data-slug="gujarat" data-destination="India"
+        data-duration="6" data-month="February" data-level="Intermediate">
+        <!-- Replace Gujarat.png with your actual retreat image -->
+        <img src="assets/gallery/home-image/Gujarat.png" alt="Gujarat heritage architecture"
+          class="retreat-card__img" />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Gujarat Heritage Journey</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>6 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Intermediate</span>
+          </p>
+          <p class="retreat-card__desc">
+            Sacred stepwells, temple towns and mindful practice woven
+            through Gujarat's timeless heritage landscape.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">08–14 Feb 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
+        </div>
+      </article>
+
+      <!-- CARD 8 -->
+      <article class="retreat-card reveal" style="transition-delay: 0.7s" data-slug="tamil-nadu"
+        data-destination="India" data-duration="8" data-month="March" data-level="Beginner">
+        <!-- Replace TN.jpg with your actual retreat image -->
+        <img src="assets/gallery/home-image/TN.jpg" alt="Tamil Nadu temple" class="retreat-card__img" />
+        <div class="retreat-card__body">
+          <h2 class="retreat-card__title">Tamil Nadu Temple Trail</h2>
+          <p class="retreat-card__meta">
+            <span class="meta-loc">India</span>
+            <span class="meta-dot">•</span>
+            <span>8 Days</span>
+            <span class="meta-dot">•</span>
+            <span class="meta-tag">Beginner</span>
+          </p>
+          <p class="retreat-card__desc">
+            Chant, ritual and stillness among South India's grand temple
+            towns — a devotional path for body and spirit.
+          </p>
+
+          <details class="retreat-card__more">
+            <summary>More Information</summary>
+            <div class="retreat-card__more-content">
+              <p>Your additional information goes here.</p>
+              <a href="#" class="retreat-card__less">Less Information</a>
+            </div>
+          </details>
+
+        </div>
+        <div class="retreat-card__aside">
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="16" rx="2" />
+              <path d="M3 9h18M8 3v4M16 3v4" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Dates</p>
+              <p class="aside-block__value">05–13 Mar 2027</p>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-block">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="aside-block__icon"
+              aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+            <div>
+              <p class="aside-block__label">Email</p>
+              <a href="mailto:travel@innerjourney.com"
+                class="aside-block__value aside-block__link">travel@innerjourney<wbr>.com</a>
+            </div>
+          </div>
+          <div class="aside-divider"></div>
+          <a href="mailto:travel@innerjourney.com?subject=Reserve My Spot" class="aside-invite-link">Write to us to
+            reserve & embark on an unforgettable journey.</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Shown by travel.js when the active filters match no cards -->
+    <p class="retreats-empty" id="retreatsEmpty" hidden>
+      No retreats match your filters. Try adjusting your selection.
+    </p>
+
+    <!-- PAGINATION (populated by travel.js, 5 cards per page, rebuilt whenever filters change) -->
+    <nav class="retreats-pagination" id="retreatsPagination" aria-label="Retreats pages"></nav>
+  </section>
+
+  <!-- ===== PERSONALIZED TRAVEL PACKAGE ===== -->
+  <section class="custom-package" id="custom-package">
+    <div class="custom-package__content reveal">
+      <p class="eyebrow eyebrow--center">· Prefer Something Different? ·</p>
+      <h2 class="custom-package__heading">Personalized Travel Package</h2>
+      <p class="custom-package__text">
+        Bring your own group friends, colleagues, or a community you
+        already practice with and we'll design a customized experience
+        around your dates, pace and interests, instead of joining one of
+        our set departures.
+      </p>
+      <a href="personalized-package.html" class="custom-package__link">See how personalized packages work &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ===== TAGLINE BANNER ===== -->
+  <section class="tagline-banner">
+    <!-- Replace candles-bg.jpg with your actual candles/lotus image -->
+    <img src="assets/gallery/home-image/path.png" alt="" class="tagline-banner__bg" aria-hidden="true" />
+    <div class="tagline-banner__overlay" aria-hidden="true"></div>
+    <p class="tagline-banner__text reveal">
+      <em>Travel inwards. Return transformed.</em>
+    </p>
+    <!-- Replace lotus-divider.svg with your actual ornament SVG -->
+    <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__brand">
+      <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon" />
+      <h2 class="site-footer__brand-title">
+        Bhoomi Mantra Yoga &amp; Meditation Research Center
+      </h2>
+      <p class="site-footer__brand-subtitle">
+        A sister project of Terra Mantra, Italy
+      </p>
+      <p class="site-footer__tagline">
+        Preserving and sharing authentic yogic traditions that support
+        profound self-transformation, inner awareness, and holistic
+        well-being.
+      </p>
+    </div>
+
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
+      <h3 class="site-footer__col-heading">Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="course.html">Explore The Teachings</a></li>
+        <li><a href="travel.html">Destinations</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
+      <h3 class="site-footer__col-heading">Our Offerings</h3>
+      <ul>
+        <li><a href="travel.html">Sacred Journeys</a></li>
+        <li><a href="course.html">Retreats &amp; Immersions</a></li>
+        <li><a href="about.html">Ceremony &amp; Ritual</a></li>
+        <li><a href="contact.html">Private Sessions</a></li>
+        <li><a href="index.html">Wellness Programs</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col site-footer__col--newsletter">
+      <h3 class="site-footer__col-heading">Stay Connected</h3>
+      <p>Join our circle for stories, rituals and journey updates.</p>
+      <form class="site-newsletter-form" onsubmit="return false;" autocomplete="off">
+        <label for="newsletterEmail" class="sr-only">Your email address</label>
+        <input id="newsletterEmail" name="newsletter_email_bhumi" type="email" placeholder="Your email address"
+          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+        <button type="submit" aria-label="Subscribe">→</button>
+      </form>
+
+      <div class="site-footer-social">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.3" cy="6.7" r="1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="6" width="18" height="12" rx="3" />
+            <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
       </div>
+    </div>
 
-      <div class="site-footer__bottom">
-        <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-        <img
-          src="assets/gallery/home-image/logo.png"
-          alt=""
-          class="site-footer__lotus"
-        />
-      </div>
-    </footer>
-    <!-- ================= /FOOTER ================= -->
+    <div class="site-footer__bottom">
+      <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
+      <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__lotus" />
+    </div>
+  </footer>
+  <!-- ================= /FOOTER ================= -->
 
-    <script>
-      (function () {
-        var siteNav = document.getElementById("siteNav");
-        var burger = document.getElementById("navBurger");
-        var links = document.getElementById("navLinks");
-        if (!burger || !links) return;
+  <script src="js/travel-page-js/travel-page.js"></script>
+</body>
 
-        burger.addEventListener("click", function () {
-          var open = links.classList.toggle("is-open");
-          burger.classList.toggle("is-open", open);
-          burger.setAttribute("aria-expanded", open ? "true" : "false");
-        });
-
-        links.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            links.classList.remove("is-open");
-            burger.classList.remove("is-open");
-            burger.setAttribute("aria-expanded", "false");
-          });
-        });
-
-        if (siteNav) {
-          var onScroll = function () {
-            siteNav.classList.toggle("site-nav--scrolled", window.scrollY > 10);
-          };
-          window.addEventListener("scroll", onScroll, { passive: true });
-          onScroll();
-        }
-
-        document
-          .querySelectorAll(".site-footer__col--collapsible")
-          .forEach(function (col) {
-            var heading = col.querySelector(".site-footer__col-heading");
-            if (!heading) return;
-            heading.addEventListener("click", function () {
-              col.classList.toggle("is-open");
-            });
-          });
-
-        /* Scroll-reveal: fades/slides .reveal, .reveal-left, .reveal-right
-         elements into view once they enter the viewport (see header-footer.css) */
-        var revealObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: "0px 0px -36px 0px" },
-        );
-        document
-          .querySelectorAll(".reveal, .reveal-left, .reveal-right")
-          .forEach(function (el) {
-            revealObserver.observe(el);
-          });
-      })();
-    </script>
-  </body>
 </html>

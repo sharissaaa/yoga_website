@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination – Bhumi Mantra</title>
+    <link rel="stylesheet" href="css/travel-page-css/travel.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/travel-page-css/destination-detail.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/travel-page-js/destination-data.js"></script>
+    <script src="js/travel-page-js/destination-detail.js"></script>
+  </head>
+
+  <body class="theme-gold">
+    <!-- ================= HEADER (shared) ================= -->
+    <nav class="site-nav" id="siteNav">
+      <a href="index.html" class="site-nav__logo">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-nav__logo-icon"
+        />
+        <span class="site-nav__logo-text">
+          BHUMI MANTRA
+          <small>Heal. Transform. Transcend.</small>
+        </span>
+      </a>
+
+      <div class="site-nav__panel" id="navLinks">
+        <ul class="site-nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li>
+            <a href="travel.html" class="active" aria-current="page"
+              >Destinations</a
+            >
+          </li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="site-nav__panel-section">
+          <h4 class="site-nav__panel-heading">Contact Information</h4>
+          <a href="tel:+393387322276" class="site-nav__panel-line"
+            >+39 3387322276</a
+          >
+          <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line"
+            >hello@bhumimantra.com</a
+          >
+          <span class="site-nav__panel-line"
+            >Italy &mdash; Available for Online &amp; In-Person Sessions</span
+          >
+        </div>
+
+        <div class="site-nav__panel-section">
+          <h4 class="site-nav__panel-heading">Follow Us</h4>
+          <div class="site-footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="site-nav__social">
+        <a href="#" aria-label="Facebook">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path
+              d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+            />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.3" cy="6.7" r="1" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="3" y="6" width="18" height="12" rx="3" />
+            <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+
+      <button
+        type="button"
+        class="site-nav__burger"
+        id="navBurger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- ================= /HEADER ================= -->
+
+    <!-- ===== DESTINATION HERO (populated by destination-detail.js) ===== -->
+    <section class="dest-hero">
+      <img src="" alt="" class="dest-hero__bg" id="destHeroImg" aria-hidden="true" />
+      <div class="dest-hero__overlay" aria-hidden="true"></div>
+      <div class="dest-hero__content reveal">
+        <a href="travel.html" class="dest-hero__back">&larr; All Destinations</a>
+        <h1 class="dest-hero__heading" id="destTitle">&nbsp;</h1>
+        <p class="dest-hero__location" id="destLocation"></p>
+      </div>
+    </section>
+
+    <!-- ===== QUICK FACTS ===== -->
+    <section class="dest-facts reveal" id="destFacts" aria-label="Trip quick facts">
+      <div class="dest-facts__item">
+        <span class="dest-facts__label">Duration</span>
+        <span class="dest-facts__value" id="destDuration">—</span>
+      </div>
+      <div class="dest-facts__divider"></div>
+      <div class="dest-facts__item">
+        <span class="dest-facts__label">Experience Level</span>
+        <span class="dest-facts__value" id="destLevel">—</span>
+      </div>
+      <div class="dest-facts__divider"></div>
+      <div class="dest-facts__item">
+        <span class="dest-facts__label">Next Departure</span>
+        <span class="dest-facts__value" id="destDates">—</span>
+      </div>
+    </section>
+
+    <!-- ===== NEXT DEPARTURES (populated by destination-detail.js) ===== -->
+    <section class="dest-departures reveal">
+      <p class="eyebrow eyebrow--center">· Next Departures ·</p>
+      <div class="dest-departures__list" id="destDeparturesList"></div>
+    </section>
+
+    <!-- ===== PHOTO GALLERY (populated by destination-detail.js) ===== -->
+    <section class="dest-gallery reveal" id="destGallerySection">
+      <p class="eyebrow eyebrow--center">· A Glimpse of the Journey ·</p>
+      <div class="dest-gallery__grid" id="destGalleryGrid"></div>
+    </section>
+
+    <!-- ===== ABOUT + RESERVE ===== -->
+    <section class="dest-about">
+      <div class="dest-about__grid">
+        <div class="dest-about__media reveal">
+          <img src="" alt="" id="destAboutImg" />
+        </div>
+        <div class="dest-about__body reveal">
+          <p class="eyebrow">· About This Journey ·</p>
+          <p class="dest-about__desc" id="destDescription"></p>
+          <ul class="dest-about__highlights" id="destHighlights"></ul>
+          <a
+            href="#"
+            id="destReserveLink"
+            class="dest-about__reserve"
+            >Write to us to reserve your spot for this journey.</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMMERSIVE BREAK (populated by destination-detail.js) ===== -->
+    <section class="dest-break">
+      <img src="" alt="" class="dest-break__bg" id="destBreakImg" aria-hidden="true" />
+      <div class="dest-break__overlay" aria-hidden="true"></div>
+      <p class="dest-break__quote reveal" id="destBreakQuote"></p>
+    </section>
+
+    <!-- ===== WHAT TO EXPECT ===== -->
+    <section class="dest-expect">
+      <p class="eyebrow eyebrow--center reveal">· What To Expect ·</p>
+      <div class="dest-expect__grid">
+        <div class="dest-expect__item reveal">
+          <h3 class="dest-expect__heading">Pace &amp; Practice</h3>
+          <p class="dest-expect__text">
+            Each day is built around guided yoga and meditation sessions, with
+            unhurried time between them this is a retreat to sink into, not
+            a checklist of sights.
+          </p>
+        </div>
+        <div class="dest-expect__item reveal">
+          <h3 class="dest-expect__heading">Meals</h3>
+          <p class="dest-expect__text">
+            Wholesome, mostly vegetarian meals suited to a retreat setting,
+            with attention to dietary needs when we know about them in
+            advance.
+          </p>
+        </div>
+        <div class="dest-expect__item reveal">
+          <h3 class="dest-expect__heading">Travel &amp; Transfers</h3>
+          <p class="dest-expect__text">
+            Airport transfers and travel between stops are arranged for the
+            group, so you can settle in rather than manage logistics.
+          </p>
+        </div>
+        <div class="dest-expect__item reveal">
+          <h3 class="dest-expect__heading">Accommodation</h3>
+          <p class="dest-expect__text">
+            Comfortable, simple stays chosen for their setting and calm as
+            much as their comfort details are shared once your spot is
+            confirmed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SAMPLE ITINERARY (populated by destination-detail.js) ===== -->
+    <section class="dest-itinerary">
+      <p class="eyebrow eyebrow--center reveal">· Sample Itinerary ·</p>
+      <p class="dest-itinerary__note reveal">
+        A day-by-day outline to give you a feel for the pace the exact plan
+        may shift a little with weather, group size and season.
+      </p>
+      <ol class="dest-itinerary__list reveal" id="destItineraryList"></ol>
+    </section>
+
+    <!-- ===== INCLUDED / EXCLUDED ===== -->
+    <section class="dest-pricing reveal">
+      <p class="eyebrow eyebrow--center">· Good To Know ·</p>
+      <div class="dest-pricing__layout">
+        <div class="dest-pricing__media">
+          <img src="assets/gallery/home-image/mat.png" alt="Rolled yoga mat resting in a quiet garden" />
+        </div>
+        <div class="dest-pricing__grid">
+          <div class="dest-pricing__col">
+            <h3 class="dest-pricing__heading">Included</h3>
+            <ul>
+              <li>All accommodation for the retreat</li>
+              <li>Daily yoga &amp; meditation sessions</li>
+              <li>Meals as outlined for the retreat</li>
+              <li>Airport transfers on arrival &amp; departure</li>
+              <li>Guided excursions named in the itinerary</li>
+            </ul>
+          </div>
+          <div class="dest-pricing__col">
+            <h3 class="dest-pricing__heading">Not Included</h3>
+            <ul>
+              <li>Flights to and from your home country</li>
+              <li>Visa fees, where applicable</li>
+              <li>Travel insurance</li>
+              <li>Personal expenses &amp; optional extras</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="dest-pricing__cta">
+        Pricing is confirmed when you enquire
+        <a href="#" id="destPricingLink" class="dest-pricing__link">write to us for a quote</a>.
+      </p>
+    </section>
+
+    <!-- ===== YOUR GUIDES ===== -->
+    <section class="dest-guides reveal">
+      <p class="eyebrow eyebrow--center">· Who Travels With You ·</p>
+      <h2 class="dest-guides__heading">Your Retreat Guides</h2>
+      <p class="dest-guides__text">
+        Every Bhumi Mantra journey is held by our own teachers the same
+        people you can meet on our
+        <a href="about.html#meet-the-team">About page</a>.
+      </p>
+      <div class="dest-guides__grid">
+        <div class="dest-guides__card">
+          <div class="dest-guides__media">
+            <img src="assets/gallery/home-image/yoga5.png" alt="Yoga dancer pose illustration" />
+          </div>
+          <h4>Jeo Varghese</h4>
+          <p>Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
+        </div>
+        <div class="dest-guides__card">
+          <div class="dest-guides__media">
+            <img src="assets/gallery/home-image/yoga4.png" alt="Yoga cobra pose illustration" />
+          </div>
+          <h4>Nidish Nidhiri</h4>
+          <p>Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+        </div>
+        <div class="dest-guides__card">
+          <div class="dest-guides__media">
+            <img src="assets/gallery/home-image/Sadhanapose.png" alt="Seated meditation pose illustration" />
+          </div>
+          <h4>Alice Avaldi</h4>
+          <p>Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="dest-faq reveal">
+      <p class="eyebrow eyebrow--center">· Frequently Asked ·</p>
+      <h2 class="dest-faq__heading">Questions Before You Book</h2>
+      <div class="dest-faq__list">
+        <details class="dest-faq__item">
+          <summary>How physically demanding is this retreat?</summary>
+          <p>It depends on the destination and experience level shown above write to us and we'll be upfront about what to expect.</p>
+        </details>
+        <details class="dest-faq__item">
+          <summary>What should I pack?</summary>
+          <p>We send a full packing guide once you've reserved your spot, tailored to the season and destination.</p>
+        </details>
+        <details class="dest-faq__item">
+          <summary>Do I need a visa?</summary>
+          <p>Requirements vary by nationality and destination we're happy to point you in the right direction when you enquire.</p>
+        </details>
+        <details class="dest-faq__item">
+          <summary>Can I join if I'm travelling alone?</summary>
+          <p>Yes most of our travelers join solo and meet the rest of the group on arrival.</p>
+        </details>
+        <details class="dest-faq__item">
+          <summary>What's your cancellation policy?</summary>
+          <p>Terms depend on how far out you cancel we'll share the full policy when you reserve.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== PERSONALIZED PACKAGE TEASER ===== -->
+    <section class="dest-custom reveal">
+      <div class="dest-custom__content">
+        <p class="eyebrow">· Prefer Something Different? ·</p>
+        <h2 class="dest-custom__heading">Design Your Own Journey</h2>
+        <p class="dest-custom__text">
+          Bring your own group and we'll build a personalized itinerary
+          around your dates, pace and interests.
+        </p>
+        <a href="personalized-package.html" class="dest-custom__link"
+          >Explore personalized travel packages &rarr;</a
+        >
+      </div>
+    </section>
+
+    <!-- ===== TAGLINE BANNER ===== -->
+    <section class="tagline-banner">
+      <img
+        src="assets/gallery/home-image/path.png"
+        alt=""
+        class="tagline-banner__bg"
+        aria-hidden="true"
+      />
+      <div class="tagline-banner__overlay" aria-hidden="true"></div>
+      <p class="tagline-banner__text reveal">
+        <em>Travel inwards. Return transformed.</em>
+      </p>
+      <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__brand">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__logo-icon"
+        />
+        <h2 class="site-footer__brand-title">
+          Bhoomi Mantra Yoga &amp; Meditation Research Center
+        </h2>
+        <p class="site-footer__brand-subtitle">
+          A sister project of Terra Mantra, Italy
+        </p>
+        <p class="site-footer__tagline">
+          Preserving and sharing authentic yogic traditions that support
+          profound self-transformation, inner awareness, and holistic
+          well-being.
+        </p>
+      </div>
+
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Quick links"
+      >
+        <h3 class="site-footer__col-heading">Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li><a href="travel.html">Destinations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Our offerings"
+      >
+        <h3 class="site-footer__col-heading">Our Offerings</h3>
+        <ul>
+          <li><a href="travel.html">Sacred Journeys</a></li>
+          <li><a href="course.html">Retreats &amp; Immersions</a></li>
+          <li><a href="about.html">Ceremony &amp; Ritual</a></li>
+          <li><a href="contact.html">Private Sessions</a></li>
+          <li><a href="index.html">Wellness Programs</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col site-footer__col--newsletter">
+        <h3 class="site-footer__col-heading">Stay Connected</h3>
+        <p>Join our circle for stories, rituals and journey updates.</p>
+        <form
+          class="site-newsletter-form"
+          onsubmit="return false;"
+          autocomplete="off"
+        >
+          <label for="newsletterEmail" class="sr-only"
+            >Your email address</label
+          >
+          <input
+            id="newsletterEmail"
+            name="newsletter_email_bhumi"
+            type="email"
+            placeholder="Your email address"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="6" width="18" height="12" rx="3" />
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__lotus"
+        />
+      </div>
+    </footer>
+    <!-- ================= /FOOTER ================= -->
+
+    <script src="js/travel-page-js/destination-detail-page.js"></script>
+  </body>
+</html>
