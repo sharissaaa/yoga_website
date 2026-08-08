@@ -210,15 +210,47 @@
         });
       }
 
-      /* ── STORY CARDS: "Read more" expands the truncated testimonial
-              text in place; card grows, others stay the same size ── */
+      /* ── STORY CARDS: measure every card's natural content height and
+              apply the tallest one to all of them, so the row is always
+              evenly sized — collapsed or expanded together ── */
+      function syncStoryCardHeights() {
+        var cards = document.querySelectorAll(".stories-section .story-card");
+        if (!cards.length) return;
+        cards.forEach(function (card) { card.style.height = "auto"; });
+        var max = 0;
+        cards.forEach(function (card) {
+          max = Math.max(max, card.offsetHeight);
+        });
+        cards.forEach(function (card) { card.style.height = max + "px"; });
+      }
+
+      /* "Read more" expands every card's testimonial text together */
       function initStoryToggle() {
-        document.querySelectorAll(".story-card .story-read").forEach(function (btn) {
+        var cards = document.querySelectorAll(".stories-section .story-card");
+        var buttons = document.querySelectorAll(".stories-section .story-read");
+        if (!buttons.length) return;
+        var expanded = false;
+        buttons.forEach(function (btn) {
           btn.addEventListener("click", function () {
-            var card = btn.closest(".story-card");
-            var expanded = card.classList.toggle("is-expanded");
-            btn.textContent = expanded ? "Read less" : "Read more";
+            expanded = !expanded;
+            cards.forEach(function (card) {
+              card.classList.toggle("is-expanded", expanded);
+            });
+            buttons.forEach(function (b) {
+              b.textContent = expanded ? "Read less" : "Read more";
+            });
+            syncStoryCardHeights();
           });
+        });
+
+        syncStoryCardHeights();
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(syncStoryCardHeights);
+        }
+        var resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(syncStoryCardHeights, 150);
         });
       }
 

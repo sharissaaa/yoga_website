@@ -365,7 +365,8 @@
       overflow: hidden;
     }
 
-    .stories-section .row { align-items: flex-start; }
+    /* Stretch (Bootstrap default) so all cards in the row always share
+       the same height — collapsed or expanded together */
 
     /* Header right controls */
     .header-controls {
@@ -438,8 +439,8 @@
       overflow: hidden;
     }
 
-    /* Collapsed cards all share the same height; expanding one lets
-       it grow to fit its full testimonial without affecting the rest */
+    /* All cards expand together (see initStoryToggle in home.js), and
+       row stretch keeps them matched to whichever grew the most */
     .story-card.is-expanded {
       height: auto;
       overflow: visible;
@@ -558,7 +559,8 @@
     }
 
     .story-card > .story-read {
-      margin-top: 4px;
+      margin-top: auto;
+      padding-top: 4px;
       align-self: flex-start;
     }
 
