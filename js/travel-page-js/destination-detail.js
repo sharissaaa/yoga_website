@@ -1,31 +1,3 @@
-/* Generic day-by-day template — cycled to fit any trip length. Illustrative
-   only ("Sample Itinerary"), since we don't have a finalized day-by-day plan
-   per destination yet; swap for real itinerary data once it exists. */
-function buildItinerary(data) {
-  const totalDays = parseInt(data.duration, 10) || 0;
-  if (!totalDays) return [];
-
-  const middleTemplates = [
-    `Morning practice, then free time to explore ${data.destination}`,
-    'Guided visit to a site central to this journey',
-    'Rest & integration day — gentle, optional practice only',
-    'Local culture, craft or community immersion',
-    'Excursion suited to the surrounding landscape',
-  ];
-
-  const days = [];
-  for (let i = 1; i <= totalDays; i++) {
-    if (i === 1) {
-      days.push('Arrival & welcome circle');
-    } else if (i === totalDays) {
-      days.push('Closing ceremony & departure');
-    } else {
-      days.push(middleTemplates[(i - 2) % middleTemplates.length]);
-    }
-  }
-  return days;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('slug');
@@ -42,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     [
       '.dest-facts', '.dest-departures', '.dest-gallery', '.dest-about',
-      '.dest-expect', '.dest-itinerary', '.dest-pricing', '.dest-faq',
+      '.dest-expect', '.dest-pricing', '.dest-faq',
     ].forEach((selector) => {
       const el = document.querySelector(selector);
       if (el) el.hidden = true;
@@ -172,26 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const source = data.whyText || data.description || '';
     const firstSentence = source.split(/(?<=[.!?])\s/)[0] || source;
     breakQuote.textContent = firstSentence;
-  }
-
-  /* Sample itinerary */
-  const itineraryList = document.getElementById('destItineraryList');
-  if (itineraryList) {
-    itineraryList.innerHTML = '';
-    buildItinerary(data).forEach((text, i) => {
-      const li = document.createElement('li');
-      li.className = 'dest-itinerary__item';
-
-      const day = document.createElement('span');
-      day.className = 'dest-itinerary__day';
-      day.textContent = `Day ${i + 1}`;
-
-      const label = document.createElement('span');
-      label.className = 'dest-itinerary__text';
-      label.textContent = text;
-
-      li.append(day, label);
-      itineraryList.appendChild(li);
-    });
   }
 });
