@@ -157,7 +157,6 @@ textarea:focus-visible{
   grid-template-rows: 1fr;
   height: calc(100vh - 76px);
   min-height: 520px;
-  max-height: 660px;
 }
 
 .hero-text,

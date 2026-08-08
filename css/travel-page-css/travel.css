@@ -123,8 +123,8 @@ details > summary::-webkit-details-marker { display: none; }
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 92vh; /* fallback for browsers without svh support */
-  min-height: 92svh;
+  min-height: calc(100vh - 76px); /* fits exactly below the 76px sticky nav — fallback for browsers without svh support */
+  min-height: calc(100svh - 76px);
   display: flex;
   align-items: flex-end;
   padding: 0 2.5rem 5rem;
@@ -736,8 +736,8 @@ details > summary::-webkit-details-marker { display: none; }
 @media (max-width: 560px) {
   .hero {
     padding: 0 1.25rem 3.5rem;
-    min-height: 80vh; /* fallback for browsers without svh support */
-    min-height: 80svh;
+    min-height: calc(100vh - 76px); /* fallback for browsers without svh support */
+    min-height: calc(100svh - 76px);
   }
   .hero__pillars { gap: 1.25rem; }
 
