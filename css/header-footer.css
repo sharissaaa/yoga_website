@@ -234,7 +234,7 @@
 .site-nav__burger.is-open span:nth-child(2){ opacity: 0; }
 .site-nav__burger.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 720px){
+@media (max-width: 960px){
   .site-nav{ grid-template-columns: auto 1fr auto; padding: 10px 20px; }
   .site-nav__logo-text small{ display: none; }
   .site-nav__burger{ display: flex; }
@@ -294,22 +294,50 @@
   }
   .site-nav__links a.active::after{ display: none; }
 
-  .site-nav__caret{ display: none; }
+  /* "Destinations" becomes an accordion trigger: the row stays a real
+     link, but its caret is a separate toggle (see js/nav-dropdown.js)
+     that expands/collapses the submenu below, mirroring the footer's
+     +/- accordion pattern instead of always showing it open. */
+  .site-nav__item--dropdown > a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .site-nav__caret{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+  }
+  .site-nav__caret::after{
+    content: '+';
+    font-size: 20px;
+    line-height: 1;
+    color: var(--nav-accent-light);
+  }
+  .site-nav__item--dropdown.is-open .site-nav__caret::after{ content: '\2212'; }
   .site-nav__dropdown{
     position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
+    display: none;
     margin: 0;
     padding: 0;
+    width: auto;
+    min-width: 0;
     background: none;
     border: none;
     border-radius: 0;
     box-shadow: none;
   }
+  .site-nav__item--dropdown.is-open .site-nav__dropdown{ display: block; }
   .site-nav__dropdown a{
     padding: 12px 0 12px 20px;
     font-size: 16px;
+    white-space: normal;
     border-top: 1px solid var(--border-gold, rgba(201,146,42,.3));
   }
 
@@ -369,7 +397,7 @@
   width: 15px;
   height: 15px;
 }
-@media (max-width: 720px){
+@media (max-width: 960px){
   /* Icons already reappear inside the full-screen panel's "Follow Us"
      section below — no room for them in the compact mobile bar */
   .site-nav__social{ display: none; }
@@ -580,8 +608,8 @@
   .site-footer__col--newsletter .site-footer__col-heading{ margin-bottom: 10px; }
   .site-footer__col--newsletter p{ margin-bottom: 10px; max-width: 260px; }
   .site-newsletter-form{ max-width: 100%; margin: 0 auto 14px; }
-  .site-footer-social{ justify-content: center; }
-  .site-footer-social a{ width: 34px; height: 34px; }
+  .site-footer .site-footer-social{ justify-content: center; }
+  .site-footer .site-footer-social a{ width: 34px; height: 34px; }
 
   .site-footer__bottom{
     margin-top: 24px;

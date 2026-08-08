@@ -1,31 +1,3 @@
-/* Generic day-by-day template — cycled to fit any trip length. Illustrative
-   only ("Sample Itinerary"), since we don't have a finalized day-by-day plan
-   per destination yet; swap for real itinerary data once it exists. */
-function buildItinerary(data) {
-  const totalDays = parseInt(data.duration, 10) || 0;
-  if (!totalDays) return [];
-
-  const middleTemplates = [
-    `Morning practice, then free time to explore ${data.destination}`,
-    'Guided visit to a site central to this journey',
-    'Rest & integration day — gentle, optional practice only',
-    'Local culture, craft or community immersion',
-    'Excursion suited to the surrounding landscape',
-  ];
-
-  const days = [];
-  for (let i = 1; i <= totalDays; i++) {
-    if (i === 1) {
-      days.push('Arrival & welcome circle');
-    } else if (i === totalDays) {
-      days.push('Closing ceremony & departure');
-    } else {
-      days.push(middleTemplates[(i - 2) % middleTemplates.length]);
-    }
-  }
-  return days;
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('slug');
@@ -42,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     [
       '.dest-facts', '.dest-departures', '.dest-gallery', '.dest-about',
-      '.dest-expect', '.dest-itinerary', '.dest-pricing', '.dest-guides', '.dest-faq',
+      '.dest-expect', '.dest-pricing', '.dest-faq',
     ].forEach((selector) => {
       const el = document.querySelector(selector);
       if (el) el.hidden = true;
@@ -86,14 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const reserveSubject = (suffix) =>
-    `mailto:travel@innerjourney.com?subject=${encodeURIComponent(`Reserve My Spot - ${data.title}${suffix ? ' (' + suffix + ')' : ''}`)}`;
+  const RESERVE_URL = 'reserve.html';
 
   const reserveLink = document.getElementById('destReserveLink');
-  if (reserveLink) reserveLink.href = reserveSubject();
+  if (reserveLink) reserveLink.href = RESERVE_URL;
 
   const pricingLink = document.getElementById('destPricingLink');
-  if (pricingLink) pricingLink.href = reserveSubject();
+  if (pricingLink) pricingLink.href = RESERVE_URL;
 
   /* Next departures */
   const departuresList = document.getElementById('destDeparturesList');
@@ -113,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const link = document.createElement('a');
       link.className = 'dest-departures__link';
-      link.href = reserveSubject(dep.range);
+      link.href = RESERVE_URL;
       link.textContent = 'Reserve this date →';
 
       card.append(range, meta, link);
@@ -148,18 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
     gallerySection.hidden = true;
   }
 
-  /* About-section portrait and mid-page immersive break reuse photos from
-     the extra gallery shots (not the hero) so they don't repeat the top
-     banner. With only one extra shot, that photo is already shown in the
-     gallery grid above, so About falls back to the hero instead of showing
-     the exact same tile again immediately below it; Break can still reuse
-     the lone extra shot since it's much further down the page. */
+  /* About-section portrait: uses data.aboutImage when the destination has
+     one set (a photo distinct from the hero and every gallery tile above
+     it) so nothing on the page repeats. Falls back to an extra gallery
+     shot for destinations with enough of them to already avoid repeats. */
   const extraPhotos = data.gallery || [];
   const heroPhoto = { src: data.image, alt: data.imageAlt };
 
   const aboutImg = document.getElementById('destAboutImg');
   if (aboutImg) {
-    const photo = extraPhotos.length > 1 ? extraPhotos[0] : heroPhoto;
+    const photo = data.aboutImage || (extraPhotos.length > 1 ? extraPhotos[0] : heroPhoto);
     aboutImg.src = photo.src;
     aboutImg.alt = photo.alt;
   }
@@ -175,26 +144,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const source = data.whyText || data.description || '';
     const firstSentence = source.split(/(?<=[.!?])\s/)[0] || source;
     breakQuote.textContent = firstSentence;
-  }
-
-  /* Sample itinerary */
-  const itineraryList = document.getElementById('destItineraryList');
-  if (itineraryList) {
-    itineraryList.innerHTML = '';
-    buildItinerary(data).forEach((text, i) => {
-      const li = document.createElement('li');
-      li.className = 'dest-itinerary__item';
-
-      const day = document.createElement('span');
-      day.className = 'dest-itinerary__day';
-      day.textContent = `Day ${i + 1}`;
-
-      const label = document.createElement('span');
-      label.className = 'dest-itinerary__text';
-      label.textContent = text;
-
-      li.append(day, label);
-      itineraryList.appendChild(li);
-    });
   }
 });

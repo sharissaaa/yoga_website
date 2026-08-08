@@ -195,12 +195,12 @@
         <div class="dest-departures__card">
           <p class="dest-departures__range">15–21 Aug 2026</p>
           <p class="dest-departures__meta">With Bhumi Mantra guides · 6 spots left</p>
-          <a class="dest-departures__link" href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat%20(15%E2%80%9321%20Aug%202026)">Reserve this date &rarr;</a>
+          <a class="dest-departures__link" href="reserve.html">Reserve this date &rarr;</a>
         </div>
         <div class="dest-departures__card">
           <p class="dest-departures__range">10–16 Oct 2026</p>
           <p class="dest-departures__meta">With Bhumi Mantra guides · 4 spots left</p>
-          <a class="dest-departures__link" href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat%20(10%E2%80%9316%20Oct%202026)">Reserve this date &rarr;</a>
+          <a class="dest-departures__link" href="reserve.html">Reserve this date &rarr;</a>
         </div>
       </div>
     </section>
@@ -223,7 +223,7 @@
     <section class="dest-about">
       <div class="dest-about__grid">
         <div class="dest-about__media reveal">
-          <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" id="destAboutImg" />
+          <img src="assets/gallery/home-image/pexels-marian-sol-miranda-32246321-14224708.jpg" alt="Headstand overlooking a coastal city" id="destAboutImg" />
         </div>
         <div class="dest-about__body reveal">
           <p class="eyebrow">· About This Journey ·</p>
@@ -235,7 +235,7 @@
             <li>Mindful, restorative pace</li>
           </ul>
           <a
-            href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat"
+            href="reserve.html"
             id="destReserveLink"
             class="dest-about__reserve"
             >Write to us to reserve your spot for this journey.</a
@@ -290,33 +290,23 @@
       </div>
     </section>
 
-    <!-- ===== SAMPLE ITINERARY (populated by destination-detail.js) ===== -->
-    <section class="dest-itinerary">
-      <p class="eyebrow eyebrow--center reveal">· Sample Itinerary ·</p>
-      <p class="dest-itinerary__note reveal">
-        A day-by-day outline to give you a feel for the pace the exact plan
-        may shift a little with weather, group size and season.
-      </p>
-      <ol class="dest-itinerary__list reveal" id="destItineraryList">
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 1</span><span class="dest-itinerary__text">Arrival &amp; welcome circle</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 2</span><span class="dest-itinerary__text">Morning practice, then free time to explore Bali</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 3</span><span class="dest-itinerary__text">Guided visit to a site central to this journey</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 4</span><span class="dest-itinerary__text">Rest &amp; integration day — gentle, optional practice only</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 5</span><span class="dest-itinerary__text">Local culture, craft or community immersion</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 6</span><span class="dest-itinerary__text">Excursion suited to the surrounding landscape</span></li>
-        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 7</span><span class="dest-itinerary__text">Closing ceremony &amp; departure</span></li>
-      </ol>
-    </section>
-
-    <!-- ===== INCLUDED / EXCLUDED ===== -->
+    <!-- ===== GOOD TO KNOW + YOUR GUIDES (one card, one row — everything
+         visible together side by side, no stacking between subsections) ===== -->
     <section class="dest-pricing reveal">
-      <p class="eyebrow eyebrow--center">· Good To Know ·</p>
-      <div class="dest-pricing__layout">
-        <div class="dest-pricing__media">
-          <img src="assets/gallery/home-image/mat.png" alt="Rolled yoga mat resting in a quiet garden" />
-        </div>
-        <div class="dest-pricing__grid">
-          <div class="dest-pricing__col">
+      <div class="dest-info-card">
+        <p class="eyebrow eyebrow--center">· Good To Know &amp; Who Travels With You ·</p>
+        <div class="dest-info-grid">
+          <div class="dest-info-col dest-info-col--media">
+            <div class="dest-pricing__media">
+              <img src="assets/gallery/home-image/travel.png" alt="Rolled yoga mat resting in a quiet garden" />
+            </div>
+            <p class="dest-pricing__cta">
+              Pricing is confirmed when you enquire
+              <a href="reserve.html" id="destPricingLink" class="dest-pricing__link">write to us for a quote</a>.
+            </p>
+          </div>
+
+          <div class="dest-info-col">
             <h3 class="dest-pricing__heading">Included</h3>
             <ul>
               <li>All accommodation for the retreat</li>
@@ -326,7 +316,8 @@
               <li>Guided excursions named in the itinerary</li>
             </ul>
           </div>
-          <div class="dest-pricing__col">
+
+          <div class="dest-info-col">
             <h3 class="dest-pricing__heading">Not Included</h3>
             <ul>
               <li>Flights to and from your home country</li>
@@ -335,44 +326,37 @@
               <li>Personal expenses &amp; optional extras</li>
             </ul>
           </div>
-        </div>
-      </div>
-      <p class="dest-pricing__cta">
-        Pricing is confirmed when you enquire
-        <a href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat" id="destPricingLink" class="dest-pricing__link">write to us for a quote</a>.
-      </p>
-    </section>
 
-    <!-- ===== YOUR GUIDES ===== -->
-    <section class="dest-guides reveal">
-      <p class="eyebrow eyebrow--center">· Who Travels With You ·</p>
-      <h2 class="dest-guides__heading">Your Retreat Guides</h2>
-      <p class="dest-guides__text">
-        Every Bhumi Mantra journey is held by our own teachers the same
-        people you can meet on our
-        <a href="about.html#meet-the-team">About page</a>.
-      </p>
-      <div class="dest-guides__grid">
-        <div class="dest-guides__card">
-          <div class="dest-guides__media">
-            <img src="assets/gallery/home-image/yoga5.png" alt="Yoga dancer pose illustration" />
+          <div class="dest-info-col">
+            <h3 class="dest-pricing__heading">Your Retreat Guides</h3>
+            <ul class="dest-guides-compact">
+              <li class="dest-guides-compact__item">
+                <img src="assets/gallery/home-image/pexels-balljinder-singh-666149-18364977.jpg" alt="Jeo Varghese guiding a meditation session at a mountain retreat" class="dest-guides-compact__avatar" />
+                <div>
+                  <strong>Jeo Varghese</strong>
+                  <span>Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</span>
+                </div>
+              </li>
+              <li class="dest-guides-compact__item">
+                <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg" alt="Nidish Nidhiri leading a seated meditation practice" class="dest-guides-compact__avatar" />
+                <div>
+                  <strong>Nidish Nidhiri</strong>
+                  <span>Meditation Teacher &nbsp;|&nbsp; Facilitator</span>
+                </div>
+              </li>
+              <li class="dest-guides-compact__item">
+                <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31743034.jpg" alt="Alice Avaldi guiding students through a standing pose" class="dest-guides-compact__avatar" />
+                <div>
+                  <strong>Alice Avaldi</strong>
+                  <span>Yoga Educator &nbsp;|&nbsp; Holistic Guide</span>
+                </div>
+              </li>
+            </ul>
+            <p class="dest-guides__text">
+              The same people you can meet on our
+              <a href="about.html#meet-the-team">About page</a>.
+            </p>
           </div>
-          <h4>Jeo Varghese</h4>
-          <p>Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
-        </div>
-        <div class="dest-guides__card">
-          <div class="dest-guides__media">
-            <img src="assets/gallery/home-image/yoga4.png" alt="Yoga cobra pose illustration" />
-          </div>
-          <h4>Nidish Nidhiri</h4>
-          <p>Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-        </div>
-        <div class="dest-guides__card">
-          <div class="dest-guides__media">
-            <img src="assets/gallery/home-image/Sadhanapose.png" alt="Seated meditation pose illustration" />
-          </div>
-          <h4>Alice Avaldi</h4>
-          <p>Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
         </div>
       </div>
     </section>
@@ -423,7 +407,7 @@
     <!-- ===== TAGLINE BANNER ===== -->
     <section class="tagline-banner">
       <img
-        src="assets/gallery/home-image/path.png"
+        src="assets/gallery/home-image/contact.png"
         alt=""
         class="tagline-banner__bg"
         aria-hidden="true"
@@ -564,5 +548,6 @@
     <!-- ================= /FOOTER ================= -->
 
     <script src="js/travel-page-js/destination-detail-page.js"></script>
+    <script src="js/nav-dropdown.js"></script>
   </body>
 </html>
