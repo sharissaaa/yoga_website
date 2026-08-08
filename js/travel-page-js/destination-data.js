@@ -77,7 +77,7 @@ const DESTINATIONS = {
       'Wellness-focused itinerary',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/stone budha.png', alt: 'Buddha statue in a quiet forest setting' },
+      { src: 'assets/gallery/home-image/budha.png', alt: 'Buddha statue in a quiet forest setting' },
     ],
     departures: [
       { range: '05–12 Oct 2026', spots: 6 },
@@ -103,7 +103,7 @@ const DESTINATIONS = {
       'Wide open mountain skies',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/Holistic.png', alt: 'Meditating beside a quiet temple pond at sunrise' },
+      { src: 'assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg', alt: 'Meditating beside a quiet temple pond at sunrise' },
     ],
     departures: [
       { range: '02–09 Nov 2026', spots: 6 },
@@ -129,7 +129,7 @@ const DESTINATIONS = {
       'Gentle, beginner-friendly pace',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/mindful living.png', alt: 'Quiet journaling beside a lotus pond temple garden' },
+      { src: 'assets/gallery/home-image/medation2.png.jpg', alt: 'Quiet journaling beside a lotus pond temple garden' },
     ],
     departures: [
       { range: '14–20 Dec 2026', spots: 7 },
@@ -182,7 +182,7 @@ const DESTINATIONS = {
       'Mindful daily practice',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/Ancient Wisdom.png', alt: 'Ancient temple ruins beside a lotus pond' },
+      { src: 'assets/gallery/home-image/pexels-balljinder-singh-666149-18364977.jpg', alt: 'Ancient temple ruins beside a lotus pond' },
     ],
     departures: [
       { range: '08–14 Feb 2027', spots: 6 },
@@ -208,7 +208,7 @@ const DESTINATIONS = {
       'Beginner-friendly journey',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/Pathway-about.png', alt: 'Candlelit temple pathway lined with statues and flowers' },
+      { src: 'assets/gallery/home-image/varnasi.jpg', alt: 'Candlelit temple pathway lined with statues and flowers' },
     ],
     departures: [
       { range: '05–13 Mar 2027', spots: 8 },

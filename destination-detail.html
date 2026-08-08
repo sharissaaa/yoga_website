@@ -160,12 +160,12 @@
 
     <!-- ===== DESTINATION HERO (populated by destination-detail.js) ===== -->
     <section class="dest-hero">
-      <img src="" alt="" class="dest-hero__bg" id="destHeroImg" aria-hidden="true" />
+      <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" class="dest-hero__bg" id="destHeroImg" aria-hidden="true" />
       <div class="dest-hero__overlay" aria-hidden="true"></div>
       <div class="dest-hero__content reveal">
         <a href="travel.html" class="dest-hero__back">&larr; All Destinations</a>
-        <h1 class="dest-hero__heading" id="destTitle">&nbsp;</h1>
-        <p class="dest-hero__location" id="destLocation"></p>
+        <h1 class="dest-hero__heading" id="destTitle">Bali Healing Retreat</h1>
+        <p class="dest-hero__location" id="destLocation">Indonesia</p>
       </div>
     </section>
 
@@ -173,44 +173,69 @@
     <section class="dest-facts reveal" id="destFacts" aria-label="Trip quick facts">
       <div class="dest-facts__item">
         <span class="dest-facts__label">Duration</span>
-        <span class="dest-facts__value" id="destDuration">—</span>
+        <span class="dest-facts__value" id="destDuration">7 Days</span>
       </div>
       <div class="dest-facts__divider"></div>
       <div class="dest-facts__item">
         <span class="dest-facts__label">Experience Level</span>
-        <span class="dest-facts__value" id="destLevel">—</span>
+        <span class="dest-facts__value" id="destLevel">Beginner</span>
       </div>
       <div class="dest-facts__divider"></div>
       <div class="dest-facts__item">
         <span class="dest-facts__label">Next Departure</span>
-        <span class="dest-facts__value" id="destDates">—</span>
+        <span class="dest-facts__value" id="destDates">15–21 Aug 2026</span>
       </div>
     </section>
 
-    <!-- ===== NEXT DEPARTURES (populated by destination-detail.js) ===== -->
+    <!-- ===== NEXT DEPARTURES (defaults below are Bali's; destination-detail.js
+         replaces them for whichever destination the ?slug= points to) ===== -->
     <section class="dest-departures reveal">
       <p class="eyebrow eyebrow--center">· Next Departures ·</p>
-      <div class="dest-departures__list" id="destDeparturesList"></div>
+      <div class="dest-departures__list" id="destDeparturesList">
+        <div class="dest-departures__card">
+          <p class="dest-departures__range">15–21 Aug 2026</p>
+          <p class="dest-departures__meta">With Bhumi Mantra guides · 6 spots left</p>
+          <a class="dest-departures__link" href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat%20(15%E2%80%9321%20Aug%202026)">Reserve this date &rarr;</a>
+        </div>
+        <div class="dest-departures__card">
+          <p class="dest-departures__range">10–16 Oct 2026</p>
+          <p class="dest-departures__meta">With Bhumi Mantra guides · 4 spots left</p>
+          <a class="dest-departures__link" href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat%20(10%E2%80%9316%20Oct%202026)">Reserve this date &rarr;</a>
+        </div>
+      </div>
     </section>
 
-    <!-- ===== PHOTO GALLERY (populated by destination-detail.js) ===== -->
+    <!-- ===== PHOTO GALLERY (defaults below are Bali's; destination-detail.js
+         replaces them for whichever destination the ?slug= points to) ===== -->
     <section class="dest-gallery reveal" id="destGallerySection">
       <p class="eyebrow eyebrow--center">· A Glimpse of the Journey ·</p>
-      <div class="dest-gallery__grid" id="destGalleryGrid"></div>
+      <div class="dest-gallery__grid" id="destGalleryGrid">
+        <div class="dest-gallery__tile">
+          <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" loading="lazy" />
+        </div>
+        <div class="dest-gallery__tile">
+          <img src="assets/gallery/home-image/pexels-tima-miroshnichenko-5928626.jpg" alt="Sunrise yoga practice on the beach" loading="lazy" />
+        </div>
+      </div>
     </section>
 
     <!-- ===== ABOUT + RESERVE ===== -->
     <section class="dest-about">
       <div class="dest-about__grid">
         <div class="dest-about__media reveal">
-          <img src="" alt="" id="destAboutImg" />
+          <img src="assets/gallery/home-image/travel-bali.png" alt="Bali temple gardens" id="destAboutImg" />
         </div>
         <div class="dest-about__body reveal">
           <p class="eyebrow">· About This Journey ·</p>
-          <p class="dest-about__desc" id="destDescription"></p>
-          <ul class="dest-about__highlights" id="destHighlights"></ul>
+          <p class="dest-about__desc" id="destDescription">Bali has long drawn seekers to its temple courtyards and rice-terrace stillness, and this retreat is built around that same quiet pull. Expect unhurried mornings of yoga and meditation, sound bath ceremonies, and visits to sacred temples woven gently into the pace of each day — a retreat, not a sightseeing itinerary.</p>
+          <ul class="dest-about__highlights" id="destHighlights">
+            <li>Sacred temple visits</li>
+            <li>Sound bath ceremonies</li>
+            <li>Daily yoga &amp; meditation</li>
+            <li>Mindful, restorative pace</li>
+          </ul>
           <a
-            href="#"
+            href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat"
             id="destReserveLink"
             class="dest-about__reserve"
             >Write to us to reserve your spot for this journey.</a
@@ -219,11 +244,12 @@
       </div>
     </section>
 
-    <!-- ===== IMMERSIVE BREAK (populated by destination-detail.js) ===== -->
+    <!-- ===== IMMERSIVE BREAK (defaults below are Bali's; destination-detail.js
+         replaces them for whichever destination the ?slug= points to) ===== -->
     <section class="dest-break">
-      <img src="" alt="" class="dest-break__bg" id="destBreakImg" aria-hidden="true" />
+      <img src="assets/gallery/home-image/pexels-tima-miroshnichenko-5928626.jpg" alt="Sunrise yoga practice on the beach" class="dest-break__bg" id="destBreakImg" aria-hidden="true" />
       <div class="dest-break__overlay" aria-hidden="true"></div>
-      <p class="dest-break__quote reveal" id="destBreakQuote"></p>
+      <p class="dest-break__quote reveal" id="destBreakQuote">Bali has long drawn seekers to its temple courtyards and rice-terrace stillness, and this retreat is built around that same quiet pull.</p>
     </section>
 
     <!-- ===== WHAT TO EXPECT ===== -->
@@ -271,7 +297,15 @@
         A day-by-day outline to give you a feel for the pace the exact plan
         may shift a little with weather, group size and season.
       </p>
-      <ol class="dest-itinerary__list reveal" id="destItineraryList"></ol>
+      <ol class="dest-itinerary__list reveal" id="destItineraryList">
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 1</span><span class="dest-itinerary__text">Arrival &amp; welcome circle</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 2</span><span class="dest-itinerary__text">Morning practice, then free time to explore Bali</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 3</span><span class="dest-itinerary__text">Guided visit to a site central to this journey</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 4</span><span class="dest-itinerary__text">Rest &amp; integration day — gentle, optional practice only</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 5</span><span class="dest-itinerary__text">Local culture, craft or community immersion</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 6</span><span class="dest-itinerary__text">Excursion suited to the surrounding landscape</span></li>
+        <li class="dest-itinerary__item"><span class="dest-itinerary__day">Day 7</span><span class="dest-itinerary__text">Closing ceremony &amp; departure</span></li>
+      </ol>
     </section>
 
     <!-- ===== INCLUDED / EXCLUDED ===== -->
@@ -305,7 +339,7 @@
       </div>
       <p class="dest-pricing__cta">
         Pricing is confirmed when you enquire
-        <a href="#" id="destPricingLink" class="dest-pricing__link">write to us for a quote</a>.
+        <a href="mailto:travel@innerjourney.com?subject=Reserve%20My%20Spot%20-%20Bali%20Healing%20Retreat" id="destPricingLink" class="dest-pricing__link">write to us for a quote</a>.
       </p>
     </section>
 
