@@ -7,7 +7,7 @@
 const DESTINATIONS = {
   bali: {
     title: 'Bali Healing Retreat',
-    image: 'assets/gallery/home-image/travel-bali.png',
+    image: 'assets/gallery/home-image/group1.jpg',
     imageAlt: 'Bali temple gardens',
     destination: 'Indonesia',
     duration: '7 Days',
@@ -24,7 +24,7 @@ const DESTINATIONS = {
       'Mindful, restorative pace',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/pexels-tima-miroshnichenko-5928626.jpg', alt: 'Sunrise yoga practice on the beach' },
+      { src: 'assets/gallery/home-image/group.jpg', alt: 'Sunrise yoga practice on the beach' },
     ],
     departures: [
       { range: '15–21 Aug 2026', spots: 6 },
@@ -33,7 +33,7 @@ const DESTINATIONS = {
   },
   rishikesh: {
     title: 'Rishikesh Yoga Retreat',
-    image: 'assets/gallery/home-image/Rishikesh.jpg',
+    image: 'assets/gallery/home-image/course-image2.jpg',
     imageAlt: 'Rishikesh on the Ganges',
     destination: 'India',
     duration: '6 Days',
@@ -60,7 +60,7 @@ const DESTINATIONS = {
   },
   'sri-lanka': {
     title: 'Sri Lanka Wellness Escape',
-    image: 'assets/gallery/home-image/sri lanka.png',
+    image: 'assets/gallery/home-image/yogapose3.jpg',
     imageAlt: 'Sri Lanka rock fortress',
     destination: 'Sri Lanka',
     duration: '8 Days',
@@ -77,7 +77,7 @@ const DESTINATIONS = {
       'Wellness-focused itinerary',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/stone budha.png', alt: 'Buddha statue in a quiet forest setting' },
+      { src: 'assets/gallery/home-image/yogapose4.jpg', alt: 'Buddha statue in a quiet forest setting' },
     ],
     departures: [
       { range: '05–12 Oct 2026', spots: 6 },
@@ -86,7 +86,7 @@ const DESTINATIONS = {
   },
   ladakh: {
     title: 'Ladakh Himalayan Retreat',
-    image: 'assets/gallery/home-image/ladakh.jpg',
+    image: 'assets/gallery/home-image/course-image3.jpg',
     imageAlt: 'Ladakh mountain monastery',
     destination: 'India',
     duration: '7 Days',
@@ -103,7 +103,7 @@ const DESTINATIONS = {
       'Wide open mountain skies',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/Holistic.png', alt: 'Meditating beside a quiet temple pond at sunrise' },
+      { src: 'assets/gallery/home-image/course-image.jpg', alt: 'Meditating beside a quiet temple pond at sunrise' },
     ],
     departures: [
       { range: '02–09 Nov 2026', spots: 6 },
@@ -112,7 +112,7 @@ const DESTINATIONS = {
   },
   auroville: {
     title: 'Auroville Mindful Living',
-    image: 'assets/gallery/home-image/Auroville.jpg',
+    image: 'assets/gallery/home-image/group1.jpg',
     imageAlt: 'Auroville township gardens',
     destination: 'India',
     duration: '6 Days',
@@ -129,7 +129,7 @@ const DESTINATIONS = {
       'Gentle, beginner-friendly pace',
     ],
     gallery: [
-      { src: 'assets/gallery/home-image/mindful living.png', alt: 'Quiet journaling beside a lotus pond temple garden' },
+      { src: 'assets/gallery/home-image/yogapose2.jpg', alt: 'Quiet journaling beside a lotus pond temple garden' },
     ],
     departures: [
       { range: '14–20 Dec 2026', spots: 7 },
