@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const highlights = document.getElementById('destHighlights');
   if (highlights && Array.isArray(data.highlights)) {
+    highlights.innerHTML = '';
     data.highlights.forEach((item) => {
       const li = document.createElement('li');
       li.textContent = item;
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Next departures */
   const departuresList = document.getElementById('destDeparturesList');
   if (departuresList && Array.isArray(data.departures)) {
+    departuresList.innerHTML = '';
     data.departures.forEach((dep) => {
       const card = document.createElement('div');
       card.className = 'dest-departures__card';
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (galleryGrid && galleryPhotos.length > 1) {
     const hasFeatured = galleryPhotos.length > 2;
     galleryGrid.classList.toggle('has-featured', hasFeatured);
+    galleryGrid.innerHTML = '';
     galleryPhotos.forEach((photo, i) => {
       const tile = document.createElement('div');
       tile.className = 'dest-gallery__tile';
@@ -146,11 +149,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* About-section portrait and mid-page immersive break reuse photos from
-     the same gallery set, favoring an extra shot over the hero when one
-     exists so the page doesn't show the same crop twice in a row. */
+     the extra gallery shots (not the hero) so they don't repeat the top
+     banner. With only one extra shot, that photo is already shown in the
+     gallery grid above, so About falls back to the hero instead of showing
+     the exact same tile again immediately below it; Break can still reuse
+     the lone extra shot since it's much further down the page. */
+  const extraPhotos = data.gallery || [];
+  const heroPhoto = { src: data.image, alt: data.imageAlt };
+
   const aboutImg = document.getElementById('destAboutImg');
   if (aboutImg) {
-    const photo = galleryPhotos.length > 1 ? galleryPhotos[1] : galleryPhotos[0];
+    const photo = extraPhotos.length > 1 ? extraPhotos[0] : heroPhoto;
     aboutImg.src = photo.src;
     aboutImg.alt = photo.alt;
   }
@@ -158,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const breakImg = document.getElementById('destBreakImg');
   const breakQuote = document.getElementById('destBreakQuote');
   if (breakImg) {
-    const photo = galleryPhotos.length > 2 ? galleryPhotos[2] : galleryPhotos[galleryPhotos.length - 1];
+    const photo = extraPhotos.length > 1 ? extraPhotos[1] : (extraPhotos[0] || heroPhoto);
     breakImg.src = photo.src;
     breakImg.alt = photo.alt;
   }
@@ -171,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Sample itinerary */
   const itineraryList = document.getElementById('destItineraryList');
   if (itineraryList) {
+    itineraryList.innerHTML = '';
     buildItinerary(data).forEach((text, i) => {
       const li = document.createElement('li');
       li.className = 'dest-itinerary__item';
