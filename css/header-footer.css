@@ -126,6 +126,63 @@
   background: var(--nav-accent);
 }
 
+/* Dropdown — currently just "Destinations" > "Personalized Travel
+   Package". Hover/focus reveals it on desktop; on mobile (see the
+   720px breakpoint below) it's always expanded inline since touch
+   has no hover to key off of. */
+.site-nav__item--dropdown{ position: relative; }
+.site-nav__caret{
+  display: inline-block;
+  width: 0; height: 0;
+  margin-left: 5px;
+  vertical-align: 2px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: .65;
+}
+.site-nav__dropdown{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  min-width: 100%;
+  width: max-content;
+  padding: 6px 0;
+  list-style: none;
+  background: rgba(13, 1, 1, 0.98);
+  border: 1px solid var(--border-gold, rgba(201,146,42,.3));
+  border-radius: 8px;
+  box-shadow: 0 16px 32px rgba(0,0,0,.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+  z-index: 110;
+}
+.site-nav__item--dropdown:hover .site-nav__dropdown,
+.site-nav__item--dropdown:focus-within .site-nav__dropdown{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.site-nav__dropdown li{ padding: 0 4px; }
+.site-nav__dropdown a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: color .15s ease, background .15s ease;
+}
+.site-nav__dropdown a:hover{
+  background: rgba(201, 146, 42, 0.12);
+}
+.site-nav__dropdown a.active::after{ display: none; }
+
 .site-nav__cta{
   grid-column: 3;
   justify-self: end;
@@ -237,6 +294,25 @@
   }
   .site-nav__links a.active::after{ display: none; }
 
+  .site-nav__caret{ display: none; }
+  .site-nav__dropdown{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .site-nav__dropdown a{
+    padding: 12px 0 12px 20px;
+    font-size: 16px;
+    border-top: 1px solid var(--border-gold, rgba(201,146,42,.3));
+  }
+
   /* Contact Information / Follow Us sections inside the panel */
   .site-nav__panel-section{
     display: block;
@@ -265,24 +341,33 @@
   grid-column: 3;
   justify-self: end;
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
 }
 
+/* Matches .site-footer-social's circular bordered buttons, just a
+   touch smaller to sit comfortably in the slimmer nav bar */
 .site-nav__social a {
-  color: var(--nav-accent-light);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--nav-accent);
   display: flex;
-  transition: color .2s ease, transform .2s ease;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav-accent-light);
+  transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 
 .site-nav__social a:hover {
-  color: var(--nav-accent);
+  background: var(--nav-accent);
+  color: var(--dark, #0D0101);
   transform: translateY(-2px);
 }
 
 .site-nav__social svg {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 @media (max-width: 720px){
   /* Icons already reappear inside the full-screen panel's "Follow Us"

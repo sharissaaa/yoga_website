@@ -30,10 +30,14 @@
         <div class="site-nav__panel" id="navLinks">
           <ul class="site-nav__links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="course.html">Explore The Teachings</a></li>
-            <li><a href="travel.html">Destinations</a></li>
             <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
-
+            <li><a href="course.html">Explore The Teachings</a></li>
+            <li class="site-nav__item--dropdown">
+              <a href="travel.html">Destinations<span class="site-nav__caret" aria-hidden="true"></span></a>
+              <ul class="site-nav__dropdown">
+                <li><a href="personalized-package.html">Personalized Travel Package</a></li>
+              </ul>
+            </li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -98,58 +102,142 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero about-hero">
-        <!-- Decorative spinning mandala watermark -->
+        <img src="assets/gallery/home-image/travel-bali.png"
+            alt="A tiered temple silhouetted against a golden sunset over a still lake"
+            class="hero__bg" />
+        <div class="hero__overlay" aria-hidden="true"></div>
 
-        <div class="hero__left ah-left">
-            <div class="ah-eyebrow">
-                <span class="ah-eyebrow__text">ABOUT US</span>
-                <span class="ah-eyebrow__rule"></span>
-            </div>
-
+        <div class="hero__content">
             <h1 class="ah-headline">
                 Rooted in Ancient Wisdom.<br />
                 <em class="ah-headline--gold">Guided by Love.</em>
             </h1>
 
-           
+            <div class="ah-identity">
+                <p class="ah-identity__name">Bhoomi Mantra Yoga &amp; Meditation Research Center</p>
+                <p class="ah-identity__sub">A sister project of Terra Mantra, Italy</p>
+            </div>
 
             <div class="ah-body">
                 <p class="ah-body__lead">
-                    <span class="ah-body__dropcap">The</span> project is now beginning to establish its own foundation in India, with the long-term
-                    vision of creating a dedicated center in the forests of Vagamon, Kerala&mdash;a place for
-                    community living, spiritual practice, education, and research.
+                    <span class="ah-body__dropcap">B</span>hoomi Mantra Yoga &amp; Meditation Research Center was
+                    founded by Alice and Jeo with the vision of preserving and sharing authentic yogic traditions
+                    that support profound self-transformation, inner awareness, and holistic well-being.
                 </p>
-
-                <div class="ah-body__more" id="aboutBodyMore">
-                    <p>
-                        Here, people can learn, grow, and reconnect with the deeper dimensions of life in
-                        harmony with nature. The offerings, course fees, and donations received through Bhoomi
-                        Mantra are dedicated to the development and sustainability of this vision, as well as
-                        supporting meaningful social initiatives&mdash;including educational opportunities for
-                        children who face financial barriers.
-                    </p>
-                    <p>
-                        Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
-                        yoga becomes not only a personal practice, but a path of transformation, compassion,
-                        and service. Our vision is to cultivate a conscious community where self-realization,
-                        knowledge, nature, and humanitarian values come together.
-                    </p>
-                </div>
-
-                <button type="button" class="ah-body__toggle" id="aboutBodyToggle" aria-expanded="false" aria-controls="aboutBodyMore">
-                    <span>Read More</span>
-                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
             </div>
         </div>
-        <div class="hero__right">
-            <!-- Replace hero-candle.jpg with your actual image -->
-            <img src="assets/gallery/home-image/about-hero.png" alt="" class="hero__img" />
-            <div class="hero__img-gradient" aria-hidden="true"></div>
+    </section>
+
+    <!-- ===== MISSION (image mosaic) ===== -->
+    <section class="mission reveal">
+        <div class="mission__intro">
+            <p class="eyebrow eyebrow--center">· Our Mission ·</p>
+            <h2 class="mission__heading">Depth, Delivered Authentically</h2>
+            <p class="mission__text">
+                Through Bhoomi Mantra, we aim to create opportunities for sincere seekers to experience the depth
+                of yoga, meditation, tantra, and the wisdom traditions of India through authentic practices,
+                guided courses, pilgrimages, expeditions, and immersive meditation retreats.
+            </p>
+        </div>
+        <div class="mission__bento">
+            <figure class="mission__tile mission__tile--a">
+                <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31742998.jpg"
+                    alt="Students in a supported forward fold during a guided yoga class" />
+                <figcaption>Spiritual Practice</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--b">
+                <img src="assets/gallery/home-image/yogavidyamandiram.jpg"
+                    alt="A group meditating together beside a river, mountains in the distance" />
+                <figcaption>Conscious Community</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--c">
+                <img src="assets/gallery/home-image/varnasi.jpg"
+                    alt="An evening aarti ceremony with lamps floating on the Ganges" />
+                <figcaption>Pilgrimages &amp; Ritual</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--d">
+                <img src="assets/gallery/home-image/livepose.jpg"
+                    alt="A teacher guiding a student through a supported yoga pose" />
+                <figcaption>Guided Courses</figcaption>
+            </figure>
         </div>
     </section>
+
+    <!-- ===== FOUNDATION ===== -->
+    <section class="about-panel about-panel--green reveal">
+        <div class="about-panel__text">
+            <span class="about-panel__num">I.</span>
+            <p class="eyebrow">· Our Foundation ·</p>
+            <h2 class="about-panel__heading">A Home in the Forests of <em>Vagamon</em></h2>
+            <p class="about-panel__body">
+                The project is now beginning to establish its own foundation in India, with the long-term vision
+                of creating a dedicated center in the forests of Vagamon, Kerala. This space will become a place
+                for community living, spiritual practice, education, and research&mdash;where people can learn,
+                grow, and reconnect with the deeper dimensions of life in harmony with nature.
+            </p>
+        </div>
+        <div class="about-panel__media">
+            <img src="assets/gallery/home-image/kerala.jpg"
+                alt="A candlelit lotus pond beside a traditional Kerala retreat house at dusk"
+                class="about-panel__img" />
+            <div class="about-panel__img-gradient about-panel__img-gradient--fade-left" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- ===== GIVING BACK ===== -->
+    <section class="about-panel about-panel--maroon reveal">
+        <div class="about-panel__media">
+            <img src="assets/gallery/home-image/contact.png"
+                alt="An open temple gate leading down a garden path toward a small Buddha shrine"
+                class="about-panel__img" />
+            <div class="about-panel__img-gradient about-panel__img-gradient--fade-right" aria-hidden="true"></div>
+        </div>
+        <div class="about-panel__text">
+            <span class="about-panel__num">II.</span>
+            <p class="eyebrow">· Giving Back ·</p>
+            <h2 class="about-panel__heading">Growth Beyond <em>the Mat</em></h2>
+            <p class="about-panel__body">
+                The offerings, course fees, and donations received through Bhoomi Mantra are dedicated to the
+                development and sustainability of this vision, as well as supporting meaningful social
+                initiatives. A part of our mission is to help provide educational opportunities for children who
+                face financial barriers, supporting their learning, growth, and future possibilities.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== BRIDGE / VISION STATEMENT ===== -->
+    <section class="mission-statement reveal">
+        <div class="mission-statement__split">
+            <div class="mission-statement__half">
+                <img src="assets/gallery/home-image/thebridge.jpg"
+                    alt="A temple glowing at sunset above the Ganges in Rishikesh"
+                    class="mission-statement__bg" />
+                <div class="mission-statement__scrim" aria-hidden="true"></div>
+                <div class="mission-statement__content">
+                    <span class="mission-statement__label">The Bridge</span>
+                    <p class="mission-statement__text">
+                        Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
+                        yoga becomes not only a personal practice, but a path of transformation, compassion,
+                        and service.
+                    </p>
+                </div>
+            </div>
+            <div class="mission-statement__half">
+                <img src="assets/gallery/home-image/thevision.jpg"
+                    alt="Aerial view of the Matrimandir at Auroville, an intentional community in India"
+                    class="mission-statement__bg" />
+                <div class="mission-statement__scrim" aria-hidden="true"></div>
+                <div class="mission-statement__content">
+                    <span class="mission-statement__label">The Vision</span>
+                    <p class="mission-statement__text mission-statement__text--emphasis">
+                        Our vision is to cultivate a conscious community where self-realization, knowledge,
+                        nature, and humanitarian values come together.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- ===== MEET THE TEAM ===== -->
 <section class="team reveal" id="meet-the-team">
     <p class="eyebrow eyebrow--center">· Meet The Team ·</p>
@@ -164,7 +252,7 @@
         <article class="team-card">
             <span class="team-card__index">01</span>
             <div class="team-card__media">
-                <img src="assets/gallery/home-image/neymar.png" alt="Jeo Varghese">
+                <img src="assets/gallery/home-image/pexels-balljinder-singh-666149-18364977.jpg" alt="Jeo Varghese guiding a meditation session at a mountain retreat" style="object-position: 78% 62%;">
             </div>
             <div class="team-card__body">
                 <h4 class="team-card__title">Jeo Varghese</h4>
@@ -183,7 +271,7 @@
         <article class="team-card">
             <span class="team-card__index">02</span>
             <div class="team-card__media">
-                <img src="assets/gallery/home-image/cristiano.png" alt="Nidish Nidhiri">
+                <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg" alt="Nidish Nidhiri leading a seated meditation practice" style="object-position: 32% 48%;">
             </div>
             <div class="team-card__body">
                 <h4 class="team-card__title">Nidish Nidhiri</h4>
@@ -201,7 +289,7 @@
         <article class="team-card">
             <span class="team-card__index">03</span>
             <div class="team-card__media">
-                <img src="assets/gallery/home-image/messi.png" alt="Alice Avaldi">
+                <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31743034.jpg" alt="Alice Avaldi guiding students through a standing pose" style="object-position: 58% 32%;">
             </div>
             <div class="team-card__body">
                 <h4 class="team-card__title">Alice Avaldi</h4>
@@ -244,7 +332,7 @@
         </div>
         <div class="story__right">
             <!-- Replace story-temple.jpg with your actual image -->
-            <img src="assets/gallery/home-image/about-temple.png" alt="" class="story__img" />
+            <img src="assets/gallery/home-image/kerala2.jpg" alt="Chinese fishing nets silhouetted against a sunset over the Kerala coast" class="story__img" />
             <div class="story__img-gradient" aria-hidden="true"></div>
         </div>
     </section>
@@ -281,7 +369,7 @@
 
     <!-- ===== QUOTE ===== -->
     <section class="quote reveal">
-        <img src="assets/gallery/home-image/logo.png" alt="" class="quote__mandala mandala-spin" aria-hidden="true">
+        <img src="assets/gallery/home-image/logo.png" alt="" class="quote__mandala mandala-rotate" aria-hidden="true">
         <p class="quote__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
         <p class="quote__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
         <p class="quote__text"><em>Then pure awareness is established in itself.</em></p>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/travel-page-css/destination-detail.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <script src="js/travel-page-js/destination-data.js"></script>
@@ -34,13 +34,16 @@
       <div class="site-nav__panel" id="navLinks">
         <ul class="site-nav__links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="course.html">Explore The Teachings</a></li>
-          <li>
-            <a href="travel.html" class="active" aria-current="page"
-              >Destinations</a
-            >
-          </li>
           <li><a href="about.html">About Us</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li class="site-nav__item--dropdown">
+            <a href="travel.html" class="active" aria-current="page"
+              >Destinations<span class="site-nav__caret" aria-hidden="true"></span></a
+            >
+            <ul class="site-nav__dropdown">
+              <li><a href="personalized-package.html">Personalized Travel Package</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -392,10 +395,13 @@
         aria-hidden="true"
       />
       <div class="tagline-banner__overlay" aria-hidden="true"></div>
-      <p class="tagline-banner__text reveal">
-        <em>Travel inwards. Return transformed.</em>
-      </p>
-      <img src="lotus-divider.svg" alt="" class="tagline-banner__ornament" />
+      <div class="tagline-banner__content reveal">
+        <img src="assets/gallery/home-image/logo.png" alt="" class="tagline-banner__mandala" aria-hidden="true">
+        <p class="tagline-banner__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+        <p class="tagline-banner__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+        <p class="tagline-banner__text"><em>Then pure awareness is established in itself.</em></p>
+        <p class="tagline-banner__attr">&mdash; Patanjali, Yoga Sutras</p>
+      </div>
     </section>
 
     <footer class="site-footer">
