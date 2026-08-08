@@ -1,0 +1,132 @@
+/* ============================================================
+   BHUMI MANTRA – Reserve Your Spot page
+   (relies on tokens, reset and nav/footer styles from travel.css)
+   ============================================================ */
+
+.reserve-section {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.reserve-card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+}
+
+.reserve-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(1.75rem, 4vw, var(--fs-2xl));
+  font-weight: 300;
+  color: var(--clr-white);
+  margin-bottom: 0.75rem;
+}
+
+.reserve-sub {
+  font-size: var(--fs-sm);
+  color: var(--clr-muted);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto 2rem;
+}
+
+.reserve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+
+.reserve-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem;
+}
+
+.reserve-field label {
+  display: block;
+  font-family: var(--ff-body);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-gold-light);
+  margin-bottom: 0.4rem;
+}
+
+.reserve-field .optional {
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--clr-muted);
+}
+
+.reserve-field input,
+.reserve-field textarea {
+  width: 100%;
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--clr-white);
+}
+
+.reserve-field input::placeholder,
+.reserve-field textarea::placeholder {
+  color: var(--clr-muted);
+}
+
+.reserve-field input:focus,
+.reserve-field textarea:focus {
+  outline: none;
+  border-color: var(--clr-gold);
+}
+
+.reserve-field textarea {
+  resize: vertical;
+}
+
+.reserve-submit {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.reserve-submit:hover {
+  background: var(--clr-gold-light);
+}
+
+.reserve-note {
+  font-size: var(--fs-sm);
+  color: var(--clr-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.reserve-note a {
+  color: var(--clr-gold);
+}
+
+@media (max-width: 520px) {
+  .reserve-card {
+    padding: 2.25rem 1.5rem;
+  }
+  .reserve-row {
+    grid-template-columns: 1fr;
+  }
+}

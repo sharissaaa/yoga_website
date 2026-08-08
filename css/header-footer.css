@@ -234,7 +234,7 @@
 .site-nav__burger.is-open span:nth-child(2){ opacity: 0; }
 .site-nav__burger.is-open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 720px){
+@media (max-width: 960px){
   .site-nav{ grid-template-columns: auto 1fr auto; padding: 10px 20px; }
   .site-nav__logo-text small{ display: none; }
   .site-nav__burger{ display: flex; }
@@ -369,7 +369,7 @@
   width: 15px;
   height: 15px;
 }
-@media (max-width: 720px){
+@media (max-width: 960px){
   /* Icons already reappear inside the full-screen panel's "Follow Us"
      section below — no room for them in the compact mobile bar */
   .site-nav__social{ display: none; }
