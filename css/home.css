@@ -4,7 +4,9 @@
    ============================================= */
 
 .hero-section {
-  position: relative; min-height: 100vh;
+  position: relative;
+  min-height: calc(100vh - 76px); /* fits exactly below the 76px sticky nav — fallback for browsers without svh support */
+  min-height: calc(100svh - 76px);
   display: flex; align-items: center;
   overflow: hidden; background: #080f09;
 }

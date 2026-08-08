@@ -112,7 +112,8 @@ em { font-style: italic; color: var(--clr-gold); }
    ============================================================ */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: calc(100vh - 76px); /* fits exactly below the 76px sticky nav — fallback for browsers without svh support */
+  min-height: calc(100svh - 76px);
   display: flex;
   align-items: center;
   padding: 2rem 4rem;

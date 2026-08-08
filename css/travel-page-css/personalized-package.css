@@ -7,8 +7,8 @@
 /* ===== HERO ===== */
 .pp-hero {
   position: relative;
-  min-height: 78vh;
-  min-height: 78svh;
+  min-height: calc(100vh - 76px); /* fits exactly below the 76px sticky nav — fallback for browsers without svh support */
+  min-height: calc(100svh - 76px);
   display: flex;
   align-items: flex-end;
   padding: 0 2.5rem 4.5rem;
