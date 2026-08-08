@@ -157,30 +157,64 @@
 }
 
 .ah-mentor {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  height: 420px;
+  overflow: hidden;
   background: linear-gradient(160deg, rgba(35, 5, 5, .5) 0%, rgba(19, 2, 2, .6) 100%);
   border: 1px solid var(--border-gold);
   border-top: 2px solid rgba(201, 146, 42, .55);
   border-radius: 16px;
-  padding: 36px 24px 32px;
   text-align: center;
   transition: transform .3s ease, border-color .3s ease;
 }
 .ah-mentor:hover { transform: translateY(-6px); border-color: rgba(201, 146, 42, .55); }
 
 .ah-mentor__photo {
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
+  position: absolute;
+  inset: 0;
 }
 .ah-mentor__photo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, .4));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s ease;
+}
+.ah-mentor:hover .ah-mentor__photo img {
+  transform: scale(1.06);
+}
+
+/* Dark gradient that fades in behind the caption so it stays legible
+   over the photo instead of sitting in its own space below it */
+.ah-mentor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(10, 2, 2, .92) 0%, rgba(10, 2, 2, .6) 34%, transparent 65%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.ah-mentor:hover::after {
+  opacity: 1;
+}
+
+.ah-mentor__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 24px 20px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.ah-mentor:hover .ah-mentor__caption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .ah-mentor__name {
