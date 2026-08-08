@@ -1,190 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhumi Mantra — Yoga · Travel · Mindfulness</title>
-    <meta name="description"
-        content="Curated yoga journeys across India's sacred landscapes. Reconnect. Rebalance. Return renewed." />
+    <meta
+      name="description"
+      content="Curated yoga journeys across India's sacred landscapes. Reconnect. Rebalance. Return renewed."
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <!-- Extra weights + Manrope needed by the meditation-orb partial.
          Kept here in <head> instead of inside that partial's own HTML,
          so the font is ready before the fragment is injected. -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="assets/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <!-- Shared header/footer design system — loaded right after main.css so its
          --nav-accent tokens can see --dark/--cream/--gold defined there -->
-    <link rel="stylesheet" href="assets/header-footer.css" />
-    <link rel="stylesheet" href="assets/home.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-about.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-experience.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-destination.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-meditation-orb.css" />
-    <link rel="stylesheet" href="assets/home-page-css/home-srories.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/home-page-css/home-about.css" />
+    <link rel="stylesheet" href="css/home-page-css/home-experience.css" />
+    <link rel="stylesheet" href="css/home-page-css/home-destination.css" />
+    <link
+      rel="stylesheet"
+      href="css/home-page-css/home-meditation-orb.css"
+    />
+    <link rel="stylesheet" href="css/home-page-css/home-srories.css" />
 
-    <style>
-        /* FIX for absolute positioned quote block – ensure relative container */
-        .journey-section .col-lg-9 {
-            position: relative;
-        }
+  </head>
 
-        /* additional micro adjustment to prevent any text overflow */
-        .journey-quote {
-            max-width: 210px;
-            z-index: 5;
-        }
-
-        @media (max-width: 992px) {
-            .journey-quote {
-                position: static;
-                margin-bottom: 20px;
-                max-width: 100%;
-            }
-        }
-
-        /* ✅ FIX: smooth in-page scrolling for nav/footer anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* ✅ FIX: offset anchor targets so the fixed navbar doesn't cover
-           the top of the section when jumped to. Adjust 90px if your
-           navbar's actual rendered height differs. */
-        #partial-about,
-        #partial-experience,
-        #partial-destinations {
-            scroll-margin-top: 90px;
-        }
-    </style>
-</head>
-
-<body class="theme-gold">
-
+  <body class="theme-gold">
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: HEADER (shared across site)   -->
     <!-- ══════════════════════════════════════ -->
     <nav class="site-nav" id="siteNav">
-        <a href="index.html" class="site-nav__logo">
-            <img src="assets/gallery/home-image/logo.png" alt="" class="site-nav__logo-icon">
-            <span class="site-nav__logo-text">
-                BHUMI MANTRA
-                <small>Heal. Transform. Transcend.</small>
-            </span>
-        </a>
+      <a href="index.html" class="site-nav__logo">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-nav__logo-icon"
+        />
+        <span class="site-nav__logo-text">
+          BHUMI MANTRA
+          <small>Explore. Transform. Transcend.</small>
+        </span>
+      </a>
 
-        <div class="site-nav__panel" id="navLinks">
-          <ul class="site-nav__links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="course.html">Explore The Teachings</a></li>
-            <li><a href="travel.html">Destinations</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+      <div class="site-nav__panel" id="navLinks">
+        <ul class="site-nav__links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li class="site-nav__item--dropdown">
+            <a href="travel.html">Destinations<span class="site-nav__caret" aria-hidden="true"></span></a>
+            <ul class="site-nav__dropdown">
+              <li><a href="personalized-package.html">Personalized Travel Package</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
 
-          <div class="site-nav__panel-section">
-            <h4 class="site-nav__panel-heading">Contact Information</h4>
-            <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
-            <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
-            <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
-          </div>
-
-          <div class="site-nav__panel-section">
-            <h4 class="site-nav__panel-heading">Follow Us</h4>
-            <div class="site-footer-social">
-              <a href="#" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/>
-                </svg>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.3" cy="6.7" r="1"/>
-                </svg>
-              </a>
-              <a href="#" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="6" width="18" height="12" rx="3"/>
-                  <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+        <div class="site-nav__panel-section">
+          <h4 class="site-nav__panel-heading">Contact Information</h4>
+          <a href="tel:+393387322276" class="site-nav__panel-line"
+            >+39 3387322276</a
+          >
+          <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line"
+            >hello@bhumimantra.com</a
+          >
+          <span class="site-nav__panel-line"
+            >Italy &mdash; Available for Online &amp; In-Person Sessions</span
+          >
         </div>
 
-        <a href="join.html" class="site-nav__cta">Join Us</a>
+        <div class="site-nav__panel-section">   
+          <h4 class="site-nav__panel-heading">Follow Us</h4>
+          <div class="site-footer-social">
+            <a href="#" aria-label="Facebook">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
 
-        <button type="button" class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"
-            aria-controls="navLinks">
-            <span></span><span></span><span></span>
-        </button>
+    <div class="site-nav__social">
+        <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+            </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+        </a>
+    </div>
+
+      <button
+        type="button"
+        class="site-nav__burger"
+        id="navBurger"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </nav>
-
 
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: HERO                          -->
     <!-- ══════════════════════════════════════ -->
     <section class="hero-section">
-        <div class="hero-bg"></div>
+      <div class="hero-bg"></div>
 
-        <div class="container hero-content">
-            <div class="row">
-                <div class="col-lg-6 col-md-9">
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-lg-6 col-md-9">
+            <h1 class="hero-h1">
+              Explore
+              <span class="hero-h1-gold">Transform. Transcend.</span>
+            </h1>
 
-                    
+            <div class="hero-rule"></div>
 
-                    <h1 class="hero-h1">
-                        Explore
-                        <span class="hero-h1-gold">Transform. Transcend.</span>
-                    </h1>
+            <p class="hero-desc">
+              Yoga courses and mindful experiences across<br />
+              India's sacred landscapes. Reconnect. Rebalance.<br />
+              Return renewed.
+            </p>
 
-                    <div class="hero-rule"></div>
-
-                    <p class="hero-desc">
-                        Yoga courses and mindful experiences across<br>
-                        India's sacred landscapes. Reconnect. Rebalance.<br>
-                        Return renewed.
-                    </p>
-
-                    <div class="hero-btns">
-                        <a href="course.html" class="btn-primary-sy">Courses &nbsp;→</a>
-                        <a href="travel.html" class="btn-outline-sy">Our Destinations &nbsp;→</a>
-                    </div>
-
-                   
-                </div>
+            <div class="hero-btns">
+              <a href="course.html" class="btn-primary-sy">Courses &nbsp;→</a>
+              <a href="travel.html" class="btn-outline-sy"
+                >Our Destinations &nbsp;→</a
+              >
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="hero-scroll-indicator">
-            <span class="scroll-num">01</span>
-            <div class="scroll-dots">
-                <span class="s-dot active"></span>
-                <span class="s-dot"></span>
-                <span class="s-dot"></span>
-                <span class="s-dot"></span>
-                <span class="s-dot"></span>
-            </div>
-            <span class="scroll-num">05</span>
-        </div>
-
-        
+    
     </section>
 
     <div class="section-sep"></div>
-
 
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: EXPERIENCES                   -->
@@ -201,8 +221,6 @@
     <!-- ══════════════════════════════════════ -->
     <div id="partial-destinations"></div>
 
-
-    
     <!-- ══════════════════════════════════════ -->
     <!-- SECTION: BREATHE (MEDITATION ORB)      -->
     <!-- ══════════════════════════════════════ -->
@@ -223,277 +241,133 @@
     <!-- ══════════════════════════════════════ -->
     <div id="partial-stories"></div>
 
-
-    <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: FOOTER (shared across site)   -->
-    <!-- ══════════════════════════════════════ -->
+    <!-- ================= FOOTER (shared) ================= -->
     <footer class="site-footer">
+      <div class="site-footer__brand">
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__logo-icon"
+        />
+        <h2 class="site-footer__brand-title">
+          Bhoomi Mantra Yoga &amp; Meditation Research Center
+        </h2>
+        <p class="site-footer__brand-subtitle">
+          A sister project of Terra Mantra, Italy
+        </p>
+        <p class="site-footer__tagline">
+          Preserving and sharing authentic yogic traditions that support
+          profound self-transformation, inner awareness, and holistic
+          well-being.
+        </p>
+      </div>
 
-        <div class="site-footer__brand">
-            <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
-            <span class="site-footer__logo-text">BHUMI MANTRA</span>
-            <span class="site-footer__logo-sub">Yoga and Meditation</span>
-            <!-- Body copy pending from client — reserved space so layout doesn't shift once added -->
-            <p class="site-footer__tagline"></p>
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Quick links"
+      >
+        <h3 class="site-footer__col-heading">Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="course.html">Explore The Teachings</a></li>
+          <li><a href="travel.html">Destinations</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav
+        class="site-footer__col site-footer__col--collapsible"
+        aria-label="Our offerings"
+      >
+        <h3 class="site-footer__col-heading">Our Offerings</h3>
+        <ul>
+          <li><a href="travel.html">Sacred Journeys</a></li>
+          <li><a href="course.html">Retreats &amp; Immersions</a></li>
+          <li><a href="course.html">Ceremony &amp; Ritual</a></li>
+          <li><a href="course.html">Private Sessions</a></li>
+          <li><a href="course.html">Wellness Programs</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col site-footer__col--newsletter">
+        <h3 class="site-footer__col-heading">Stay Connected</h3>
+        <p>Join our circle for stories, rituals and journey updates.</p>
+        <form
+          class="site-newsletter-form"
+          onsubmit="return false;"
+          autocomplete="off"
+        >
+          <label for="newsletterEmail" class="sr-only">Your email address</label>
+          <input
+            id="newsletterEmail"
+            name="newsletter_email_bhumi"
+            type="email"
+            placeholder="Your email address"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <button type="submit" aria-label="Subscribe">→</button>
+        </form>
+
+        <div class="site-footer-social">
+          <a href="#" aria-label="Facebook">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="1" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="6" width="18" height="12" rx="3" />
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
         </div>
+      </div>
 
-        <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
-            <h3 class="site-footer__col-heading">Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="course.html">Explore The Teachings</a></li>
-                <li><a href="travel.html">Destinations</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
-            <h3 class="site-footer__col-heading">Our Offerings</h3>
-            <ul>
-                <li><a href="course.html">Sadhana Immersion</a></li>
-                <li><a href="course.html">Yoga TTC Online</a></li>
-                <li><a href="course.html">Prana Vidya Courses Online</a></li>
-                <li><a href="course.html">Regular guided practice and Meditation Online</a></li>
-            </ul>
-        </nav>
-
-        <div class="site-footer__col site-footer__col--newsletter">
-            <h3 class="site-footer__col-heading">Join our Community</h3>
-            <form class="site-newsletter-form" onsubmit="return false;">
-                <label for="newsletterEmail" class="sr-only">Your email address</label>
-                <input id="newsletterEmail" type="email" placeholder="Your email address">
-                <button type="submit" aria-label="Subscribe">→</button>
-            </form>
-
-            <div class="site-footer-social">
-                <a href="#" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
-                    </svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <rect x="3" y="3" width="18" height="18" rx="5" />
-                        <circle cx="12" cy="12" r="4" />
-                        <circle cx="17.3" cy="6.7" r="1" />
-                    </svg>
-                </a>
-                <a href="#" aria-label="YouTube">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                        <rect x="3" y="6" width="18" height="12" rx="3" />
-                        <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="site-footer__bottom">
-            <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
-            <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__lotus">
-        </div>
+      <div class="site-footer__bottom">
+        <span>© 2026 BHUMI MANTRA. All Rights Reserved.</span>
+        <img
+          src="assets/gallery/home-image/logo.png"
+          alt=""
+          class="site-footer__lotus"
+        />
+      </div>
     </footer>
+    <!-- ================= /FOOTER ================= -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Shared header/footer behavior: mobile burger toggle + sticky-nav scroll shadow -->
-    <script>
-        (function () {
-            var siteNav = document.getElementById('siteNav');
-            var burger = document.getElementById('navBurger');
-            var links = document.getElementById('navLinks');
-            if (!burger || !links) return;
-
-            burger.addEventListener('click', function () {
-                var open = links.classList.toggle('is-open');
-                burger.classList.toggle('is-open', open);
-                burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-            });
-
-            links.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    links.classList.remove('is-open');
-                    burger.classList.remove('is-open');
-                    burger.setAttribute('aria-expanded', 'false');
-                });
-            });
-
-            if (siteNav) {
-                var onScroll = function () {
-                    siteNav.classList.toggle('site-nav--scrolled', window.scrollY > 10);
-                };
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll();
-            }
-
-            document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
-                var heading = col.querySelector('.site-footer__col-heading');
-                if (!heading) return;
-                heading.addEventListener('click', function () {
-                    col.classList.toggle('is-open');
-                });
-            });
-        })();
-    </script>
-
-    <script>
-        /* ── SCROLL REVEAL ── */
-        var revealObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                    /* ✅ FIX: add both class names so all sections animate in */
-                    e.target.classList.add('visible', 'is-visible');
-                    revealObserver.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
-
-        function initReveal() {
-            /* ✅ FIX: include .reveal-item used by the about section */
-            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-item')
-                .forEach(function (el) { revealObserver.observe(el); });
-        }
-
-        /* ── BREATHING ORB ── */
-        var phases = [
-            { label: 'Inhale', count: 4, unit: 'SEC', color: '#8FF2A9', ringClass: 'inhale-active' },
-            { label: 'Hold', count: 4, unit: 'SEC', color: '#13A832', ringClass: '' },
-            { label: 'Exhale', count: 6, unit: 'SEC', color: '#076B1A', ringClass: 'exhale-active' }
-        ];
-        var phaseIndex = 0, timer = null, current = 0, running = false;
-
-        function initBreathing() {
-            var orbLabel = document.querySelector('.orb-label-top');
-            var orbNumber = document.querySelector('.orb-number');
-            var orbUnit = document.querySelector('.orb-unit');
-            var ringEl = document.getElementById('breathingRing');
-            var startBtn = document.querySelector('.btn-start-breathe');
-            var btnIcon = document.getElementById('btnIcon');
-            var btnText = document.getElementById('btnText');
-            if (!startBtn) return;
-
-            function runBreath() {
-                clearInterval(timer);
-                var phase = phases[phaseIndex];
-                current = phase.count;
-                if (orbLabel) { orbLabel.textContent = phase.label; orbLabel.style.color = phase.color; }
-                if (orbNumber) orbNumber.textContent = current;
-                if (orbUnit) orbUnit.textContent = phase.unit;
-                if (ringEl) {
-                    ringEl.classList.remove('inhale-active', 'exhale-active');
-                    if (phase.ringClass) ringEl.classList.add(phase.ringClass);
-                }
-                timer = setInterval(function () {
-                    current--;
-                    if (orbNumber) orbNumber.textContent = current;
-                    if (current <= 0) {
-                        clearInterval(timer);
-                        phaseIndex = (phaseIndex + 1) % phases.length;
-                        setTimeout(runBreath, 400);
-                    }
-                }, 1000);
-            }
-
-            startBtn.addEventListener('click', function () {
-                if (!running) {
-                    running = true;
-                    if (btnText) btnText.textContent = 'Pause';
-                    runBreath();
-                } else {
-                    running = false;
-                    clearInterval(timer);
-                    phaseIndex = 0; current = 0;
-                    if (btnText) btnText.textContent = 'Begin Breathing';
-                    if (ringEl) ringEl.classList.remove('inhale-active', 'exhale-active');
-                    if (orbLabel) { orbLabel.textContent = 'Inhale'; orbLabel.style.color = phases[0].color; }
-                    if (orbNumber) orbNumber.textContent = '4';
-                    if (orbUnit) orbUnit.textContent = 'SEC';
-                }
-            });
-        }
-
-        /* ── JOURNEY PATH ── */
-        function initJourneyPath() {
-            var svgWrap = document.querySelector('.journey-svg-wrap');
-            if (!svgWrap) return;
-
-            var pathObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('path-visible');
-                        pathObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.25 });
-
-            pathObserver.observe(svgWrap);
-        }
-
-        /* ── EXPERIENCE SECTION: "Next experience" arrow → Teaching and
-              Courses page (same destination as the section heading link) ── */
-        function initExperienceArrow() {
-            var arrow = document.querySelector('.exp-main-arrow');
-            if (!arrow) return;
-            arrow.addEventListener('click', function () {
-                window.location.href = 'course.html';
-            });
-        }
-
-        /* ── DESTINATIONS: prev/next arrows scroll the card grid ──
-              .dest-grid already becomes horizontally scrollable on mobile
-              (overflow-x: auto in home-destination.css); this just gives
-              the header arrows something to do. No-ops harmlessly on
-              desktop widths where the grid doesn't overflow. */
-        function initDestinationArrows() {
-            var grid = document.querySelector('.dest-grid');
-            var prevBtn = document.querySelector('.dest-arrow[aria-label="Previous destination"]');
-            var nextBtn = document.querySelector('.dest-arrow[aria-label="Next destination"]');
-            if (!grid || !prevBtn || !nextBtn) return;
-
-            function scrollByCard(direction) {
-                var card = grid.querySelector('.dest-card');
-                var gap = 18;
-                var amount = card ? card.getBoundingClientRect().width + gap : 300;
-                grid.scrollBy({ left: direction * amount, behavior: 'smooth' });
-            }
-
-            prevBtn.addEventListener('click', function () { scrollByCard(-1); });
-            nextBtn.addEventListener('click', function () { scrollByCard(1); });
-        }
-
-        /* ── LOAD HTML PARTIALS ── */
-        var partials = [
-            { id: 'partial-experience', src: 'home/home-experience.html' },
-            { id: 'partial-about', src: 'home/home-about.html' },
-            { id: 'partial-destinations', src: 'home/home-destinations.html' },
-            { id: 'partial-meditation-orb', src: 'home/home-meditation-orb.html' },
-            { id: 'partial-stories', src: 'home/home-stories.html' },
-        ];
-
-        var loadPromises = partials.map(function (p) {
-            return fetch(p.src)
-                .then(function (r) {
-                    if (!r.ok) throw new Error('Not found: ' + p.src);
-                    return r.text();
-                })
-                .then(function (html) {
-                    var el = document.getElementById(p.id);
-                    if (el) el.innerHTML = html;
-                })
-                .catch(function (err) {
-                    console.warn('Skipping partial —', err.message);
-                });
-        });
-
-        Promise.all(loadPromises).then(function () {
-            initReveal();
-            initBreathing();
-            initJourneyPath();
-            initExperienceArrow();
-            initDestinationArrows();
-        });
-
-    </script>
-</body>
-
+    <script src="js/home-page-js/home.js"></script>
+    <script src="js/nav-dropdown.js"></script>
+  </body>
 </html>

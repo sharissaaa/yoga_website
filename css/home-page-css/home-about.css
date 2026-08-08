@@ -1,0 +1,250 @@
+/* ============================================================
+   BHUMI MANTRA — ABOUT SECTION
+   Centered intro + two-column body copy, same palette as before.
+   ============================================================ */
+
+.about-hero {
+  --gold:          #C9922A;
+  --gold-light:    #E8B84B;
+  --gold-pale:     #f0d080;
+  --cream:         #F5EDD6;
+  --cream-dim:     rgba(245, 237, 214, 0.82);
+  --cream-muted:   rgba(245, 237, 214, 0.60);
+  --dark:          #0D0101;
+  --dark-card:     #130202;
+  --maroon:        #1a0303;
+  --maroon-card:   rgba(35, 5, 5, 0.85);
+  --border-gold:   rgba(201, 146, 42, 0.30);
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-caps:     'Cinzel', serif;
+}
+
+.about-hero *, .about-hero *::before, .about-hero *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.about-hero {
+  padding: 92px 28px 80px;
+  background: linear-gradient(160deg, var(--maroon-card) 0%, var(--dark-card) 100%);
+  font-family: var(--font-display);
+  color: var(--cream);
+  overflow: hidden;
+  position: relative;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(80, 10, 10, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Faint decorative lotus — texture, not illustration; barely visible */
+.ah-watermark {
+  position: absolute;
+  top: 50%;
+  right: -70px;
+  width: 440px;
+  height: 440px;
+  transform: translateY(-50%);
+  opacity: .05;
+  pointer-events: none;
+  z-index: 0;
+}
+.ah-watermark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.ah-intro {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.ah-eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+.ah-eyebrow__text { font-family: var(--font-caps); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+.ah-eyebrow__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: 0.5; }
+
+.ah-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  background: linear-gradient(100deg, var(--gold) 0%, var(--gold-pale) 30%, var(--cream) 55%, var(--gold-pale) 78%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ah-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold-light);
+}
+
+.ah-body {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px;
+  row-gap: 22px;
+}
+.ah-body p {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--cream-dim);
+}
+
+/* Homepage teaser reuses the same two-column .ah-body layout — just
+   a shorter margin below it since it's followed by the Read More
+   link rather than going straight to the mentors divider */
+.ah-body--teaser { margin-bottom: 0; }
+
+.ah-readmore-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+.ah-readmore {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-caps);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 146, 42, .4);
+  padding-bottom: 3px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.ah-readmore:hover { color: var(--gold-pale); border-color: rgba(201, 146, 42, .8); }
+
+.ah-mentors {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 72px auto 0;
+}
+.ah-mentors__eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.ah-mentors__eyebrow span:first-child {
+  font-family: var(--font-caps);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.ah-mentors__rule { display: block; width: 36px; height: 1px; background: var(--gold); opacity: .5; }
+
+.ah-mentors__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ah-mentor {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(35, 5, 5, .5) 0%, rgba(19, 2, 2, .6) 100%);
+  border: 1px solid var(--border-gold);
+  border-top: 2px solid rgba(201, 146, 42, .55);
+  border-radius: 16px;
+  text-align: center;
+  transition: transform .3s ease, border-color .3s ease;
+}
+.ah-mentor:hover { transform: translateY(-6px); border-color: rgba(201, 146, 42, .55); }
+
+.ah-mentor__photo {
+  position: absolute;
+  inset: 0;
+}
+.ah-mentor__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s ease;
+}
+.ah-mentor:hover .ah-mentor__photo img {
+  transform: scale(1.06);
+}
+
+/* Dark gradient that fades in behind the caption so it stays legible
+   over the photo instead of sitting in its own space below it */
+.ah-mentor::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(10, 2, 2, .92) 0%, rgba(10, 2, 2, .6) 34%, transparent 65%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.ah-mentor:hover::after {
+  opacity: 1;
+}
+
+.ah-mentor__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 24px 20px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.ah-mentor:hover .ah-mentor__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ah-mentor__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.ah-mentor__role {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--gold-light);
+  opacity: .85;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ah-body { grid-template-columns: 1fr; row-gap: 18px; }
+}
+@media (max-width: 720px) {
+  .ah-mentors__grid { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 1024px) {
+  .about-hero { padding: 64px 40px; }
+  .ah-watermark { display: none; }
+}
+@media (max-width: 480px) {
+  .about-hero { padding: 48px 24px; }
+  .ah-title { margin-bottom: 8px; }
+}

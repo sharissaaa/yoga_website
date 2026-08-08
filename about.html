@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us – Bhumi Mantra</title>
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="css/about.css" />
     <!-- Shared across every page: same nav + footer design, color set per page below -->
-    <link rel="stylesheet" href="assets/header-footer.css" />
+    <link rel="stylesheet" href="css/header-footer.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
         rel="stylesheet" />
 </head>
 
@@ -28,49 +28,74 @@
         </a>
 
         <div class="site-nav__panel" id="navLinks">
-          <ul class="site-nav__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="course.html">Explore The Teachings</a></li>
-            <li><a href="travel.html">Destinations</a></li>
-            <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+            <ul class="site-nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+                <li><a href="course.html">Explore The Teachings</a></li>
+                <li class="site-nav__item--dropdown">
+                    <a href="travel.html">Destinations<span class="site-nav__caret" aria-hidden="true"></span></a>
+                    <ul class="site-nav__dropdown">
+                        <li><a href="personalized-package.html">Personalized Travel Package</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-          <div class="site-nav__panel-section">
-            <h4 class="site-nav__panel-heading">Contact Information</h4>
-            <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
-            <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
-            <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
-          </div>
-
-          <div class="site-nav__panel-section">
-            <h4 class="site-nav__panel-heading">Follow Us</h4>
-            <div class="site-footer-social">
-              <a href="#" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/>
-                </svg>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.3" cy="6.7" r="1"/>
-                </svg>
-              </a>
-              <a href="#" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="6" width="18" height="12" rx="3"/>
-                  <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>
-                </svg>
-              </a>
+            <div class="site-nav__panel-section">
+                <h4 class="site-nav__panel-heading">Contact Information</h4>
+                <a href="tel:+393387322276" class="site-nav__panel-line">+39 3387322276</a>
+                <a href="mailto:hello@bhumimantra.com" class="site-nav__panel-line">hello@bhumimantra.com</a>
+                <span class="site-nav__panel-line">Italy &mdash; Available for Online &amp; In-Person Sessions</span>
             </div>
-          </div>
+
+            <div class="site-nav__panel-section">
+                <h4 class="site-nav__panel-heading">Follow Us</h4>
+                <div class="site-footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            aria-hidden="true">
+                            <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.3" cy="6.7" r="1" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            aria-hidden="true">
+                            <rect x="3" y="6" width="18" height="12" rx="3" />
+                            <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <a href="join.html" class="site-nav__cta">Join Us</a>
-
+        <div class="site-nav__social">
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.3" cy="6.7" r="1" />
+                </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="12" rx="3" />
+                    <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+                </svg>
+            </a>
+        </div>
         <button type="button" class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"
             aria-controls="navLinks">
             <span></span><span></span><span></span>
@@ -78,197 +103,242 @@
     </nav>
     <!-- ================= /HEADER ================= -->
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO =====
+         One section, not two: the founder byline sits right above
+         the headline, and the founding line sits right below it, all
+         over the same full-bleed photo — a single cinematic frame
+         instead of a photo section handing off to a flat black block. -->
     <section class="hero about-hero">
-        <!-- Decorative spinning mandala watermark -->
+        <img src="assets/gallery/home-image/about.jpg"
+            alt="A tiered temple silhouetted against a golden sunset over a still lake" class="hero__bg" />
+        <div class="hero__overlay" aria-hidden="true"></div>
 
-        <div class="hero__left ah-left">
-            <div class="ah-eyebrow">
-                <span class="ah-eyebrow__text">ABOUT US</span>
-                <span class="ah-eyebrow__rule"></span>
-            </div>
-
+        <div class="hero__content">
             <h1 class="ah-headline">
-                Rooted in Ancient Wisdom.<br />
-                <em class="ah-headline--gold">Guided by Love.</em>
+                The Journey We Share<br />
             </h1>
-
-           
-
-            <div class="ah-body">
-                <p>Bhumi Mantra is a sanctuary for soul seekers, a space where ancient yogic traditions meet modern
-                    understanding.</p>
-                <p>We support you on your journey of healing, self-discovery and transformation.</p>
-                <p>Through mindful teachings, immersive retreats and sacred practices, we help you reconnect with
-                    your true essence and live a life of purpose, balance and harmony.</p>
-            </div>
-        </div>
-        <div class="hero__right">
-            <!-- Replace hero-candle.jpg with your actual image -->
-            <img src="assets/gallery/home-image/about-hero.png" alt="" class="hero__img" />
-            <div class="hero__img-gradient" aria-hidden="true"></div>
-        </div>
-    </section>
-
-    <!-- ===== PURPOSE ===== -->
-    <section class="purpose reveal">
-        <p class="eyebrow eyebrow--center">· Our Purpose ·</p>
-        <h2 class="purpose__heading">
-            To create spaces for <em>healing</em>,<br />
-            <em>growth</em>, and <em>awakening</em>.
-        </h2>
-        <p class="purpose__sub">
-            We believe that travel can be a powerful path of inner transformation. Through sacred destinations,
-            authentic teachings, and meaningful connections, we support individuals in remembering who they truly are.
-        </p>
-
-        <div class="purpose__grid">
-            <div class="purpose-item">
-                <!-- Replace icon-lotus.svg with your own line-art SVG -->
-                <img src="assets/gallery/home-image/about-heal.png" alt="" class="purpose-item__icon" />
-                <h3 class="purpose-item__title">Healing</h3>
-                <p class="purpose-item__desc">Restore balance in body and mind</p>
-            </div>
-            <div class="purpose-item">
-                <img src="assets/gallery/home-image/about-growth.png" alt="" class="purpose-item__icon" />
-                <h3 class="purpose-item__title">Growth</h3>
-                <p class="purpose-item__desc">Expand through knowledge and self-inquiry</p>
-            </div>
-            <div class="purpose-item">
-                <img src="assets/gallery/home-image/about-awaken.png" alt="" class="purpose-item__icon" />
-                <h3 class="purpose-item__title">Awakening</h3>
-                <p class="purpose-item__desc">Awaken to your true nature</p>
-            </div>
-            <div class="purpose-item">
-                <img src="assets/gallery/home-image/about-connect.png" alt="" class="purpose-item__icon" />
-                <h3 class="purpose-item__title">Connection</h3>
-                <p class="purpose-item__desc">Connect with self, others and our planet</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== STORY ===== -->
-    <section class="story reveal">
-        <div class="story__left">
-            <p class="eyebrow">· Our Story</p>
-            <h2 class="story__heading">
-                A journey of <em>devotion</em><br />
-                and <em>discovery</em>
-            </h2>
-            <p class="story__text">
-                Bhumi Mantra was born from a deep love for India and a longing to share its sacred traditions with the
-                world.
+            <p class="ah-tagline">
+                Bhoomi Mantra was founded to preserve and share authentic yogic traditions that support
+                profound self-transformation, inner awareness, and holistic well-being.
             </p>
-            <p class="story__text">
-                After years of study, practice and exploration, we created a space where ancient wisdom is lived, shared
-                and experienced in a meaningful way.
+        </div>
+    </section>
+<!-- ===== MEET THE TEAM ===== -->
+<section class="team reveal" id="meet-the-team">
+    <p class="eyebrow eyebrow--center">· Meet The Team ·</p>
+    <h2 class="team__heading">The Teachers Guiding Your Practice</h2>
+
+    <!-- Represented with yoga-pose line art until real portrait
+             photos of the team are supplied -->
+    <!-- Bio copy below is placeholder text — swap in the real bios
+             for each teacher when available -->
+    <div class="team__grid">
+
+        <article class="team-card">
+            <span class="team-card__index">01</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/pexels-balljinder-singh-666149-18364977.jpg"
+                    alt="Jeo Varghese guiding a meditation session at a mountain retreat"
+                    style="object-position: 78% 62%;">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Jeo Varghese</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
+                <p class="team-card__desc">
+                    Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages
+                    across South India, blending rigorous technique with a deeply personal,
+                    meditative teaching style. He leads our retreat programs in Kerala and
+                    continues to research classical yogic texts.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
+
+        <article class="team-card">
+            <span class="team-card__index">02</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg"
+                    alt="Nidish Nidhiri leading a seated meditation practice" style="object-position: 32% 48%;">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Nidish Nidhiri</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+                <p class="team-card__desc">
+                    Nidish guides students into stillness through breath-centred meditation and
+                    sound practice, drawing on years spent training in ashram settings across
+                    India. His sessions are known for their gentle pace and quiet depth.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
+
+        <article class="team-card">
+            <span class="team-card__index">03</span>
+            <div class="team-card__media">
+                <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31743034.jpg"
+                    alt="Alice Avaldi guiding students through a standing pose" style="object-position: 58% 32%;">
+            </div>
+            <div class="team-card__body">
+                <h4 class="team-card__title">Alice Avaldi</h4>
+                <span class="team-card__rule" aria-hidden="true"></span>
+                <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
+                <p class="team-card__desc">
+                    Alice bridges Western wellness training with time-honoured yogic philosophy,
+                    creating a warm, holistic space for every student's practice. She is
+                    especially devoted to supporting beginners through their first retreat
+                    experience.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+ 
+
+    <!-- ===== MISSION (image mosaic) ===== -->
+    <section class="mission reveal">
+        <div class="mission__intro">
+            <p class="eyebrow eyebrow--center">· Our Mission ·</p>
+            <h2 class="mission__heading">Depth, Delivered Authentically</h2>
+            <p class="mission__text">
+                Through Bhoomi Mantra, we aim to create opportunities for sincere seekers to experience the depth
+                of yoga, meditation, tantra, and the wisdom traditions of India through authentic practices,
+                guided courses, pilgrimages, expeditions, and immersive meditation retreats.
             </p>
-            <p class="story__text">
-                Today, we are a team of yoga teachers, healers and travel curators dedicated to holding space for your
-                transformation.
-            </p>
-            <a href="#meet-the-team" class="btn btn--outline-light">Meet The Team</a>
         </div>
-        <div class="story__right">
-            <!-- Replace story-temple.jpg with your actual image -->
-            <img src="assets/gallery/home-image/about-temple.png" alt="" class="story__img" />
-            <div class="story__img-gradient" aria-hidden="true"></div>
-        </div>
-    </section>
-
-    <!-- ===== MEET THE TEAM ===== -->
-    <section class="team reveal" id="meet-the-team">
-        <p class="eyebrow eyebrow--center">· Meet The Team ·</p>
-        <h2 class="team__heading">The Teachers Guiding Your Practice</h2>
-
-        <div class="team__grid">
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/Ancient Wisdom.png" alt="Sadhana Immersion">
-                </div>
-                <h4 class="team-card__title">1. Sadhana Immersion</h4>
-                <p class="team-card__meta">With Jeo Varghese and Nidish Nidhiri and Alice Avaldi</p>
-                <p class="team-card__meta">Residential in India</p>
-                <!-- Bio copy pending from client — reserved space so the card
-                     layout doesn't shift once the longer text is added -->
-                <p class="team-card__desc"></p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/Holistic.png" alt="Yoga TTC">
-                </div>
-                <h4 class="team-card__title">2. Yoga TTC</h4>
-                <p class="team-card__meta">Online</p>
-                <p class="team-card__meta">With Jeo Varghese and Nidish Nidhiri</p>
-                <p class="team-card__desc"></p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/mat.png" alt="Prana Vidya Courses">
-                </div>
-                <h4 class="team-card__title">3. Prana Vidya Courses</h4>
-                <p class="team-card__meta">Residential and online</p>
-                <p class="team-card__meta">With Jeo Varghese</p>
-                <p class="team-card__desc"></p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/mindful living.png" alt="Regular guided practice and Meditation">
-                </div>
-                <h4 class="team-card__title">4. Regular guided practice and Meditation</h4>
-                <p class="team-card__meta">With Jeo Varghese and Alice Avaldi</p>
-                <p class="team-card__meta">Online</p>
-                <p class="team-card__desc"></p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
+        <div class="mission__bento">
+            <figure class="mission__tile mission__tile--a">
+                <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31742998.jpg"
+                    alt="Students in a supported forward fold during a guided yoga class" />
+                <figcaption>Spiritual Practice</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--b">
+                <img src="assets/gallery/home-image/yogavidyamandiram.jpg"
+                    alt="A group meditating together beside a river, mountains in the distance" />
+                <figcaption>Conscious Community</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--c">
+                <img src="assets/gallery/home-image/about1.jpg"
+                    alt="An evening aarti ceremony with lamps floating on the Ganges" />
+                <figcaption>Pilgrimages &amp; Ritual</figcaption>
+            </figure>
+            <figure class="mission__tile mission__tile--d">
+                <img src="assets/gallery/home-image/livepose.jpg"
+                    alt="A teacher guiding a student through a supported yoga pose" />
+                <figcaption>Guided Courses</figcaption>
+            </figure>
         </div>
     </section>
 
-    <!-- ===== STATS ===== -->
-    <section class="stats reveal">
-        <!-- Decorative mandala ornaments - these rotate continuously via JS/CSS -->
-        <img src="assets/gallery/home-image/about-mandala.png" alt=""
-            class="stats__ornament stats__ornament--left mandala-spin" aria-hidden="true" />
-        <img src="assets/gallery/home-image/about-mandala.png" alt=""
-            class="stats__ornament stats__ornament--right mandala-spin mandala-spin--reverse" aria-hidden="true" />
+    <!-- ===== OUR JOURNEY (Story + Foundation + Giving Back, unified) =====
+         These three were previously three separate full-bleed alternating
+         panels, stacking to well over a thousand vertical pixels. Combined
+         here into one compact three-chapter card row instead — same text,
+         a fundamentally different, much shorter format. -->
+    <section class="journey reveal">
+        <div class="journey__intro">
+            <p class="eyebrow eyebrow--center">· Our Journey ·</p>
+            <h2 class="journey__heading">Story, Foundation &amp; Impact</h2>
+        </div>
+        <div class="journey__grid">
+            <article class="journey__card">
+                <div class="journey__media">
+                    <img src="assets/gallery/home-image/pose1.jpg"
+                        alt="Chinese fishing nets silhouetted against a sunset over the Kerala coast" />
+                    <span class="journey__badge">· Our Story ·</span>
+                </div>
+                <h3 class="journey__title">A journey of <em>devotion</em> and <em>discovery</em></h3>
+                <p class="journey__text">
+                    Bhumi Mantra was born from a deep love for India and a longing to share its sacred
+                    traditions with the world.
+                </p>
+                <p class="journey__text">
+                    After years of study, practice and exploration, we created a space where ancient wisdom
+                    is lived, shared and experienced in a meaningful way.
+                </p>
+                <p class="journey__text">
+                    Today, we are a team of yoga teachers, healers and travel curators dedicated to holding
+                    space for your transformation.
+                </p>
+            </article>
 
-        <div class="stats__grid">
-            <div class="stat-item">
-                <p class="stat-item__number">5000+</p>
-                <p class="stat-item__label">Practitioners<br />Impacted</p>
+            <article class="journey__card">
+                <div class="journey__media">
+                    <img src="assets/gallery/home-image/pose2.jpg"
+                        alt="A candlelit lotus pond beside a traditional Kerala retreat house at dusk" />
+                    <span class="journey__badge">· Our Foundation ·</span>
+                </div>
+                <h3 class="journey__title">A home in the forests of <em>Vagamon</em></h3>
+                <p class="journey__text">
+                    The project is now beginning to establish its own foundation in India, with the
+                    long-term vision of creating a dedicated center in the forests of Vagamon, Kerala. This
+                    space will become a place for community living, spiritual practice, education, and
+                    research in where people can learn, grow, and reconnect with the deeper dimensions of
+                    life in harmony with nature.
+                </p>
+            </article>
+
+            <article class="journey__card">
+                <div class="journey__media">
+                    <img src="assets/gallery/home-image/pose3.jpg"
+                        alt="An open temple gate leading down a garden path toward a small Buddha shrine" />
+                    <span class="journey__badge">· Giving Back ·</span>
+                </div>
+                <h3 class="journey__title">Growth beyond <em>the mat</em></h3>
+                <p class="journey__text">
+                    The offerings, course fees, and donations received through Bhoomi Mantra are dedicated
+                    to the development and sustainability of this vision, as well as supporting meaningful
+                    social initiatives. A part of our mission is to help provide educational opportunities
+                    for children who face financial barriers, supporting their learning, growth, and future
+                    possibilities.
+                </p>
+            </article>
+        </div>
+    </section>
+    <!-- ===== BRIDGE / VISION STATEMENT ===== -->
+    <section class="mission-statement reveal">
+        <div class="mission-statement__split">
+            <div class="mission-statement__half">
+                <img src="assets/gallery/home-image/thebridge.jpg"
+                    alt="A temple glowing at sunset above the Ganges in Rishikesh" class="mission-statement__bg" />
+                <div class="mission-statement__scrim" aria-hidden="true"></div>
+                <div class="mission-statement__content">
+                    <span class="mission-statement__label">The Bridge</span>
+                    <p class="mission-statement__text">
+                        Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
+                        yoga becomes not only a personal practice, but a path of transformation, compassion,
+                        and service.
+                    </p>
+                </div>
             </div>
-            <div class="stat-item">
-                <p class="stat-item__number">400+</p>
-                <p class="stat-item__label">Yoga Students<br />Trained</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number">20+</p>
-                <p class="stat-item__label">Sacred<br />Destinations</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number">10+</p>
-                <p class="stat-item__label">Years of Curating<br />Journeys</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number stat-item__number--text">Countless</p>
-                <p class="stat-item__label">Transformations</p>
+            <div class="mission-statement__half">
+                <img src="assets/gallery/home-image/thevision.jpg"
+                    alt="Aerial view of the Matrimandir at Auroville, an intentional community in India"
+                    class="mission-statement__bg" />
+                <div class="mission-statement__scrim" aria-hidden="true"></div>
+                <div class="mission-statement__content">
+                    <span class="mission-statement__label">The Vision</span>
+                    <p class="mission-statement__text mission-statement__text--emphasis">
+                        Our vision is to cultivate a conscious community where self-realization, knowledge,
+                        nature, and humanitarian values come together.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+
+   
 
     <!-- ===== QUOTE ===== -->
     <section class="quote reveal">
-        <span class="quote__mark">&ldquo;</span>
-        <p class="quote__text"><em>The journey within is the greatest adventure.</em></p>
-        <img src="assets/gallery/home-image/about-awaken.png" alt="" class="quote__ornament" />
+        <img src="assets/gallery/home-image/logo.png" alt="" class="quote__mandala mandala-rotate" aria-hidden="true">
+        <p class="quote__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+        <p class="quote__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+        <p class="quote__text"><em>Then pure awareness is established in itself.</em></p>
+        <p class="quote__attr">&mdash; Patanjali, Yoga Sutras</p>
     </section>
 
     <!-- ══════════════════════════════════════ -->
@@ -278,9 +348,10 @@
 
         <div class="site-footer__brand">
             <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
-            <span class="site-footer__logo-text">BHUMI MANTRA</span>
-            <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing,
-                ritual and transformation.</p>
+            <h2 class="site-footer__brand-title">Bhoomi Mantra Yoga &amp; Meditation Research Center</h2>
+            <p class="site-footer__brand-subtitle">A sister project of Terra Mantra, Italy</p>
+            <p class="site-footer__tagline">Preserving and sharing authentic yogic traditions that support profound
+                self-transformation, inner awareness, and holistic well-being.</p>
         </div>
 
         <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
@@ -308,8 +379,10 @@
         <div class="site-footer__col site-footer__col--newsletter">
             <h3 class="site-footer__col-heading">Stay Connected</h3>
             <p>Join our circle for stories, rituals and journey updates.</p>
-            <form class="site-newsletter-form" onsubmit="return false;">
-                <input id="newsletterEmail" type="email" placeholder="Your email address">
+            <form class="site-newsletter-form" onsubmit="return false;" autocomplete="off">
+                <label for="newsletterEmail" class="sr-only">Your email address</label>
+                <input id="newsletterEmail" name="newsletter_email_bhumi" type="email" placeholder="Your email address"
+                    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 <button type="submit" aria-label="Subscribe">→</button>
             </form>
 
@@ -340,198 +413,8 @@
             <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__lotus">
         </div>
     </footer>
-    <script>
-        (function () {
-            var siteNav = document.getElementById('siteNav');
-            var burger = document.getElementById('navBurger');
-            var links = document.getElementById('navLinks');
-            if (burger && links) {
-                burger.addEventListener('click', function () {
-                    var open = links.classList.toggle('is-open');
-                    burger.classList.toggle('is-open', open);
-                    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-                });
-                links.querySelectorAll('a').forEach(function (link) {
-                    link.addEventListener('click', function () {
-                        links.classList.remove('is-open');
-                        burger.classList.remove('is-open');
-                        burger.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-            if (siteNav) {
-                var onScroll = function () {
-                    siteNav.classList.toggle('site-nav--scrolled', window.scrollY > 10);
-                };
-                window.addEventListener('scroll', onScroll, { passive: true });
-                onScroll();
-            }
-
-            document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
-                var heading = col.querySelector('.site-footer__col-heading');
-                if (!heading) return;
-                heading.addEventListener('click', function () {
-                    col.classList.toggle('is-open');
-                });
-            });
-        })();
-    </script>
-
-    <script>/* ============================================================
-BHUMI MANTRA – About Page Script
-(mobile-nav toggle and nav-scroll handling now live in the
-shared script above, shared by every page)
-============================================================ */
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            /* ----------------------------------------------------------
-               1. SCROLL-REVEAL ANIMATIONS
-               Sections with the `.reveal` class fade + slide up into view
-               ---------------------------------------------------------- */
-            const revealEls = document.querySelectorAll('.reveal');
-
-            if ('IntersectionObserver' in window && revealEls.length) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.15,
-                    rootMargin: '0px 0px -60px 0px'
-                });
-
-                revealEls.forEach(el => revealObserver.observe(el));
-            } else {
-                // Fallback: just show everything if IntersectionObserver isn't supported
-                revealEls.forEach(el => el.classList.add('is-visible'));
-            }
-
-            /* ----------------------------------------------------------
-               2. ANIMATED STAT COUNTERS (5000+, 400+, 20+, 10+ etc.)
-               Counts up from 0 to the target number once the stats
-               section scrolls into view.
-               ---------------------------------------------------------- */
-            const statNumbers = document.querySelectorAll('.stat-item__number:not(.stat-item__number--text)');
-
-            const animateCount = (el) => {
-                const raw = el.textContent.trim();          // e.g. "5000+"
-                const suffix = raw.replace(/[\d,]/g, '');     // "+"
-                const target = parseInt(raw.replace(/[^\d]/g, ''), 10) || 0;
-
-                const duration = 1400;
-                const startTime = performance.now();
-
-                const tick = (now) => {
-                    const progress = Math.min((now - startTime) / duration, 1);
-                    // easeOutCubic
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.floor(eased * target);
-                    el.textContent = current.toLocaleString() + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(tick);
-                    } else {
-                        el.textContent = target.toLocaleString() + suffix;
-                    }
-                };
-
-                requestAnimationFrame(tick);
-            };
-
-            if ('IntersectionObserver' in window && statNumbers.length) {
-                const statsSection = document.querySelector('.stats');
-                let hasAnimated = false;
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !hasAnimated) {
-                            hasAnimated = true;
-                            statNumbers.forEach(animateCount);
-                            statsObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.4 });
-
-                if (statsSection) statsObserver.observe(statsSection);
-            }
-
-            /* ----------------------------------------------------------
-               3. MOVING MANDALA — continuous rotation + subtle parallax
-               The mandalas already spin via CSS (.mandala-spin keyframes).
-               This adds a gentle parallax drift as the user scrolls, and
-               respects prefers-reduced-motion.
-               ---------------------------------------------------------- */
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const mandalas = document.querySelectorAll('.mandala-spin');
-
-            if (!prefersReducedMotion && mandalas.length) {
-                let ticking = false;
-
-                const updateParallax = () => {
-                    const scrollY = window.scrollY;
-                    mandalas.forEach((el) => {
-                        // hero mandala drifts slowly; both stats ornaments share
-                        // the exact same speed so they stay mirrored on scroll
-                        const speed = el.classList.contains('stats__ornament') ? 0.04 : -0.03;
-                        const offset = scrollY * speed;
-                        el.style.setProperty('--mandala-drift', `${offset}px`);
-                        el.style.marginTop = `${offset}px`;
-                    });
-                    ticking = false;
-                };
-
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(updateParallax);
-                        ticking = true;
-                    }
-                }, { passive: true });
-            }
-
-            /* ----------------------------------------------------------
-               4. MEET THE TEAM — expandable card previews
-               ---------------------------------------------------------- */
-            document.querySelectorAll('.team-card__toggle').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const desc = btn.previousElementSibling;
-                    if (!desc || !desc.classList.contains('team-card__desc')) return;
-                    const expanded = desc.classList.toggle('is-expanded');
-                    btn.textContent = expanded ? 'Read less' : 'Read more';
-                    btn.setAttribute('aria-expanded', String(expanded));
-                });
-            });
-
-            /* ----------------------------------------------------------
-               5. NEWSLETTER FORM (placeholder submit handler)
-               ---------------------------------------------------------- */
-            const newsletterForm = document.querySelector('.site-newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const input = newsletterForm.querySelector('#newsletterEmail');
-                    const email = input ? input.value.trim() : '';
-
-                    if (!email) return;
-
-                    // Replace this with your real subscribe endpoint / API call
-                    console.log('Newsletter signup:', email);
-
-                    const btn = newsletterForm.querySelector('button');
-                    if (btn) {
-                        const original = btn.textContent;
-                        btn.textContent = '✓';
-                        setTimeout(() => { btn.textContent = original; }, 1800);
-                    }
-                    input.value = '';
-                });
-            }
-
-        });
-    </script>
+    <script src="js/about-page-js/about.js"></script>
+    <script src="js/nav-dropdown.js"></script>
 </body>
 
 </html>

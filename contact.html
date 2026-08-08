@@ -10,11 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="css/contact.css">
   <!-- Shared across every page: same nav + footer design, color set per page below -->
-  <link rel="stylesheet" href="assets/header-footer.css">
+  <link rel="stylesheet" href="css/header-footer.css">
 </head>
 <!-- theme-gold matches the reference design; swap the class (see assets/header-footer.css)
      to theme-forest / theme-maroon / theme-indigo on other pages for a different accent -->
@@ -36,12 +36,17 @@
 
     <div class="site-nav__panel" id="navLinks">
       <ul class="site-nav__links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="course.html">Explore The Teachings</a></li>
-      <li><a href="travel.html">Destinations</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
-    </ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="course.html">Explore The Teachings</a></li>
+        <li class="site-nav__item--dropdown">
+          <a href="travel.html">Destinations<span class="site-nav__caret" aria-hidden="true"></span></a>
+          <ul class="site-nav__dropdown">
+            <li><a href="personalized-package.html">Personalized Travel Package</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
+      </ul>
 
       <div class="site-nav__panel-section">
         <h4 class="site-nav__panel-heading">Contact Information</h4>
@@ -55,28 +60,46 @@
         <div class="site-footer-social">
           <a href="#" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z"/>
+              <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
             </svg>
           </a>
           <a href="#" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.3" cy="6.7" r="1"/>
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.3" cy="6.7" r="1" />
             </svg>
           </a>
           <a href="#" aria-label="YouTube">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="6" width="18" height="12" rx="3"/>
-              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none"/>
+              <rect x="3" y="6" width="18" height="12" rx="3" />
+              <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
             </svg>
           </a>
         </div>
       </div>
     </div>
 
-    <a href="join.html" class="site-nav__cta">Join Us</a>
-
+    <div class="site-nav__social">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M14 9h2V6h-2a3 3 0 0 0-3 3v2H9v3h2v6h3v-6h2.2l.8-3H14V9.5c0-.3.2-.5.5-.5Z" />
+        </svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <circle cx="17.3" cy="6.7" r="1" />
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="3" y="6" width="18" height="12" rx="3" />
+          <path d="m10 9 5 3-5 3Z" fill="currentColor" stroke="none" />
+        </svg>
+      </a>
+    </div>
     <button type="button" class="site-nav__burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"
       aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -94,14 +117,12 @@
           <p class="eyebrow">
             Connect With Us
             <!-- PLACEHOLDER: small lotus icon -->
-            <img src="assets/gallery/home-image/lotus.png" alt="" class="eyebrow-icon">
-            <span class="eyebrow-line" aria-hidden="true"></span>
+
           </p>
 
           <h1>We&rsquo;d Love To<br>Hear From <span class="accent">You</span></h1>
 
           <div class="divider-dots" aria-hidden="true">
-            <span></span><i></i><i></i><span></span>
           </div>
 
           <p class="hero-desc">
@@ -109,62 +130,6 @@
             journeys and retreats? We're here to help.
           </p>
 
-          <div class="hero-info-grid">
-            <div class="hero-info-item">
-              <span class="icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 7 9 6 9-6" />
-                </svg>
-              </span>
-              <div class="hero-info-text">
-                <strong>Email Us</strong>
-                <span><a href="mailto:hello@bhumimantra.com">hello@bhumimantra.com</a></span>
-              </div>
-            </div>
-
-            <div class="hero-info-item">
-              <span class="icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path
-                    d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z" />
-                </svg>
-              </span>
-              <div class="hero-info-text">
-                <strong>Call Us</strong>
-                <span><a href="tel:+393387322276">+39 3387322276</a></span>
-              </div>
-            </div>
-
-            <div class="hero-info-item">
-              <span class="icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" />
-                  <circle cx="12" cy="9" r="2.5" />
-                </svg>
-              </span>
-              <div class="hero-info-text">
-                <strong>Visit Us</strong>
-                <span>Italy</span>
-              </div>
-            </div>
-
-            <div class="hero-info-item">
-              <span class="icon-circle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3.5 2" />
-                </svg>
-              </span>
-              <div class="hero-info-text">
-                <strong>Office Hours</strong>
-                <span class="hero-info-hours">Mon &ndash; Fri: 9:00&nbsp;AM &ndash; 6:00&nbsp;PM</span>
-                <span class="hero-info-hours">Sat &ndash; Sun: 9:00&nbsp;AM &ndash; 2:00&nbsp;PM</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="#send-message" class="btn btn-primary hero-cta">Get In Touch <span class="arrow">→</span></a>
         </div>
 
         <div class="hero-image-full reveal-right">
@@ -207,18 +172,6 @@
                 </div>
               </li>
 
-              <li>
-                <span class="icon-circle">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <path
-                      d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z" />
-                  </svg>
-                </span>
-                <div class="contact-text">
-                  <strong>Phone</strong>
-                  <span><a href="tel:+393387322276">+39 3387322276</a></span>
-                </div>
-              </li>
 
               <li>
                 <span class="icon-circle">
@@ -233,7 +186,7 @@
                 </div>
               </li>
 
-              <li class="no-border">
+              <li>
                 <span class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                     <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" />
@@ -246,11 +199,19 @@
                   <span class="muted">Available for Online &amp; In-Person Sessions</span>
                 </div>
               </li>
+
+              <li class="no-border">
+                
+                <div class="contact-text">
+                  <strong>Year-Round Courses</strong>
+                  <span>Our courses run throughout the year. Get in touch with us to find the next available program
+                    that best suits your schedule.</span>
+                </div>
+              </li>
             </ul>
 
             <!-- PLACEHOLDER: corner mandala decoration -->
-            <img src="assets/gallery/home-image/yogapose.png" alt="" class="mandala-deco mandala-bottom-left"
-              aria-hidden="true">
+
           </div>
 
           <!-- RIGHT: SEND US A MESSAGE -->
@@ -282,8 +243,7 @@
             </form>
 
             <!-- PLACEHOLDER: corner mandala decoration -->
-            <img src="assets/gallery/home-image/yoga4.png" alt="" class="mandala-deco mandala-bottom-right"
-              aria-hidden="true">
+
           </div>
 
         </div>
@@ -346,35 +306,28 @@
     <!-- ================= QUOTE BANNER ================= -->
     <section class="quote-banner">
       <!-- PLACEHOLDER: replace with temple silhouette background image -->
-      <img src="assets/gallery/home-image/path.png" alt="" class="quote-bg" aria-hidden="true">
+      <img src="assets/gallery/home-image/contact.png" alt="" class="quote-bg" aria-hidden="true">
       <div class="quote-overlay" aria-hidden="true"></div>
 
       <div class="container quote-content reveal">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <div class="divider divider-center"></div>
-        <p class="quote-text">
-          The soul is always free.<br>
-          The mind can be quieted.<br>
-          The body can be cared for.<br>
-          The heart can be opened.
-        </p>
-        <div class="divider divider-center">
-          <!-- PLACEHOLDER: small lotus icon -->
-        </div>
+        <img src="assets/gallery/home-image/logo.png" alt="" class="quote-mandala" aria-hidden="true">
+        <p class="quote-sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
+        <p class="quote-translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
+        <p class="quote-text">Then pure awareness is established in itself.</p>
+        <p class="quote-attr">&mdash; Patanjali, Yoga Sutras</p>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= FOOTER (shared) ================= -->
   <footer class="site-footer">
 
     <div class="site-footer__brand">
-      <!-- PLACEHOLDER: replace with your lotus logo image -->
       <img src="assets/gallery/home-image/logo.png" alt="" class="site-footer__logo-icon">
-      <span class="site-footer__logo-text">BHUMI MANTRA</span>
-      <p class="site-footer__tagline">Rooted in the earth's oldest wisdom, we guide sacred journeys of healing, ritual
-        and transformation.</p>
+      <h2 class="site-footer__brand-title">Bhoomi Mantra Yoga &amp; Meditation Research Center</h2>
+      <p class="site-footer__brand-subtitle">A sister project of Terra Mantra, Italy</p>
+      <p class="site-footer__tagline">Preserving and sharing authentic yogic traditions that support profound
+        self-transformation, inner awareness, and holistic well-being.</p>
     </div>
 
     <nav class="site-footer__col site-footer__col--collapsible" aria-label="Quick links">
@@ -390,21 +343,22 @@
 
     <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
       <h3 class="site-footer__col-heading">Our Offerings</h3>
-       <ul>
+      <ul>
         <li><a href="travel.html">Sacred Journeys</a></li>
         <li><a href="course.html">Retreats &amp; Immersions</a></li>
         <li><a href="about.html">Ceremony &amp; Ritual</a></li>
         <li><a href="contact.html">Private Sessions</a></li>
         <li><a href="index.html">Wellness Programs</a></li>
-    </ul>
+      </ul>
     </nav>
 
     <div class="site-footer__col site-footer__col--newsletter">
       <h3 class="site-footer__col-heading">Stay Connected</h3>
       <p>Join our circle for stories, rituals and journey updates.</p>
-      <form class="site-newsletter-form" onsubmit="return false;">
+      <form class="site-newsletter-form" onsubmit="return false;" autocomplete="off">
         <label for="newsletterEmail" class="sr-only">Your email address</label>
-        <input id="newsletterEmail" type="email" placeholder="Your email address">
+        <input id="newsletterEmail" name="newsletter_email_bhumi" type="email" placeholder="Your email address"
+          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
         <button type="submit" aria-label="Subscribe">→</button>
       </form>
 
@@ -437,57 +391,8 @@
   </footer>
   <!-- ================= /FOOTER ================= -->
 
-  <script>
-    (function () {
-      var siteNav = document.getElementById('siteNav');
-      var burger = document.getElementById('navBurger');
-      var links = document.getElementById('navLinks');
-      if (!burger || !links) return;
-
-      burger.addEventListener('click', function () {
-        var open = links.classList.toggle('is-open');
-        burger.classList.toggle('is-open', open);
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      links.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          links.classList.remove('is-open');
-          burger.classList.remove('is-open');
-          burger.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      if (siteNav) {
-        var onScroll = function () {
-          siteNav.classList.toggle('site-nav--scrolled', window.scrollY > 10);
-        };
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-      }
-
-      document.querySelectorAll('.site-footer__col--collapsible').forEach(function (col) {
-        var heading = col.querySelector('.site-footer__col-heading');
-        if (!heading) return;
-        heading.addEventListener('click', function () {
-          col.classList.toggle('is-open');
-        });
-      });
-
-      /* Scroll-reveal: fades/slides .reveal, .reveal-left, .reveal-right
-         elements into view once they enter the viewport (see header-footer.css) */
-      var revealObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
-        .forEach(function (el) { revealObserver.observe(el); });
-    })();
-  </script>
+  <script src="js/contact-page-js/contact.js"></script>
+  <script src="js/nav-dropdown.js"></script>
 
 </body>
 
