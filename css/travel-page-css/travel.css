@@ -572,12 +572,18 @@ details > summary::-webkit-details-marker { display: none; }
   padding: 1rem 1.5rem 5rem;
 }
 .custom-package__content {
+  position: relative;
   max-width: 640px;
   text-align: center;
   padding: 2.75rem;
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.custom-package__content:has(.custom-package__link:hover) {
+  border-color: var(--clr-gold-dim);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.1), transparent);
 }
 .custom-package__heading {
   font-family: var(--ff-display);
@@ -593,13 +599,23 @@ details > summary::-webkit-details-marker { display: none; }
   margin-bottom: 1.5rem;
 }
 .custom-package__link {
+  display: inline-block;
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--clr-gold);
   text-decoration: none;
   transition: color 0.2s ease;
+  cursor: pointer;
 }
 .custom-package__link:hover { color: var(--clr-gold-light); }
+/* Stretches this link's hit area to cover the whole card (::after,
+   not the anchor itself, so its own inline layout/text stays
+   untouched) so tapping anywhere in the card navigates. */
+.custom-package__link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
 
 /* ============================================================
    TAGLINE BANNER

@@ -260,12 +260,18 @@
   padding: 5rem 2.5rem;
 }
 .pp-cta__content {
+  position: relative;
   max-width: 620px;
   text-align: center;
   padding: 3rem;
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.pp-cta__content:has(.pp-cta__link:hover) {
+  border-color: var(--clr-gold-dim);
+  background: linear-gradient(180deg, rgba(201, 168, 76, 0.1), transparent);
 }
 .pp-cta__heading {
   font-family: var(--ff-display);
@@ -281,6 +287,8 @@
   margin-bottom: 1.5rem;
 }
 .pp-cta__link {
+  position: relative;
+  z-index: 1;
   display: inline-block;
   font-size: var(--fs-md);
   font-weight: 500;
@@ -296,8 +304,20 @@
   color: var(--clr-muted);
   text-decoration: underline;
   text-underline-offset: 3px;
+  cursor: pointer;
 }
 .pp-cta__secondary:hover { color: var(--clr-gold-light); }
+/* Stretches this link's hit area to cover the whole card (::after,
+   not the anchor itself, so its own inline layout/text stays
+   untouched) so tapping anywhere — not just this small text —
+   navigates to travel.html. "Write to us" sits above this overlay
+   (z-index above) so its own mailto action stays independently
+   tappable. */
+.pp-cta__secondary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
 
 @media (max-width: 1024px) {
   .pp-ideas__grid { grid-template-columns: repeat(2, 1fr); }
