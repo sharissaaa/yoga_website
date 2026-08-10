@@ -146,6 +146,11 @@
   font-size: clamp(32px, 2.8vw, 47px); line-height: 1.18;
   color: var(--cream); margin: 0 0 22px;
   letter-spacing: -0.01em;
+  /* Breakout transform (pinning this flush to the true viewport edge)
+     is applied in JS via getBoundingClientRect — see home-meditation-
+     orb.js. A pure CSS vw-based calc can't account for the scrollbar's
+     width, which threw the alignment off by that many pixels and
+     clipped the first letter. */
 }
 .meditation-copy h2 .hl {
   color: var(--green-pale); font-style: italic;
@@ -328,9 +333,7 @@
 
 .breathing-ring {
   position: relative; width: 220px; height: 220px; border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 24%, rgba(143, 242, 169, 0.5), rgba(7, 107, 26, 0.32) 32%, rgba(2, 8, 5, 0.94) 72%),
-    radial-gradient(circle at 68% 78%, rgba(2, 8, 5, 0.9), transparent 55%);
+  background: linear-gradient(135deg, rgba(95, 226, 122, 0.3), var(--green-deepest));
   display: flex; align-items: center; justify-content: center;
   transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
   animation: idle-heartbeat 6s ease-in-out infinite;
@@ -358,14 +361,6 @@
   pointer-events: none;
 }
 
-.breathing-ring::after {
-  content: '';
-  position: absolute; top: 8%; left: 14%;
-  width: 46%; height: 34%; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.32), transparent 72%);
-  filter: blur(2px);
-  pointer-events: none;
-}
 
 @keyframes idle-heartbeat {
   0%, 100% {
