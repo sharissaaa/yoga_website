@@ -60,6 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const RESERVE_URL = 'reserve.html';
 
+  const heroReserveLink = document.getElementById('destHeroReserve');
+  if (heroReserveLink) heroReserveLink.href = RESERVE_URL;
+
   const reserveLink = document.getElementById('destReserveLink');
   if (reserveLink) reserveLink.href = RESERVE_URL;
 
