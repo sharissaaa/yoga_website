@@ -150,42 +150,6 @@
         });
       }
 
-      /* ── MEDITATION HEADLINE BREAKOUT ──
-         Pins "Return to Stillness" flush against the true viewport
-         edge rather than just the 1280px container's edge. Uses
-         getBoundingClientRect (measured against the client area,
-         which excludes the scrollbar) instead of a CSS vw-based calc —
-         100vw includes the scrollbar's width, so that approach
-         overshot by that amount and clipped the first letter.
-         Disabled below 920px, matching the layout's mobile breakpoint
-         where the copy column centers instead. */
-      function initHeadlineBreakout() {
-        var heading = document.querySelector(".meditation-copy h2");
-        if (!heading) return;
-
-        function align() {
-          if (window.innerWidth <= 920) {
-            heading.style.transform = "";
-            return;
-          }
-          heading.style.transform = "none";
-          var left = heading.getBoundingClientRect().left;
-          heading.style.transform = "translateX(" + -left + "px)";
-        }
-
-        var ticking = false;
-        window.addEventListener("resize", function () {
-          if (!ticking) {
-            window.requestAnimationFrame(function () {
-              align();
-              ticking = false;
-            });
-            ticking = true;
-          }
-        });
-        align();
-      }
-
       /* ── JOURNEY PATH ── */
       function initJourneyPath() {
         var svgWrap = document.querySelector(".journey-svg-wrap");
@@ -317,7 +281,6 @@
       Promise.all(loadPromises).then(function () {
         initReveal();
         initBreathing();
-        initHeadlineBreakout();
         initJourneyPath();
         initExperienceArrow();
         initDestinationArrows();

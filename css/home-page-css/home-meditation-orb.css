@@ -134,6 +134,13 @@
   gap: 60px;
 }
 
+.meditation-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: stretch;
+}
+
 .orb-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 26px; }
 .orb-eyebrow__text {
   font-family: var(--font-body); font-weight: 600;

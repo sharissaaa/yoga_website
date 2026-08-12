@@ -109,6 +109,31 @@
         });
       });
 
+      /* 4b. COURSE HIGHLIGHTS — carousel arrows scroll the track */
+      const hlTrack = document.querySelector('.highlights__track');
+      const hlPrev = document.querySelector('.highlights__arrow--prev');
+      const hlNext = document.querySelector('.highlights__arrow--next');
+      if (hlTrack && hlPrev && hlNext) {
+        const scrollByCard = (dir) => {
+          const card = hlTrack.querySelector('.hl-card');
+          if (!card) return;
+          const gap = parseFloat(getComputedStyle(hlTrack).columnGap) || 0;
+          const amount = card.getBoundingClientRect().width + gap;
+          hlTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
+        };
+        hlPrev.addEventListener('click', () => scrollByCard(-1));
+        hlNext.addEventListener('click', () => scrollByCard(1));
+
+        const updateArrowState = () => {
+          const max = hlTrack.scrollWidth - hlTrack.clientWidth;
+          hlPrev.disabled = hlTrack.scrollLeft <= 4;
+          hlNext.disabled = hlTrack.scrollLeft >= max - 4;
+        };
+        hlTrack.addEventListener('scroll', updateArrowState, { passive: true });
+        window.addEventListener('resize', updateArrowState);
+        updateArrowState();
+      }
+
       /* 5. COMPARE COURSES — filter the table rows by format */
       const ccFilterBtns = document.querySelectorAll('.cc-filter__btn');
       const ccRows = document.querySelectorAll('.cc-table tbody tr');
