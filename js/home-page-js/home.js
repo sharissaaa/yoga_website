@@ -150,42 +150,6 @@
         });
       }
 
-      /* ── MEDITATION HEADLINE BREAKOUT ──
-         Pins "Return to Stillness" flush against the true viewport
-         edge rather than just the 1280px container's edge. Uses
-         getBoundingClientRect (measured against the client area,
-         which excludes the scrollbar) instead of a CSS vw-based calc —
-         100vw includes the scrollbar's width, so that approach
-         overshot by that amount and clipped the first letter.
-         Disabled below 920px, matching the layout's mobile breakpoint
-         where the copy column centers instead. */
-      function initHeadlineBreakout() {
-        var heading = document.querySelector(".meditation-copy h2");
-        if (!heading) return;
-
-        function align() {
-          if (window.innerWidth <= 920) {
-            heading.style.transform = "";
-            return;
-          }
-          heading.style.transform = "none";
-          var left = heading.getBoundingClientRect().left;
-          heading.style.transform = "translateX(" + -left + "px)";
-        }
-
-        var ticking = false;
-        window.addEventListener("resize", function () {
-          if (!ticking) {
-            window.requestAnimationFrame(function () {
-              align();
-              ticking = false;
-            });
-            ticking = true;
-          }
-        });
-        align();
-      }
-
       /* ── JOURNEY PATH ── */
       function initJourneyPath() {
         var svgWrap = document.querySelector(".journey-svg-wrap");
@@ -206,35 +170,21 @@
         pathObserver.observe(svgWrap);
       }
 
-      /* ── EXPERIENCE SECTION: "Next experience" arrow → Teaching and
-              Courses page (same destination as the section heading link) ── */
-      function initExperienceArrow() {
-        var arrow = document.querySelector(".exp-main-arrow");
-        if (!arrow) return;
-        arrow.addEventListener("click", function () {
-          window.location.href = "course.html";
-        });
-      }
-
-      /* ── DESTINATIONS: prev/next arrows scroll the card grid ──
-              .dest-grid already becomes horizontally scrollable on mobile
-              (overflow-x: auto in home-destination.css); this just gives
-              the header arrows something to do. No-ops harmlessly on
-              desktop widths where the grid doesn't overflow. */
-      function initDestinationArrows() {
-        var grid = document.querySelector(".dest-grid");
+      /* ── STORIES: prev/next arrows scroll the card grid ── */
+      function initStoryArrows() {
+        var grid = document.querySelector(".story-grid");
         var prevBtn = document.querySelector(
-          '.dest-arrow[aria-label="Previous destination"]',
+          '.story-arrow[aria-label="Previous story"]',
         );
         var nextBtn = document.querySelector(
-          '.dest-arrow[aria-label="Next destination"]',
+          '.story-arrow[aria-label="Next story"]',
         );
         if (!grid || !prevBtn || !nextBtn) return;
 
         function scrollByCard(direction) {
-          var card = grid.querySelector(".dest-card");
-          var gap = 18;
-          var amount = card ? card.getBoundingClientRect().width + gap : 300;
+          var card = grid.querySelector(".story-card-col");
+          var gap = 24;
+          var amount = card ? card.getBoundingClientRect().width + gap : 320;
           grid.scrollBy({ left: direction * amount, behavior: "smooth" });
         }
 
@@ -317,10 +267,8 @@
       Promise.all(loadPromises).then(function () {
         initReveal();
         initBreathing();
-        initHeadlineBreakout();
         initJourneyPath();
-        initExperienceArrow();
-        initDestinationArrows();
+        initStoryArrows();
         initStoryToggle();
       });
     
