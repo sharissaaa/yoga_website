@@ -9,7 +9,7 @@
     <!-- Shared across every page: same nav + footer design, color set per page below -->
     <link rel="stylesheet" href="css/header-footer.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
         rel="stylesheet" />
 </head>
 
@@ -23,7 +23,7 @@
             <img src="assets/gallery/home-image/logo.png" alt="" class="site-nav__logo-icon">
             <span class="site-nav__logo-text">
                 BHUMI MANTRA
-                <small>Heal. Transform. Transcend.</small>
+                <small>Explore. Transform. Transcend.</small>
             </span>
         </a>
 
@@ -31,13 +31,8 @@
             <ul class="site-nav__links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
-                <li><a href="course.html">Explore The Teachings</a></li>
-                <li class="site-nav__item--dropdown">
-                    <a href="travel.html">Destinations<span class="site-nav__caret" aria-hidden="true"></span></a>
-                    <ul class="site-nav__dropdown">
-                        <li><a href="personalized-package.html">Personalized Travel Package</a></li>
-                    </ul>
-                </li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="travel.html">Destinations</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
@@ -155,21 +150,6 @@
 
             <article class="team-card">
                 <div class="team-card__media">
-                    <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg"
-                        alt="Nidish Nidhiri leading a seated meditation practice" style="object-position: 32% 48%;">
-                </div>
-                <h4 class="team-card__title">Nidish Nidhiri</h4>
-                <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-                <p class="team-card__desc">
-                    Nidish guides students into stillness through breath-centred meditation and sound practice,
-                    drawing on years spent training in ashram settings across India. His sessions are known for
-                    their gentle pace and quiet depth.
-                </p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
                     <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31743034.jpg"
                         alt="Alice Avaldi guiding students through a standing pose" style="object-position: 58% 32%;">
                 </div>
@@ -183,38 +163,21 @@
                 <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
             </article>
 
-        </div>
-    </section>
+            <article class="team-card">
+                <div class="team-card__media">
+                    <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg"
+                        alt="Nidish Nidhiri leading a seated meditation practice" style="object-position: 32% 48%;">
+                </div>
+                <h4 class="team-card__title">Nidish Nidhiri</h4>
+                <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
+                <p class="team-card__desc">
+                    Nidish guides students into stillness through breath-centred meditation and sound practice,
+                    drawing on years spent training in ashram settings across India. His sessions are known for
+                    their gentle pace and quiet depth.
+                </p>
+                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+            </article>
 
-    <!-- ===== BRIDGE / VISION STATEMENT ===== -->
-    <section class="mission-statement reveal">
-        <div class="mission-statement__split">
-            <div class="mission-statement__half">
-                <img src="assets/gallery/home-image/thebridge.jpg"
-                    alt="A temple glowing at sunset above the Ganges in Rishikesh" class="mission-statement__bg" />
-                <div class="mission-statement__scrim" aria-hidden="true"></div>
-                <div class="mission-statement__content">
-                    <span class="mission-statement__label">The Bridge</span>
-                    <p class="mission-statement__text">
-                        Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
-                        yoga becomes not only a personal practice, but a path of transformation, compassion,
-                        and service.
-                    </p>
-                </div>
-            </div>
-            <div class="mission-statement__half">
-                <img src="assets/gallery/home-image/thevision.jpg"
-                    alt="Aerial view of the Matrimandir at Auroville, an intentional community in India"
-                    class="mission-statement__bg" />
-                <div class="mission-statement__scrim" aria-hidden="true"></div>
-                <div class="mission-statement__content">
-                    <span class="mission-statement__label">The Vision</span>
-                    <p class="mission-statement__text mission-statement__text--emphasis">
-                        Our vision is to cultivate a conscious community where self-realization, knowledge,
-                        nature, and humanitarian values come together.
-                    </p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -254,6 +217,19 @@
                 Today, we are a team of yoga teachers, healers and travel curators dedicated to holding space for your
                 transformation.
             </p>
+
+            <div class="story__more" id="storyMore">
+                <p class="story__text">
+                    Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
+                    yoga becomes not only a personal practice, but a path of transformation, compassion,
+                    and service.
+                </p>
+                <p class="story__text">
+                    Our vision is to cultivate a conscious community where self-realization, knowledge,
+                    nature, and humanitarian values come together.
+                </p>
+            </div>
+            <button type="button" class="btn btn--outline story__toggle" id="storyToggle" aria-expanded="false" aria-controls="storyMore">Read more</button>
         </div>
         <div class="story__right">
             <img src="assets/gallery/home-image/varnasi.jpg" alt="" class="story__img" />
@@ -261,32 +237,6 @@
         </div>
     </section>
 
-    <!-- ===== STATS ===== -->
-    <section class="stats reveal">
-       
-        <div class="stats__grid">
-            <div class="stat-item">
-                <p class="stat-item__number">5000+</p>
-                <p class="stat-item__label">Practitioners<br />Impacted</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number">400+</p>
-                <p class="stat-item__label">Yoga Students<br />Trained</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number">20+</p>
-                <p class="stat-item__label">Sacred<br />Destinations</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number">10+</p>
-                <p class="stat-item__label">Years of Curating<br />Journeys</p>
-            </div>
-            <div class="stat-item">
-                <p class="stat-item__number stat-item__number--text">Countless</p>
-                <p class="stat-item__label">Transformations</p>
-            </div>
-        </div>
-    </section>
 
     <!-- ===== QUOTE ===== -->
     <section class="quote reveal">
@@ -314,8 +264,6 @@
             <h3 class="site-footer__col-heading">Quick Links</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="course.html">Explore The Teachings</a></li>
-                <li><a href="travel.html">Destinations</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -324,11 +272,8 @@
         <nav class="site-footer__col site-footer__col--collapsible" aria-label="Our offerings">
             <h3 class="site-footer__col-heading">Our Offerings</h3>
             <ul>
-                <li><a href="travel.html">Sacred Journeys</a></li>
-                <li><a href="course.html">Retreats &amp; Immersions</a></li>
-                <li><a href="about.html">Ceremony &amp; Ritual</a></li>
-                <li><a href="contact.html">Private Sessions</a></li>
-                <li><a href="index.html">Wellness Programs</a></li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="travel.html">Destinations</a></li>
             </ul>
         </nav>
 

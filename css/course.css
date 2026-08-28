@@ -20,8 +20,8 @@
   --clr-border:      rgba(201,168,76,0.18);
   --clr-overlay:     rgba(10, 7, 2, 0.55);
 
-  --ff-display: 'Cormorant Garamond', Georgia, serif;
-  --ff-body:    'Jost', system-ui, sans-serif;
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body:    'Inter', system-ui, sans-serif;
 
   --fs-xs:  0.75rem;
   --fs-sm:  0.875rem;
@@ -686,15 +686,15 @@ em { font-style: italic; color: var(--clr-gold); }
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
   gap: 4rem;
-  align-items: center;
+  align-items: start;
 }
 
 .cc-media {
-  position: sticky;
-  top: 100px;
-  aspect-ratio: 3 / 4;
+  max-width: 380px;
+  aspect-ratio: 4 / 3;
+  margin: 0;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--clr-border);
@@ -708,92 +708,14 @@ em { font-style: italic; color: var(--clr-gold); }
   color: var(--clr-white);
   margin-bottom: 0.9rem;
 }
-.cc-intro {
-  font-family: var(--ff-display);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--clr-muted);
-  max-width: 520px;
-  margin-bottom: 2rem;
-}
-
-.cc-filter {
-  display: flex;
-  gap: 0.6rem;
-  margin-bottom: 1.75rem;
-}
-.cc-filter__btn {
-  font-family: var(--ff-body);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clr-muted);
-  background: none;
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-pill);
-  padding: 0.55rem 1.2rem;
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-.cc-filter__btn:hover { border-color: rgba(201, 168, 76, 0.5); color: var(--clr-gold-light); }
-.cc-filter__btn.is-active {
-  color: var(--clr-bg);
-  background: var(--clr-gold);
-  border-color: var(--clr-gold);
-}
-
-.cc-table-wrap { width: 100%; overflow-x: auto; }
-.cc-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.cc-table th {
-  font-family: var(--ff-body);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--clr-gold);
-  text-align: left;
-  padding: 0 1rem 0.85rem 0;
-  border-bottom: 1px solid var(--clr-border);
-  white-space: nowrap;
-}
-.cc-table td {
-  font-family: var(--ff-display);
-  font-size: 0.98rem;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--clr-muted);
-  padding: 1.1rem 1rem 1.1rem 0;
-  border-bottom: 1px solid var(--clr-border);
-  vertical-align: top;
-}
-.cc-table tbody tr:last-child td { border-bottom: none; }
-.cc-table td:first-child {
-  font-weight: 500;
-  color: var(--clr-gold-light);
-}
-.cc-table tbody tr:hover td { color: var(--clr-white); }
-.cc-table tbody tr:hover td:first-child { color: var(--clr-gold); }
-.cc-table__empty {
-  font-family: var(--ff-body);
-  font-size: var(--fs-sm);
-  color: var(--clr-muted);
-  padding: 2rem 0;
-  text-align: center;
-}
-
 /* Year-round availability + contact banner */
 .course-details__note {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
   max-width: 780px;
-  margin: 3.5rem auto 0;
+  margin: 2rem 0 0;
   padding: 1.75rem 2rem;
   border: 1px solid var(--clr-border);
   border-radius: 16px;
@@ -825,42 +747,10 @@ em { font-style: italic; color: var(--clr-gold); }
 @media (max-width: 900px) {
   .cc-inner { grid-template-columns: 1fr; gap: 2rem; }
   .cc-media { position: static; aspect-ratio: 16 / 9; }
-  .cc-intro { max-width: none; }
-  .cc-table th:nth-child(3),
-  .cc-table td:nth-child(3) { display: none; }
 }
 @media (max-width: 640px) {
   .course-compare { padding: 3rem 1.25rem; }
-  .cc-filter { flex-wrap: wrap; }
   .course-details__note { flex-direction: column; text-align: center; padding: 1.5rem; }
-}
-
-@media (max-width: 560px) {
-  /* Stack the comparison table into cards instead of a cramped
-     horizontally-scrolling table — data-label attrs already on
-     each <td> supply the printed field name via ::before. */
-  .cc-table thead { display: none; }
-  .cc-table, .cc-table tbody, .cc-table tr, .cc-table td { display: block; width: 100%; }
-  .cc-table tr { padding: 1rem 0; border-bottom: 1px solid var(--clr-border); }
-  .cc-table tbody tr:last-child { border-bottom: none; }
-  .cc-table th:nth-child(3),
-  .cc-table td:nth-child(3) { display: block; }
-  .cc-table td {
-    border-bottom: none;
-    padding: 0.3rem 0;
-  }
-  .cc-table td::before {
-    content: attr(data-label);
-    display: block;
-    font-family: var(--ff-body);
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--clr-gold);
-    margin-bottom: 0.2rem;
-  }
-  .cc-table td:first-child { font-size: 1.05rem; }
 }
 
 /* ============================================================

@@ -67,55 +67,6 @@ shared script above, shared by every page)
             }
 
             /* ----------------------------------------------------------
-               2. ANIMATED STAT COUNTERS (5000+, 400+, 20+, 10+ etc.)
-               Counts up from 0 to the target number once the stats
-               section scrolls into view.
-               ---------------------------------------------------------- */
-            const statNumbers = document.querySelectorAll('.stat-item__number:not(.stat-item__number--text)');
-
-            const animateCount = (el) => {
-                const raw = el.textContent.trim();          // e.g. "5000+"
-                const suffix = raw.replace(/[\d,]/g, '');     // "+"
-                const target = parseInt(raw.replace(/[^\d]/g, ''), 10) || 0;
-
-                const duration = 1400;
-                const startTime = performance.now();
-
-                const tick = (now) => {
-                    const progress = Math.min((now - startTime) / duration, 1);
-                    // easeOutCubic
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.floor(eased * target);
-                    el.textContent = current.toLocaleString() + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(tick);
-                    } else {
-                        el.textContent = target.toLocaleString() + suffix;
-                    }
-                };
-
-                requestAnimationFrame(tick);
-            };
-
-            if ('IntersectionObserver' in window && statNumbers.length) {
-                const statsSection = document.querySelector('.stats');
-                let hasAnimated = false;
-
-                const statsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !hasAnimated) {
-                            hasAnimated = true;
-                            statNumbers.forEach(animateCount);
-                            statsObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.4 });
-
-                if (statsSection) statsObserver.observe(statsSection);
-            }
-
-            /* ----------------------------------------------------------
                3. MOVING MANDALA — continuous rotation + subtle parallax
                The mandalas already spin via CSS (.mandala-spin keyframes).
                This adds a gentle parallax drift as the user scrolls, and
@@ -171,6 +122,19 @@ shared script above, shared by every page)
                     const expanded = aboutMore.classList.toggle('is-open');
                     aboutToggle.setAttribute('aria-expanded', String(expanded));
                     aboutToggle.querySelector('span').textContent = expanded ? 'Read Less' : 'Read More';
+                });
+            }
+
+            /* ----------------------------------------------------------
+               4c. STORY — "Read more" reveals the Bridge & Vision passages
+               ---------------------------------------------------------- */
+            const storyToggle = document.getElementById('storyToggle');
+            const storyMore = document.getElementById('storyMore');
+            if (storyToggle && storyMore) {
+                storyToggle.addEventListener('click', () => {
+                    const expanded = storyMore.classList.toggle('is-open');
+                    storyToggle.textContent = expanded ? 'Read less' : 'Read more';
+                    storyToggle.setAttribute('aria-expanded', String(expanded));
                 });
             }
 

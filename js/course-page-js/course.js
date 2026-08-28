@@ -134,26 +134,5 @@
         updateArrowState();
       }
 
-      /* 5. COMPARE COURSES — filter the table rows by format */
-      const ccFilterBtns = document.querySelectorAll('.cc-filter__btn');
-      const ccRows = document.querySelectorAll('.cc-table tbody tr');
-      const ccEmpty = document.querySelector('.cc-table__empty');
-      ccFilterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          ccFilterBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-
-          const filter = btn.getAttribute('data-filter');
-          let visibleCount = 0;
-          ccRows.forEach(row => {
-            const formats = (row.getAttribute('data-format') || '').split(' ');
-            const show = filter === 'all' || formats.includes(filter);
-            row.hidden = !show;
-            if (show) visibleCount++;
-          });
-          if (ccEmpty) ccEmpty.hidden = visibleCount !== 0;
-        });
-      });
-
     });
   

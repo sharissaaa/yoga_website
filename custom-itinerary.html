@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reserve Your Spot – Bhumi Mantra</title>
+  <title>Build Your Itinerary – Bhumi Mantra</title>
   <link rel="stylesheet" href="css/travel-page-css/travel.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
   <link rel="stylesheet" href="css/reserve.css" />
@@ -68,57 +68,52 @@
   </nav>
   <!-- ================= /HEADER ================= -->
 
-  <!-- ===== RESERVE FORM ===== -->
+  <!-- ===== BUILD YOUR ITINERARY FORM ===== -->
   <section class="reserve-section">
     <div class="reserve-card reveal">
-      <p class="eyebrow eyebrow--center">· Book Your Journey ·</p>
-      <h1 class="reserve-heading">Reserve Your Spot</h1>
+      <p class="eyebrow eyebrow--center">· Ready When You Are ·</p>
+      <h1 class="reserve-heading">Let's Build Your Itinerary</h1>
       <p class="reserve-sub">
-        Fill in your details below. Submitting opens your email app with
-        everything filled in, ready for you to send to our team.
+        Tell us your group size and rough dates, and we'll get back to you
+        with a starting shape for the journey.
       </p>
 
-      <form id="reserveForm" class="reserve-form" novalidate>
+      <form id="itineraryForm" class="reserve-form" novalidate>
         <div class="reserve-field">
-          <label for="resName">Full Name</label>
-          <input id="resName" name="name" type="text" placeholder="Your full name" autocomplete="name" required />
+          <label for="itName">Full Name</label>
+          <input id="itName" name="name" type="text" placeholder="Your full name" autocomplete="name" required />
         </div>
 
         <div class="reserve-field">
-          <label for="resEmail">Email</label>
-          <input id="resEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <label for="itEmail">Email</label>
+          <input id="itEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
         </div>
 
         <div class="reserve-field">
-          <label for="resPhone">Phone <span class="optional">(optional)</span></label>
-          <input id="resPhone" name="phone" type="tel" placeholder="+1 234 567 8900" autocomplete="tel" />
-        </div>
-
-        <div class="reserve-field">
-          <label for="resDestination">Destination / Retreat</label>
-          <input id="resDestination" name="destination" type="text" placeholder="e.g. Bali Healing Retreat" required />
+          <label for="itPhone">Phone <span class="optional">(optional)</span></label>
+          <input id="itPhone" name="phone" type="tel" placeholder="+1 234 567 8900" autocomplete="tel" />
         </div>
 
         <div class="reserve-row">
           <div class="reserve-field">
-            <label for="resDates">Preferred Dates <span class="optional">(optional)</span></label>
-            <input id="resDates" name="dates" type="text" placeholder="e.g. 15–21 Aug 2026" />
+            <label for="itGroupSize">Group Size</label>
+            <input id="itGroupSize" name="groupSize" type="number" min="1" placeholder="e.g. 8" required />
           </div>
 
           <div class="reserve-field">
-            <label for="resTravelers">Travelers <span class="optional">(optional)</span></label>
-            <input id="resTravelers" name="travelers" type="number" min="1" placeholder="1" />
+            <label for="itDates">Rough Dates <span class="optional">(optional)</span></label>
+            <input id="itDates" name="dates" type="text" placeholder="e.g. Late Sept 2026" />
           </div>
         </div>
 
         <div class="reserve-field">
-          <label for="resNotes">Additional Notes <span class="optional">(optional)</span></label>
-          <textarea id="resNotes" name="notes" rows="4" placeholder="Anything else we should know?"></textarea>
+          <label for="itVision">What Do You Have In Mind? <span class="optional">(optional)</span></label>
+          <textarea id="itVision" name="vision" rows="4" placeholder="Destinations, pace, style of practice — anything that helps us shape it."></textarea>
         </div>
 
-        <button type="submit" class="reserve-submit">Send Reservation Request &rarr;</button>
+        <button type="submit" class="reserve-submit">Write to Us &rarr;</button>
 
-        <p class="reserve-note" id="reserveNote" hidden>
+        <p class="reserve-note" id="itineraryNote" hidden>
           Your email app should now be open with your request ready to send.
           If nothing opened, please email us directly at
           <a href="mailto:travel@innerjourney.com">travel@innerjourney.com</a>.
@@ -126,7 +121,7 @@
       </form>
     </div>
   </section>
-  <!-- ================= /RESERVE FORM ================= -->
+  <!-- ================= /BUILD YOUR ITINERARY FORM ================= -->
 
   <footer class="site-footer">
     <div class="site-footer__brand">
@@ -200,7 +195,7 @@
   </footer>
   <!-- ================= /FOOTER ================= -->
 
-  <script src="js/reserve-page-js/reserve.js"></script>
+  <script src="js/travel-page-js/custom-itinerary.js"></script>
   <script src="js/nav-dropdown.js"></script>
 </body>
 </html>

@@ -18,10 +18,10 @@
   --maroon:        #1a0303;
   --maroon-card:   rgba(35, 5, 5, 0.85);
   --border-gold:   rgba(201, 146, 42, 0.30);
-  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-display:  'Playfair Display', Georgia, serif;
   --font-caps:     'Cinzel', serif;
 
-  --font-body: 'Poppins', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
 *{ box-sizing: border-box; margin:0; padding:0; }
@@ -222,13 +222,6 @@ textarea:focus-visible{
   font-style: normal;
 }
 
-.hero-desc{
-  max-width: 400px;
-  color: var(--cream-muted);
-  font-size: 14px;
-  line-height: 1.55;
-  margin-bottom: 26px;
-}
 
 .hero-info-grid{
   display: grid;
@@ -319,33 +312,6 @@ textarea:focus-visible{
   grid-template-columns: 1fr 1fr;
   border-radius: 18px;
   border: 1px solid var(--border-gold);
-}
-
-.medallion{
-  position:absolute;
-  top: -36px;
-  left:50%;
-  transform: translateX(-50%);
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: var(--dark);
-  border: 1px solid var(--gold);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index: 5;
-}
-.medallion img{ width: 74px; height:44px; }
-.medallion-ring{
-  position:absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: 1px dashed var(--border-gold);
-  animation: spin-slow 48s linear infinite;
-}
-@keyframes spin-slow{
-  to{ transform: rotate(360deg); }
 }
 
 .panel{
@@ -459,54 +425,6 @@ textarea:focus-visible{
 .mandala-bottom-right{ right: -10px; bottom: -30px; }
 
 /* =========================================================
-   INFO STRIP
-========================================================= */
-.info-strip{
-  padding: 50px 0;
-  border-top: 1px solid var(--border-gold);
-  border-bottom: 1px solid var(--border-gold);
-}
-.info-strip-inner{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap: 30px;
-}
-.info-item{
-  display:flex;
-  gap: 18px;
-  flex:1;
-}
-.info-sep{
-  width:1px;
-  align-self: stretch;
-  background: var(--border-gold);
-}
-.icon-circle-green{
-  border-color: var(--border-gold);
-  background: var(--dark-card);
-  color: var(--gold-light);
-}
-.icon-circle-maroon{
-  border-color: var(--border-gold);
-  background: var(--maroon-card);
-  color: var(--gold-light);
-}
-.info-title{
-  font-family: var(--font-caps);
-  font-size: 14px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-.info-title.green{ color: var(--gold-light); }
-.info-title.red{ color: var(--gold-pale); }
-.info-item p{
-  font-size: 13.5px;
-  color: var(--cream-muted);
-  max-width: 230px;
-}
-
-/* =========================================================
    QUOTE BANNER
 ========================================================= */
 .quote-banner{
@@ -595,9 +513,6 @@ textarea:focus-visible{
   .panel-frame{ grid-template-columns: 1fr; }
   .panel-maroon{ border-radius: 18px 18px 0 0; }
   .panel-green{ border-radius: 0 0 18px 18px; }
-  .medallion{ display: none; }
-  .info-strip-inner{ flex-direction:column; }
-  .info-sep{ display:none; }
 }
 
 @media (max-width: 720px){

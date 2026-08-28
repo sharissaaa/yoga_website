@@ -15,8 +15,8 @@
   --clr-border:      rgba(201,168,76,0.18);
   --clr-overlay:     rgba(10, 7, 2, 0.55);
 
-  --ff-display:  'Cormorant Garamond', Georgia, serif;
-  --ff-body:     'Jost', system-ui, sans-serif;
+  --ff-display:  'Playfair Display', Georgia, serif;
+  --ff-body:     'Inter', system-ui, sans-serif;
 
   --fs-xs:   0.75rem;
   --fs-sm:   0.875rem;
