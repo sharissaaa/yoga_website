@@ -61,11 +61,18 @@
   color: var(--clr-gold);
 }
 .pp-hero__sub {
+  display: block;
   font-size: var(--fs-sm);
   color: var(--clr-muted);
   line-height: 1.7;
   margin-bottom: 1.75rem;
   max-width: 520px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.pp-hero__sub:hover {
+  color: var(--clr-gold-light);
 }
 .pp-hero__cta {
   display: inline-block;
@@ -269,7 +276,7 @@
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
   transition: border-color 0.25s ease, background 0.25s ease;
 }
-.pp-cta__content:has(.pp-cta__link:hover) {
+.pp-cta__content:hover {
   border-color: var(--clr-gold-dim);
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.1), transparent);
 }
@@ -287,8 +294,6 @@
   margin-bottom: 1.5rem;
 }
 .pp-cta__link {
-  position: relative;
-  z-index: 1;
   display: inline-block;
   font-size: var(--fs-md);
   font-weight: 500;
@@ -297,27 +302,6 @@
   transition: color 0.2s ease;
 }
 .pp-cta__link:hover { color: var(--clr-gold-light); }
-.pp-cta__secondary {
-  display: block;
-  margin-top: 1rem;
-  font-size: var(--fs-xs);
-  color: var(--clr-muted);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-}
-.pp-cta__secondary:hover { color: var(--clr-gold-light); }
-/* Stretches this link's hit area to cover the whole card (::after,
-   not the anchor itself, so its own inline layout/text stays
-   untouched) so tapping anywhere — not just this small text —
-   navigates to travel.html. "Write to us" sits above this overlay
-   (z-index above) so its own mailto action stays independently
-   tappable. */
-.pp-cta__secondary::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-}
 
 @media (max-width: 1024px) {
   .pp-ideas__grid { grid-template-columns: repeat(2, 1fr); }

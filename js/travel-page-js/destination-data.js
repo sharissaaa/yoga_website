@@ -31,6 +31,15 @@ const DESTINATIONS = {
       { range: '15–21 Aug 2026', spots: 6 },
       { range: '10–16 Oct 2026', spots: 4 },
     ],
+    itinerary: [
+      { title: 'Arrival & Grounding', text: 'Arrive in Bali and settle in, followed by an evening welcome circle and orientation.' },
+      { title: 'Morning Yoga & Rice Terraces', text: 'Sunrise yoga practice, then an unhurried walk through the rice terraces.' },
+      { title: 'Sacred Temple Visit', text: 'A guided visit to a local temple, including a traditional water-blessing ceremony.' },
+      { title: 'Sound Bath & Stillness', text: 'Deep meditation session followed by an evening sound bath ceremony.' },
+      { title: 'Rest Day', text: 'Free time to rest, with an optional excursion to nearby waterfalls or the coast.' },
+      { title: 'Closing Practices', text: 'A full immersive practice session, closing with a gratitude and integration circle.' },
+      { title: 'Departure', text: 'Final morning meditation and breakfast together before farewells and departure.' },
+    ],
   },
   rishikesh: {
     title: 'Rishikesh Yoga Retreat',
@@ -57,6 +66,14 @@ const DESTINATIONS = {
     departures: [
       { range: '10–15 Sep 2026', spots: 8 },
       { range: '05–10 Nov 2026', spots: 5 },
+    ],
+    itinerary: [
+      { title: 'Arrival in Rishikesh', text: 'Settle in, then join an evening Ganga Aarti ceremony by the river.' },
+      { title: 'Foundations of Practice', text: 'Morning asana and pranayama session, with an introduction to Ayurveda.' },
+      { title: 'Ayurvedic Treatments', text: 'A personalized Ayurvedic consultation and treatment, followed by evening meditation.' },
+      { title: 'Riverside Immersion', text: 'Extended riverside meditation and a yoga philosophy talk.' },
+      { title: 'Deepening Practice', text: 'An advanced asana session, with free time to explore Rishikesh.' },
+      { title: 'Integration & Departure', text: 'A closing practice and breakfast together before departure.' },
     ],
   },
   'sri-lanka': {
@@ -85,6 +102,16 @@ const DESTINATIONS = {
       { range: '05–12 Oct 2026', spots: 6 },
       { range: '07–14 Dec 2026', spots: 3 },
     ],
+    itinerary: [
+      { title: 'Arrival & Beachside Welcome', text: 'Arrive and settle in with an easy evening on the coast.' },
+      { title: 'Beach Yoga & Ocean Meditation', text: 'Sunrise yoga on the sand, followed by an ocean-facing meditation session.' },
+      { title: 'Journey to Tea Country', text: 'Travel inland to the cool green hills of tea country.' },
+      { title: 'Tea Estate Walks & Wellness Rituals', text: 'A walk through the tea estates paired with traditional wellness rituals.' },
+      { title: 'Buddhist Heritage Visit', text: 'A guided visit to a site of Buddhist heritage and quiet reflection.' },
+      { title: 'Ayurvedic Wellness Day', text: 'A full day devoted to Ayurvedic treatments and gentle practice.' },
+      { title: 'Return to the Coast', text: 'Travel back to the coast for a final stretch of beach mornings.' },
+      { title: 'Closing Circle & Departure', text: 'A closing circle to reflect on the journey, followed by departure.' },
+    ],
   },
   ladakh: {
     title: 'Ladakh Himalayan Retreat',
@@ -111,6 +138,15 @@ const DESTINATIONS = {
     departures: [
       { range: '02–09 Nov 2026', spots: 6 },
       { range: '04–11 Jan 2027', spots: 4 },
+    ],
+    itinerary: [
+      { title: 'Arrival & Acclimatization', text: 'Arrive and rest as your body adjusts to the altitude.' },
+      { title: 'Gentle Practice & Rest', text: 'A light practice session suited to the elevation, with plenty of rest.' },
+      { title: 'Monastery Visit', text: 'A guided visit to an ancient Himalayan monastery.' },
+      { title: 'Guided Breathwork at Altitude', text: 'A breathwork session adapted for high-altitude practice.' },
+      { title: 'Silent Retreat Day', text: 'A full day of silence and inward reflection.' },
+      { title: 'Mountain Meditation & Reflection', text: 'Meditation beneath wide open mountain skies, with closing reflection.' },
+      { title: 'Departure', text: 'Final morning together before departure.' },
     ],
   },
   auroville: {
@@ -139,6 +175,14 @@ const DESTINATIONS = {
       { range: '14–20 Dec 2026', spots: 7 },
       { range: '15–21 Feb 2027', spots: 5 },
     ],
+    itinerary: [
+      { title: 'Arrival & Community Welcome', text: 'Arrive and join a welcome circle with the Auroville community.' },
+      { title: 'Garden Immersion & Meditation', text: 'Time in the community gardens followed by guided meditation.' },
+      { title: 'Conscious Living Workshop', text: 'A workshop on conscious, communal ways of living.' },
+      { title: 'Shared Meal & Community Circle', text: 'A shared community meal and open circle conversation.' },
+      { title: 'Free Reflection Day', text: 'Unstructured time to rest and reflect at your own pace.' },
+      { title: 'Closing Gathering & Departure', text: 'A closing gathering with the community before departure.' },
+    ],
   },
   kerala: {
     title: 'Kerala Ayurveda Retreat',
@@ -165,6 +209,15 @@ const DESTINATIONS = {
     departures: [
       { range: '10–17 Jan 2027', spots: 8 },
       { range: '14–21 Mar 2027', spots: 6 },
+    ],
+    itinerary: [
+      { title: 'Arrival & Backwater Welcome', text: 'Arrive to the calm of the backwaters and settle in for the evening.' },
+      { title: 'Ayurvedic Consultation', text: 'A personal consultation to shape your treatments for the retreat.' },
+      { title: 'Gentle Yoga by the Water', text: 'A gentle yoga session set beside the backwaters.' },
+      { title: 'Traditional Treatments', text: 'A day of traditional Ayurvedic treatments and rest.' },
+      { title: 'Backwater Boat Meditation', text: 'A quiet boat journey through the backwaters with guided meditation.' },
+      { title: 'Rest & Restoration', text: 'Unstructured time to rest and let the treatments settle in.' },
+      { title: 'Departure', text: 'A final gentle practice and breakfast before departure.' },
     ],
   },
   gujarat: {
@@ -193,6 +246,14 @@ const DESTINATIONS = {
       { range: '08–14 Feb 2027', spots: 6 },
       { range: '12–18 Apr 2027', spots: 4 },
     ],
+    itinerary: [
+      { title: 'Arrival & Orientation', text: 'Arrive and get oriented for the journey ahead.' },
+      { title: 'Stepwell & Heritage Walk', text: 'A walk through Gujarat’s carved stepwells and heritage sites.' },
+      { title: 'Temple Town Practice', text: 'Morning practice followed by time in a historic temple town.' },
+      { title: 'Craft & Culture Immersion', text: 'Time with local artisans and centuries of craftsmanship.' },
+      { title: 'Mindful Heritage Exploration', text: 'A slower, mindful day exploring more of the region’s heritage.' },
+      { title: 'Closing Circle & Departure', text: 'A closing circle to reflect on the journey before departure.' },
+    ],
   },
   'tamil-nadu': {
     title: 'Tamil Nadu Temple Trail',
@@ -219,6 +280,16 @@ const DESTINATIONS = {
     departures: [
       { range: '05–13 Mar 2027', spots: 8 },
       { range: '09–17 May 2027', spots: 6 },
+    ],
+    itinerary: [
+      { title: 'Arrival & Welcome', text: 'Arrive and settle in with an orientation for the trail ahead.' },
+      { title: 'Temple Town Introduction', text: 'A first visit to one of South India’s grand temple towns.' },
+      { title: 'Chant & Ritual Practice', text: 'A session on traditional chant and ritual practice.' },
+      { title: 'Grand Temple Visit', text: 'A guided visit to a major temple, rich in centuries of devotion.' },
+      { title: 'Devotional Practice Day', text: 'A full day woven around devotional practice rather than sightseeing.' },
+      { title: 'Rest & Reflection', text: 'Unstructured time to rest and reflect on the journey so far.' },
+      { title: 'Closing Temple Ceremony', text: 'A closing ceremony at a temple to mark the end of the trail.' },
+      { title: 'Departure', text: 'Final morning together before departure.' },
     ],
   },
 };

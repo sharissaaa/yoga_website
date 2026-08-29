@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     [
       '.dest-facts', '.dest-departures', '.dest-gallery', '.dest-about',
-      '.dest-expect', '.dest-pricing', '.dest-faq',
+      '.dest-program', '#destProgramList', '.dest-expect', '.dest-pricing', '.dest-faq',
     ].forEach((selector) => {
       const el = document.querySelector(selector);
       if (el) el.hidden = true;
@@ -136,16 +136,60 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutImg.alt = photo.alt;
   }
 
-  const breakImg = document.getElementById('destBreakImg');
-  const breakQuote = document.getElementById('destBreakQuote');
-  if (breakImg) {
+  const programImg = document.getElementById('destProgramImg');
+  if (programImg) {
     const photo = extraPhotos.length > 1 ? extraPhotos[1] : (extraPhotos[0] || heroPhoto);
-    breakImg.src = photo.src;
-    breakImg.alt = photo.alt;
+    programImg.src = photo.src;
+    programImg.alt = photo.alt;
   }
-  if (breakQuote) {
-    const source = data.whyText || data.description || '';
-    const firstSentence = source.split(/(?<=[.!?])\s/)[0] || source;
-    breakQuote.textContent = firstSentence;
+
+  /* Day-by-day itinerary: hidden until the toggle button is clicked,
+     then rendered from data.itinerary (falls back to hiding the whole
+     program section if a destination has none set). */
+  const programToggle = document.getElementById('destProgramToggle');
+  const programList = document.getElementById('destProgramList');
+  if (programToggle && programList) {
+    if (!Array.isArray(data.itinerary) || !data.itinerary.length) {
+      programToggle.closest('.dest-program').hidden = true;
+      programList.hidden = true;
+    } else {
+      programList.innerHTML = '';
+      data.itinerary.forEach((day, i) => {
+        const item = document.createElement('div');
+        item.className = 'dest-program__day';
+
+        const num = document.createElement('span');
+        num.className = 'dest-program__day-num';
+        num.textContent = `Day ${i + 1}`;
+
+        const point = document.createElement('p');
+        point.className = 'dest-program__day-point';
+        point.textContent = day.text;
+
+        item.append(num, point);
+        programList.appendChild(item);
+      });
+
+      programToggle.addEventListener('click', () => {
+        const expanded = programToggle.getAttribute('aria-expanded') === 'true';
+        programToggle.setAttribute('aria-expanded', String(!expanded));
+        programToggle.querySelector('span').textContent = expanded
+          ? 'View the Full Itinerary'
+          : 'Hide the Itinerary';
+        programList.hidden = expanded;
+      });
+    }
+  }
+
+  /* "Design Your Own Journey" box: clicking anywhere on it (except the
+     link itself, which already goes there) opens the personalized
+     travel package page. */
+  const customBox = document.querySelector('.dest-custom__content');
+  if (customBox) {
+    const customLink = customBox.querySelector('.dest-custom__link');
+    customBox.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      if (customLink) window.location.href = customLink.href;
+    });
   }
 });

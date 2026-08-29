@@ -193,15 +193,6 @@
     }
 
     /* Matched to .ah-quote__author */
-    .quote-attr {
-      font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #C9922A;
-      margin-bottom: 32px;
-    }
-
     /* Quote bottom bar */
     .quote-bottom {
       position: absolute;
@@ -880,9 +871,9 @@
 
 /* ═══════════════════════════════════════════
    QUOTE CAROUSEL (auto sideways slide)
-   Added on top of existing .quote-text/.quote-attr
-   rules above — those stay untouched and still
-   apply to the text inside each slide.
+   Added on top of the existing .quote-text rule
+   above — it stays untouched and still applies
+   to the text inside each slide.
 ═══════════════════════════════════════════ */
 .quote-carousel {
   position: relative;

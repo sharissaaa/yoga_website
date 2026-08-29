@@ -263,42 +263,141 @@
 }
 .dest-about__reserve:hover { color: var(--clr-gold); }
 
-/* ===== IMMERSIVE BREAK ===== */
-.dest-break {
+/* ===== PROGRAM ===== */
+.dest-program {
   position: relative;
   min-height: 46vh;
   min-height: 46svh;
   margin-top: 4rem;
+  padding: 4rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.dest-break__bg {
+.dest-program__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.dest-break__overlay {
+.dest-program__overlay {
   position: absolute;
   inset: 0;
   background: rgba(10, 7, 2, 0.55);
 }
-.dest-break__quote {
+.dest-program__content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  width: 100%;
+  max-width: 1040px;
   padding: 0 2rem;
   text-align: center;
+}
+.dest-program__heading {
   font-family: var(--ff-display);
-  font-style: italic;
-  font-size: clamp(1.35rem, 2.6vw, 2rem);
-  line-height: 1.5;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
   color: var(--clr-white);
+  margin-bottom: 1.5rem;
+}
+.dest-program__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  background: transparent;
+  border: 1px solid var(--clr-gold);
+  border-radius: 999px;
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dest-program__toggle:hover {
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+}
+.dest-program__toggle svg {
+  transition: transform 0.2s ease;
+}
+.dest-program__toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 
+/* Day-by-day list revealed by the toggle button above — sits as its own
+   full-width row within .dest-program (a sibling of .dest-program__content,
+   not nested inside its narrower max-width) so the cards can use the
+   image's full width instead of being boxed in with side gaps. Horizontal
+   scroller, not a long vertical stack, so the image never has to grow
+   tall to fit every day. */
+.dest-program__list {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: safe center;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  text-align: left;
+  /* Fade both edges equally instead of the last card getting cut off
+     flush against the right side while the first card sits clear of
+     the left side. */
+  mask-image: linear-gradient(to right, transparent 0, black 1.5rem, black calc(100% - 1.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 1.5rem, black calc(100% - 1.5rem), transparent 100%);
+}
+.dest-program__list::-webkit-scrollbar {
+  display: none;
+}
+/* [hidden] alone loses to the .dest-program__list display:flex rule above
+   (equal specificity, author stylesheet loads after the UA stylesheet),
+   so it has to be restated here to actually hide the list before the
+   toggle button is clicked. */
+.dest-program__list[hidden] {
+  display: none;
+}
+.dest-program__day {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  background: rgba(10, 7, 2, 0.55);
+  border: 1px solid rgba(245, 240, 232, 0.16);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(2px);
+}
+.dest-program__day-num {
+  flex-shrink: 0;
+  font-family: var(--ff-display);
+  font-size: var(--fs-md);
+  color: var(--clr-gold);
+}
+.dest-program__day-point {
+  position: relative;
+  padding-left: 1rem;
+  font-size: var(--fs-sm);
+  color: var(--clr-muted);
+  line-height: 1.6;
+}
+.dest-program__day-point::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--clr-gold);
+}
 /* ===== WHAT TO EXPECT ===== */
 .dest-expect {
   padding: 3.5rem 2.5rem 0;
@@ -522,6 +621,7 @@
   padding: 2.5rem;
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
+  cursor: pointer;
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
 }
 .dest-custom__heading {
@@ -586,7 +686,9 @@
   .dest-about { padding: 3.5rem 1.5rem; }
   .dest-about__grid { grid-template-columns: 1fr; gap: 2rem; }
   .dest-about__media img { height: 260px; }
-  .dest-break { min-height: 36vh; min-height: 36svh; }
+  .dest-program { min-height: 36vh; min-height: 36svh; padding: 3rem 0; }
+  .dest-program__list { padding: 0 1.25rem 0.5rem; }
+  .dest-program__day { flex-basis: 210px; }
   .dest-expect { padding: 2.5rem 1.5rem 0; }
   .dest-pricing { padding: 2.5rem 1.5rem 0; }
   .dest-info-card { padding: 1.75rem 1.5rem; }

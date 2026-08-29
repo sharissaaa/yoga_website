@@ -36,7 +36,7 @@
 
 /* ---------- RESET ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { font-size: 15px; scroll-behavior: smooth; }
 body {
   background: var(--clr-bg);
   color: var(--clr-white);
@@ -456,14 +456,6 @@ em {
   color: #e0b377;
   max-width: 640px;
   margin-top: 0.35rem;
-}
-.quote__attr {
-  font-family: 'Cinzel', serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #C9922A;
-  margin-top: 0.4rem;
 }
 .quote__ornament {
   height: 50px;
