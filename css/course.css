@@ -115,8 +115,8 @@ em { font-style: italic; color: var(--clr-gold); }
   min-height: calc(100vh - 76px); /* fits exactly below the 76px sticky nav — fallback for browsers without svh support */
   min-height: calc(100svh - 76px);
   display: flex;
-  align-items: center;
-  padding: 2rem 4rem;
+  align-items: flex-end;
+  padding: 0 2.5rem 4rem;
   overflow: hidden;
 }
 .hero__bg {

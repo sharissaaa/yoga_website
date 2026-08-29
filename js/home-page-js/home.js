@@ -170,6 +170,29 @@
         pathObserver.observe(svgWrap);
       }
 
+      /* ── DESTINATIONS: clicking a card goes to the full Destinations page ── */
+      function initDestinationCards() {
+        document.querySelectorAll(".dest-card").forEach(function (card) {
+          card.addEventListener("click", function (e) {
+            if (e.target.closest("a, button")) return;
+            window.location.href = "travel.html";
+          });
+        });
+      }
+
+      /* ── OFFERINGS: clicking anywhere in the Courses block (heading,
+              description, or any of the 4 course cards) goes to the
+              full Courses page ── */
+      function initOfferingsSection() {
+        var section = document.querySelector(".exp-section");
+        if (!section) return;
+        section.style.cursor = "pointer";
+        section.addEventListener("click", function (e) {
+          if (e.target.closest("a, button")) return;
+          window.location.href = "course.html";
+        });
+      }
+
       /* ── STORIES: prev/next arrows scroll the card grid ── */
       function initStoryArrows() {
         var grid = document.querySelector(".story-grid");
@@ -268,6 +291,8 @@
         initReveal();
         initBreathing();
         initJourneyPath();
+        initDestinationCards();
+        initOfferingsSection();
         initStoryArrows();
         initStoryToggle();
       });
