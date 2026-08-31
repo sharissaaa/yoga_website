@@ -45,7 +45,6 @@
   color: var(--clr-gold-light);
   text-decoration: none;
   margin-bottom: 1.25rem;
-  transition: color 0.2s ease;
 }
 .pp-hero__back:hover { color: var(--clr-gold); }
 .pp-hero__heading {
@@ -69,7 +68,6 @@
   max-width: 520px;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease;
 }
 .pp-hero__sub:hover {
   color: var(--clr-gold-light);
@@ -80,7 +78,6 @@
   font-style: italic;
   color: var(--clr-gold-light);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 .pp-hero__cta:hover { color: var(--clr-gold); }
 
@@ -102,11 +99,9 @@
   background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .pp-steps__item:hover {
   border-color: var(--clr-gold-dim);
-  transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 .pp-steps__num {
@@ -196,11 +191,9 @@
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .pp-idea:hover {
   border-color: var(--clr-gold-dim);
-  transform: translateY(-4px);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
 }
 .pp-idea__media {
@@ -212,9 +205,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
-.pp-idea:hover .pp-idea__media img { transform: scale(1.06); }
 .pp-idea h3 {
   font-family: var(--ff-display);
   font-size: var(--fs-md);
@@ -235,7 +226,6 @@
   color: var(--clr-gold);
   text-decoration: none;
   margin: 0 1.25rem 1.25rem;
-  transition: color 0.2s ease;
 }
 .pp-idea a:hover { color: var(--clr-gold-light); }
 
@@ -252,7 +242,6 @@
 }
 .pp-idea--note:hover {
   border-color: var(--clr-border);
-  transform: none;
   box-shadow: none;
 }
 .pp-idea--note__inner { max-width: 520px; }
@@ -307,11 +296,9 @@
   color: var(--clr-bg);
   background: var(--clr-gold);
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
 }
 .pp-cta__link:hover {
   background: var(--clr-gold-light);
-  transform: translateY(-2px);
 }
 
 @media (max-width: 1024px) {

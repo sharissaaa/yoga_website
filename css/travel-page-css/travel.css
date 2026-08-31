@@ -80,7 +80,6 @@ details > summary::-webkit-details-marker { display: none; }
   font-size: var(--fs-sm);
   font-weight: 400;
   letter-spacing: 0.06em;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
 }
 .btn--outline {
@@ -235,7 +234,6 @@ details > summary::-webkit-details-marker { display: none; }
   font-family: var(--ff-body);
   font-size: var(--fs-sm);
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .retreats-pagination__btn:hover { border-color: var(--clr-gold-dim); color: var(--clr-white); }
 .retreats-pagination__btn.is-active {
@@ -258,12 +256,10 @@ details > summary::-webkit-details-marker { display: none; }
   overflow: hidden;
   margin-bottom: 1.25rem;
   cursor: pointer;
-  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   width: 100%;
 }
 .retreat-card:hover {
   border-color: var(--clr-gold-dim);
-  transform: translateY(-2px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -344,7 +340,6 @@ details > summary::-webkit-details-marker { display: none; }
 .retreat-card__more summary::after {
   content: '▾';
   font-size: 0.75rem;
-  transition: transform 0.2s;
 }
 .retreat-card__more[open] summary::after { transform: rotate(180deg); }
 /* edited portion*/
@@ -459,7 +454,6 @@ details > summary::-webkit-details-marker { display: none; }
   border-radius: var(--radius-lg);
   text-decoration: none;
   text-align: center;
-  transition: background 0.2s ease;
 }
 .aside-invite-btn:hover { background: var(--clr-gold-light); }
 
@@ -479,7 +473,6 @@ details > summary::-webkit-details-marker { display: none; }
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
-  transition: border-color 0.25s ease, background 0.25s ease;
 }
 .custom-package__content:has(.custom-package__link:hover) {
   border-color: var(--clr-gold-dim);
@@ -504,7 +497,6 @@ details > summary::-webkit-details-marker { display: none; }
   font-weight: 500;
   color: var(--clr-gold);
   text-decoration: none;
-  transition: color 0.2s ease;
   cursor: pointer;
 }
 .custom-package__link:hover { color: var(--clr-gold-light); }
@@ -644,11 +636,4 @@ details > summary::-webkit-details-marker { display: none; }
   .footer { grid-template-columns: 1fr; padding: 2.5rem 1.25rem 1.25rem; }
 
   .nav { padding: 0 1.25rem; }
-}
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
 }

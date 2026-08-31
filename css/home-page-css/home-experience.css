@@ -80,7 +80,6 @@
 .exp-left__link {
   color: inherit;
   text-decoration: none;
-  transition: color .3s ease;
 }
 .exp-left__link:hover {
   color: rgba(199, 163, 92, .85);
@@ -100,7 +99,6 @@
   color: rgba(199, 163, 92, .9);
   text-decoration: none;
   border-bottom: 1px solid rgba(199, 163, 92, .35);
-  transition: color .2s ease, border-color .2s ease;
 }
 .exp-note a:hover {
   color: #d9a75c;
@@ -113,7 +111,6 @@
   border: 1px solid rgba(201, 164, 106, .14);
   border-top: 2px solid rgba(199, 163, 92, .55);
   border-radius: 20px; padding: 26px 20px 46px; position: relative;
-  transition: transform .38s cubic-bezier(.22,.68,0,1.2), border-color .38s ease, box-shadow .38s ease;
   /* soft gold bar under each card, like an underline accent */
   box-shadow: 0 10px 0 -7px rgba(199, 163, 92, .5);
   overflow: hidden; cursor: pointer;
@@ -122,15 +119,14 @@
   content: ""; position: absolute; inset: 0; border-radius: 20px; padding: 1px;
   background: linear-gradient(160deg, rgba(199, 163, 92, .38) 0%, rgba(199, 163, 92, .06) 60%, transparent 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; transition: opacity .38s;
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
 }
 .exp-card::after {
   content: ""; position: absolute; inset: 0; border-radius: 20px;
   background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(199, 163, 92, .06), transparent 70%);
-  opacity: 0; transition: opacity .38s; pointer-events: none;
+  opacity: 0; pointer-events: none;
 }
 .exp-card:hover {
-  transform: translateY(-7px);
   border-color: rgba(201, 164, 106, .38);
   box-shadow: 0 24px 56px rgba(0, 0, 0, .55), 0 0 0 1px rgba(199, 163, 92, .08), 0 10px 0 -7px rgba(199, 163, 92, .7);
 }
@@ -143,11 +139,9 @@
   display: flex;
   color: rgba(199, 163, 92, .7);
   z-index: 1;
-  transition: transform .3s ease, color .3s ease;
 }
 .exp-card:hover .exp-card-arrow {
   color: #d9a75c;
-  transform: translateX(4px);
 }
 
 .exp-card-title {
@@ -241,7 +235,6 @@
   font-weight: 500;
   text-decoration: none;
   border-bottom: 1px solid rgba(199, 163, 92, .4);
-  transition: color .2s ease, border-color .2s ease;
 }
 .exp-info-item a:hover { color: #d9a75c; border-color: rgba(199, 163, 92, .7); }
 
