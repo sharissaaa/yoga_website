@@ -170,35 +170,44 @@
         pathObserver.observe(svgWrap);
       }
 
-      /* ── EXPERIENCE SECTION: "Next experience" arrow → Teaching and
-              Courses page (same destination as the section heading link) ── */
-      function initExperienceArrow() {
-        var arrow = document.querySelector(".exp-main-arrow");
-        if (!arrow) return;
-        arrow.addEventListener("click", function () {
+      /* ── DESTINATIONS: clicking a card goes to the full Destinations page ── */
+      function initDestinationCards() {
+        document.querySelectorAll(".dest-card").forEach(function (card) {
+          card.addEventListener("click", function (e) {
+            if (e.target.closest("a, button")) return;
+            window.location.href = "travel.html";
+          });
+        });
+      }
+
+      /* ── OFFERINGS: clicking anywhere in the Courses block (heading,
+              description, or any of the 4 course cards) goes to the
+              full Courses page ── */
+      function initOfferingsSection() {
+        var section = document.querySelector(".exp-section");
+        if (!section) return;
+        section.style.cursor = "pointer";
+        section.addEventListener("click", function (e) {
+          if (e.target.closest("a, button")) return;
           window.location.href = "course.html";
         });
       }
 
-      /* ── DESTINATIONS: prev/next arrows scroll the card grid ──
-              .dest-grid already becomes horizontally scrollable on mobile
-              (overflow-x: auto in home-destination.css); this just gives
-              the header arrows something to do. No-ops harmlessly on
-              desktop widths where the grid doesn't overflow. */
-      function initDestinationArrows() {
-        var grid = document.querySelector(".dest-grid");
+      /* ── STORIES: prev/next arrows scroll the card grid ── */
+      function initStoryArrows() {
+        var grid = document.querySelector(".story-grid");
         var prevBtn = document.querySelector(
-          '.dest-arrow[aria-label="Previous destination"]',
+          '.story-arrow[aria-label="Previous story"]',
         );
         var nextBtn = document.querySelector(
-          '.dest-arrow[aria-label="Next destination"]',
+          '.story-arrow[aria-label="Next story"]',
         );
         if (!grid || !prevBtn || !nextBtn) return;
 
         function scrollByCard(direction) {
-          var card = grid.querySelector(".dest-card");
-          var gap = 18;
-          var amount = card ? card.getBoundingClientRect().width + gap : 300;
+          var card = grid.querySelector(".story-card-col");
+          var gap = 24;
+          var amount = card ? card.getBoundingClientRect().width + gap : 320;
           grid.scrollBy({ left: direction * amount, behavior: "smooth" });
         }
 
@@ -282,8 +291,9 @@
         initReveal();
         initBreathing();
         initJourneyPath();
-        initExperienceArrow();
-        initDestinationArrows();
+        initDestinationCards();
+        initOfferingsSection();
+        initStoryArrows();
         initStoryToggle();
       });
     

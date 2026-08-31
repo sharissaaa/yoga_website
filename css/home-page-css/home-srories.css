@@ -193,15 +193,6 @@
     }
 
     /* Matched to .ah-quote__author */
-    .quote-attr {
-      font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #C9922A;
-      margin-bottom: 32px;
-    }
-
     /* Quote bottom bar */
     .quote-bottom {
       position: absolute;
@@ -422,6 +413,49 @@
       border-color: var(--gold);
       color: var(--gold);
       background: rgba(207, 155, 92, 0.07);
+    }
+
+    .stories-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .story-nav { display: flex; gap: 12px; }
+    .story-arrow {
+      width: 44px; height: 44px; border-radius: 50%; background: transparent;
+      border: 1px solid rgba(199,163,92,.28); color: #d0a45c; cursor: pointer; transition: .3s;
+      display: flex; align-items: center; justify-content: center; font-size: .85rem;
+    }
+    .story-arrow:hover, .story-arrow.active { border-color: rgba(199,163,92,.75); box-shadow: 0 0 20px rgba(199,163,92,.15); }
+
+    /* Story carousel — horizontally scrollable so more cards can be
+       added later without changing layout; arrows in .stories-top
+       scroll it one card at a time (see initStoryArrows in home.js) */
+    .story-grid {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      padding-bottom: 4px;
+    }
+    .story-grid::-webkit-scrollbar { display: none; }
+
+    .story-card-col {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 280px;
+      scroll-snap-align: start;
+    }
+
+    @media (max-width: 991px) {
+      .story-card-col { flex: 0 0 calc(50% - 12px); }
+    }
+    @media (max-width: 640px) {
+      .story-card-col { flex: 0 0 85%; }
     }
 
     /* Story cards */
@@ -837,9 +871,9 @@
 
 /* ═══════════════════════════════════════════
    QUOTE CAROUSEL (auto sideways slide)
-   Added on top of existing .quote-text/.quote-attr
-   rules above — those stay untouched and still
-   apply to the text inside each slide.
+   Added on top of the existing .quote-text rule
+   above — it stays untouched and still applies
+   to the text inside each slide.
 ═══════════════════════════════════════════ */
 .quote-carousel {
   position: relative;

@@ -54,5 +54,6 @@
           .forEach(function (el) {
             revealObserver.observe(el);
           });
+
       })();
     
