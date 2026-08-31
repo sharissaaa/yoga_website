@@ -55,23 +55,5 @@
             revealObserver.observe(el);
           });
 
-        /* "Don't See Your Style Here?" and "Let's Build Your Itinerary" —
-           clicking anywhere in either box (not just the link text) goes
-           to that box's primary link. Clicks on an actual <a> keep their
-           own destination (so the secondary "browse retreats" link on
-           the CTA box still works). */
-        function makeBoxClickable(boxSelector, linkSelector) {
-          var box = document.querySelector(boxSelector);
-          var link = box && box.querySelector(linkSelector);
-          if (!box || !link) return;
-          box.style.cursor = "pointer";
-          box.addEventListener("click", function (e) {
-            if (e.target.closest("a")) return;
-            window.location.href = link.href;
-          });
-        }
-
-        makeBoxClickable(".pp-idea--note", "a");
-        makeBoxClickable(".pp-cta__content", ".pp-cta__link");
       })();
     

@@ -257,8 +257,20 @@
 }
 .pp-idea--note__inner { max-width: 520px; }
 .pp-idea--note h3 { margin: 0 0 0.5rem; }
-.pp-idea--note p { margin: 0 0 1rem; }
-.pp-idea--note a { margin: 0; }
+.pp-idea--note p { margin: 0; }
+/* Folded into the paragraph as plain text, not a separate CTA line —
+   no color/weight/arrow to suggest a button or a page redirect. */
+.pp-idea a.pp-idea--note__link {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--clr-border);
+  text-underline-offset: 2px;
+}
+.pp-idea a.pp-idea--note__link:hover { color: inherit; text-decoration-color: var(--clr-muted); }
 
 /* ===== FINAL CTA ===== */
 .pp-cta {
@@ -267,18 +279,8 @@
   padding: 5rem 2.5rem;
 }
 .pp-cta__content {
-  position: relative;
   max-width: 620px;
   text-align: center;
-  padding: 3rem;
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.06), transparent);
-  transition: border-color 0.25s ease, background 0.25s ease;
-}
-.pp-cta__content:hover {
-  border-color: var(--clr-gold-dim);
-  background: linear-gradient(180deg, rgba(201, 168, 76, 0.1), transparent);
 }
 .pp-cta__heading {
   font-family: var(--ff-display);
@@ -294,14 +296,23 @@
   margin-bottom: 1.5rem;
 }
 .pp-cta__link {
-  display: inline-block;
-  font-size: var(--fs-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--clr-gold);
+  letter-spacing: 0.03em;
+  color: var(--clr-bg);
+  background: var(--clr-gold);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
-.pp-cta__link:hover { color: var(--clr-gold-light); }
+.pp-cta__link:hover {
+  background: var(--clr-gold-light);
+  transform: translateY(-2px);
+}
 
 @media (max-width: 1024px) {
   .pp-ideas__grid { grid-template-columns: repeat(2, 1fr); }
@@ -313,5 +324,4 @@
   .pp-ideas { padding: 3.5rem 1.5rem 0; }
   .pp-ideas__grid { grid-template-columns: 1fr; }
   .pp-cta { padding: 3.5rem 1.5rem; }
-  .pp-cta__content { padding: 2rem; }
 }
