@@ -84,7 +84,6 @@ em { font-style: italic; color: var(--clr-gold); }
   font-family: var(--ff-body);
   font-weight: 500;
   letter-spacing: 0.04em;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
   cursor: pointer;
 }
 .btn--gold {
@@ -94,7 +93,7 @@ em { font-style: italic; color: var(--clr-gold); }
   border-radius: var(--radius);
   font-size: var(--fs-sm);
 }
-.btn--gold:hover { background: var(--clr-gold-light); transform: translateY(-1px); }
+.btn--gold:hover { background: var(--clr-gold-light); }
 
 .btn--gold-pill {
   padding: 0.9rem 2rem;
@@ -103,7 +102,7 @@ em { font-style: italic; color: var(--clr-gold); }
   border-radius: var(--radius-pill);
   font-size: var(--fs-sm);
 }
-.btn--gold-pill:hover { background: var(--clr-gold-light); transform: translateY(-1px); }
+.btn--gold-pill:hover { background: var(--clr-gold-light); }
 .btn__icon { width: 16px; height: 16px; filter: brightness(0); }
 .btn__arrow { font-size: 1rem; }
 
@@ -457,7 +456,6 @@ em { font-style: italic; color: var(--clr-gold); }
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: border-color 0.25s ease, background 0.25s ease;
   align-self: center;
 }
 .highlights__arrow svg {
@@ -597,7 +595,6 @@ em { font-style: italic; color: var(--clr-gold); }
   color: var(--clr-gold);
   border-bottom: 1px solid rgba(201, 168, 76, 0.4);
   padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
 }
 .hl-card__toggle:hover {
   color: var(--clr-gold-light);
@@ -737,7 +734,6 @@ em { font-style: italic; color: var(--clr-gold); }
   font-weight: 500;
   text-decoration: none;
   border-bottom: 1px solid rgba(201, 168, 76, 0.4);
-  transition: color 0.2s ease, border-color 0.2s ease;
 }
 .course-details__note a:hover {
   color: var(--clr-gold);
@@ -791,37 +787,14 @@ em { font-style: italic; color: var(--clr-gold); }
 }
 
 /* ============================================================
-   MOVING MANDALA ANIMATION
+   MOVING MANDALA — rotation animation removed (mandala-spin
+   classes are not applied to any element on this page).
    ============================================================ */
-@keyframes mandala-rotate-plain {
-  from { transform: translateY(-50%) rotate(0deg); }
-  to   { transform: translateY(-50%) rotate(360deg); }
-}
-.mandala-spin {
-  animation: mandala-rotate-plain 70s linear infinite;
-  transform-origin: center;
-  will-change: transform;
-}
-.mandala-spin--reverse {
-  animation-direction: reverse;
-  animation-duration: 90s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .mandala-spin { animation: none !important; }
-}
 
 /* ============================================================
-   SCROLL REVEAL (toggled by course.js)
+   SCROLL REVEAL — removed; classes stripped from course.html so
+   content renders at full opacity immediately (no fade/slide-in).
    ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ============================================================
    RESPONSIVE
@@ -835,8 +808,4 @@ em { font-style: italic; color: var(--clr-gold); }
 
 @media (max-width: 560px) {
   .hero__heading { font-size: 2.25rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
 }

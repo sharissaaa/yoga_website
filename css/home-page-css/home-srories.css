@@ -223,14 +223,12 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background .2s, border-color .2s, transform .2s;
       flex-shrink: 0;
     }
 
     .play-btn:hover {
       background: rgba(207, 155, 92, 0.16);
       border-color: var(--gold);
-      transform: scale(1.06);
     }
 
     .play-label {
@@ -256,21 +254,6 @@
       width: 1px;
       height: 36px;
       background: linear-gradient(to bottom, transparent, rgba(207, 155, 92, 0.35));
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollPulse {
-
-      0%,
-      100% {
-        opacity: 0.4;
-        transform: scaleY(0.9);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(1.1);
-      }
     }
 
     /* Buddha / statue image */
@@ -378,7 +361,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: border-color .2s, color .2s, background .2s;
     }
 
     .ctrl-btn:hover {
@@ -405,7 +387,6 @@
       background: transparent;
       color: var(--cream-dim);
       cursor: pointer;
-      transition: border-color .2s, color .2s, background .2s;
     }
 
     .filter-tag.active,
@@ -427,7 +408,7 @@
     .story-nav { display: flex; gap: 12px; }
     .story-arrow {
       width: 44px; height: 44px; border-radius: 50%; background: transparent;
-      border: 1px solid rgba(199,163,92,.28); color: #d0a45c; cursor: pointer; transition: .3s;
+      border: 1px solid rgba(199,163,92,.28); color: #d0a45c; cursor: pointer;
       display: flex; align-items: center; justify-content: center; font-size: .85rem;
     }
     .story-arrow:hover, .story-arrow.active { border-color: rgba(199,163,92,.75); box-shadow: 0 0 20px rgba(199,163,92,.15); }
@@ -468,7 +449,6 @@
       min-height: 250px;
       display: flex;
       flex-direction: column;
-      transition: border-color .3s, background .3s, transform .3s;
       position: relative;
       overflow: hidden;
     }
@@ -489,13 +469,11 @@
       height: 1px;
       background: linear-gradient(90deg, transparent 10%, rgba(207, 155, 92, 0.18) 50%, transparent 90%);
       opacity: 0;
-      transition: opacity .3s;
     }
 
     .story-card:hover {
       border-color: var(--card-border-hover);
       background: var(--card-bg-hover);
-      transform: translateY(-3px);
     }
 
     .story-card:hover::before {
@@ -604,7 +582,6 @@
       text-transform: uppercase;
       color: rgba(207, 155, 92, 0.5);
       cursor: pointer;
-      transition: color .2s;
       background: none;
       border: none;
       padding: 0;
@@ -731,7 +708,6 @@
       border-radius: 100px;
       overflow: hidden;
       background: rgba(244, 236, 224, 0.03);
-      transition: border-color .2s;
     }
 
     .nl-form:focus-within {
@@ -766,12 +742,10 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: opacity .2s, transform .2s;
     }
 
     .nl-btn:hover {
       opacity: 0.9;
-      transform: scale(1.02);
     }
 
     /* ═══════════════════════════════════════════
