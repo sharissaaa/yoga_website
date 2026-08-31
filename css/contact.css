@@ -79,7 +79,6 @@ ul{ list-style:none; }
   font-size: 13px;
   letter-spacing: .02em;
   z-index: 200;
-  transition: top .2s ease;
 }
 .skip-link:focus{ top: 12px; }
 
@@ -129,18 +128,14 @@ textarea:focus-visible{
   border-radius: 30px;
   border:none;
   cursor:pointer;
-  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
 }
 .btn-primary{
   background: linear-gradient(180deg, var(--gold-light), var(--gold));
   color: var(--dark);
 }
 .btn-primary:hover{
-  transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(201,146,42,.35);
 }
-.arrow{ transition: transform .25s ease; }
-.btn:hover .arrow{ transform: translateX(3px); }
 
 .accent{ color: var(--gold-light); font-style: italic; }
 
@@ -355,11 +350,9 @@ textarea:focus-visible{
   align-items:center;
   justify-content:center;
   color: var(--gold-light);
-  transition: background .2s ease, transform .2s ease;
 }
 .contact-list li:hover .icon-circle{
   background: rgba(201,146,42,.12);
-  transform: translateY(-2px);
 }
 .icon-circle svg{ width: 20px; height:20px; }
 .icon-circle img{ width: 39px; height:32px; }
@@ -399,7 +392,6 @@ textarea:focus-visible{
   font-family: var(--font-body);
   font-size: 14px;
   outline: none;
-  transition: border-color .2s, box-shadow .2s;
 }
 .contact-form textarea{ resize: vertical; min-height: 130px; }
 .contact-form input::placeholder,

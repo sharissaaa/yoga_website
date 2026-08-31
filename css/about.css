@@ -80,7 +80,6 @@ em {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
 }
 .btn--outline {
@@ -400,7 +399,6 @@ em {
   color: var(--clr-gold);
   border-bottom: 1px solid rgba(201, 168, 76, 0.4);
   padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
 }
 .team-card__toggle:hover {
   color: var(--clr-gold-light);
@@ -468,59 +466,6 @@ em {
   }
 }
 
-/* ============================================================
-   MOVING MANDALA ANIMATION
-   ============================================================ */
-@keyframes mandala-rotate {
-  from { transform: translateY(-50%) rotate(0deg); }
-  to   { transform: translateY(-50%) rotate(360deg); }
-}
-@keyframes mandala-rotate-plain {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.mandala-spin {
-  animation: mandala-rotate-plain 60s linear infinite;
-  transform-origin: center;
-  will-change: transform;
-}
-.mandala-rotate {
-  animation: mandala-rotate-plain 60s linear infinite;
-  transform-origin: center;
-  will-change: transform;
-}
-.mandala-spin--reverse {
-  animation-direction: reverse;
-  animation-duration: 80s;
-}
-.hero__mandala.mandala-spin {
-  animation: mandala-rotate 90s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mandala-spin,
-  .mandala-spin--reverse,
-  .mandala-rotate,
-  .hero__mandala.mandala-spin {
-    animation: none !important;
-  }
-}
-
-/* ============================================================
-   SCROLL REVEAL (toggled by about.js)
-   ============================================================ */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
 @media (max-width: 1024px) {
   .purpose__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem; }
   .purpose-item:nth-child(2)::after { display: none; }
@@ -555,10 +500,6 @@ em {
   .purpose { padding: 4rem 1.25rem 3.5rem; }
   .purpose__grid { grid-template-columns: 1fr; gap: 2rem; }
   .purpose-item::after { display: none !important; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
 }
 
 /* ============================================================

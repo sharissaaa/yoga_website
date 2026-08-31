@@ -67,39 +67,6 @@ shared script above, shared by every page)
             }
 
             /* ----------------------------------------------------------
-               3. MOVING MANDALA — continuous rotation + subtle parallax
-               The mandalas already spin via CSS (.mandala-spin keyframes).
-               This adds a gentle parallax drift as the user scrolls, and
-               respects prefers-reduced-motion.
-               ---------------------------------------------------------- */
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const mandalas = document.querySelectorAll('.mandala-spin');
-
-            if (!prefersReducedMotion && mandalas.length) {
-                let ticking = false;
-
-                const updateParallax = () => {
-                    const scrollY = window.scrollY;
-                    mandalas.forEach((el) => {
-                        // hero mandala drifts slowly; both stats ornaments share
-                        // the exact same speed so they stay mirrored on scroll
-                        const speed = el.classList.contains('stats__ornament') ? 0.04 : -0.03;
-                        const offset = scrollY * speed;
-                        el.style.setProperty('--mandala-drift', `${offset}px`);
-                        el.style.marginTop = `${offset}px`;
-                    });
-                    ticking = false;
-                };
-
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(updateParallax);
-                        ticking = true;
-                    }
-                }, { passive: true });
-            }
-
-            /* ----------------------------------------------------------
                4. MEET THE TEAM — expandable card previews
                ---------------------------------------------------------- */
             document.querySelectorAll('.team-card__toggle').forEach(btn => {

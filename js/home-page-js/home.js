@@ -150,26 +150,6 @@
         });
       }
 
-      /* ── JOURNEY PATH ── */
-      function initJourneyPath() {
-        var svgWrap = document.querySelector(".journey-svg-wrap");
-        if (!svgWrap) return;
-
-        var pathObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("path-visible");
-                pathObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.25 },
-        );
-
-        pathObserver.observe(svgWrap);
-      }
-
       /* ── DESTINATIONS: clicking a card goes to the full Destinations page ── */
       function initDestinationCards() {
         document.querySelectorAll(".dest-card").forEach(function (card) {
@@ -290,7 +270,6 @@
       Promise.all(loadPromises).then(function () {
         initReveal();
         initBreathing();
-        initJourneyPath();
         initDestinationCards();
         initOfferingsSection();
         initStoryArrows();

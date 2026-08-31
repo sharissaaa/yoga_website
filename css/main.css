@@ -76,7 +76,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.3s;
 }
 img {
   max-width: 100%;
@@ -115,12 +114,10 @@ ul {
   padding: 12px 22px;
   border: none;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   white-space: nowrap;
 }
 .btn-primary-sy:hover {
   background: var(--gold-light);
-  transform: translateY(-1px);
   box-shadow: 0 8px 28px rgba(200, 146, 42, 0.35);
   color: var(--dark-green);
 }
@@ -139,12 +136,10 @@ ul {
   padding: 11px 22px;
   border: 1px solid rgba(244, 236, 224, 0.3);
   cursor: pointer;
-  transition: border-color 0.3s, background 0.3s, transform 0.2s;
 }
 .btn-outline-sy:hover {
   border-color: var(--gold);
   background: rgba(200, 146, 42, 0.07);
-  transform: translateY(-1px);
   color: var(--off-white);
 }
 
@@ -160,7 +155,6 @@ ul {
   gap: 6px;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
-  transition: border-color 0.3s, gap 0.3s, color 0.3s;
 }
 .view-all-link:hover {
   color: var(--gold-light);
@@ -176,7 +170,6 @@ ul {
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
 }
 #mainNav.scrolled {
   background: rgba(7, 14, 8, 0.93);
@@ -185,18 +178,6 @@ ul {
   padding: 11px 0;
   border-bottom: 1px solid var(--border-subtle);
 }
-
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeInLeft { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes fadeInRight { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: translateX(0); } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0 0 rgba(200, 146, 42, 0.35); } 50% { box-shadow: 0 0 0 14px rgba(200, 146, 42, 0); } }
-@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.07); } }
-@keyframes lineGrow { from { width: 0; } to { width: 100%; } }
-@keyframes breatheOrb { 0%, 100% { transform: scale(1); opacity: 0.75; } 50% { transform: scale(1.1); opacity: 1; } }
-@keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }
 .reveal-left { opacity: 0; transform: translateX(-26px); transition: opacity 0.72s cubic-bezier(0.4, 0, 0.2, 1), transform 0.72s cubic-bezier(0.4, 0, 0.2, 1); }

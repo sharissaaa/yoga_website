@@ -47,7 +47,6 @@
   color: var(--clr-gold-light);
   text-decoration: none;
   margin-bottom: 1.25rem;
-  transition: color 0.2s ease;
 }
 .dest-hero__back:hover { color: var(--clr-gold); }
 .dest-hero__heading {
@@ -132,11 +131,9 @@
   background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-lg);
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 .dest-departures__card:hover {
   border-color: var(--clr-gold-dim);
-  transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
 }
 .dest-departures__range {
@@ -155,7 +152,6 @@
   font-weight: 500;
   color: var(--clr-gold);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 .dest-departures__link:hover { color: var(--clr-gold-light); }
 
@@ -193,9 +189,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
-.dest-gallery__tile:hover img { transform: scale(1.06); }
 
 /* ===== ABOUT ===== */
 .dest-about {
@@ -259,7 +253,6 @@
   font-style: italic;
   color: var(--clr-gold-light);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 .dest-about__reserve:hover { color: var(--clr-gold); }
 
@@ -317,14 +310,10 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 .dest-program__toggle:hover {
   background: var(--clr-gold);
   color: var(--clr-bg);
-}
-.dest-program__toggle svg {
-  transition: transform 0.2s ease;
 }
 .dest-program__toggle[aria-expanded="true"] svg {
   transform: rotate(180deg);
@@ -505,7 +494,6 @@
 }
 .dest-pricing__link {
   color: var(--clr-gold);
-  transition: color 0.2s ease;
 }
 .dest-pricing__link:hover { color: var(--clr-gold-light); }
 
@@ -551,7 +539,6 @@
 }
 .dest-guides__text a {
   color: var(--clr-gold);
-  transition: color 0.2s ease;
 }
 .dest-guides__text a:hover { color: var(--clr-gold-light); }
 
@@ -642,7 +629,6 @@
   font-weight: 500;
   color: var(--clr-gold);
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 .dest-custom__link:hover { color: var(--clr-gold-light); }
 
