@@ -51,6 +51,7 @@
       'Name: ' + get('name'),
       'Email: ' + get('email'),
       'Phone: ' + (get('phone') || '-'),
+      'Nationality: ' + get('nationality'),
       'Destination / Retreat: ' + destination,
       'Preferred Dates: ' + (get('dates') || '-'),
       'Travelers: ' + (get('travelers') || '-'),
