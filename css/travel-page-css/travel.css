@@ -215,33 +215,6 @@ details > summary::-webkit-details-marker { display: none; }
   font-size: var(--fs-md);
 }
 
-/* Pagination */
-.retreats-pagination {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-.retreats-pagination__btn {
-  min-width: 40px;
-  height: 40px;
-  padding: 0 0.5rem;
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
-  border-radius: 50px;
-  color: var(--clr-muted);
-  font-family: var(--ff-body);
-  font-size: var(--fs-sm);
-  cursor: pointer;
-}
-.retreats-pagination__btn:hover { border-color: var(--clr-gold-dim); color: var(--clr-white); }
-.retreats-pagination__btn.is-active {
-  background: var(--clr-gold);
-  border-color: var(--clr-gold);
-  color: var(--clr-bg);
-}
-
 /* ============================================================
    RETREAT CARD
    ============================================================ */
@@ -498,14 +471,17 @@ details > summary::-webkit-details-marker { display: none; }
   margin-bottom: 1.5rem;
 }
 .custom-package__link {
-  display: inline-block;
-  font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--clr-gold);
   text-decoration: none;
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+  border: 1px solid var(--clr-gold);
   cursor: pointer;
 }
-.custom-package__link:hover { color: var(--clr-gold-light); }
+.custom-package__link:hover {
+  background: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+}
 /* Stretches this link's hit area to cover the whole card (::after,
    not the anchor itself, so its own inline layout/text stays
    untouched) so tapping anywhere in the card navigates. */

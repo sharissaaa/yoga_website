@@ -21,67 +21,36 @@ document.addEventListener('click', (e) => {
   if (slug) window.location.href = `destination-detail.html?slug=${encodeURIComponent(slug)}`;
 });
 
-/* ── PAGINATION ──
-   Paginates .retreat-card elements inside #retreatsList, 5 per page.
-   Cards added later (e.g. via Strapi) just need to be in that list —
-   no changes needed here as the count grows. */
+/* ── RETREAT LIST ──
+   Shows every .retreat-card inside #retreatsList (no pagination). */
 document.addEventListener('DOMContentLoaded', () => {
-  const CARDS_PER_PAGE = 5;
   const list = document.getElementById('retreatsList');
-  const pagination = document.getElementById('retreatsPagination');
   const emptyMessage = document.getElementById('retreatsEmpty');
-  if (!list || !pagination) return;
+  if (!list) return;
 
   const allCards = Array.from(list.querySelectorAll('.retreat-card'));
-  let currentPage = 1;
+  allCards.forEach((card) => card.classList.add('visible'));
+
+  if (emptyMessage) emptyMessage.hidden = allCards.length !== 0;
 
   /* ── HIGHLIGHT ──
      Arriving via ?highlight=<slug> (e.g. from a homepage destination
-     card) shows every card unpaginated — so the target card is
-     guaranteed to be visible regardless of which page it'd normally
-     fall on — and brightens its border so it's easy to spot. */
+     card) brightens that card's border and scrolls to it. */
   const highlightSlug = new URLSearchParams(window.location.search).get('highlight');
   const highlightIndex = highlightSlug
     ? allCards.findIndex((card) => card.dataset.slug === highlightSlug)
     : -1;
-  const showAll = highlightIndex !== -1;
-
-  function render() {
-    const totalPages = Math.max(1, Math.ceil(allCards.length / CARDS_PER_PAGE));
-    if (currentPage > totalPages) currentPage = 1;
-
-    allCards.forEach((card, i) => {
-      const onPage = showAll || Math.floor(i / CARDS_PER_PAGE) + 1 === currentPage;
-      card.style.display = onPage ? '' : 'none';
-      if (onPage) card.classList.add('visible');
-    });
-
-    if (emptyMessage) emptyMessage.hidden = allCards.length !== 0;
-
-    pagination.innerHTML = '';
-    if (!showAll && totalPages > 1) {
-      for (let page = 1; page <= totalPages; page++) {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'retreats-pagination__btn';
-        btn.textContent = String(page);
-        btn.setAttribute('aria-label', `Page ${page}`);
-        if (page === currentPage) btn.classList.add('is-active');
-        btn.addEventListener('click', () => {
-          currentPage = page;
-          render();
-          list.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-        pagination.appendChild(btn);
-      }
-    }
-  }
-
-  render();
 
   if (highlightIndex !== -1) {
     const target = allCards[highlightIndex];
     target.classList.add('retreat-card--highlighted');
-    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    /* Land right on the card instead of visibly sliding down the page —
+       html has scroll-behavior: smooth for normal anchor links, so it's
+       switched off just for this jump and restored right after. */
+    const html = document.documentElement;
+    const prevScrollBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    target.scrollIntoView({ block: 'center' });
+    html.style.scrollBehavior = prevScrollBehavior;
   }
 });
