@@ -150,12 +150,19 @@
         });
       }
 
-      /* ── DESTINATIONS: clicking a card goes to the full Destinations page ── */
+      /* ── DESTINATIONS: clicking a card goes to the Destinations list
+              (travel.html), landing on and highlighting that specific
+              card there (see the ?highlight= handling in travel.js).
+              Falls back to a plain trip for cards with no single
+              destination, like the Tamil Nadu/Kerala carousel card ── */
       function initDestinationCards() {
         document.querySelectorAll(".dest-card").forEach(function (card) {
           card.addEventListener("click", function (e) {
             if (e.target.closest("a, button")) return;
-            window.location.href = "travel.html";
+            var slug = card.dataset.slug;
+            window.location.href = slug
+              ? "travel.html?highlight=" + encodeURIComponent(slug)
+              : "travel.html";
           });
         });
       }
