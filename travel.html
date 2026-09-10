@@ -111,9 +111,7 @@
   <!-- ===== RETREATS ===== -->
   <section class="retreats" id="retreats">
 
-    <!-- CARDS (5 per page — pagination below builds itself from however
-           many .retreat-card elements are inside this list, so adding more
-           cards later via Strapi needs no changes here) -->
+    <!-- CARDS (all shown at once — no pagination) -->
     <div class="retreats-list" id="retreatsList">
 
       <!-- CARD 1 -->
@@ -533,8 +531,6 @@
       No retreats match your filters. Try adjusting your selection.
     </p>
 
-    <!-- PAGINATION (populated by travel.js, 5 cards per page, rebuilt whenever filters change) -->
-    <nav class="retreats-pagination" id="retreatsPagination" aria-label="Retreats pages"></nav>
   </section>
 
   <!-- ===== PERSONALIZED TRAVEL PACKAGE ===== -->
@@ -545,7 +541,7 @@
         Bring your own group and we'll design a custom journey around
         your dates, pace and interests.
       </p>
-      <a href="personalized-package.html" class="custom-package__link">See how personalized packages work &rarr;</a>
+      <a href="personalized-package.html" class="btn custom-package__link">See how personalized packages work &rarr;</a>
     </div>
   </section>
 
@@ -637,6 +633,5 @@
 
   <script src="js/travel-page-js/travel-page.js"></script>
   <script src="js/nav-dropdown.js"></script>
-</body>
-
+  </body>
 </html>
