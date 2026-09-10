@@ -58,7 +58,7 @@
     .quote-section {
       position: relative;
       min-height: 480px;
-      padding: 80px 0 64px;
+      padding: 130px 0 64px;
       overflow: hidden;
       background: linear-gradient(160deg, rgba(35, 5, 5, 0.85) 0%, #130202 100%);
     }
@@ -854,6 +854,8 @@
   min-height: 260px;
   margin-bottom: 22px;
   overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 /* 4 slides × 4s each = 16s total loop — each slide's own animation
@@ -862,6 +864,9 @@
 .quote-slide {
   position: absolute;
   inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
   transform: translateX(60px);
   animation: quoteCarouselSlide 16s infinite;
