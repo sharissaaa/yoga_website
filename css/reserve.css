@@ -121,6 +121,10 @@
   color: var(--clr-gold);
 }
 
+.reserve-note--error {
+  color: #d97a6c;
+}
+
 @media (max-width: 520px) {
   .reserve-card {
     padding: 2.25rem 1.5rem;

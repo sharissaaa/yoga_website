@@ -262,6 +262,12 @@ details > summary::-webkit-details-marker { display: none; }
   border-color: var(--clr-gold-dim);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }
+/* Arrived at via ?highlight=<slug> from a homepage destination card */
+.retreat-card--highlighted {
+  border-color: var(--clr-gold-light);
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(226, 196, 122, 0.25);
+}
 
 /* Badge */
 .retreat-card__badge {

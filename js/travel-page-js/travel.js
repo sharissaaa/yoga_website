@@ -35,12 +35,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const allCards = Array.from(list.querySelectorAll('.retreat-card'));
   let currentPage = 1;
 
+  /* ── HIGHLIGHT ──
+     Arriving via ?highlight=<slug> (e.g. from a homepage destination
+     card) shows every card unpaginated — so the target card is
+     guaranteed to be visible regardless of which page it'd normally
+     fall on — and brightens its border so it's easy to spot. */
+  const highlightSlug = new URLSearchParams(window.location.search).get('highlight');
+  const highlightIndex = highlightSlug
+    ? allCards.findIndex((card) => card.dataset.slug === highlightSlug)
+    : -1;
+  const showAll = highlightIndex !== -1;
+
   function render() {
     const totalPages = Math.max(1, Math.ceil(allCards.length / CARDS_PER_PAGE));
     if (currentPage > totalPages) currentPage = 1;
 
     allCards.forEach((card, i) => {
-      const onPage = Math.floor(i / CARDS_PER_PAGE) + 1 === currentPage;
+      const onPage = showAll || Math.floor(i / CARDS_PER_PAGE) + 1 === currentPage;
       card.style.display = onPage ? '' : 'none';
       if (onPage) card.classList.add('visible');
     });
@@ -48,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (emptyMessage) emptyMessage.hidden = allCards.length !== 0;
 
     pagination.innerHTML = '';
-    if (totalPages > 1) {
+    if (!showAll && totalPages > 1) {
       for (let page = 1; page <= totalPages; page++) {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -67,4 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   render();
+
+  if (highlightIndex !== -1) {
+    const target = allCards[highlightIndex];
+    target.classList.add('retreat-card--highlighted');
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 });

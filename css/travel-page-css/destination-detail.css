@@ -625,12 +625,16 @@
   margin-bottom: 1.25rem;
 }
 .dest-custom__link {
-  font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--clr-gold);
   text-decoration: none;
+  background: var(--clr-gold);
+  color: var(--clr-bg);
+  border: 1px solid var(--clr-gold);
 }
-.dest-custom__link:hover { color: var(--clr-gold-light); }
+.dest-custom__link:hover {
+  background: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+}
 
 @media (max-width: 820px) {
   .dest-facts {
