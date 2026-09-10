@@ -1,0 +1,3 @@
+# Real Mailtrap credentials — never commit. Copy mail-config.example.php
+# to mail-config.php and fill in your own token there.
+php/mail-config.php

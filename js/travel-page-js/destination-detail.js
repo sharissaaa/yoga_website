@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const RESERVE_URL = 'reserve.html';
+  const RESERVE_URL = 'reserve.html?destination=' + encodeURIComponent(data.title);
 
   const heroReserveLink = document.getElementById('destHeroReserve');
   if (heroReserveLink) heroReserveLink.href = RESERVE_URL;
@@ -181,12 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* "Design Your Own Journey" box: clicking anywhere on it (except the
-     link itself, which already goes there) opens the personalized
-     travel package page. */
+  /* "Ready to Reserve Your Spot?" box: clicking anywhere on it (except
+     the link itself, which already goes there) opens the reserve form. */
   const customBox = document.querySelector('.dest-custom__content');
   if (customBox) {
     const customLink = customBox.querySelector('.dest-custom__link');
+    if (customLink) customLink.href = RESERVE_URL;
     customBox.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
       if (customLink) window.location.href = customLink.href;
