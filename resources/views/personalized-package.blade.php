@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Personalized Travel Packages – Bhumi Mantra')
-
 @push('styles')
   <link rel="stylesheet" href="css/travel-page-css/travel.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
@@ -14,136 +12,133 @@
 
 @section('content')
 
-  <!-- ================= /HEADER ================= -->
-
   <!-- ===== HERO ===== -->
+  @if(!empty($hero['heading']) || !empty($hero['subText']))
   <section class="pp-hero">
-    <img src="assets/gallery/home-image/varnasi.jpg" alt="Evening ceremony on the ghats of the Ganges"
-      class="pp-hero__bg" aria-hidden="true" />
+    @if(!empty($hero['backgroundImage']))
+    <img src="{{ $hero['backgroundImage'] }}" alt="" class="pp-hero__bg" aria-hidden="true" />
+    @endif
     <div class="pp-hero__overlay" aria-hidden="true"></div>
     <div class="pp-hero__content">
+      @if(!empty($hero['heading']) || !empty($hero['headingHighlight']))
       <h1 class="pp-hero__heading">
-        Personalized <em>Travel Packages</em>
+        {{ $hero['heading'] ?? '' }}
+        @if(!empty($hero['headingHighlight']))
+        <em>{{ $hero['headingHighlight'] }}</em>
+        @endif
       </h1>
-      <a href="mailto:travel@innerjourney.com?subject=Personalized Travel Package Enquiry" class="pp-hero__sub">
-        Bring your own group friends, colleagues, or a community you
-        already practice with and we'll design a journey built entirely
-        around your dates, pace and interests.
-      </a>
+      @endif
+      @if(!empty($hero['subText']))
+        @if(!empty($hero['subLinkUrl']))
+        <a href="{{ $hero['subLinkUrl'] }}" class="pp-hero__sub">{{ $hero['subText'] }}</a>
+        @else
+        <p class="pp-hero__sub">{{ $hero['subText'] }}</p>
+        @endif
+      @endif
     </div>
   </section>
+  @endif
 
   <!-- ===== HOW IT WORKS ===== -->
+  @if(!empty($steps['items']))
   <section class="pp-steps">
-    <p class="eyebrow eyebrow--center">· How It Works ·</p>
+    @if(!empty($steps['eyebrow']))
+    <p class="eyebrow eyebrow--center">{{ $steps['eyebrow'] }}</p>
+    @endif
     <div class="pp-steps__grid">
+      @foreach($steps['items'] as $step)
       <div class="pp-steps__item">
-        <span class="pp-steps__num">01</span>
-        <h3>Tell Us About Your Group</h3>
-        <p>Group size, rough dates, and the kind of experience you're after relaxed, active, devotional, or a mix.</p>
+        @if(!empty($step['number']))
+        <span class="pp-steps__num">{{ $step['number'] }}</span>
+        @endif
+        @if(!empty($step['heading']))
+        <h3>{{ $step['heading'] }}</h3>
+        @endif
+        @if(!empty($step['text']))
+        <p>{{ $step['text'] }}</p>
+        @endif
       </div>
-      <div class="pp-steps__item">
-        <span class="pp-steps__num">02</span>
-        <h3>We Design Your Itinerary</h3>
-        <p>Our guides shape a route, pace and set of practices around what you've told us, drawing on the destinations
-          we already know well.</p>
-      </div>
-      <div class="pp-steps__item">
-        <span class="pp-steps__num">03</span>
-        <h3>You Travel, We Hold The Space</h3>
-        <p>The same teachers who lead our group retreats accompany your journey from arrival to departure.</p>
-      </div>
+      @endforeach
     </div>
   </section>
+  @endif
 
   <!-- ===== IMMERSIVE BREAK ===== -->
+  @if(!empty($breakSection['quote']))
   <section class="pp-break">
-    <img src="assets/gallery/home-image/medation2.png.jpg" alt="Buddha statue in a quiet forest setting"
-      class="pp-break__bg" aria-hidden="true" />
+    @if(!empty($breakSection['backgroundImage']))
+    <img src="{{ $breakSection['backgroundImage'] }}" alt="" class="pp-break__bg" aria-hidden="true" />
+    @endif
     <div class="pp-break__overlay" aria-hidden="true"></div>
-    <p class="pp-break__quote">
-      <em>Every group is different your itinerary should be too.</em>
-    </p>
+    <p class="pp-break__quote"><em>{{ $breakSection['quote'] }}</em></p>
   </section>
+  @endif
 
   <!-- ===== PACKAGE IDEAS ===== -->
+  @if(!empty($ideas['heading']) || !empty($ideas['items']))
   <section class="pp-ideas">
-    <p class="eyebrow eyebrow--center">· A Few Starting Points ·</p>
-    <h2 class="pp-ideas__heading">Ways Groups Travel With Us</h2>
-    <p class="pp-ideas__sub">
-      These are starting points, not fixed packages every one of them is
-      reshaped around your group before we call it an itinerary.
-    </p>
+    @if(!empty($ideas['eyebrow']))
+    <p class="eyebrow eyebrow--center">{{ $ideas['eyebrow'] }}</p>
+    @endif
+    @if(!empty($ideas['heading']))
+    <h2 class="pp-ideas__heading">{{ $ideas['heading'] }}</h2>
+    @endif
+    @if(!empty($ideas['subText']))
+    <p class="pp-ideas__sub">{{ $ideas['subText'] }}</p>
+    @endif
 
     <div class="pp-ideas__grid">
+      @foreach($ideas['items'] as $idea)
       <article class="pp-idea">
+        @if(!empty($idea['image']))
         <div class="pp-idea__media">
-          <img src="assets/gallery/home-image/livepose.jpg"
-            alt="Yoga teacher assisting a student at a studio in Rishikesh" />
+          <img src="{{ $idea['image'] }}" alt="{{ $idea['heading'] }}" />
         </div>
-        <h3>Private Group Retreats</h3>
-        <p>A retreat built just for your circle of friends, family or colleagues same practice, same care, entirely your
-          own dates.</p>
+        @endif
+        @if(!empty($idea['heading']))
+        <h3>{{ $idea['heading'] }}</h3>
+        @endif
+        @if(!empty($idea['text']))
+        <p>{{ $idea['text'] }}</p>
+        @endif
       </article>
+      @endforeach
 
-      <article class="pp-idea">
-        <div class="pp-idea__media">
-          <img src="assets/gallery/home-image/yogavidyamandiram.jpg"
-            alt="Group meditation by the river with the Himalayan foothills behind" />
-        </div>
-        <h3>Yoga Teacher Training Immersions</h3>
-        <p>Extended, practice heavy itineraries for teacher trainees who need depth, repetition and time with
-          experienced guides.</p>
-      </article>
-
-      <article class="pp-idea">
-        <div class="pp-idea__media">
-          <img src="assets/gallery/home-image/varnasi.jpg"
-            alt="Candlelit temple pathway lined with statues and flowers" />
-        </div>
-        <h3>Cultural &amp; Pilgrimage Journeys</h3>
-        <p>Slower, devotional itineraries built around temples, ritual and ceremony rather than sightseeing stops.</p>
-      </article>
-
-
+      @if(!empty($ideas['noteHeading']) || !empty($ideas['noteText']))
       <div class="pp-idea pp-idea--note">
         <div class="pp-idea--note__inner">
-          <h3>Don't See Your Style Here?</h3>
-          <p>
-            These six are just where most conversations start. If what
-            you have in mind doesn't fit neatly into any of them,
-            <a href="custom-itinerary.html" class="pp-idea--note__link">tell us anyway</a>
-            &mdash; that's exactly what "personalized" is for.
-          </p>
+          @if(!empty($ideas['noteHeading']))
+          <h3>{{ $ideas['noteHeading'] }}</h3>
+          @endif
+          @if(!empty($ideas['noteText']))
+          <p>{!! $ideas['noteText'] !!}</p>
+          @endif
         </div>
       </div>
+      @endif
     </div>
   </section>
+  @endif
 
   <!-- ===== FINAL CTA ===== -->
+  @if(!empty($cta['heading']))
   <section class="pp-cta">
     <div class="pp-cta__content">
-      <p class="eyebrow eyebrow--center">· Ready When You Are ·</p>
-      <h2 class="pp-cta__heading">Let's Build Your Itinerary</h2>
-      <p class="pp-cta__text">
-        Write to us with your group size and rough dates, and we'll get
-        back to you with a starting shape for the journey.
-      </p>
-      <a href="custom-itinerary.html" class="pp-cta__link">Write to us &rarr;</a>
+      @if(!empty($cta['eyebrow']))
+      <p class="eyebrow eyebrow--center">{{ $cta['eyebrow'] }}</p>
+      @endif
+      <h2 class="pp-cta__heading">{{ $cta['heading'] }}</h2>
+      @if(!empty($cta['text']))
+      <p class="pp-cta__text">{{ $cta['text'] }}</p>
+      @endif
+      @if(!empty($cta['linkText']))
+      <a href="{{ $cta['linkUrl'] ?: '#' }}" class="pp-cta__link">{{ $cta['linkText'] }} &rarr;</a>
+      @endif
     </div>
   </section>
+  @endif
 
-  <!-- ===== TAGLINE BANNER ===== -->
-  <section class="tagline-banner">
-    <img src="assets/gallery/home-image/contact.png" alt="" class="tagline-banner__bg" aria-hidden="true" />
-    <div class="tagline-banner__overlay" aria-hidden="true"></div>
-    <div class="tagline-banner__content">
-      <img src="assets/gallery/home-image/logo.png" alt="" class="tagline-banner__mandala" aria-hidden="true">
-      <p class="tagline-banner__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
-      <p class="tagline-banner__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
-      <p class="tagline-banner__text"><em>Then pure awareness is established in itself.</em></p>
-    </div>
-  </section>
+  @include('partials.tagline-banner')
 @endsection
 
 @push('scripts')

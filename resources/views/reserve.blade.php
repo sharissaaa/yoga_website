@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Reserve Your Spot – Bhumi Mantra')
-
 @push('styles')
   <link rel="stylesheet" href="css/travel-page-css/travel.css" />
   <link rel="stylesheet" href="css/header-footer.css" />
@@ -17,12 +15,15 @@
   <!-- ===== RESERVE FORM ===== -->
   <section class="reserve-section">
     <div class="reserve-card">
-      <p class="eyebrow eyebrow--center">· Book Your Journey ·</p>
-      <h1 class="reserve-heading">Reserve Your Spot</h1>
-      <p class="reserve-sub">
-        Fill in your details below and we'll be in touch to confirm your
-        reservation.
-      </p>
+      @if(!empty($eyebrow))
+      <p class="eyebrow eyebrow--center">{{ $eyebrow }}</p>
+      @endif
+      @if(!empty($heading))
+      <h1 class="reserve-heading">{{ $heading }}</h1>
+      @endif
+      @if(!empty($subText))
+      <p class="reserve-sub">{{ $subText }}</p>
+      @endif
 
       <form id="reserveForm" class="reserve-form" method="POST" action="{{ route('reservations.store') }}" novalidate>
         @csrf
@@ -71,8 +72,9 @@
         <button type="submit" class="reserve-submit">Send Reservation Request &rarr;</button>
 
         <p class="reserve-note" id="reserveNote" hidden>
-          Your email app should now be open with your request ready to send.
-          If nothing opened, please email us directly at
+          @if(!empty($successNote))
+          {{ $successNote }}
+          @endif
           <a href="mailto:travel@innerjourney.com">travel@innerjourney.com</a>.
         </p>
       </form>

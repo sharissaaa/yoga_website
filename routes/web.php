@@ -3,7 +3,9 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Destinations\DestinationController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PersonalizedPackageController;
 use App\Http\Controllers\Reservations\ReservationController;
+use App\Http\Controllers\Reservations\ReserveController;
 use App\Http\Controllers\StrapiWebhookController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +26,7 @@ Route::get('index.html', [HomeController::class, 'index']);
 Route::get('about.html', [AboutController::class, 'index'])->name('about');
 Route::view('contact.html', 'contact')->name('contact');
 Route::view('course.html', 'course')->name('course');
-Route::view('personalized-package.html', 'personalized-package')->name('personalized-package');
+Route::get('personalized-package.html', [PersonalizedPackageController::class, 'index'])->name('personalized-package');
 Route::view('custom-itinerary.html', 'custom-itinerary')->name('custom-itinerary');
 
 // ─── Destinations ────────────────────────────────────────────────────────────
@@ -32,7 +34,7 @@ Route::get('travel.html', [DestinationController::class, 'index'])->name('travel
 Route::get('destination-detail.html', [DestinationController::class, 'show'])->name('destination-detail');
 
 // ─── Reservations ────────────────────────────────────────────────────────────
-Route::view('reserve.html', 'reserve')->name('reserve');
+Route::get('reserve.html', [ReserveController::class, 'index'])->name('reserve');
 Route::post('reserve.html', [ReservationController::class, 'store'])->name('reservations.store');
 
 // ─── Strapi webhook ──────────────────────────────────────────────────────────
