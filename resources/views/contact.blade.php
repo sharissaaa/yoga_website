@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us | Bhumi Mantra')
-
 @push('styles')
-  <meta name="description"
-    content="Get in touch with Bhumi Mantra. Reach out about journeys, retreats, or private sessions — we typically respond within 24 hours.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,35 +13,36 @@
 
 @section('content')
 
-  <!-- ================= /HEADER ================= -->
-
   <main id="main">
 
     <!-- ================= HERO ================= -->
+    @if(!empty($hero['heading']))
     <section class="hero">
       <div class="hero-grid">
 
         <div class="hero-text">
-          <p class="eyebrow">
-            Connect With Us
-            <!-- PLACEHOLDER: small lotus icon -->
+          @if(!empty($hero['eyebrow']))
+          <p class="eyebrow">{{ $hero['eyebrow'] }}</p>
+          @endif
 
-          </p>
+          <h1>{{ $hero['heading'] }}
+            @if(!empty($hero['headingAccent']))
+            <span class="accent">{{ $hero['headingAccent'] }}</span>
+            @endif
+          </h1>
 
-          <h1>We&rsquo;d Love To<br>Hear From <span class="accent">You</span></h1>
-
-          <div class="divider-dots" aria-hidden="true">
-          </div>
-
+          <div class="divider-dots" aria-hidden="true"></div>
         </div>
 
+        @if(!empty($hero['image']))
         <div class="hero-image-full">
-          <!-- PLACEHOLDER: replace with your temple/garden entrance image -->
-          <img src="assets/gallery/home-image/contact.png" alt="Open temple doors leading to a sunlit garden path">
+          <img src="{{ $hero['image'] }}" alt="">
         </div>
+        @endif
 
       </div>
     </section>
+    @endif
 
     <!-- ================= CONTACT PANELS ================= -->
     <section class="contact-panels">
@@ -54,11 +51,13 @@
         <div class="panel-frame">
 
           <!-- LEFT: GET IN TOUCH -->
+          @if(!empty($getInTouch['heading']))
           <div class="panel panel-maroon">
-            <h2>Get In Touch</h2>
+            <h2>{{ $getInTouch['heading'] }}</h2>
             <div class="divider divider-center"></div>
 
             <ul class="contact-list">
+              @if(!empty($getInTouch['teamName']))
               <li>
                 <span class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -67,12 +66,15 @@
                   </svg>
                 </span>
                 <div class="contact-text">
-                  <strong>Bhumi Mantra Team</strong>
-                  <span>Guides &amp; Facilitators</span>
+                  <strong>{{ $getInTouch['teamName'] }}</strong>
+                  @if(!empty($getInTouch['teamRole']))
+                  <span>{{ $getInTouch['teamRole'] }}</span>
+                  @endif
                 </div>
               </li>
+              @endif
 
-
+              @if(!empty($getInTouch['email']))
               <li>
                 <span class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -82,10 +84,12 @@
                 </span>
                 <div class="contact-text">
                   <strong>Email</strong>
-                  <span><a href="mailto:hello@bhumimantra.com">hello@bhumimantra.com</a></span>
+                  <span><a href="mailto:{{ $getInTouch['email'] }}">{{ $getInTouch['email'] }}</a></span>
                 </div>
               </li>
+              @endif
 
+              @if(!empty($getInTouch['locationLabel']))
               <li>
                 <span class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -95,24 +99,27 @@
                 </span>
                 <div class="contact-text">
                   <strong>Location</strong>
-                  <span>Italy</span>
-                  <span class="muted">Available for Online &amp; In-Person Sessions</span>
+                  <span>{{ $getInTouch['locationLabel'] }}</span>
+                  @if(!empty($getInTouch['locationNote']))
+                  <span class="muted">{{ $getInTouch['locationNote'] }}</span>
+                  @endif
                 </div>
               </li>
+              @endif
 
+              @if(!empty($getInTouch['yearRoundHeading']))
               <li class="no-border">
-                
                 <div class="contact-text">
-                  <strong>Year-Round Courses</strong>
-                  <span>Our courses run throughout the year. Get in touch with us to find the next available program
-                    that best suits your schedule.</span>
+                  <strong>{{ $getInTouch['yearRoundHeading'] }}</strong>
+                  @if(!empty($getInTouch['yearRoundText']))
+                  <span>{{ $getInTouch['yearRoundText'] }}</span>
+                  @endif
                 </div>
               </li>
+              @endif
             </ul>
-
-            <!-- PLACEHOLDER: corner mandala decoration -->
-
           </div>
+          @endif
 
           <!-- RIGHT: SEND US A MESSAGE -->
           <div class="panel panel-green" id="send-message">
@@ -141,9 +148,6 @@
                 Send Message <span class="arrow">→</span>
               </button>
             </form>
-
-            <!-- PLACEHOLDER: corner mandala decoration -->
-
           </div>
 
         </div>
@@ -151,18 +155,25 @@
     </section>
 
     <!-- ================= QUOTE BANNER ================= -->
+    @if(!empty($tagline['sanskrit']) || !empty($tagline['translation']))
     <section class="quote-banner">
-      <!-- PLACEHOLDER: replace with temple silhouette background image -->
       <img src="assets/gallery/home-image/contact.png" alt="" class="quote-bg" aria-hidden="true">
       <div class="quote-overlay" aria-hidden="true"></div>
 
       <div class="container quote-content">
         <img src="assets/gallery/home-image/logo.png" alt="" class="quote-mandala" aria-hidden="true">
-        <p class="quote-sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
-        <p class="quote-translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
-        <p class="quote-text">Then pure awareness is established in itself.</p>
+        @if(!empty($tagline['sanskrit']))
+        <p class="quote-sanskrit">{{ $tagline['sanskrit'] }}</p>
+        @endif
+        @if(!empty($tagline['transliteration']))
+        <p class="quote-translit">{{ $tagline['transliteration'] }}</p>
+        @endif
+        @if(!empty($tagline['translation']))
+        <p class="quote-text">{{ $tagline['translation'] }}</p>
+        @endif
       </div>
     </section>
+    @endif
 
   </main>
 @endsection

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Destinations\DestinationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PersonalizedPackageController;
@@ -24,8 +26,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('index.html', [HomeController::class, 'index']);
 Route::get('about.html', [AboutController::class, 'index'])->name('about');
-Route::view('contact.html', 'contact')->name('contact');
-Route::view('course.html', 'course')->name('course');
+Route::get('contact.html', [ContactController::class, 'index'])->name('contact');
+Route::get('course.html', [CourseController::class, 'index'])->name('course');
 Route::get('personalized-package.html', [PersonalizedPackageController::class, 'index'])->name('personalized-package');
 Route::view('custom-itinerary.html', 'custom-itinerary')->name('custom-itinerary');
 
