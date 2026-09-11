@@ -41,4 +41,17 @@ return [
         'reservation_to' => env('RESERVATION_TO_EMAIL'),
     ],
 
+    'strapi' => [
+        'url' => env('STRAPI_URL', 'http://localhost:1337'),
+        // Used to build the <img src> URLs sent to the browser. Normally the
+        // same as 'url', but if php ever talks to Strapi over an internal
+        // network address, that hostname means nothing to an actual browser
+        // - this stays on the host-reachable address.
+        'public_url' => env('STRAPI_PUBLIC_URL', env('STRAPI_URL', 'http://localhost:1337')),
+        'token' => env('STRAPI_API_TOKEN'),
+        'timeout' => env('STRAPI_TIMEOUT', 5),
+        'cache_ttl' => env('STRAPI_CACHE_TTL', 300),
+        'webhook_secret' => env('STRAPI_WEBHOOK_SECRET'),
+    ],
+
 ];
