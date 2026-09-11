@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'Bhumi Mantra — Yoga · Travel · Mindfulness')
-@section('meta-description', 'Curated yoga journeys across India\'s sacred landscapes. Reconnect. Rebalance. Return renewed.')
-
 @push('styles')
     <link
       rel="stylesheet"
@@ -42,30 +39,36 @@
     <!-- SECTION: HERO                          -->
     <!-- ══════════════════════════════════════ -->
     <section class="hero-section">
-      <div class="hero-bg"></div>
+      <div class="hero-bg" @if(!empty($hero['backgroundImage'])) style="background-image: url('{{ $hero['backgroundImage'] }}')" @endif></div>
 
       <div class="container hero-content">
         <div class="row">
           <div class="col-lg-6 col-md-9">
+            @if(!empty($hero['headingLine1']) || !empty($hero['headingHighlight']))
             <h1 class="hero-h1">
-              Explore
-              <span class="hero-h1-gold">Transform. Transcend.</span>
+              {{ $hero['headingLine1'] ?? '' }}
+              @if(!empty($hero['headingHighlight']))
+              <span class="hero-h1-gold">{{ $hero['headingHighlight'] }}</span>
+              @endif
             </h1>
 
             <div class="hero-rule"></div>
+            @endif
 
-            <p class="hero-desc">
-              Yoga courses and mindful experiences across<br />
-              India's sacred landscapes. Reconnect. Rebalance.<br />
-              Return renewed.
-            </p>
+            @if(!empty($hero['description']))
+            <p class="hero-desc">{{ $hero['description'] }}</p>
+            @endif
 
+            @if(!empty($hero['primaryButtonText']) || !empty($hero['secondaryButtonText']))
             <div class="hero-btns">
-              <a href="course.html" class="btn-primary-sy">Courses &nbsp;→</a>
-              <a href="travel.html" class="btn-outline-sy"
-                >Our Destinations &nbsp;→</a
-              >
+              @if(!empty($hero['primaryButtonText']))
+              <a href="{{ $hero['primaryButtonLink'] ?: '#' }}" class="btn-primary-sy">{{ $hero['primaryButtonText'] }} &nbsp;→</a>
+              @endif
+              @if(!empty($hero['secondaryButtonText']))
+              <a href="{{ $hero['secondaryButtonLink'] ?: '#' }}" class="btn-outline-sy">{{ $hero['secondaryButtonText'] }} &nbsp;→</a>
+              @endif
             </div>
+            @endif
           </div>
         </div>
       </div>

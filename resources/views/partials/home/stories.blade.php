@@ -3,50 +3,46 @@
   <div class="hero-stories-wrapper">
 
     <!-- ─────────── HERO QUOTE ─────────── -->
+    @if(!empty($stories['quotes']))
     <section class="quote-section">
       <div class="ember ember-1"></div>
       <div class="ember ember-2"></div>
       <div class="ember ember-3"></div>
 
-      <!-- Main quote — auto-cycling carousel, 4 quotes, sideways slide -->
+      <!-- Main quote — auto-cycling carousel, sideways slide -->
       <div class="wrapper quote-inner">
-        
 
         <div class="quote-carousel">
+          @foreach($stories['quotes'] as $quote)
           <div class="quote-slide">
-            <p class="quote-sanskrit">योगश्चित्तवृत्तिनिरोधः</p>
-            <p class="quote-translit">Yogaś citta-vṛtti-nirodhaḥ</p>
-            <p class="quote-text">Yoga is the stilling of the fluctuations of the mind.</p>
+            @if(!empty($quote['sanskrit']))
+            <p class="quote-sanskrit">{{ $quote['sanskrit'] }}</p>
+            @endif
+            @if(!empty($quote['transliteration']))
+            <p class="quote-translit">{{ $quote['transliteration'] }}</p>
+            @endif
+            @if(!empty($quote['translation']))
+            <p class="quote-text">{{ $quote['translation'] }}</p>
+            @endif
           </div>
-          <div class="quote-slide">
-            <p class="quote-sanskrit">उद्धरेदात्मनात्मानं नात्मानमवसादयेत्</p>
-            <p class="quote-translit">Uddhared ātmanātmānaṁ nātmānam avasādayet</p>
-            <p class="quote-text">Let a person lift themselves by their own self; let them not lower themselves.</p>
-          </div>
-          <div class="quote-slide">
-            <p class="quote-sanskrit">यथा दीपो निवातस्थो नेङ्गते सोपमा स्मृता</p>
-            <p class="quote-translit">Yathā dīpo nivāta-stho neṅgate sopamā smṛtā</p>
-            <p class="quote-text">As a lamp sheltered from the wind does not flicker, so is the steady mind of the yogi.</p>
-          </div>
-          <div class="quote-slide">
-            <p class="quote-sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
-            <p class="quote-translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
-            <p class="quote-text">Then pure awareness is established in itself.</p>
-          </div>
+          @endforeach
         </div>
       </div>
-
-      
     </section>
+    @endif
 
     <div class="rule"></div>
 
+    @if(!empty($stories['eyebrow']) || !empty($stories['items']))
     <section class="stories-section">
       <div class="container">
         <div class="stories-top">
           <div>
-            <span class="eyebrow">Voices from the Journey</span>
+            @if(!empty($stories['eyebrow']))
+            <span class="eyebrow">{{ $stories['eyebrow'] }}</span>
+            @endif
           </div>
+          @if(!empty($stories['items']))
           <div class="story-nav">
             <button class="story-arrow" aria-label="Previous story">
               <i class="fas fa-arrow-left"></i>
@@ -55,49 +51,50 @@
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
+          @endif
         </div>
+        @if(!empty($stories['items']))
         <div class="story-grid">
+          @foreach($stories['items'] as $story)
           <div class="story-card-col">
-            <div class="story-card">
+            <div class="story-card @if(!empty($story['isPlaceholder'])) story-card--placeholder @endif">
               <span class="card-quote-glyph">&rdquo;</span>
-              <p class="story-name">Maria</p>
-              <p class="story-meta">Mistic India Journey</p>
-              <p class="story-quote">Mistic India has been an extraordinary experience that I will cherish as one of the most profound in my life. We were a very well assorted group of people coming from different countries, different backgrounds and at different stages in our lives. But the strong experiences and the amazing teachers led us to a beautiful inner growth path that also forged a special human bond between all the members of our group. Many many thanks to Alice and Jeo for organizing such a wonderful life discovery adventure.</p>
+              @if(!empty($story['name']))
+              <p class="story-name">{{ $story['name'] }}</p>
+              @endif
+              @if(!empty($story['meta']))
+              <p class="story-meta">{{ $story['meta'] }}</p>
+              @endif
+              @if(!empty($story['isPlaceholder']))
+              <p class="story-placeholder-text">{{ $story['quote'] }}</p>
+              @else
+              @if(!empty($story['quote']))
+              <p class="story-quote">{{ $story['quote'] }}</p>
+              @endif
               <button type="button" class="story-read">Read more</button>
+              @endif
             </div>
           </div>
-          <div class="story-card-col">
-            <div class="story-card">
-              <span class="card-quote-glyph">&rdquo;</span>
-              <p class="story-name">Fanny</p>
-              <p class="story-meta">Yoga Teacher, India</p>
-              <p class="story-quote">About 6 months ago, I traveled half way around the globe to go to India. As a baby yoga teacher, I felt the need to go to India to deepen my understanding of yoga. It's difficult to describe with words what was mostly feelings — colors everywhere, sounds of mantras and honks, the perfect touch of the massages, the smell of incense and food. During this travel, Ali and Jeo taught me to let go, to trust and to simply enjoy. I'm profoundly grateful for that. I met wonderful beings, teachers I could have listened to for days, and fellow travelers I can't wait to see again. I hope I'll go back to India again, and it will surely be with them.</p>
-              <button type="button" class="story-read">Read more</button>
-            </div>
-          </div>
-          <div class="story-card-col">
-            <div class="story-card story-card--placeholder">
-              <span class="card-quote-glyph">&rdquo;</span>
-              <p class="story-name">Jinki</p>
-              <p class="story-meta">Sacred Journey, India</p>
-              <p class="story-placeholder-text">Her story is coming soon.</p>
-            </div>
-          </div>
+          @endforeach
         </div>
+        @endif
       </div>
     </section>
+    @endif
 
     <img src="assets/gallery/home-image/budha.png" alt="Buddha statue" class="buddha-image" />
   </div>
 
   <!-- ─────────── NEWSLETTER ─────────── -->
+  @if(!empty($newsletter['heading']))
   <section class="newsletter-section">
     <div class="nl-inner">
-      <h2 class="nl-title">Join our Community</h2>
+      <h2 class="nl-title">{{ $newsletter['heading'] }}</h2>
       <div class="nl-form">
         <input class="nl-input" type="email" placeholder="Your email address" aria-label="Email address" />
         <button class="nl-btn">Subscribe</button>
       </div>
     </div>
   </section>
+  @endif
 </div>
