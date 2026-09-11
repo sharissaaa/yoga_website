@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('title', 'About Us – Bhumi Mantra')
-
 @push('styles')
     <link rel="stylesheet" href="css/about.css" />
     <!-- Shared across every page: same nav + footer design, color set per page below -->
@@ -13,159 +11,123 @@
 
 @section('content')
 
-    <!-- ================= /HEADER ================= -->
-
     <!-- ===== HERO ===== -->
+    @if(!empty($hero['headline']) || !empty($hero['paragraphs']))
     <section class="hero about-hero">
         <div class="hero__left ah-left">
-            
 
+            @if(!empty($hero['headline']) || !empty($hero['headlineHighlight']))
             <h1 class="ah-headline">
-                Rooted in Ancient Wisdom.<br />
-                <em class="ah-headline--gold">Guided by Love.</em>
+                {{ $hero['headline'] ?? '' }}<br />
+                @if(!empty($hero['headlineHighlight']))
+                <em class="ah-headline--gold">{{ $hero['headlineHighlight'] }}</em>
+                @endif
             </h1>
+            @endif
 
+            @if(!empty($hero['paragraphs']))
             <div class="ah-body">
-                <p>Bhoomi Mantra is a sanctuary for soul seekers, a space where ancient yogic traditions meet modern
-                    understanding.</p>
-                <p>We support you on your journey of healing, self-discovery and transformation.</p>
-                <p>Through mindful teachings, immersive retreats and sacred practices, we help you reconnect with
-                    your true essence and live a life of purpose, balance and harmony.</p>
-                <p>Through Bhoomi Mantra, we aim to create opportunities for sincere seekers to experience the depth
-                    of yoga, meditation, tantra, and the wisdom traditions of India through authentic practices,
-                    guided courses, pilgrimages, expeditions, and immersive meditation retreats.</p>
+                @foreach($hero['paragraphs'] as $paragraph)
+                <p>{{ $paragraph }}</p>
+                @endforeach
             </div>
+            @endif
         </div>
+        @if(!empty($hero['image']))
         <div class="hero__right">
-            <img src="assets/gallery/home-image/about.jpg" alt="" class="hero__img" />
+            <img src="{{ $hero['image'] }}" alt="" class="hero__img" />
             <div class="hero__img-gradient" aria-hidden="true"></div>
         </div>
+        @endif
     </section>
+    @endif
 
     <!-- ===== MEET THE TEAM ===== -->
+    @if(!empty($team['heading']) || !empty($team['members']))
     <section class="team" id="meet-the-team">
-        <p class="eyebrow eyebrow--center">· Meet The Team ·</p>
-        <h2 class="team__heading">The Teachers Guiding Your Practice</h2>
+        @if(!empty($team['eyebrow']))
+        <p class="eyebrow eyebrow--center">{{ $team['eyebrow'] }}</p>
+        @endif
+        @if(!empty($team['heading']))
+        <h2 class="team__heading">{{ $team['heading'] }}</h2>
+        @endif
 
+        @if(!empty($team['members']))
         <div class="team__grid">
-
+            @foreach($team['members'] as $member)
             <article class="team-card">
+                @if(!empty($member['image']))
                 <div class="team-card__media">
-                    <img src="assets/gallery/home-image/pexels-balljinder-singh-666149-18364977.jpg"
-                        alt="Jeo Varghese guiding a meditation session at a mountain retreat"
-                        style="object-position: 78% 62%;">
+                    <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}">
                 </div>
-                <h4 class="team-card__title">Jeo Varghese</h4>
-                <p class="team-card__meta">Yoga Teacher &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Guide</p>
-                <p class="team-card__desc">
-                    Jeo has spent over a decade studying traditional Hatha and Ashtanga lineages across South
-                    India, blending rigorous technique with a deeply personal, meditative teaching style. He
-                    leads our retreat programs in Kerala and continues to research classical yogic texts.
-                </p>
+                @endif
+                @if(!empty($member['name']))
+                <h4 class="team-card__title">{{ $member['name'] }}</h4>
+                @endif
+                @if(!empty($member['meta']))
+                <p class="team-card__meta">{{ $member['meta'] }}</p>
+                @endif
+                @if(!empty($member['description']))
+                <p class="team-card__desc">{{ $member['description'] }}</p>
                 <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
+                @endif
             </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/pexels-yogavidyamandiram-31743034.jpg"
-                        alt="Alice Avaldi guiding students through a standing pose" style="object-position: 58% 32%;">
-                </div>
-                <h4 class="team-card__title">Alice Avaldi</h4>
-                <p class="team-card__meta">Yoga Educator &nbsp;|&nbsp; Holistic Guide</p>
-                <p class="team-card__desc">
-                    Alice bridges Western wellness training with time-honoured yogic philosophy, creating a
-                    warm, holistic space for every student's practice. She is especially devoted to supporting
-                    beginners through their first retreat experience.
-                </p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
-            <article class="team-card">
-                <div class="team-card__media">
-                    <img src="assets/gallery/home-image/pexels-kundalini-yoga-ashram-324305954-14533456.jpg"
-                        alt="Nidish Nidhiri leading a seated meditation practice" style="object-position: 32% 48%;">
-                </div>
-                <h4 class="team-card__title">Nidish Nidhiri</h4>
-                <p class="team-card__meta">Meditation Teacher &nbsp;|&nbsp; Facilitator</p>
-                <p class="team-card__desc">
-                    Nidish guides students into stillness through breath-centred meditation and sound practice,
-                    drawing on years spent training in ashram settings across India. His sessions are known for
-                    their gentle pace and quiet depth.
-                </p>
-                <button type="button" class="team-card__toggle" aria-expanded="false">Read more</button>
-            </article>
-
+            @endforeach
         </div>
+        @endif
     </section>
+    @endif
 
     <!-- ===== STORY ===== -->
+    @if(!empty($story['heading']) || !empty($story['paragraphs']))
+    @php
+        $mainParagraphs = collect($story['paragraphs'] ?? [])->where('isExtra', false);
+        $extraParagraphs = collect($story['paragraphs'] ?? [])->where('isExtra', true);
+    @endphp
     <section class="story">
         <div class="story__left">
-            <p class="eyebrow"><h2 class="story__heading">
-                A journey of <em>devotion</em>and <em>discovery</em>
-            </h2>
-            
-            <p class="story__text">
-                Bhoomi Mantra Yoga &amp; Meditation Research Center was founded by Alice and Jeo with the vision of
-                preserving and sharing authentic yogic traditions that support profound self-transformation, inner
-                awareness, and holistic well-being.
-            </p>
-            <p class="story__text">
-                Bhumi Mantra was born from a deep love for India and a longing to share its sacred traditions with the
-                world.
-            </p>
-            <p class="story__text">
-                After years of study, practice and exploration, we created a space where ancient wisdom is lived, shared
-                and experienced in a meaningful way.
-            </p>
-            <p class="story__text">
-                The project is now beginning to establish its own foundation in India, with the long-term vision of
-                creating a dedicated center in the forests of Vagamon, Kerala. This space will become a place for
-                community living, spiritual practice, education, and research&mdash;where people can learn, grow, and
-                reconnect with the deeper dimensions of life in harmony with nature.
-            </p>
-            <p class="story__text">
-                The offerings, course fees, and donations received through Bhoomi Mantra are dedicated to the
-                development and sustainability of this vision, as well as supporting meaningful social initiatives. A
-                part of our mission is to help provide educational opportunities for children who face financial
-                barriers, supporting their learning, growth, and future possibilities.
-            </p>
-            <p class="story__text">
-                Today, we are a team of yoga teachers, healers and travel curators dedicated to holding space for your
-                transformation.
-            </p>
+            @if(!empty($story['heading']))
+            <h2 class="story__heading">{!! $story['heading'] !!}</h2>
+            @endif
 
+            @foreach($mainParagraphs as $paragraph)
+            <p class="story__text">{{ $paragraph['text'] }}</p>
+            @endforeach
+
+            @if($extraParagraphs->isNotEmpty())
             <div class="story__more" id="storyMore">
-                <p class="story__text">
-                    Bhoomi Mantra is a bridge between ancient wisdom and modern life&mdash;a place where
-                    yoga becomes not only a personal practice, but a path of transformation, compassion,
-                    and service.
-                </p>
-                <p class="story__text">
-                    Our vision is to cultivate a conscious community where self-realization, knowledge,
-                    nature, and humanitarian values come together.
-                </p>
+                @foreach($extraParagraphs as $paragraph)
+                <p class="story__text">{{ $paragraph['text'] }}</p>
+                @endforeach
             </div>
             <button type="button" class="btn btn--outline story__toggle" id="storyToggle" aria-expanded="false" aria-controls="storyMore">Read more</button>
+            @endif
         </div>
+        @if(!empty($story['image']))
         <div class="story__right">
-            <img src="assets/gallery/home-image/varnasi.jpg" alt="" class="story__img" />
+            <img src="{{ $story['image'] }}" alt="" class="story__img" />
             <div class="story__img-gradient" aria-hidden="true"></div>
         </div>
+        @endif
     </section>
-
+    @endif
 
     <!-- ===== QUOTE ===== -->
+    @if(!empty($quote['sanskrit']) || !empty($quote['translation']))
     <section class="quote">
         <img src="assets/gallery/home-image/logo.png" alt="" class="quote__mandala" aria-hidden="true">
-        <p class="quote__sanskrit">तदा द्रष्टुः स्वरूपेऽवस्थानम्</p>
-        <p class="quote__translit">Tadā draṣṭuḥ svarūpe 'vasthānam</p>
-        <p class="quote__text"><em>Then pure awareness is established in itself.</em></p>
+        @if(!empty($quote['sanskrit']))
+        <p class="quote__sanskrit">{{ $quote['sanskrit'] }}</p>
+        @endif
+        @if(!empty($quote['transliteration']))
+        <p class="quote__translit">{{ $quote['transliteration'] }}</p>
+        @endif
+        @if(!empty($quote['translation']))
+        <p class="quote__text"><em>{{ $quote['translation'] }}</em></p>
+        @endif
     </section>
+    @endif
 
-    <!-- ══════════════════════════════════════ -->
-    <!-- SECTION: FOOTER (shared across site)   -->
-    <!-- ══════════════════════════════════════ -->
 @endsection
 
 @push('scripts')

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Destinations\DestinationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Reservations\ReservationController;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // ─── Static Pages ────────────────────────────────────────────────────────────
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('index.html', [HomeController::class, 'index']);
-Route::view('about.html', 'about')->name('about');
+Route::get('about.html', [AboutController::class, 'index'])->name('about');
 Route::view('contact.html', 'contact')->name('contact');
 Route::view('course.html', 'course')->name('course');
 Route::view('personalized-package.html', 'personalized-package')->name('personalized-package');
