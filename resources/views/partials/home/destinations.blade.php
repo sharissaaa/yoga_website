@@ -2,42 +2,84 @@
 <!-- DESTINATIONS SECTION                         -->
 <!-- ══════════════════════════════════════════════ -->
 
-@if(!empty($destinations['heading']) || !empty($destinations['items']))
 <section class="dest-section">
     <div class="container">
 
         <!-- HEADER -->
-        @if(!empty($destinations['heading']))
         <div class="dest-header">
+
             <div class="dest-heading">
-                <h2>{{ $destinations['heading'] }}</h2>
+                <h2>Explore Indian Destinations</h2>
             </div>
+
         </div>
-        @endif
 
         <!-- DESTINATION CARDS -->
-        @if(!empty($destinations['items']))
-        @php($destCardCount = max(2, min(5, count($destinations['items']))))
-        <div class="dest-grid" style="--dest-count: {{ $destCardCount }};">
-            @foreach($destinations['items'] as $destination)
-            <article class="dest-card" data-slug="{{ $destination['slug'] }}">
-                @if(!empty($destination['image']))
-                <img src="{{ $destination['image'] }}" alt="{{ $destination['name'] }}">
-                @endif
+        <div class="dest-grid">
+
+            <!-- CARD 1 -->
+            <article class="dest-card" data-slug="tamil-nadu">
+                <img src="assets/gallery/home-image/TN.jpg" alt="Tamil Nadu">
                 <div class="dest-overlay"></div>
                 <div class="dest-content">
-                    @if(!empty($destination['name']))
-                    <h3>{{ $destination['name'] }}</h3>
-                    @endif
-                    @if(!empty($destination['dates']))
-                    <p class="dest-content__dates">{{ $destination['dates'] }}</p>
-                    @endif
+                    <h3>Tamil Nadu</h3>
+                    <p class="dest-content__dates">Dates: To be announced</p>
                 </div>
             </article>
-            @endforeach
+
+            <!-- CARD 2 -->
+            <article class="dest-card" data-slug="kerala">
+                <img src="assets/gallery/home-image/kerala.jpg" alt="Kerala">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3>Kerala</h3>
+                    <p class="dest-content__dates">Dates: To be announced</p>
+                </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="dest-card" data-slug="gujarat">
+                <img src="assets/gallery/home-image/Gujarat.png" alt="Gujarat">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3>Gujarat</h3>
+                    <p class="dest-content__dates">Dates: To be announced</p>
+                </div>
+            </article>
+
+            <!-- CARD 4 — AUTO CAROUSEL (Tamil Nadu ⇄ Kerala) -->
+            <article class="dest-card dest-card--carousel">
+                <div class="dest-carousel">
+                    <div class="dest-carousel__slide dest-carousel__slide--1">
+                        <img src="assets/gallery/home-image/TN.jpg" alt="Tamil Nadu">
+                        <div class="dest-overlay"></div>
+                        <div class="dest-content">
+                            <h3>Tamil Nadu</h3>
+                            <p class="dest-content__dates">Dates: To be announced</p>
+                        </div>
+                    </div>
+                    <div class="dest-carousel__slide dest-carousel__slide--2">
+                        <img src="assets/gallery/home-image/kerala.jpg" alt="Kerala">
+                        <div class="dest-overlay"></div>
+                        <div class="dest-content">
+                            <h3>Kerala</h3>
+                            <p class="dest-content__dates">Dates: To be announced</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CARD 5 -->
+            <article class="dest-card" data-slug="ladakh">
+                <img src="assets/gallery/home-image/ladakh.jpg" alt="Ladakh">
+                <div class="dest-overlay"></div>
+                <div class="dest-content">
+                    <h3>Ladakh</h3>
+                    <p class="dest-content__dates">Dates: To be announced</p>
+                </div>
+            </article>
+
         </div>
-        @endif
 
     </div>
 </section>
-@endif

@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\Destinations\DestinationController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Reservations\ReservationController;
-use App\Http\Controllers\StrapiWebhookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ─── Static Pages ────────────────────────────────────────────────────────────
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('index.html', [HomeController::class, 'index']);
+Route::view('/', 'home')->name('home');
+Route::view('index.html', 'home');
 Route::view('about.html', 'about')->name('about');
 Route::view('contact.html', 'contact')->name('contact');
 Route::view('course.html', 'course')->name('course');
@@ -33,9 +31,3 @@ Route::get('destination-detail.html', [DestinationController::class, 'show'])->n
 // ─── Reservations ────────────────────────────────────────────────────────────
 Route::view('reserve.html', 'reserve')->name('reserve');
 Route::post('reserve.html', [ReservationController::class, 'store'])->name('reservations.store');
-
-// ─── Strapi webhook ──────────────────────────────────────────────────────────
-// Called by Strapi on entry.publish/update/unpublish/delete so cached page
-// content is cleared immediately instead of waiting for the cache to expire.
-// See StrapiWebhookController for details.
-Route::post('/webhooks/strapi', StrapiWebhookController::class)->name('webhooks.strapi');

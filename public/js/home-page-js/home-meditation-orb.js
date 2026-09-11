@@ -12,29 +12,7 @@
     targets.forEach(function (t) { obs.observe(t); });
 })();
 
-var PHASE_COLORS = ['#8FF2A9', '#13A832', '#076B1A'];
-var PHASE_RING_CLASSES = ['inhale-active', '', 'exhale-active'];
-
-function buildPhasesFromDataset() {
-    var raw = document.getElementById('orbContainer').dataset.steps;
-    if (!raw) return null;
-    try {
-        var steps = JSON.parse(raw);
-        if (!Array.isArray(steps) || steps.length === 0) return null;
-        return steps.map(function (step, i) {
-            return {
-                label: step.label,
-                sec: step.duration,
-                color: PHASE_COLORS[i % PHASE_COLORS.length],
-                ringClass: PHASE_RING_CLASSES[i % PHASE_RING_CLASSES.length],
-            };
-        });
-    } catch (e) {
-        return null;
-    }
-}
-
-var phases = buildPhasesFromDataset() || [
+var phases = [
     { label: 'Inhale', sec: 4, color: '#8FF2A9', ringClass: 'inhale-active' },
     { label: 'Hold',   sec: 4, color: '#13A832', ringClass: '' },
     { label: 'Exhale', sec: 6, color: '#076B1A', ringClass: 'exhale-active' }
@@ -86,9 +64,9 @@ function toggleBreathing() {
         clearInterval(timer);
         pi = 0; cnt = phases[0].sec;
         ringEl.classList.remove('inhale-active', 'exhale-active', 'is-running');
-        labelEl.textContent = phases[0].label;
-        labelEl.style.color = phases[0].color;
-        numEl.textContent = phases[0].sec;
+        labelEl.textContent = 'Inhale';
+        labelEl.style.color = '#8FF2A9';
+        numEl.textContent = '4';
         biconEl.textContent = '▶';
         btxtEl.textContent = 'Begin Breathing';
     }
