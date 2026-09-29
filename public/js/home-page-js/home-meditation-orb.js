@@ -16,15 +16,19 @@ var PHASE_COLORS = ['#8FF2A9', '#13A832', '#076B1A'];
 var PHASE_RING_CLASSES = ['inhale-active', '', 'exhale-active'];
 
 function buildPhasesFromDataset() {
-    var raw = document.getElementById('orbContainer').dataset.steps;
+    var container = document.getElementById('orbContainer');
+    var raw = container && container.dataset.steps;
     if (!raw) return null;
     try {
         var steps = JSON.parse(raw);
-        if (!Array.isArray(steps) || steps.length === 0) return null;
+        if (!Array.isArray(steps)) return null;
+        // A step with no duration would show "null" and skip instantly.
+        steps = steps.filter(function (step) { return Number(step.duration) > 0; });
+        if (steps.length === 0) return null;
         return steps.map(function (step, i) {
             return {
                 label: step.label,
-                sec: step.duration,
+                sec: Number(step.duration),
                 color: PHASE_COLORS[i % PHASE_COLORS.length],
                 ringClass: PHASE_RING_CLASSES[i % PHASE_RING_CLASSES.length],
             };
@@ -159,18 +163,23 @@ function spawnRipple(container, evt, sizeMultiplier, bg) {
     });
 }
 
-/* Clicking anywhere on the orb ring cluster ripples + toggles breathing */
-orbContainerEl.addEventListener('click', function (e) {
-    spawnRipple(orbContainerEl, e, 1.6);
-    toggleBreathing();
-});
+/* Clicking anywhere on the orb ring cluster ripples + toggles breathing.
+   The orb and button only render when Strapi has steps, so guard both. */
+if (orbContainerEl) {
+    orbContainerEl.addEventListener('click', function (e) {
+        spawnRipple(orbContainerEl, e, 1.6);
+        toggleBreathing();
+    });
+}
 
 /* Ripple on the "Begin Breathing" / "Pause" button, contained within it */
-startBtnEl.addEventListener('click', function (e) {
-    spawnRipple(
-        startBtnEl,
-        e,
-        2,
-        'radial-gradient(circle, rgba(95, 226, 122, 0.35) 0%, transparent 70%)'
-    );
-});
+if (startBtnEl) {
+    startBtnEl.addEventListener('click', function (e) {
+        spawnRipple(
+            startBtnEl,
+            e,
+            2,
+            'radial-gradient(circle, rgba(95, 226, 122, 0.35) 0%, transparent 70%)'
+        );
+    });
+}

@@ -63,93 +63,6 @@
           });
       }
 
-      /* ── BREATHING ORB ── */
-      var phases = [
-        {
-          label: "Inhale",
-          count: 4,
-          unit: "SEC",
-          color: "#8FF2A9",
-          ringClass: "inhale-active",
-        },
-        {
-          label: "Hold",
-          count: 4,
-          unit: "SEC",
-          color: "#13A832",
-          ringClass: "",
-        },
-        {
-          label: "Exhale",
-          count: 6,
-          unit: "SEC",
-          color: "#076B1A",
-          ringClass: "exhale-active",
-        },
-      ];
-      var phaseIndex = 0,
-        timer = null,
-        current = 0,
-        running = false;
-
-      function initBreathing() {
-        var orbLabel = document.querySelector(".orb-label-top");
-        var orbNumber = document.querySelector(".orb-number");
-        var orbUnit = document.querySelector(".orb-unit");
-        var ringEl = document.getElementById("breathingRing");
-        var startBtn = document.querySelector(".btn-start-breathe");
-        var btnIcon = document.getElementById("btnIcon");
-        var btnText = document.getElementById("btnText");
-        if (!startBtn) return;
-
-        function runBreath() {
-          clearInterval(timer);
-          var phase = phases[phaseIndex];
-          current = phase.count;
-          if (orbLabel) {
-            orbLabel.textContent = phase.label;
-            orbLabel.style.color = phase.color;
-          }
-          if (orbNumber) orbNumber.textContent = current;
-          if (orbUnit) orbUnit.textContent = phase.unit;
-          if (ringEl) {
-            ringEl.classList.remove("inhale-active", "exhale-active");
-            if (phase.ringClass) ringEl.classList.add(phase.ringClass);
-          }
-          timer = setInterval(function () {
-            current--;
-            if (orbNumber) orbNumber.textContent = current;
-            if (current <= 0) {
-              clearInterval(timer);
-              phaseIndex = (phaseIndex + 1) % phases.length;
-              setTimeout(runBreath, 400);
-            }
-          }, 1000);
-        }
-
-        startBtn.addEventListener("click", function () {
-          if (!running) {
-            running = true;
-            if (btnText) btnText.textContent = "Pause";
-            runBreath();
-          } else {
-            running = false;
-            clearInterval(timer);
-            phaseIndex = 0;
-            current = 0;
-            if (btnText) btnText.textContent = "Begin Breathing";
-            if (ringEl)
-              ringEl.classList.remove("inhale-active", "exhale-active");
-            if (orbLabel) {
-              orbLabel.textContent = "Inhale";
-              orbLabel.style.color = phases[0].color;
-            }
-            if (orbNumber) orbNumber.textContent = "4";
-            if (orbUnit) orbUnit.textContent = "SEC";
-          }
-        });
-      }
-
       /* ── DESTINATIONS: clicking a card goes to the Destinations list
               (travel.html), landing on and highlighting that specific
               card there (see the ?highlight= handling in travel.js).
@@ -254,7 +167,6 @@
          resources/views/home.blade.php), so no client-side fetching is
          needed — just run each section's init once the DOM is ready. */
       initReveal();
-      initBreathing();
       initDestinationCards();
       initOfferingsSection();
       initStoryArrows();
